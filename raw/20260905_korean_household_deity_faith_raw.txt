@@ -22,7 +22,9 @@
    - 1차 고전문헌 사료(《예기》 오사, 《국조오례의》 종묘 칠사당, 《중종실록》 부녀자 성주·조왕 숭배 탄핵, 《훈몽자회》, 《동국세시기》, 《규합총서》, 《임원경제지》) 및 서사무가(성주풀이, 문전본풀이) 채록본 원문.
 5. raw/korean_household_deity_faith/05_academic_theses_and_studies.txt
    - 주요 학술 단행본(김명자, 아키바 다카시, 장주근, 이두현, 현용준) 서지 및 등재 학술지 핵심 논문 요약문 덤프.
-6. raw/korean_household_deity_faith/README.txt
+6. raw/korean_household_deity_faith/06_jeonghwasu_origin_and_history_raw.txt
+   - 정화수(井華水) 어원, 물질성, 《동의보감》 탕액편 수부 원문, 《숙종실록》 명수 대용 사료 및 고대~현대 5대 시기별 변천 전수 덤프.
+7. raw/korean_household_deity_faith/README.txt
    - 아카이브 상세 색인 및 활용 안내.
 
 ================================================================================
