@@ -1,0 +1,14 @@
+[원천 데이터 덤프 - 2026-08-22]
+주제: LLM 위키 및 에이전트 컨텍스트 작성 포맷 논쟁 (HTML5 vs Markdown)
+
+1. 논쟁 배경:
+- Anthropic Claude Code 팀(Thariq Shihipar 리드): 'HTML is the new markdown for agentic UX' 주장. 에이전트 인터랙션, 상태 접기(<details>), 임베디드 UI 컨트롤을 위해 HTML 단일 파일 출력을 강조.
+- 오픈소스 및 RAG 엔지니어링 진영: 토큰 효율성(Markdown이 HTML 대비 토큰 3~10배 절감), RAG 파싱 및 검색 정밀도, Git diff 편의성을 이유로 Markdown 유지 강력 주장.
+
+2. Andrej Karpathy의 원형 설계 팩트체크:
+- Karpathy가 제안한 LLM Wiki 저장소(Storage/Memory)의 단일 진실 공급원(SSOT)은 처음부터 'Markdown 폴더 + [[wikilinks]]' 구조였음.
+- HTML은 인간에게 최종 전달(Delivery)되는 리포트/대시보드 산출물에 한해 Single-file HTML로 파생하도록 제안한 것이며, 저장소 자체를 HTML로 대체하려 한 것이 아님.
+
+3. 2계층 하이브리드 절충안:
+- 저장 레이어(기계 메모리): Pure Markdown + YAML Frontmatter + XML 태그
+- 프론트엔드 뷰(인간 시각화): Single-file HTML5 (style.css 연동, SVG 다이어그램)

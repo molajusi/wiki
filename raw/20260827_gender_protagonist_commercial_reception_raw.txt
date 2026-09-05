@@ -1,0 +1,112 @@
+================================================================================
+원천 데이터: 게임(메트로이드배니아)·영화 산업의 여성 주인공과 상업적 흥행·비평 평가 상관관계
+수집 일시: 2026-08-27 (정확한 시각 미기록, KST, UTC+9)
+수집 경위: 대화 세션 내 2회차 논의(메트로이드배니아 장르 조사 → 영화 산업 비교 조사) + WebSearch 교차 확인
+================================================================================
+
+1. 메트로이드배니아 장르 — 상업적 판매량 비교 (WebSearch 결과)
+1.1 할로우 나이트: 실크송(2025, 주인공 호넷·여성)
+- 출시 약 3개월 만에 600~700만 장 판매(Game Awards 후보작 중 최고 판매 속도).
+- 스팀 단독 3.2M(2주), 전체 플랫폼 600만 장 이상.
+- OpenCritic 94점 — 2025년 최고 평점.
+- 출처: GosuGamers, GameSpot, NotebookCheck, WGB(wolfsgamingblog.com)
+
+1.2 할로우 나이트(2017, 주인공 나이트·성별 불명/젠더리스 '베슬')
+- 누적 약 1,500만 장(2019년 실크송 발표 전 280만 장 + 이후 1,200만 장 추가).
+- 출처: Nintendo Life, VGChartz
+
+1.3 오리 시리즈(2015 블라인드 포레스트/2020 윌 오브 더 위습스, 주인공 오리·젠더리스 정령)
+- 두 작품 합산 1,500만 장 이상(2025년 3월, 10주년 기준 Moon Studios 발표).
+- 출처: GoNintendo, ScreenRant, GameWorldObserver
+
+1.4 블러드스테인드: 리추얼 오브 더 나이트(2019, 주인공 미리엄·여성)
+- 2020년 100만 장 돌파, 2023년 기준 200만 장 이상.
+- SXSW 2020 신규 IP 부문 후보 등 비평가 호평.
+- 출처: PC Gamer, InstallBaseForum, CogConnected
+
+1.5 액시엄 버지(2015, 주인공 트레이스·남성)
+- 스팀 소유자 20만~50만 명 수준(정확한 총판매량 미확인).
+- 비평은 호평이나 상업 규모는 소규모.
+- 출처: SteamSpy/GameSensor 요약(원문 미대조)
+
+1.6 캐슬바니아: 오더 오브 엑클레시아(2008, 주인공 샤노아·여성)
+- DS 캐슬바니아 3부작(새벽의 협주곡, 초상의 폐허, 오더 오브 엑클레시아) 중 판매 부진으로 언급됨(정확한 수치 미확인).
+- 게임 판매 부진과 무관하게 샤노아 캐릭터는 팬덤 내 인기 상승, 이후 크로스오버 작품에 등장.
+- 혼입 변수: 짧은 기간 내 3번째 DS 캐슬바니아 출시로 인한 프랜차이즈 피로도 가능성(직접 검증 안 됨).
+- 출처: TVTropes(신뢰도 중급 — 게임 위키 특성상 편집 검증 수준 낮음)
+
+1.7 메트로이드(1986, 주인공 사무스 아란·여성) — 역사적 선례
+- 개발 당시 영문 설명서조차 남성 대명사로 사무스를 지칭, 5시간 이내 클리어 시에만 여성임을 반전 공개하는 '숨긴 반전' 마케팅 채택.
+- 배경: "주인공이 여성이라는 사실을 미리 공개하면 남성 중심 코어 게이머층이 이탈할 것"이라는 업계의 암묵적 가정.
+- 결과: 장르 자체를 창시한 시리즈로 성장, 반전 엔딩은 "역대 최고의 게임 엔딩" 중 하나로 꼽힘.
+- 출처: Den of Geek, Wikipedia(Samus Aran)
+
+1.8 장르 구조적 배경 (ResetEra 커뮤니티 논의)
+- 메트로이드배니아는 타 장르 대비 여성 주인공 비중이 높은 편이라는 관찰.
+- 대형 퍼블리셔의 마케팅·포커스 테스트 압박에서 상대적으로 자유로운 인디 개발 중심 장르라는 점이 원인으로 거론됨(대형 AAA는 "안전한 선택"으로 남성 주인공을 기본값 삼는 경향과 대비).
+- 출처: ResetEra 스레드(신뢰도 하급 — 비검증 커뮤니티 포럼)
+
+================================================================================
+
+2. 영화 산업 — 여성 주도작 흥행 데이터 및 담론 검증 (WebSearch 결과)
+
+2.1 CAA/Shift7 연구(2018)
+- 2014~2017년 개봉 350편(여성 주도 105편, 남성 주도 245편) 분석.
+- 모든 예산 구간에서 여성 주도 영화가 남성 주도 영화보다 평균 글로벌 흥행 수익이 높음.
+- 벡델 테스트 통과작이 미통과작보다 $1억 이상 예산 구간에서 평균 2억 달러 더 흥행.
+- 출처: CBS News, Variety(2018), Seattle Times
+
+2.2 USC 애넌버그 인클루전 이니셔티브 (연례 보고서)
+- 흥행 상위작 여성 주인공 비중: 2007년 20% → 2023년 30% → 2024년 55%(사상 최초 성비 균형 도달).
+- 2025년 기준 전체 대사 있는 캐릭터 중 여성 비중은 33.6%로 2007년(29.9%) 대비 정체 — "주인공 성비"와 "전체 캐릭터 성비"는 별개로 진전.
+- 출처: USC Annenberg(annenberg.usc.edu), Variety(2026), SHOOTonline
+
+2.3 Stephen Follows 데이터 분석(2025-09, 약 1만 편)
+- "고 워크, 고 브로크(Go Woke, Go Broke)" 담론 검증 — 결론: 진보적 테마가 흥행에 부정적 영향을 준다는 일관된 패턴 없음("그렇지 않다"가 결론이나 뉘앙스 있음).
+- 실패의 실제 변수: 노골적 정치 메시지, 어설픈 정경 변경, 시대착오적 대사 등 실행력(execution) 문제.
+- 공포·스릴러·스포츠·음악 장르는 다양성 캐스팅이 오히려 흥행에 긍정적으로 작용.
+- 출처: stephenfollows.com, ThePinkNews, Marshall and the Movies(Substack)
+
+2.4 성공 사례
+- 바비(2023, 그레타 거윅 감독, 마고 로비 주연): 개봉주 1억 5,500만 달러(여성 감독 역대 최고 오프닝), 3주 만에 10억 달러 돌파, 최종 11억 8,390만 달러로 캡틴 마블(11억 2,830만 달러) 경신. 관객 65%가 여성 — 통상 1억 달러 이상 개봉작은 남성 관객 다수라는 업계 통계와 대비.
+- 캡틴 마블(2019): 개봉주 전 세계 4억 5,500만 달러, 최종 11억 2,830만 달러.
+- 원더우먼(2017, 패티 젠킨스 감독): 여성 단독 감독작 개봉주 기록(북미 1억 300만 달러, 2023년까지 보유).
+- 출처: Variety, Deadline, CBR, Hollywood Reporter, WHYY
+
+2.5 실패 사례와 실제 지목된 원인
+- 고스트버스터즈(2016): 이후 흥행 실패의 "환자 0번"으로 불림. 감독이 팬 비판에 욕설로 대응한 홍보 리스크 관리 실패가 함께 지목됨.
+- 터미네이터: 다크 페이트(2019): 예산 1억 8,500만 달러, 개봉주 2,900만 달러. 원인: Z세대의 프랜차이즈 무관심(마블/스타워즈 대비 성장기 애착 부재), 직전 2편(제네시스·구원) 저평가로 인한 피로도, 제작진 내부 갈등(팀 밀러 감독-제임스 카메론 프로듀서), 첫 예고편 혹평.
+- 더 마블스(2023): MCU 역대 최저 오프닝(약 4,700만~5,200만 달러, 예산 2억 달러 이상, 최종 손실 약 2억 3,700만 달러로 2023년 최대 손실작). 원인: SAG-AFTRA 배우 파업 종료 바로 다음 날 개봉(배우 홍보 활동 전면 불가), 몬스터/캡틴 마블 캐릭터 인지도 저하(디즈니+ 시리즈 '미즈 마블' 최저 시청률), MCU 전반의 피로도·품질 논란.
+- 스노우 화이트(2025): 예산 약 2억 5,000만 달러(originally 1억 8,000만에서 초과), 개봉주 4,300만 달러(역대 최악의 디즈니 실사 리메이크 오프닝, 기존 최저작 덤보 2019의 4,600만 달러보다도 낮음). 원인: 반복된 재촬영·리라이트로 인한 예산 초과, 난쟁이 캐스팅 관련 사전 논란(피터 딘클리지 비판), 주연 배우(레이첼 지글러) 본인의 원작 폄하 발언 논란("왕자는 스토커 같다" 등), 저조한 비평 점수("무미건조하고 평범하다"는 평).
+- 출처: TheWrap, Forbes, Variety, Looper, ScreenRant, SlashFilm, IMDb, Fox News
+
+================================================================================
+
+3. 세션 자체 종합 해석 (귀납적 분석 — 직접 논증한 1차 학술 출처 없음)
+- 대규모 통계(CAA/Shift7, Annenberg, Stephen Follows)는 일관되게 "여성 주인공=흥행 리스크" 가설을 반증.
+- 그럼에도 통설이 지속되는 이유로, 소수의 두드러진 실패작이 "여성 주도라서 망했다"는 프레임으로 반복 소비되는 반면 다수의 흥행작은 그 프레임으로 거론되지 않는 가용성 편향(availability bias) 가능성을 세션이 제시함(직접 검증한 심리학 연구는 인용하지 않음 — 통념 수준의 개념 적용).
+- 게임(메트로이드배니아)과 영화 모두에서 "주인공 성별"이 상업적 성패의 1차 변수라는 근거는 확인되지 않으며, 매체별로 다른 구조적 변수(게임: 인디 개발 문화, 영화: 프랜차이즈 피로도·파업/제작 리스크·배우 개인 이슈)가 실제 원인으로 반복 지목됨.
+
+4. 검색 쿼리 기록 (재현성 확보용)
+- "Metroid Samus Aran gender reveal 1986 marketing hidden female protagonist history"
+- "Hollow Knight Silksong Hornet sales figures review scores 2025"
+- "Bloodstained Ritual of the Night Miriam sales commercial performance reception"
+- "metroidvania female protagonist commercial success industry perception discussion article"
+- "Hollow Knight original 2017 sales figures millions copies sold"
+- "Ori and the Blind Forest Will of the Wisps sales figures millions"
+- "Castlevania Order of Ecclesia Shanoa sales reception lowest selling DS Castlevania"
+- "Axiom Verge Guacamelee Blasphemous sales figures million copies male protagonist"
+- ""male protagonist" metroidvania indie games marketing default gender industry ResetEra reddit discussion"
+- "study data female-led films box office perform as well as male-led films Hollywood analysis"
+- "Annenberg Inclusion Initiative box office gender protagonist study findings"
+- ""get woke go broke" box office data debunked myth analysis"
+- "Captain Marvel Wonder Woman Barbie box office success female led blockbuster record"
+- "Terminator Dark Fate Ghostbusters 2016 The Marvels box office underperform reasons budget marketing"
+- "The Marvels 2023 box office bomb reasons Snow White 2025 remake box office bomb reasons"
+- "Stephen Follows go woke go broke data analysis 10000 films female lead conclusion"
+
+5. 출처 등급 및 한계
+- 상급(데이터 저널리즘/학술 연구): CAA/Shift7, USC Annenberg Inclusion Initiative, Stephen Follows — 원 보고서 PDF 직접 대조는 미수행, 검색엔진 요약 및 2차 보도 기반.
+- 중급(주요 매체 보도): Variety, CBS News, TheWrap, Forbes, Deadline 등 — 대체로 신뢰할 수 있는 편집 매체이나 원문 전체 재확인은 부분적.
+- 하급(게임 팬 위키·커뮤니티 포럼): TVTropes, ResetEra — 사실관계 확인 수준 낮음.
+================================================================================

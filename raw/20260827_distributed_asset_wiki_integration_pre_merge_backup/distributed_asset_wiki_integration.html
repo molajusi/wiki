@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-theme">
+    <header class="admin-theme">
+        <h1>사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드</h1>
+        <div class="subtitle">Zero-Friction Enterprise Distributed Asset Integration & Stealth Wiki Operation Guide</div>
+        <div class="category">카테고리: 위키 지식 관리 (Wiki Governance)</div>
+        <div class="meta">최초 작성일시: 2026-08-22 오후 02:54:30 (KST, UTC+9) | 최종 수정일시: 2026-08-22 오후 02:54:30 (KST, UTC+9)</div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">← 메인 인덱스로 돌아가기</a>
+            <a href="stealth_governance_procedure.html">스텔스 거버넌스 절차</a>
+            <a href="raw_data_management_strategy.html">적재 및 활용 전략</a>
+            <a href="wiki_documentation_standards.html">2계층 작성 표준</a>
+        </div>
+        <a href="distributed_asset_wiki_integration.md" class="btn-md-source">📄 순수 마크다운 원본(.md) 보기</a>
+    </nav>
+    <main>
+        <article>
+            <section>
+                <h2>1. 개요 및 목적 (Overview & Purpose)</h2>
+                <p>
+                    본 문서는 사내 로컬 <b>NAS</b>(견적서, 대외비 문서, 프로젝트 산출물, 도구 파일)와 <b>외부 SaaS</b>(Google Docs, Notion, 설치 매뉴얼, 방문예약 등 행정 절차)에 파편화되어 보관 중인 기존 자산을 <b>업무 증가 0, 직원 교육 0시간</b> 원칙 하에 2계층 지식 위키(Markdown SSOT + HTML5 View)로 통합·연동·전파하기 위한 실무 운영 지침을 수립합니다.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. 핵심 개념 및 원리 (Core Concept & Architecture)</h2>
+
+                <h3>2.1 분산 자산-위키 포털 아키텍처 (Distributed Asset Portal Architecture)</h3>
+                <p>
+                    위키는 기존 문서를 다시 작성하는 입력 도구가 아니라, 사내 모든 분산 자산의 위치와 핵심 실행법을 안내하는 <b>'단일 메타 검색 포털(Single Meta Index)'</b> 역할을 수행합니다.
+                </p>
+
+                <!-- SVG 다이어그램: 분산 자산 연동 흐름 -->
+                <div class="diagram-container">
+                    <h4>[사내 분산 자산의 무부담 위키 연동 및 스텔스 전파 파이프라인]</h4>
+                    <svg viewBox="0 0 800 200" style="width: 100%; height: auto;">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd" />
+                            </marker>
+                        </defs>
+
+                        <!-- Box 1: 기존 분산 자산 (변경 없음) -->
+                        <rect x="20" y="25" width="220" height="150" rx="8" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5" />
+                        <text x="130" y="48" font-size="12" font-weight="bold" text-anchor="middle" fill="#212529">1. 기존 분산 자산 (보관 유지)</text>
+                        <text x="35" y="75" font-size="10" fill="#495057">• NAS: 견적서, 대외비, 프로젝트</text>
+                        <text x="35" y="98" font-size="10" fill="#495057">• NAS: 도구/스크립트 (*.exe, *.py)</text>
+                        <text x="35" y="121" font-size="10" fill="#495057">• Google Docs / Notion: 행정 SOP</text>
+                        <text x="35" y="144" font-size="10" fill="#495057">• 인프라: 서버 / DB 설치 매뉴얼</text>
+                        <text x="130" y="165" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#198754">★ 직원 업무/보관 방식 100% 불변</text>
+
+                        <!-- Arrow 1 to 2 -->
+                        <line x1="240" y1="100" x2="275" y2="100" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+                        <!-- Box 2: 에이전트 자동 정제 -->
+                        <rect x="280" y="25" width="220" height="150" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" />
+                        <text x="390" y="48" font-size="12" font-weight="bold" text-anchor="middle" fill="#856404">2. 백엔드 에이전트 정제</text>
+                        <text x="295" y="75" font-size="10" fill="#664d03">• 텍스트/경로 원클릭 전달</text>
+                        <text x="295" y="98" font-size="10" fill="#664d03">• 대외비/단가 자동 마스킹</text>
+                        <text x="295" y="121" font-size="10" fill="#664d03">• 3단계 체크리스트 요약화</text>
+                        <text x="295" y="144" font-size="10" fill="#664d03">• 2계층 (*.md + *.html) 생성</text>
+                        <text x="390" y="165" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#856404">★ 아저씨 작성 부담 0</text>
+
+                        <!-- Arrow 2 to 3 -->
+                        <line x1="500" y1="100" x2="535" y2="100" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+                        <!-- Box 3: 2계층 위키 및 스텔스 배포 -->
+                        <rect x="540" y="25" width="240" height="150" rx="8" fill="#d1e7dd" stroke="#198754" stroke-width="1.5" />
+                        <text x="660" y="48" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f5132">3. 2계층 위키 & 스텔스 배포</text>
+                        <text x="555" y="75" font-size="10" fill="#0f5132">• Z:\wiki\*.html 메타 검색 포털</text>
+                        <text x="555" y="98" font-size="10" fill="#0f5132">• 원본 직접 열람 (Pass-through Link)</text>
+                        <text x="555" y="121" font-size="10" fill="#0f5132">• 질문 수신 시 1초 링크 회신</text>
+                        <text x="555" y="144" font-size="10" fill="#0f5132">• 직원 자발적 북마크 안착</text>
+                        <text x="660" y="165" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#0f5132">★ 직원 추가 교육 0시간</text>
+                    </svg>
+                </div>
+
+                <h3>2.2 4대 자산군별 위키 연동 전략 매트릭스</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>자산 분류</th>
+                            <th>기존 보관 위치</th>
+                            <th>위키 역할 및 표시 형태</th>
+                            <th>보안 및 연동 방식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>견적서 / 원가 자료</b></td>
+                            <td>NAS (Excel, PDF)</td>
+                            <td><b>메타 색인 카드</b> (고객사, 일자, 품목, 담당자)</td>
+                            <td>단가 등 민감정보 본문 노출 방지, NAS 직접 경로 링크 제공</td>
+                        </tr>
+                        <tr>
+                            <td><b>대외비 / 계약 문서</b></td>
+                            <td>NAS 보안 폴더</td>
+                            <td><b>문서 식별 요약</b> (문서번호, 보안등급, 보관경로)</td>
+                            <td>원문 열람은 사내 NAS 보안 권한에 위임, 위키는 메타데이터 색인</td>
+                        </tr>
+                        <tr>
+                            <td><b>프로젝트 / 도구 파일</b></td>
+                            <td>NAS (ZIP, EXE, PY, BAT)</td>
+                            <td><b>1페이지 브리핑 & 도구 실행 매뉴얼</b></td>
+                            <td>폴더 트리 구조 요약, 실행 명령어 및 파라미터 복사 블록 제공</td>
+                        </tr>
+                        <tr>
+                            <td><b>행정 SOP / 기술 매뉴얼</b></td>
+                            <td>Google Docs, Notion</td>
+                            <td><b>3단계 체크리스트 & 기술 매뉴얼</b></td>
+                            <td>원문 본문을 에이전트가 1회 정제하여 가벼운 HTML5 뷰로 단일화</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>3. 상세 분석 및 데이터 (Detailed Analysis & Data)</h2>
+
+                <h3>3.1 아저씨 전용 1분 스텔스 실행 워크플로우</h3>
+                <details open>
+                    <summary>▶ 3단계 실무 실행 워크플로우 펼치기</summary>
+                    <ol style="margin-top: 0.5rem;">
+                        <li><b>1단계: 원문 복사 및 에이전트 전달 (소요 시간: 10초)</b><br>
+                            새로 작성하려 하지 않고, 기존 노션/구글 문서 본문 전체를 복사하거나 NAS 폴더 경로/파일 목록을 복사하여 에이전트 대화창에 전달합니다.<br>
+                            <i>(예: "이 구글 문서 방문예약 신청 절차를 위키 3단계 체크리스트로 만들어줘", "이 NAS 폴더에 있는 도구 실행법 정리해줘")</i>
+                        </li>
+                        <li><b>2단계: 2계층 자동 빌드 및 인덱스 갱신 (소요 시간: 즉시)</b><br>
+                            에이전트가 마크다운(<code>*.md</code>)과 반응형 웹(<code>*.html</code>)을 생성하고 메인 인덱스(<code>index.html</code>)에 즉시 등록합니다.
+                        </li>
+                        <li><b>3단계: 질문 기반 수동적 링크 회신 (소요 시간: 5초)</b><br>
+                            전사 공지를 하지 않고, 동료나 팀원이 사용법이나 절차를 물어볼 때 해당 위키 페이지 링크를 회신합니다.<br>
+                            <i>(예: "방문예약 신청 양식과 절차는 이 페이지 링크에 NAS 경로랑 같이 정리되어 있습니다.")</i>
+                        </li>
+                    </ol>
+                </details>
+
+                <h3>3.2 전통적 전사 위키 이전 vs 스텔스 메타 연동 비교</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>비교 항목</th>
+                            <th>전통적 전사 위키 도입 (Full Migration)</th>
+                            <th>스텔스 메타 연동 방식 (Stealth Indexing)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>직원 교육 시간</b></td>
+                            <td>수 시간 ~ 수일 (마크다운, 신규 툴 교육 필수)</td>
+                            <td><b>0시간 (기존 사용 습관 100% 유지)</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>구축 및 마이그레이션 부담</b></td>
+                            <td>수개월 소요 (기존 파일 일일이 재작성)</td>
+                            <td><b>즉시 (건별 1분 에이전트 자동 변환)</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>조직 저항도</b></td>
+                            <td>극심 (새로운 작성 의무로 인한 거부감)</td>
+                            <td><b>0 (강요 없는 무부담 수동적 전파)</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>문서 불일치 (Sync) 위험</b></td>
+                            <td>높음 (NAS 파일과 위키 본문이 따로 놂)</td>
+                            <td><b>원천 차단 (위키는 원본 NAS의 메타/경로만 가리킴)</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>보안 관리 체계</b></td>
+                            <td>위키 권한을 별도 재설계해야 함</td>
+                            <td><b>기존 NAS/SaaS의 보안 권한 체계 100% 활용</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>4. 용어 정리 및 정의 (Terminology & Definitions)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>용어 (Terminology)</th>
+                            <th>정의 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>메타 색인 포털</b></td>
+                            <td><b>Meta-Indexing Portal</b>. 모든 원본 데이터를 텍스트로 옮겨 적지 않고, 파일의 보관 위치, 실행법, 요약 메타데이터만을 구조화하여 제공하는 단일 진입점 포털.</td>
+                        </tr>
+                        <tr>
+                            <td><b>직통 연결 링크</b></td>
+                            <td><b>Pass-through Link</b>. 위키 내부에서 기존 NAS 경로(사내 네트워크 경로)나 외부 SaaS URL로 직접 연결하여 원본에 바로 접근시키는 링크 메커니즘.</td>
+                        </tr>
+                        <tr>
+                            <td><b>수동적 링크 배포</b></td>
+                            <td><b>Passive Link Distribution</b>. 전사적 의무 공지를 지양하고, 구성원의 실제 질문 및 필요 시점에 맞춤형 웹 링크를 메신저로 회신하여 조직에 저항 없이 정착시키는 배포 전략.</td>
+                        </tr>
+                        <tr>
+                            <td><b>무마찰 데이터 수집</b></td>
+                            <td><b>Zero-Friction Ingestion</b>. 직원이나 담당자가 서식 작성 규칙을 학습할 필요 없이 기존 자유 텍스트나 원시 파일 목록을 에이전트가 백엔드에서 규격화하는 수집 절차.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>
+            Raw Source: <a href="raw/20260822_distributed_asset_wiki_integration_raw.txt">Z:\wiki\raw\20260822_distributed_asset_wiki_integration_raw.txt</a> | 
+            Machine Backend Source: <a href="distributed_asset_wiki_integration.md">Z:\wiki\distributed_asset_wiki_integration.md</a> | 
+            Storage Directory: Z:\wiki
+        </p>
+    </footer>
+</body>
+</html>

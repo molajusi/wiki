@@ -1,0 +1,188 @@
+[Raw Data: Metroidvania Genre History, Mechanics, Dual Pillars, Zelda Influence, RPG Minimization, Item vs Skill Embodiment, Reward Philosophy, Inter-Game Influences, and Map Design Philosophy & Citations]
+Date: 2026-08-22
+Subject: 메트로이드배니아의 지도(Map) 설계 유무 및 표현 방식에 대한 철학적·비평적·인지과학적 분석과 학술/개발자 근거
+
+1. 글로벌 표준 및 한국 표기
+- 글로벌 표준: **Metroidvania**
+- 한국 내 표기: 메트로이드배니아 (통용 표준), 메트로배니아 (약칭), 메트로이드바니아 (어원 보존형)
+
+2. 지도(Map) 설계 유무(Map vs No-Map)의 철학적 대립과 레벨 디자인 본질
+1) 존재론적 위상: 지도는 단순한 UI가 아니라 플레이어와 가상 공간 사이의 '현상학적 매개체(Phenomenological Medium)'.
+   - 지도를 주면 세계는 '추상화된 정보 격자'가 되어 안전성과 효율을 얻음.
+   - 지도를 뺏으면 세계는 '직접 대면해야 하는 물리적 실체'가 되어 원초적 긴장감과 신체적 체화를 얻음.
+
+2) 지도 유무의 대립 (The Great Dichotomy):
+   - [지도 배제 (No-Map) - 예: Metroid (1986), Dark Souls 1 (2011), Salt and Sanctuary (2016), Fear & Hunger]
+     * 핵심 미학: 길 잃음(Disorientation)을 결함이 아닌 '핵심 감정 피처'로 수용. 취약성과 고립감 극대화.
+     * 보상 메커니즘: 헤매던 끝에 익숙한 불사의 교구/제단으로 이어지는 '숏컷(Shortcut)'을 뚫었을 때의 강력한 도파민과 안도감.
+     * 선결 조건: 환경 자체에 압도적인 랜드마크(Visual Anchor), 수직성(Verticality), 조명 대비, 음향 힌트가 내장되어야 함.
+     * 2D vs 3D 차원적 한계: 3D는 360도 자유 시점 조작으로 원거리 랜드마크를 보며 방향을 잡을 수 있으나, 2D는 '시야의 평면성' 때문에 지도 배제 시 인지 부하와 길 찾기 스트레스가 극단적으로 치솟음.
+   - [지도 지원 (Map-Assisted) - 예: Super Metroid, Castlevania SOTN, Metroid Dread, Ori]
+     * 핵심 미학: 비선형 능력 기팅(Ability-gating)과 백트래킹(Backtracking)의 복잡도 관리.
+     * 리스크: 상시 미니맵에 시선이 갇히는 '미니맵 응시 증후군(GPS Effect)' 및 탐험이 아닌 '타일 칠하기 청소 노동(Chore)'으로의 전락.
+
+3) 지도 시각 표현 방식의 4대 양식 (4 Representation Styles):
+   - ① 2D 추상 격자 타일 맵 (Abstract Grid Tile Map): 《Super Metroid》, 《Castlevania SOTN》. 타일=방 1:1 대응. 탐색률(100%/200.6%) 수치화로 완벽주의 자극. 고저차/곡선 왜곡의 한계.
+   - ② 3D 홀로그램/벡터 맵 (3D Holographic Vector Map): 《Metroid Prime》, 《Star Wars Jedi: Fallen Order》. 복잡한 3차원 다층 층위를 입체 투영하여 수직 연결 파악 용이. 회전/줌/틸트 조작 피로 발생.
+   - ③ 다이제틱 손그림 양피지 맵 (Diegetic Hand-Drawn Map): 《Hollow Knight》, 《Elden Ring》. 세계관 내 탐험가의 실제 스케치로 표현. 정밀 충돌선 생략으로 직접 탐색 유도 및 감성적 몰입 극대화.
+   - ④ 레이어드 고해상도 단면도 맵 (Layered High-Res Schematic Map): 《Ori and the Will of the Wisps》, 《Metroid Dread》. 실제 인게임 물리 지형과 단면을 실시간 렌더링. 직관적이고 정확한 통로 판별 지원.
+
+3. 지도 설계와 환경 랜드마크의 인지과학·공간현상학적 상관관계
+- 에드워드 톨먼(Edward C. Tolman, 1948) 《인지 지도(Cognitive Map)》: 외부 지도가 없을 때 두뇌(해마)의 장소 세포(Place cells)와 격자 세포(Grid cells)가 능동적으로 공간 위상학적 심상을 형성.
+- 마르틴 하이데거(Martin Heidegger) 도구적 존재론(Zuhandenheit): 지도가 완벽하면 세계는 은폐되고 도구(UI)만 드러남. 지도를 제한할 때 비로소 세계(환경 미술)가 드러남.
+- 케빈 린치(Kevin Lynch, 《The Image of the City》, 1960)의 도시 인지 5대 요소:
+  1) 통로(Paths), 2) 경계(Edges), 3) 구역(Districts), 4) 결절점(Nodes), 5) 랜드마크(Landmarks).
+- 마크 브라운(GMTK, 2018)의 비평: 훌륭한 게임은 미니맵을 보지 않고도 조명, 색상 대비, 독특한 오브젝트로 플레이어의 시선을 올바른 경로로 자연스럽게 견인함(Visual Signposting).
+- 팀 체리(Team Cherry)의 다이제틱 카토그래피(Diegetic Cartography): "길 잃는 취약성 → 탐색 → 상인(코니퍼) 조우 → 벤치에서 깃펜으로 채움"이라는 4단계 정서적 아크 완성.
+
+4. 1997~2017년 20년간의 계보적 진화 및 상호 영향 (The 20-Year Evolution & Lineage Bridge)
+- 통념적 오해: 1997년 《월하의 야상곡》부터 2017년 《할로우 나이트》까지 20년간 장르가 정체되었다는 착시.
+- 실제 역사적 실체: 거치형 3D 콘솔 전환기에 밀린 2D 메트로이드배니아가 휴대기기(GBA/NDS)로 이동하여 시스템을 고도화하고, PC 인디 씬의 태동을 이끌며, 2D 소울라이크를 실험하여 《할로우 나이트》의 토양을 완성한 핵심 진화기.
+
+1) 1단계: 휴대용 콘솔(GBA/NDS) 황금기와 시스템 심화 (2001~2008)
+   - 《캐슬바니아: 효월의 원무곡》(Aria of Sorrow, 2003): '택티컬 소울(Tactical Soul)' 확립. 몬스터 능력 흡수/장착 → 할로우 나이트 부적(Charm), 블러드스테인드 샤드, 엔더 릴리즈 스킬로 직결.
+   - 《캐슬바니아: 오더 오브 에클레시아》(Order of Ecclesia, 2008): 글리프(Glyph) 조합 및 고난도 보스전 패턴 확립.
+   - 《메트로이드 퓨전》(Metroid Fusion, 2002): 무적 추격자 'SA-X' 도입 (서바이벌 호러 결합 → 2021년 메트로이드 드레드 EMMI의 원형).
+   - 《메트로이드 제로 미션》(Metroid Zero Mission, 2004): 시퀀스 브레이킹을 공식 레벨 디자인에 의도적으로 설계 반영.
+   - 《메트로이드 프라임》(Metroid Prime, 2002): 2D 탐색/바이저 스캔/아이템 기팅을 3D 1인칭 어드벤처로 완벽 전환 (메타크리틱 97점).
+
+2) 2단계: 인디 게임 혁명과 상업적 재입증 (2004~2010)
+   - 《동굴 이야기》(Cave Story, 2004, Pixel): 1인 개발 인디 메트로이드배니아의 시초, 총기 레벨업 및 멀티 엔딩. 현대 인디 씬의 기폭제.
+   - 《아쿠아리아》(Aquaria, 2007, Bit Blot): IGF 대상 수상작, 수중 비선형 탐색과 형태 변형.
+   - 《섀도우 컴플렉스》(Shadow Complex, 2009, Chair/Epic): 언리얼 엔진 3 기반 2.5D 메트로이드배니아. XBLA 최단기 100만 다운로드 돌파로 현대 시장에서의 2D 메트로이드배니아 상업성 재입증.
+
+3) 3단계: 소울라이크 융합 및 장르 하이브리드 폭발 (2011~2016)
+   - 《과카멜레!》(Guacamelee!, 2013): 격투 콤보 액션과 이동 능력 기팅의 1:1 일체화.
+   - 《액시옴 버지》(Axiom Verge, 2015, Tom Happ): 슈퍼 메트로이드 오마주 및 글리치 조작 메커닉.
+   - 《오리 앤 더 블라인드 포레스트》(Ori 1, 2015): 바쉬(Bash) 반동 플랫포밍과 감성 비주얼.
+   - 《솔트 앤 생추어리》(Salt and Sanctuary, 2016, Ska Studios): 2D 소울라이크의 시초. 스태미나 공방, 소금(자산) 드롭/회수, 지도 미제공 탐험을 메트로이드배니아와 완벽 융합하여 할로우 나이트의 직접적 가교 역할 수행.
+   - 《모모도라: 달 아래의 진혼곡》(Momodora: RUTM, 2016): 정교한 근접 히트박스 공방과 구르기 회피 중심 보스전.
+
+4) 4단계: 할로우 나이트(2017)의 집대성과 현대적 표준 정립
+   - 메트로이드의 '유기적 고립 맵' + 효월의 원무곡의 '근접 대못 및 부적 커스텀' + 솔트 앤 생추어리/다크 소울의 '벤치 세이브 및 영혼 회수' + 동굴 이야기 이래 축적된 인디 감성의 총결산.
+
+5. 플레이어 주도 지도 마커(Player-Placed Map Markers) 지원 철학 및 비평 분석
+- 정의: 게임이 자동으로 목적지를 찍어주는 대신, 플레이어가 직접 지도상에 핀(Pin), 스탬프(Stamp), 아이콘, 스크린샷 등을 배치하여 공간 정보를 능동적으로 기록하도록 지원하는 레벨 디자인 메커니즘.
+
+1) 3대 게임 디자인 철학:
+   - ① 능동적 카토그래피(Active Cartography) vs 수동적 GPS 내비게이션: 게임이 루트를 정해주는 '유비소프트식 자동 퀘스트 마커'와 달리, 플레이어가 세계를 직접 관찰하고 스스로 재방문 위치를 결정하는 탐험 주체성(Player Agency) 보존.
+   - ② 인지적 외주화(Cognitive Offloading)를 통한 작업 기억(Working Memory) 보호: 조지 밀러(George A. Miller, 1956)의 매지컬 넘버 7±2, 존 스웰러(John Sweller, 1988)의 인지 부하 이론. 수십 시간짜리 거대 미로에서 모든 장애물 위치를 뇌에 외우게 만드는 '외재적 인지 피로'를 제거하고 퍼즐/조작 실행에 집중시킴.
+   - ③ '막다른 길(Failure)'의 '미래 목표(Future Objective)' 전환: 마크 브라운(GMTK)의 분석에 따라 막힌 문을 만난 실패 경험을 "나중에 능력을 얻어 열어야 할 플레이어 스스로의 약속"으로 승화.
+
+2) 마커 수량 제한(Quantity Limit) 딜레마:
+   - 개발진 의도: 지도 시각 오염(Visual Clutter) 방지, 배경 랜드마크 관찰 및 인지 지도 유도, 체크리스트 숙제화 방지.
+   - 플레이어 피로: 핀 소모에 대한 메타 자원 관리 스트레스(Meta-Resource Anxiety), 미마킹 지형 망각에 따른 백트래킹 방황 재발, 핀 교체 조작 마찰.
+
+3) 단일 형태/아이콘 제한(Single Shape Restriction)과 의미적 부호화 실패:
+   - 의미 소실(Loss of Context): 단순 점 하나는 '위치'만 남기고 '장애물 유형(더블점프? 대시? 폭탄?)'을 상실.
+   - 헛걸음 백트래킹(False Positive Trips): 새 능력 획득 후 찾아갔으나 다른 기믹이어서 헛걸음하는 피로 유발.
+   - 다중 심볼(Multi-symbol)과의 절충: 심볼 휠 선택 조작 피로 vs 스크린샷 썸네일 핀(페르시아의 왕자: 잃어버린 왕관)의 혁신적 해결.
+
+4) 평론가 및 학계의 긍정적 평가 (Praises):
+   - 백트래킹의 인지 마찰(Friction) 해소 및 플레이어의 시간 존중(Respecting Player Time).
+   - 플레이어 고유의 색상/심볼 분류 체계를 통한 맞춤형 탐색 전략 수립(Strategic Routing)의 쾌감.
+   - 외부 공략 검색 의존도를 낮추고 자력 완주를 돕는 접근성(Accessibility)의 비약적 혁신.
+
+5) 비평가들의 우려 및 설계적 딜레마 (Criticisms & Side Effects):
+   - ① 인지 지도(Cognitive Map) 뇌내 형성 억제: 랜드마크와 배경 미술을 눈으로 기억하지 않고 지도 UI에만 의존하는 기억의 외주화(Externalization of Memory) 심화.
+   - ② 탐험의 '체크리스트 숙제화(To-Do List Fatigue)': 신비로운 모험이 지도에 찍힌 점들을 지워나가는 기계적 '청소 노동(Clean-up Chore)'으로 전락.
+   - ③ 우연한 발견(Serendipity)의 상실: 길을 잃고 방황하다가 우연히 보스나 보물을 찾는 우발적 카타르시스 감소.
+   - ④ 수량 및 형태 제한 딜레마: 무제한 핀의 시각적 오염 vs 제한된 핀의 메타 자원 스트레스 및 단일 핀의 의미 소실.
+
+6) 대표작별 마커 구현 패러다임:
+   - 《Hollow Knight》(2017): 상점(이슬다)에서 지오로 핀을 구매하게 하여 마킹을 인게임 경제 및 다이제틱 투자로 편입.
+   - 《Zelda: BotW / TotK》(2017/2023): 망원경으로 육안 랜드마크를 먼저 관찰하게 유도한 후 빛기둥 핀 및 100개 스탬프 배치.
+   - 《Elden Ring》(2022): 미니맵/퀘스트 마커를 전면 삭제하고 100개 심볼 마커 및 비콘을 통한 고전적 매핑 강제.
+   - 《Metroid Dread》(2021): 특정 문을 클릭하면 맵 전체 동일 문이 일괄 점등되는 스마트 아이콘 필터링 도입.
+   - 《Prince of Persia: The Lost Crown (페르시아의 왕자: 잃어버린 왕관)》(2024): 패드 버튼으로 화면 스크린샷 썸네일을 지도 핀에 부착하는 '방랑자의 눈(Memory Shards)' 도입 (편의 기능/QoL 극찬).
+
+6. 외부 공식 웹링크 및 참고 문헌 출처 (References & Web Sources)
+- Jeremy Parish: Metroidvania: Mapping the History (1UP / Retronauts)
+  https://www.metroidvania.com/
+- Mark Brown (Game Maker's Toolkit - GMTK): Designing for Exploration (YouTube)
+  https://www.youtube.com/watch?v=kY41Zhhg30s
+- Mark Brown (GMTK): Boss Keys Series (YouTube)
+  https://www.youtube.com/playlist?list=PLc38fcMFcV_ul4D6OChdWhsNsYY3JU5Ev
+- Koji Igarashi: GDC 2014 - There's More to Castlevania than Metroid (GDC Vault)
+  https://www.gdcvault.com/play/1020412/There-s-More-to-Castlevania
+- Team Cherry (Ari Gibson & William Pellen): Hollow Knight GDC 2018 - Crafting a World (GDC)
+  https://www.gdcvault.com/play/1025000/Hollow-Knight-Crafting-a-World
+- Ska Studios (James Silva): Designing Salt and Sanctuary (PlayStation Blog)
+  https://blog.playstation.com/2016/03/08/salt-and-sanctuary-out-next-week-on-ps4/
+- Ubisoft Montpellier: Prince of Persia: The Lost Crown - Guided vs Exploration Mode (Ubisoft News)
+  https://news.ubisoft.com/
+- George A. Miller (1956): The Magical Number Seven, Plus or Minus Two (Psychological Review, 63(2), 81–97)
+  https://doi.org/10.1037/h0043158
+- John Sweller (1988): Cognitive Load During Problem Solving (Cognitive Science, 12(2), 257–285)
+  https://doi.org/10.1207/s15516709cog1202_4
+- Edward C. Tolman (1948): Cognitive Maps in Rats and Men (Psychological Review)
+  https://doi.org/10.1037/h0061626
+- Kevin Lynch (1960): The Image of the City (MIT Press)
+  https://mitpress.mit.edu/9780262620017/the-image-of-the-city/
+- Andy Clark (2008): Supersizing the Mind (Oxford University Press)
+  https://mitpress.mit.edu/9780262531566/supersizing-the-mind/
+- Matt Bozon (WayForward): Shantae Development & Hybrid Genre Philosophy (Nintendo World Report)
+  http://www.nintendoworldreport.com/
+- Yoshio Sakamoto & MercurySteam: Metroid Dread Development History & E.M.M.I. Stalker AI (Nintendo)
+  https://www.nintendo.com/whatsnew/metroid-dread-development-history/
+
+7. 샨테(Shantae) 시리즈의 장르적 기여 요약 메모 (Raw Notes)
+- 2002년 GBC 황혼기 출시: 8비트 기기 한계 활용, 낮/밤 주기, 마을-오버월드-던전 3단 구조. 2D 암흑기 독립 IP 가교.
+- 《젤다 2》/《악마성 2》 계보: 맷 보존 증언, 허브 마을 + 필드 + 던전 공략의 하이브리드 액션 어드벤처 문법.
+- 동물 변신 기반 형태 변형 기팅(Form-shifting Gating): 원숭이(소형/벽타기), 코끼리(파괴), 거미(배경등반), 인어(잠수), 하피(비행).
+- 《해적의 저주(2014)》: 변신 딜레이 배제 및 해적 장비(모자 활강, 부츠 돌진, 대포 점프)를 통한 즉각형 고속 기동성 플랫포밍 완성 (시리즈 최고 비평).
+- 밝은 아라비안 나이트풍 톤앤매너, 정교한 2D 수작업 애니메이션, DSiWare 및 킥스타터 크라우드펀딩 자생 생태계 개척.
+
+8. 추격전 및 스토커 시퀀스(Chase & Stalker Sequences) 게임 디자인 메모 (Raw Notes)
+- 정적 탐색에 대한 페이스 브레이커(Pacing Breaker): 느린 맵 탐색과 관찰의 루틴을 깨는 동적 텐션 부여.
+- 3대 설계 가치: 취약성/공포 환기, 이동 기동성 숙련도의 졸업 시험(Mechanical Culmination), 도망자→사냥꾼의 권력 역전(Power Inversion).
+- 진화 4단계:
+  1) 메트로이드 퓨전(2002) SA-X: 시네마틱 스크립트 스릴러, 다회차 시 공포 감쇄.
+  2) 제로 미션(2004) 제로 슈트: 무력감 극대화 후 슈트 탈환 처형 카타르시스.
+  3) 오리(2015) 긴소 나무 탈출: 무음악 중단 없는 플랫포밍 명연출 vs 암기식 즉사(Trial & Error) 피로.
+  4) 메트로이드 드레드(2021) E.M.M.I.: E.M.M.I. 존 구역화(Zoning)로 탐험과 추격 분리, 오메가 캐논 영구 처형.
+- 실패 원인 vs 성공 공식: 무작위 스토커의 탐험 방해/불합리한 즉사/공포 감쇄 vs 존 분리(Zoning)/명확한 시각 길잡이(Signposting)/영구 제거 보상.
+
+9. 컨트롤러 버튼 한계 극복과 글로벌 매핑 표준화 메모 (Raw Notes)
+- 5대 설계 철학:
+  1) 맥락 의존(Context-Sensitive): 젤다 시오 A버튼, 어쌔신 크리드 파쿠르. 오입력 딜레마.
+  2) 모디파이어(Modifier): 파판14 WXHB, 엘든링 Y+L1/R1, 페르시아의 왕자 L2+4버튼.
+  3) 동사 물리 합성(Verb Chaining): 할로우 나이트 포고 점프, 슈퍼 메트로이드 샤인스파크, 셀레스테 웨이브대시.
+  4) 방향 벡터 제스처(Directional Gestures): 대난투 스매시 브라더스 A/B+4방향, EA 스케이트 Flickit.
+  5) 시간 왜곡 휠(Tactical Radial Wheel): 둠 이터널 90% 슬로우모션 휠, 몬스터 헌터 L1 숏컷.
+- 매핑 표준화 역사와 '엄지손가락 해방(Right Thumb Liberation)':
+  1) 1983 NES 2버튼 → 1990 SNES 다이아몬드 4버튼 + L/R 숄더.
+  2) 1997 PS1 듀얼쇼크 트윈 스틱(좌 이동, 우 카메라).
+  3) 2001 헤일로 & 2007 콜옵 모던워페어 콘솔 슈터 표준(LT 조준, RT 사격, L3 달리기, R3 밀치기).
+  4) 2011 다크소울 R1/R2 숄더 공격 표준: 오른쪽 엄지손가락을 우측 스틱에 고정시켜 3D 카메라와 록온을 상시 제어. 갓오브워, 어쌔신크리드 오리진 수용.
+  5) 2D 메트로이드배니아 표준: 하단 A/X 점프, 좌측 X/Square 공격, 우측 B/Circle 회피, 상단 Y/Triangle 스킬, ZR 대시, ZL 모디파이어/패링.
+- 시스템 버튼군(System Buttons / 시스템 좌·우 버튼)의 40년 진화:
+  1) 1983 NES: 시스템 우(START, 아케이드 게임시작/일시정지), 시스템 좌(SELECT, 1P/2P 모드선택/난이도).
+  2) 1990년대 인게임 메커니즘화: 메트로이드(미사일 토글), 젤다 트라이포스 & 캐슬바니아 월하(시스템 좌 SELECT=지도 Map Screen, 시스템 우 START=인벤토리/장비창).
+  3) 2013~현재 현대적 재정의:
+     - PS4/PS5: 시스템 좌 = 터치패드 클릭(Map/Journal), 시스템 우 = OPTIONS(시스템 메뉴/일시정지).
+     - Xbox One/Series: 시스템 좌 = View(창문아이콘=Map/Scoreboard), 시스템 우 = Menu(햄버거아이콘=Pause/Settings).
+     - Switch: 시스템 좌 = Minus(- 맵), 시스템 우 = Plus(+ 메뉴).
+  4) 이원화 철학: 시스템 좌(게임 내부 공간/서사 메타 정보: 지도/퀘스트) vs 시스템 우(게임 외부 시스템 제어: 일시정지/저장/옵션).
+- 참고 문헌 링크:
+  - Masahiro Sakurai on Game Creation (YouTube): https://www.youtube.com/@sora_sakurai_en
+  - Halo & Modern Console Shooter Control Standards: https://www.eurogamer.net/
+
+10. 젤다 신들의 트라이포스 2 (ALBW) 아이템 대여 시스템 비평 및 BotW 진화 메모 (Raw Notes)
+- 배경 및 의도:
+  - 25년간의 '선형 던전 거대 보물상자 아이템 획득 공식' 탈피.
+  - 라비오(Ravio) 상점에서 초반 루피로 전 도구(활, 폭탄, 훅샷 등) 대여 → 로우랄 7개 던전 공략 순서의 완전 비선형 자유도 확보.
+  - 루피 경제의 실질 가치 복원.
+- 비평계 4대 핵심 비판 (Mark Brown Boss Keys, IGN 등):
+  1) 발견/획득 카타르시스 소멸: 던전 입구 팻말 보고 상점에서 도구 빌려오는 작업으로 변질. 던전 내 신규 능력 획득 쾌감 상실.
+  2) 던전 퍼즐 복합성 거세 (단일 도구 조립 라인화): 플레이어가 타 도구를 가졌는지 보장 불가하므로 던전당 1개 도구만 시험. 다중 아이템 연계 퍼즐 원천 봉쇄.
+  3) 성장 체감/권능감 평탄화: 초반 전 도구 획득으로 계단식 난이도/성장 곡선 상실.
+  4) 사망 페널티 마찰: 대여 회수로 인한 이동 번거로움.
+- BotW(2017)로의 진화:
+  - 대여 방식 폐기 → 시작의 대지에서 4대 물리 룬(마그넷, 리모컨폭탄, 아이스메이커, 타임록) 영구 지급 후 창발적 물리 상호작용 오픈 에어로 완성.
+- 참고 문헌 링크:
+  - Iwata Asks: The Legend of Zelda: A Link Between Worlds: https://iwataasks.nintendo.com/interview.html#/3ds/zelda-a-link-between-worlds/0/0
+  - Boss Keys (Mark Brown, GMTK): https://www.youtube.com/playlist?list=PLc38fcMFcV_ul4D6OChdWhsNsYY3JU5Ev
+
+
+

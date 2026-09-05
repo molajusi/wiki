@@ -1,0 +1,168 @@
+================================================================================
+Z:\wiki 카테고리 분류 체계 적절성 분석 리포트 (총 26개 문서)
+================================================================================
+
+[1] 문서별 category 메타데이터 현황 (.md 기준)
+--------------------------------------------------------------------------------
+
+■ [게임 디자인 및 분석 (Game Design & Taxonomy)] — 총 10건
+   - alwa_series_analysis.md: 알와 시리즈 게임 디자인 및 비평적 분석
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - game_controller_input_design_and_standards.md: 게임 컨트롤러 입력 설계와 글로벌 매핑 표준
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - game_gating_mechanisms.md: 비디오 게임 게이팅 이론 및 설계 메커니즘
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - metroidvania_and_cartography_game_design.md: 메트로이드배니아 및 카토그래피 게임 디자인 종합 연구 아카이브
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - metroidvania_death_and_respawn_mechanics.md: 메트로이드배니아 사망 및 부활 메커니즘 분석
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - metroidvania_genre_analysis.md: 메트로이드배니아 장르 개요 및 계보학
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - metroidvania_map_and_spatial_cognition.md: 메트로이드배니아 지도 설계 및 공간 인지공학
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - metroidvania_mechanics_and_level_design.md: 메트로이드배니아 시스템 메커니즘 및 레벨 디자인
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - roguelike_genre_characteristics.md: 로그 계열 게임 장르 특성 및 메커니즘 분석
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+   - shantae_series_analysis.md: 샨테 시리즈 게임 디자인 및 비평적 분석
+     * HTML 카테고리: 카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)
+
+■ [인문 및 서사학 (Humanities & Narratology)] — 총 8건
+   - children_narrative_politics_and_power_structures.md: 아동 서사의 정치철학과 권력 구조 비판
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - curse_psychological_and_sociological_mechanisms.md: 저주의 심리·사회·생리학적 기제와 자멸성 및 회복적 대안 모델
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - gender_protagonist_commercial_reception.md: 게임·영화 산업의 여성 주인공과 상업적 흥행·비평 평가 상관관계
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - goryeo_horizontal_fantasy_worldbuilding.md: 고려 중세풍 수평적 판타지 세계관과 아동 서사 모델
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - goryeo_military_regime_autonomous_governance.md: 고려 무신정권기 민중 자치 조직의 통치 기제와 관료 시스템
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - korean_traditional_non_shamanic_magic.md: 한국 전통 비도교 비무속 주술 및 마법 체계
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - possession_curse_and_gossip_psychology.md: 빙의·강림·점괘와 저주 및 뒷담화의 심리·사회적 기제와 대안 모델
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+   - premodern_horizontal_fantasy_governance.md: 고전풍 판타지 서사 속 기설정 수평 사회구조와 자치 모델
+     * HTML 카테고리: 카테고리: 인문 및 서사학 (Humanities & Narratology)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)
+
+■ [위키 지식 관리 (Wiki Governance)] — 총 4건
+   - distributed_asset_wiki_integration.md: 사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드
+     * HTML 카테고리: 카테고리: 위키 지식 관리 (Wiki Governance)
+     * index.html 배치: ⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin
+   - raw_data_management_strategy.md: LLM 위키 원천·참고자료 적재 및 활용 전략
+     * HTML 카테고리: 카테고리: 위키 지식 관리 (Wiki Governance)
+     * index.html 배치: ⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin
+   - stealth_governance_procedure.md: 1인 주도형 사내 스텔스 거버넌스 실행 절차
+     * HTML 카테고리: 카테고리: 위키 지식 관리 (Wiki Governance)
+     * index.html 배치: ⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin
+   - wiki_documentation_standards.md: 2계층 위키 문서 작성 및 관리 표준
+     * HTML 카테고리: 카테고리: 위키 지식 관리 (Wiki Governance)
+     * index.html 배치: ⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin
+
+■ [기술 및 학술 (Technology & Science)] — 총 4건
+   - library_book_request_prompt.md: 도서관 희망도서 신청 사유 작성 프롬프트 및 프로세스
+     * HTML 카테고리: 카테고리: 기술 및 학술 (Technology & Science)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)
+   - llm_wiki_construction_guide.md: LLM 위키 구축 및 지식 구조화 실무 가이드
+     * HTML 카테고리: 카테고리: 기술 및 학술 (Technology & Science)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)
+   - llm_wiki_format_debate.md: LLM 위키 작성 포맷 논쟁: HTML5 vs Markdown 최신 현황
+     * HTML 카테고리: 카테고리: 기술 및 학술 (Technology & Science)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)
+   - llm_wiki_system_architecture.md: LLM 위키 시스템 아키텍처 및 자가 유지 지식 관리
+     * HTML 카테고리: 카테고리: 기술 및 학술 (Technology & Science)
+     * index.html 배치: 📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)
+
+
+================================================================================
+[2] index.html 상의 카테고리 카드별 배치 현황
+--------------------------------------------------------------------------------
+
+■ ⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin — 총 4건
+   - wiki_documentation_standards.html: 📄 2계층 위키 문서 작성 및 관리 표준
+   - raw_data_management_strategy.html: 📄 LLM 위키 원천·참고자료 적재 및 활용 전략
+   - stealth_governance_procedure.html: 📄 1인 주도형 사내 스텔스 거버넌스 실행 절차
+   - distributed_asset_wiki_integration.html: 📄 사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드
+
+■ 📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy) — 총 10건
+   - roguelike_genre_characteristics.html: 📄 로그 계열 게임 장르 특성 및 메커니즘 분석
+   - metroidvania_genre_analysis.html: 📄 [메인 허브] 메트로이드배니아 장르 개요 및 계보학
+   - metroidvania_map_and_spatial_cognition.html: └ 🗺️ [분과 1] 메트로이드배니아 지도 설계 및 공간 인지공학
+   - metroidvania_mechanics_and_level_design.html: └ ⚙️ [분과 2] 메트로이드배니아 시스템 메커니즘 및 레벨 디자인
+   - game_controller_input_design_and_standards.html: └ 🎮 [분과 3] 게임 컨트롤러 입력 설계와 글로벌 매핑 표준
+   - alwa_series_analysis.html: └ 🪄 [분과 비평] 알와 시리즈 게임 디자인 및 비평적 분석
+   - metroidvania_death_and_respawn_mechanics.html: └ 💀 [분과 비평 2] 메트로이드배니아 사망 및 부활 메커니즘 분석
+   - shantae_series_analysis.html: └ 🧞 [분과 비평 3] 샨테 시리즈 게임 디자인 및 비평적 분석
+   - metroidvania_and_cartography_game_design.html: └ 🗺️ [분과 연구] 메트로이드배니아 및 카토그래피 게임 디자인 종합 연구 아카이브
+   - game_gating_mechanisms.html: └ 🚪 [분과 연구] 비디오 게임 게이팅 이론 및 설계 메커니즘
+
+■ 📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science) — 총 4건
+   - llm_wiki_system_architecture.html: 📄 [메인 허브] LLM 위키 시스템 아키텍처 및 자가 유지 지식 관리
+   - llm_wiki_format_debate.html: └ ⚖️ [분과 1] LLM 위키 작성 포맷 논쟁: HTML5 vs Markdown
+   - llm_wiki_construction_guide.html: └ 🛠️ [분과 2] LLM 위키 구축 및 지식 구조화 실무 가이드
+   - library_book_request_prompt.html: 📄 도서관 희망도서 신청 사유 작성 프롬프트 및 프로세스
+
+■ 📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology) — 총 8건
+   - children_narrative_politics_and_power_structures.html: 📄 아동 서사의 정치철학과 권력 구조 비판
+   - premodern_horizontal_fantasy_governance.html: 📄 고전풍 판타지 서사 속 기설정 수평 사회구조와 자치 모델
+   - goryeo_military_regime_autonomous_governance.html: 📄 고려 무신정권기 민중 자치 조직의 통치 기제와 관료 시스템
+   - goryeo_horizontal_fantasy_worldbuilding.html: 📄 고려 중세풍 수평적 판타지 세계관과 아동 서사 모델
+   - possession_curse_and_gossip_psychology.html: 📄 빙의·강림·점괘와 저주 및 뒷담화의 심리·사회적 기제와 대안 모델
+   - curse_psychological_and_sociological_mechanisms.html: 📄 저주의 심리·사회·생리학적 기제와 자멸성 및 회복적 대안 모델
+   - korean_traditional_non_shamanic_magic.html: 📄 한국 전통 비도교 비무속 주술 및 마법 체계
+   - gender_protagonist_commercial_reception.html: 📄 게임·영화 산업의 여성 주인공과 상업적 흥행·비평 평가 상관관계
+
+
+================================================================================
+[3] 카테고리 분류 정합성 및 구조적 문제점 분석
+--------------------------------------------------------------------------------
+
+(1) index.html 미등록 문서: 0건
+
+(2) .md vs .html 카테고리 표기 불일치: 0건
+
+(3) 메타데이터 카테고리와 index.html 카드 분류 대조:
+   - alwa_series_analysis.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - children_narrative_politics_and_power_structures.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - curse_psychological_and_sociological_mechanisms.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - distributed_asset_wiki_integration.md: 메타데이터=[위키 지식 관리 (Wiki Governance)] ➔ index.html=[⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin]
+   - game_controller_input_design_and_standards.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - game_gating_mechanisms.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - gender_protagonist_commercial_reception.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - goryeo_horizontal_fantasy_worldbuilding.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - goryeo_military_regime_autonomous_governance.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - korean_traditional_non_shamanic_magic.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - library_book_request_prompt.md: 메타데이터=[기술 및 학술 (Technology & Science)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)]
+   - llm_wiki_construction_guide.md: 메타데이터=[기술 및 학술 (Technology & Science)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)]
+   - llm_wiki_format_debate.md: 메타데이터=[기술 및 학술 (Technology & Science)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)]
+   - llm_wiki_system_architecture.md: 메타데이터=[기술 및 학술 (Technology & Science)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 기술 및 학술 (Technology & Science)]
+   - metroidvania_and_cartography_game_design.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - metroidvania_death_and_respawn_mechanics.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - metroidvania_genre_analysis.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - metroidvania_map_and_spatial_cognition.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - metroidvania_mechanics_and_level_design.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - possession_curse_and_gossip_psychology.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - premodern_horizontal_fantasy_governance.md: 메타데이터=[인문 및 서사학 (Humanities & Narratology)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 인문 및 서사학 (Humanities & Narratology)]
+   - raw_data_management_strategy.md: 메타데이터=[위키 지식 관리 (Wiki Governance)] ➔ index.html=[⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin]
+   - roguelike_genre_characteristics.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - shantae_series_analysis.md: 메타데이터=[게임 디자인 및 분석 (Game Design & Taxonomy)] ➔ index.html=[📚 축적 지식 데이터 카테고리 > 게임 디자인 및 분석 (Game Design & Taxonomy)]
+   - stealth_governance_procedure.md: 메타데이터=[위키 지식 관리 (Wiki Governance)] ➔ index.html=[⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin]
+   - wiki_documentation_standards.md: 메타데이터=[위키 지식 관리 (Wiki Governance)] ➔ index.html=[⚙️ 위키 시스템 및 지식 운영 관리 > 위키 지식 관리 (Wiki Governance)System Admin]

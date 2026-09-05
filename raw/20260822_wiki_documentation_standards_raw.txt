@@ -1,0 +1,22 @@
+[Raw Data: HTML5 Wiki Documentation Standards Specification]
+Date: 2026-08-22
+Subject: HTML5 위키 문서 작성 및 관리 표준
+
+1. 문서 작성 기본 규칙
+- HTML5 웹 표준 (<!DOCTYPE html>) 준수.
+- 시맨틱 태그(<header>, <nav>, <main>, <article>, <section>, <aside>, <footer>) 활용.
+- 주제 페이지 필수 4대 섹션 개편 (대안 A 적용):
+  1) 1. 개요 및 목적 (Overview & Purpose)
+  2) 2. 핵심 개념 및 원리 (Core Concept & Architecture)
+  3) 3. 상세 분석 및 데이터 (Detailed Analysis & Data)
+  4) 4. 용어 정리 및 정의 (Terminology & Definitions)
+
+2. 일시 표기 규정
+- 최상단 (<header>) 메타 영역에 최초 작성일시 및 최종 수정일시 기재.
+- 한국 표준시 기준 12시간 표기법 (오전/오후 hh:mm:ss) 초단위 표기.
+- 타임존 명시: (KST, UTC+9)
+- 예시: 최초 작성일시: YYYY-MM-DD 오후 01:30:00 (KST, UTC+9) | 최종 수정일시: YYYY-MM-DD 오후 01:30:00 (KST, UTC+9)
+
+3. 파일 및 출처 추적
+- 메인 색인 (Z:\wiki\index.html) 등록.
+- 원천 데이터 (Z:\wiki\raw\*) 보존 및 <footer> 상호 링크 명시.

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2계층 위키 문서 작성 및 관리 표준</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-theme">
+    <header class="admin-theme">
+        <h1>2계층 위키 문서 작성 및 관리 표준</h1>
+        <div class="subtitle">Two-Layer Wiki Documentation & Governance Standards</div>
+        <div class="category">카테고리: 위키 지식 관리 (Wiki Governance)</div>
+        <div class="meta">최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-08-22 오후 07:43:00 (KST, UTC+9)</div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">← 메인 인덱스로 돌아가기</a>
+            <a href="AGENTS.md">에이전트 가이드</a>
+            <a href="raw_data_management_strategy.html">적재 및 활용 전략</a>
+        </div>
+        <a href="wiki_documentation_standards.md" class="btn-md-source">📄 순수 마크다운 원본(.md) 보기</a>
+    </nav>
+    <main>
+        <article>
+            <section>
+                <h2>1. 개요 및 목적</h2>
+                <div class="section-subtitle">Overview &amp; Purpose</div>
+                <p>
+                    본 표준 문서는 지식 관리 및 정보 보좌 에이전트 <b>jane(자네)</b>가 <code>Z:\wiki</code> 디렉터리에 지식 자산을 등록, 정제, 시각화할 때 준수해야 하는 <b>2계층 위키 문서 작성 및 거버넌스 기술 표준</b>을 정의합니다.
+                </p>
+                <p>
+                    <b>"마크다운을 기계 기억의 기본 골격(SSOT)으로 삼고, 필요한 곳에만 인간 시각화용 HTML5(UI)를 파생 결합한다"</b>는 단일 철학 아래, 시각 스타일시트(CSS), 디렉터리 배치, 태그 규칙 및 버전 동기화 체계를 표준화합니다.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. 핵심 개념 및 원리</h2>
+                <div class="section-subtitle">Core Concept &amp; Architecture</div>
+
+                <h3>2.1 2계층 이중 파일 아키텍처 (Dual Representation Architecture)</h3>
+                
+                <!-- SVG 2계층 다이어그램 -->
+                <div class="diagram-container" style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0; text-align: center; color: #343a40;">[2계층 위키 표준 아키텍처 매핑]</h4>
+                    <svg viewBox="0 0 800 180" style="width: 100%; height: auto;">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd" />
+                            </marker>
+                        </defs>
+
+                        <!-- Box 1: 기계 저장용 Markdown SSOT -->
+                        <rect x="30" y="30" width="330" height="120" rx="6" fill="#d1e7dd" stroke="#198754" stroke-width="2" />
+                        <text x="195" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#0f5132">1. 기계 저장용 마크다운 (*.md)</text>
+                        <text x="195" y="80" font-size="11" text-anchor="middle" fill="#0f5132">YAML Frontmatter + XML 태그 (SSOT)</text>
+                        <text x="195" y="105" font-size="10" text-anchor="middle" fill="#495057">• 디자인 태그 0% (토큰 오버헤드 0%)</text>
+                        <text x="195" y="125" font-size="10" text-anchor="middle" fill="#495057">• LLM의 초고속 검색 및 RAG 색인 메모리</text>
+
+                        <line x1="360" y1="90" x2="430" y2="90" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+                        <!-- Box 2: 인간 브라우징용 HTML5 View -->
+                        <rect x="440" y="30" width="330" height="120" rx="6" fill="#cfe2ff" stroke="#0d6efd" stroke-width="2" />
+                        <text x="605" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#084298">2. 인간 브라우징용 HTML5 (*.html)</text>
+                        <text x="605" y="80" font-size="11" text-anchor="middle" fill="#084298">인터랙티브 웹 표준 뷰 (View Layer)</text>
+                        <text x="605" y="105" font-size="10" text-anchor="middle" fill="#495057">• SVG 다이어그램, &lt;details&gt; 아코디언</text>
+                        <text x="605" y="125" font-size="10" text-anchor="middle" fill="#495057">• 반응형 비교 테이블 및 상단 .md 직행 버튼</text>
+                    </svg>
+                </div>
+
+                <h3>2.2 문서 제목 및 영문 부제목 표기 규정 (Bilingual Title Display Rules)</h3>
+                <p>한국어 대표 제목은 <code>&lt;h1&gt;</code>에 괄호 없이 단독 표기하며, 영문 부제목은 바로 아랫줄에 괄호 없이 상대적으로 작은 크기(<code>1.05rem</code>)와 흐린 색상(<code>#ced4da</code>)의 <code>&lt;div class="subtitle"&gt;</code>로 배치합니다.</p>
+
+                <h3>2.3 카테고리 및 일시 표기 규정 (Category & Datetime Display Rules)</h3>
+                <ul>
+                    <li><b>카테고리 독립 배치</b>: 카테고리는 일시(작성일시/수정일시) 윗줄에 독립 배치하여 식별성을 극대화함.</li>
+                    <li><b>표기 위치</b>: 최상단 <code>&lt;header&gt;</code> 내 <code>&lt;div class="category"&gt;</code> 및 <code>&lt;div class="meta"&gt;</code> 영역</li>
+                    <li><b>필수 표기 항목</b>: <b>카테고리</b>, <b>최초 작성일시</b> 및 <b>최종 수정일시</b></li>
+                    <li><b>시간 표기법</b>: 한국 표준시 기준 12시간 표기법 (오전/오후 hh:mm:ss)으로 초단위까지 기재</li>
+                    <li><b>타임존 명시</b>: <code>(KST, UTC+9)</code> 필수 명시</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. 상세 분석 및 규격</h2>
+                <div class="section-subtitle">Detailed Specifications &amp; Design System</div>
+
+                <h3>3.1 표준 공용 스타일시트 단일 출처 (CSS SSOT) 및 참조 규정</h3>
+                <div class="section-subtitle">CSS Style SSOT &amp; External Link Mandate</div>
+                <p>
+                    모든 위키 HTML 문서는 개별 인라인 <code>&lt;style&gt;</code> 블록 작성을 엄격히 금지하며, 반드시 공용 스타일시트 <b><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></b>를 단일 진실 공급원(SSOT)으로 링크하여 전체 위키의 시각적 통일성을 100% 보장합니다.
+                </p>
+                <details open>
+                    <summary>▶ 표준 공용 스타일시트(style.css) 코드 명세</summary>
+                    <pre><code>:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --primary-color: #0d6efd;
+    --admin-color: #495057;
+    --border-color: #dee2e6;
+    --card-bg: #ffffff;
+    --code-bg: #e9ecef;
+    --badge-green: #198754;
+    --badge-blue: #0d6efd;
+    --badge-red: #dc3545;
+}
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-bottom: 3px solid var(--primary-color);
+}
+header h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+header .subtitle {
+    font-size: 1.05rem;
+    color: #ced4da;
+    margin: 0 0 0.6rem 0;
+    font-weight: 400;
+}
+header .category {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6ea8fe;
+    margin: 0 0 0.3rem 0;
+}
+header .meta {
+    font-size: 0.85rem;
+    color: #adb5bd;
+}
+.section-subtitle {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+.btn-md-source {
+    background-color: #343a40;
+    color: #ffffff !important;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}</code></pre>
+                </details>
+
+                <h3>3.2 문서 및 섹션 제목, 영문 부제목 표기 규정</h3>
+                <div class="section-subtitle">Bilingual Title &amp; Subtitle Display Rules</div>
+                <ul>
+                    <li><b>최상단 대표 제목 (<code>&lt;h1&gt;</code>, <code>#</code>)</b>: 순수 한국어 단독 표기(괄호 없음), 영문 부제목은 바로 아랫줄에 괄호 없이 상대적으로 작고 흐린 색상(<code>&lt;div class="subtitle"&gt;</code>)으로 독립 배치.</li>
+                    <li><b>본문 섹션 제목 (<code>&lt;h2&gt;</code>/<code>##</code>, <code>&lt;h3&gt;</code>/<code>###</code>)</b>:
+                        <ul>
+                            <li>제목 본문은 <b>순수 한국어 단독 표기(괄호 및 영문 병기 금지)</b>.</li>
+                            <li>영문 부제목/명칭은 제목 옆에 괄호로 병기하지 않고, <b>제목 바로 아랫줄에 괄호 없이 더 작고 흐린 색상(HTML <code>&lt;div class="section-subtitle"&gt;</code>, 마크다운 이탤릭)으로 독립 배치</b>.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>3.3 주제 위키 섹션 구조 규정</h3>
+                <div class="section-subtitle">Major Section Partitioning Framework</div>
+                <details open>
+                    <summary><strong>주제 위키 섹션 구조 규정표</strong></summary>
+                    <table style="margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th>섹션 번호 및 구분</th>
+                                <th>주요 내용 및 작성 목적</th>
+                                <th>구조적 성격</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>1. 개요 및 목적</b><br><small style="color: #6c757d;">Overview &amp; Purpose</small></td>
+                                <td>수집 배경, 추진 목적, 해당 주제를 정리하는 핵심 의도 및 기대 효과</td>
+                                <td>필수 서론 (도입부)</td>
+                            </tr>
+                            <tr>
+                                <td><b>2. 핵심 개념 및 원리</b><br><small style="color: #6c757d;">Core Concepts &amp; Principles</small></td>
+                                <td>해당 주제의 기본 정의, 작동 메커니즘, 아키텍처 다이어그램</td>
+                                <td>필수 본론 1 (개념/메커니즘)</td>
+                            </tr>
+                            <tr>
+                                <td><b>3~N. 주제별 전문 본문 대섹션</b><br><small style="color: #6c757d;">Domain Major Sections</small></td>
+                                <td>지식 과밀화를 방지하기 위해 역사/계보, 시스템 메커니즘, 심층 비평 등을 <b>독립된 1급 대섹션(h2)으로 복수 분할</b></td>
+                                <td>전문 본론 (자율 대분할)</td>
+                            </tr>
+                            <tr>
+                                <td><b>[N-1]. 용어 정리 및 정의</b><br><small style="color: #6c757d;">Terminology &amp; Definitions</small></td>
+                                <td>기술 용어, 고유명사, 약어 및 관련 매개변수의 명확한 정의 표</td>
+                                <td>필수 결론 및 부록</td>
+                            </tr>
+                            <tr>
+                                <td><b>[N]. 참고 자료 및 원천 데이터 출처</b><br><small style="color: #6c757d;">References &amp; Raw Sources</small></td>
+                                <td>로컬 원천 데이터 파일(raw/) 경로, 외부 공식 웹링크(URL), 개발자 인터뷰/학술 논문 목록</td>
+                                <td>필수 출처 및 검증</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+
+                <h3>3.4 용어 정리 및 정의 표 표기 규정</h3>
+                <div class="section-subtitle">Terminology Table Display Rules</div>
+                <ul>
+                    <li><b>'용어' 열(좌측)</b>: <b>순수 한국어 단독 표기(괄호 및 영문 병기 금지)</b>를 원칙으로 합니다.</li>
+                    <li><b>'정의' 열(우측)</b>: 영문 및 외국어 원문 표기가 필요한 경우, <b>'영문 표기' 등의 부가 접두사 없이 굵은 글씨로 단독 명시</b>합니다. (예: <code>용어: 체화된 인지 | 정의: &lt;b&gt;Embodied Cognition&lt;/b&gt;. 컨트롤러 조작과...</code>).</li>
+                </ul>
+
+                <h3>3.5 독립된 원천 자료 및 참고 문헌 섹션 연동 규정</h3>
+                <div class="section-subtitle">Raw Sources &amp; References Integration</div>
+                <ol>
+                    <li>원천 데이터 수신 시 <code>Z:\wiki\raw\YYYYMMDD_[주제]_raw.txt</code> 또는 서브 폴더로 정형 보존.</li>
+                    <li>문서 하단에 <code>[N]. 참고 자료 및 원천 데이터 출처</code> 섹션을 독립 구성하여 로컬 원천 데이터 파일 경로와 공식 웹링크 목록을 체계적으로 명시.</li>
+                    <li>정제 위키 <code>&lt;footer&gt;</code> 영역에 해당 <code>raw/</code> 원시 데이터 경로 링크 및 <code>*.md</code> 원본 링크 포함.</li>
+                    <li>작성 완료 후 메인 색인 페이지 <code>Z:\wiki\index.html</code> 카테고리 목록에 링크 등록.</li>
+                </ol>
+
+                <h3>3.6 주장 및 정보의 근거/웹링크/출처 명시 규정</h3>
+                <div class="section-subtitle">Evidence &amp; Grounding Standards</div>
+                <ul>
+                    <li><b>학술 및 이론적 근거</b>: 인지과학, 심리학, 게임 디자인 이론 인용 시 학자명 및 핵심 저서/이론명(예: Edward Tolman의 Cognitive Map, Kevin Lynch의 The Image of the City 등)을 명확히 명시하고 관련 웹링크를 연결합니다.</li>
+                    <li><b>설계자 및 비평가 인터뷰 근거</b>: 게임 디자이너(사카모토 요시오, 이가라시 코지, Team Cherry 등) 및 게임 비평 매체(GMTK, GDC 등)의 발언 및 분석을 공식 인터뷰 기사/영상 웹링크(URL)와 함께 인용합니다.</li>
+                    <li><b>시각적 출처 표기</b>: 출처 배지(<code>&lt;span class="badge badge-blue"&gt;&lt;a href="..." target="_blank"&gt;출처: ...&lt;/a&gt;&lt;/span&gt;</code>) 또는 하단 참고자료 링크 형태로 표시합니다.</li>
+                </ul>
+
+                <h3>3.7 콜아웃 박스 절제 및 시맨틱 태그 준수 규정</h3>
+                <div class="section-subtitle">Callout Moderation &amp; Semantic HTML Standards</div>
+                <ul>
+                    <li><b>콜아웃 사용의 엄격한 제한</b>: 콜아웃 박스(<code>&lt;div class="callout-box"&gt;</code>)는 문서 전체에서 <b>1~2개의 핵심 결론 요약에만 제한적으로 사용</b>하며, 본문 레이아웃으로 남용하지 않습니다.</li>
+                    <li><b>시맨틱 요소 환원</b>: 학술 이론, 개발자 인터뷰, 데이터 분석 등 핵심 지식 본문은 콜아웃 내부에 가두지 않고 일반 소제목(<code>&lt;h3&gt;/&lt;h4&gt;</code>), 단락(<code>&lt;p&gt;</code>), 블록인용(<code>&lt;blockquote&gt;</code>), 리스트(<code>&lt;ul&gt;/&lt;ol&gt;</code>), 표(<code>&lt;table&gt;</code>) 등 표준 시맨틱 태그로 구성합니다.</li>
+                </ul>
+
+                <h3>3.8 대형 위키 문서 분할 및 무손실 이관 프로토콜</h3>
+                <div class="section-subtitle">Lossless Document Splitting &amp; Automated Audit Protocol</div>
+                <ol>
+                    <li><b>파괴적 요약 덮어쓰기 전면 금지</b>: 대형 위키를 복수의 분과 문서로 분할할 때, 기억이나 요약 프롬프트에 의존해 템플릿 요약본을 새로 작성하여 덮어쓰는 행위를 엄격히 금지합니다.</li>
+                    <li><b>분할 전 원본 동결 스냅샷 백업</b>: 분할 착수 전, 반드시 원본 파일(<code>.html/.md</code>) 전체를 <code>raw/YYYYMMDD_[주제]_pre_split_backup.txt</code>에 동결 보존하고 원본의 총 줄 수, 바이트, 섹션 구조 목록을 기록합니다.</li>
+                    <li><b>무손실 절단 및 이관</b>: 원본에 존재하던 모든 단락, 표, 학술 인용, 각주, SVG 다이어그램을 한 글자도 누락하지 않고 각 분과 대상 파일로 온전히 오려내어 이관합니다.</li>
+                    <li><b>기계적 전수 대조 감사</b>: 분할 완료 후, 원본의 모든 소제목(<code>&lt;h2&gt;/&lt;h3&gt;/&lt;h4&gt;</code>), 표 행 수, 각주 번호(<code>ref-*</code>), 핵심 학술 개념 키워드가 분할된 하위 문서들의 총합과 일치하는지 자동화 스크립트로 전수 검증합니다.</li>
+                    <li><b>근거 없는 완전성 주장 금지 및 정량적 매핑 대조표 제시</b>: "100% 복원", "완벽 반영" 등의 주관적 확언을 금지하고, 반드시 <b>[분할 전 원본 섹션 ➔ 분할 후 파일명 및 위치 매핑 표]</b>와 정량적 수치 데이터를 보고서에 명시합니다.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>4. 용어 정리 및 정의</h2>
+                <div class="section-subtitle">Terminology &amp; Definitions</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>용어 (Terminology)</th>
+                            <th>정의 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>2계층 위키 구조</b></td>
+                            <td><b>Two-Layer Wiki Architecture</b>. 기계 저장용 Markdown SSOT와 인간 검토용 HTML5 View를 분리하여 운영하는 2단계 지식 관리 구조.</td>
+                        </tr>
+                        <tr>
+                            <td><b>단일 진실 공급원</b></td>
+                            <td><b>Single Source of Truth, SSOT</b>. 지식 데이터를 단일 마크다운 포맷으로 관리하고 타 시각화 뷰는 자동 파생시키는 관리 방식.</td>
+                        </tr>
+                        <tr>
+                            <td><b>대섹션 분할 원칙</b></td>
+                            <td><b>Major Section Partitioning Rule</b>. 지식 과밀화를 방지하기 위해 실질 본문을 주제별 1급 대섹션(h2/##)으로 복수 분할하여 정보 계층을 입체화하는 구조 규정.</td>
+                        </tr>
+                        <tr>
+                            <td><b>콜아웃 절제 규정</b></td>
+                            <td><b>Callout Moderation Rule</b>. 콜아웃 박스를 핵심 요약에만 제한하고 일반 본문은 표준 시맨틱 요소(p, h3, blockquote, table)로 작성하는 가독성 보존 규정.</td>
+                        </tr>
+                        <tr>
+                            <td><b>이중 언어 제목 및 섹션 부제목 표기 규칙</b></td>
+                            <td><b>Bilingual Title &amp; Subtitle Display Rules</b>. 최상단 제목 및 모든 섹션 제목은 순수 한국어로 단독 표기하고, 영문 부제목은 괄호 없이 바로 아랫줄에 더 작고 흐린 색상으로 독립 배치하는 제목 스타일 표준.</td>
+                        </tr>
+                        <tr>
+                            <td><b>한국 표준시 12시간 표기 규격</b></td>
+                            <td><b>KST 12-Hour Time Format</b>. 'YYYY-MM-DD 오전/오후 hh:mm:ss (KST, UTC+9)' 형식의 초단위 타임스탬프 규격.</td>
+                        </tr>
+                        <tr>
+                            <td><b>용어 정의 표기 규정</b></td>
+                            <td>용어 열은 순수 한국어로만 표기하고 영문 원문은 정의 열 서두에 '영문 표기' 접두사 없이 굵은 글씨로 단독 배치하는 기술 표기 표준.</td>
+                        </tr>
+                        <tr>
+                            <td><b>근거 및 웹링크 명시 규정</b></td>
+                            <td><b>Evidence & Web Link Standards</b>. 위키 내 주장과 설계 분석에 대해 학술 이론, 개발자 공식 발언, 전문 비평 자료 등의 객관적 출처 및 유효한 웹링크(URL)를 명기하는 신뢰성 보증 표준.</td>
+                        </tr>
+                        <tr>
+                            <td><b>독립 원천 자료 섹션</b></td>
+                            <td><b>Dedicated Raw Sources Section</b>. 위키 문서 하단에 로컬 원천 텍스트 및 외부 참조 링크를 독립된 제5섹션으로 체계화하여 보존하는 구조 표준.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>5. 참고 자료 및 원천 데이터 출처</h2>
+                <div class="section-subtitle">References &amp; Raw Sources</div>
+                <div class="callout callout-info" style="border-left: 4px solid var(--primary-color); padding: 1rem; background: #e7f1ff; border-radius: 4px;">
+                    <ul style="margin: 0; padding-left: 1.2rem;">
+                        <li><b>로컬 원천 데이터</b>: <a href="raw/20260822_wiki_documentation_standards_raw.txt"><code>raw/20260822_wiki_documentation_standards_raw.txt</code></a></li>
+                        <li><b>지식 거버넌스 가이드</b>: <a href="AGENTS.md">에이전트 가이드 (AGENTS.md)</a></li>
+                        <li><b>메인 인덱스</b>: <a href="index.html">Z:\wiki\index.html</a></li>
+                        <li><b>공통 CSS 스타일시트</b>: <a href="style.css">Z:\wiki\style.css</a></li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>
+            Machine Backend Source: <a href="wiki_documentation_standards.md">Z:\wiki\wiki_documentation_standards.md</a> | 
+            Raw Data Source: <a href="raw/20260822_wiki_documentation_standards_raw.txt">Z:\wiki\raw\20260822_wiki_documentation_standards_raw.txt</a> | 
+            Storage Directory: Z:\wiki
+        </p>
+    </footer>
+</body>
+</html>

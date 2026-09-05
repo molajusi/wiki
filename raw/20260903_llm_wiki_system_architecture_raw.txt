@@ -1,0 +1,48 @@
+[원천 데이터 덤프 및 기술 연구 아카이브 - 2026-09-03]
+주제: LLM 위키 시스템 아키텍처 및 자가 유지 지식 관리 (LLM Wiki System Architecture & Self-Maintaining Knowledge Base)
+
+1. 안드레이 카파시 (Andrej Karpathy) 제안 배경 및 핵심 설계 원형
+- 출처: Andrej Karpathy 공식 포스트 (2024년 및 2025년 지속 제안), 'LLM OS and Personal Knowledge Base'
+- 문제의식:
+  - 인간의 뇌는 단기 작업 메모리(Context Window)와 장기 영구 저장소(Hard Drive/Books)를 구분함.
+  - 기존 LLM 챗봇의 '채팅창 중심 휘발성 상호작용'은 지식의 축적이 불가능하며, 컨텍스트 윈도우가 가득 차면 이전 기억이 망실되거나 왜곡(Context Rot)됨.
+  - 전통적 RAG(Retrieval-Augmented Generation)의 청킹-임베딩-벡터검색 파이프라인은 파편화된 조각(Fragmented Chunks)만을 인출하므로, 개념 간의 종합적 맥락, 시간적 선후관계, 문서 간 상호 참조를 파악하지 못하고 정보 모순(Contradiction)을 노출함.
+- 카파시의 솔루션 (LLM Wiki 패러다임):
+  - 'Personal Wiki compiled and maintained by LLM'
+  - LLM을 단순 질의응답기가 아니라 지식의 '컴파일러(Compiler)' 및 '사서(Librarian)'로 운용.
+  - 원시 텍스트/대화 덤프(Raw Notes) -> 1차 정제 및 원자화(Atomic Fact Extraction) -> 종합 위키 페이지(Synthesized Wiki)로 증류(Distillation).
+  - 지식의 저장은 순수 텍스트(Markdown) 폴더와 양방향 링크([[wikilinks]])를 기반으로 구축하여 도구 종속성을 제거.
+  - 복잡한 대시보드나 시각화 보고서는 필요 시점에 Single-file HTML로 파생 출력.
+
+2. 전통적 RAG vs Microsoft GraphRAG vs Wiki-RAG 대조 분석
+- 전통적 Chunk-based RAG:
+  - 방식: 텍스트를 500~1,000 토큰 단위로 기계적 분할 -> 벡터 임베딩 -> 코사인 유사도 기반 상위 K개 청크 주입.
+  - 한계: 청크 간 맥락 단절, '전체 요약'이나 '글로벌 트렌드 분석' 불가능, 유사어 검색 시 노이즈 다수 유입.
+  - 토큰 비용: 쿼리마다 다수의 불필요한 청크를 컨텍스트에 밀어 넣어 토큰 낭비 심각.
+- Microsoft GraphRAG:
+  - 방식: LLM을 이용해 텍스트에서 Entity(개체)와 Relationship(관계)을 추출하여 지식 그래프 구축 -> 커뮤니티 요약(Community Summaries) 생성.
+  - 한계: 인덱싱 비용(LLM API 호출량)이 극도로 높음(일반 RAG 대비 수십~수백 배), 동적 증분 갱신(Incremental Update)이 매우 까다롭고 그래프 유지보수 복잡도 폭증.
+- LLM Wiki 기반 RAG (Wiki-RAG):
+  - 방식: 에이전트가 새로운 지식을 기존 위키 문서에 직접 읽고/수정/병합(Incremental Compilation). 지식 그래프를 별도의 그래프 DB(Neo4j 등)가 아닌 파일 시스템상의 마크다운 헤더, XML 시맨틱 태그, 양방향 백링크([[wikilinks]])로 유지.
+  - 장점: 인덱싱 비용이 GraphRAG 대비 극히 저렴하며 인간 가독성(Human-readability)과 Git 버전 관리가 100% 호환됨.
+  - 쿼리 시점: 이미 종합·구조화된 정제 위키(Markdown SSOT)의 해당 섹션만 인출하므로 추론 지연(Latency) 및 토큰 소비 최소화.
+
+3. LLM 위키의 자가 유지(Self-Maintenance) 파이프라인 메커니즘
+- 증분 컴파일(Incremental Compilation):
+  - Step 1 (Ingestion): 원천 텍스트 raw/ 디렉터리 보존.
+  - Step 2 (Entity & Concept Matching): 신규 정보와 연관된 기존 위키 문서를 백링크 및 태그로 탐색.
+  - Step 3 (Diff & Merge): 덮어쓰기가 아닌 Git diff 스타일로 기존 문서의 특정 섹션을 보강하거나 수정.
+  - Step 4 (Index & Backlink Propagation): 새로 생성된 개념에 대해 관련된 타 문서에 백링크([[문서명]]) 및 메인 색인(index.html) 동기화.
+- 양방향 링크(Bidirectional Wikilinks) 그래프 순회:
+  - 문서 A에서 문서 B를 참조할 때, 문서 B의 역링크(Backlinks) 목록에 문서 A가 자동 등록됨.
+  - 에이전트가 탐색 시 그래프 순회(Graph Traversal)를 통해 인접 개념으로 문맥을 확장(Context Expansion) 가능.
+
+4. 실패 모드(Failure Modes) 및 엔트로피 방어 거버넌스
+- 환각 연쇄(Hallucination Cascading):
+  - 위험: 에이전트가 생성한 잘못된 사실이 위키에 기록되면, 이후의 다른 세션과 에이전트가 그 위키를 진실로 믿고 재인용하면서 거짓이 증폭됨.
+  - 방어: 모든 위키 명제에 대해 원천 데이터(raw/) 경로와 외부 팩트 링크(URL)를 필수 명시하는 Grounding 원칙 강제.
+- 모순 드리프트(Contradiction Drift):
+  - 문서가 늘어나면서 A 문서와 B 문서에서 동일 사안에 대해 상반된 결론을 내리는 현상.
+  - 방어: 기계적 일관성 감사 스크립트(Automated Audit Script) 및 정기 교차 검증.
+- 1인 주도형 HITL(Human-In-The-Loop):
+  - 에이전트에게 완전 자율 덮어쓰기 권한을 부여하지 않고, 전후 정량적 diff 보고 및 변경 승인 절차 결합.

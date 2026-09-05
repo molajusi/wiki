@@ -1,0 +1,51 @@
+[Raw Data: Roguelike & Roguelite Genre Taxonomy and Mechanics Research]
+Date: 2026-08-22
+Subject: 로그(Rogue) 계열 장르(Roguelike / Roguelite)의 구조적 특성 및 유저 피로 요인 분석 원천 자료
+
+1. 장르의 기원 및 역사적 배경
+- 기원: 1980년 Michael Toy, Glenn Wichman, Ken Arnold가 개발한 텍스트 기반 던전 탐색 게임 'Rogue'.
+- 2008년 베를린 해석 (Berlin Interpretation, International Roguelike Development Conference):
+  * 고가치 요소 (High-Value Factors):
+    1) 절차적 환경 생성 (Random environment generation)
+    2) 영구적 죽음 (Permadeath)
+    3) 턴제 진행 (Turn-based)
+    4) 그리드/타일 기반 이동 (Grid-based)
+    5) 비모달 인터페이스 (Non-modal: 단일 화면에서 모든 명령 수행)
+    6) 시스템적 복잡성 (Complexity & Interactivity)
+    7) 자원 관리 (Resource management: 식량, 포션, 내구도 등)
+    8) 몬스터 전투 및 해킹앤슬래시 (Hack'n'slash)
+    9) 탐험 및 미식별 아이템 감정 (Exploration and discovery)
+  * 저가치 요소 (Low-Value Factors):
+    1) 단일 플레이어 캐릭터
+    2) 플레이어와 대등한 몬스터 규칙
+    3) 전술적 도전
+    4) ASCII 그래픽
+    5) 던전 배경
+    6) 수치 기반 능력치
+
+2. 로그라이크(Roguelike) vs 로그라이트(Roguelite) 분류
+- 전통 로그라이크 (Classic Roguelike):
+  * 특징: 턴제, 타일 기반, 영구 사망 시 외부 누적 자산 0% (완전 초기화).
+  * 대표작: Rogue, NetHack, Angband, ADOM, Dungeon Crawl Stone Soup (DCSS), Tales of Maj'Eyal (ToME).
+  * 보상 체계: 오직 플레이어의 지식(Game Knowledge)과 전술적 판단력만 누적.
+- 현대 로그라이트 (Modern Roguelite / Rogue-lite):
+  * 특징: 실시간 액션/덱빌딩 등 다양한 장르 결합, 메타 프로그레션(영구적 해금 및 능력치 성장) 도입.
+  * 대표작: The Binding of Isaac, FTL, Rogue Legacy, Dead Cells, Slay the Spire, Hades, Vampire Survivors.
+  * 보상 체계: 런(Run) 실패 시에도 메타 재화를 통해 베이스 스펙을 강화하여 다음 런의 난이도 완화.
+
+3. 유저 저항 및 기피 요인 (Friction Points & Player Psychology)
+- 영구적 죽음(Permadeath)과 자산 소멸:
+  * 행동경제학의 손실 회피 편향(Loss Aversion): 잃어버린 시간과 세팅에 대한 인지적 고통이 승리의 쾌감보다 큼.
+  * 매몰 비용의 즉각적 청산(Sunk Cost Wipeout): 30분~2시간의 세션 투자가 단 1회의 실수로 무효화됨.
+- 초반부 루프의 강제 반복(Repetitive Early-game Loop):
+  * 사망 시 가장 쉽고 이미 숙달된 1스테이지부터 재시작해야 하므로 튜토리얼 구간 반복에 따른 극심한 지루함 유발.
+- 난수 생성(RNG) 의존도 및 통제감 상실:
+  * 무작위 아이템/스킬 드롭 운에 따라 런의 성공 여부가 좌우되는 불합리함('억까').
+- 지식 숙련(Intangible Mastery) vs 데이터 성장(Tangible Progress)의 충돌:
+  * 캐릭터의 스탯 상승이 아닌 플레이어의 실력 향상만을 요구하는 구조에 대한 피로.
+
+4. 현대 게임 디자인의 완화 전략
+- 메타 영구 해금 시스템 (Persistent Meta-progression)
+- 세션 플레이 시간의 단축 (15~30분 내외 숏폼 런)
+- 시드 고정 및 데일리 챌린지
+- 어시스트 모드 / 난이도 보정 옵션 제공

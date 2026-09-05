@@ -1,0 +1,134 @@
+---
+title: "사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드"
+subtitle: "Zero-Friction Enterprise Distributed Asset Integration & Stealth Wiki Operation Guide"
+created: "2026-08-22 오후 02:54:30 (KST, UTC+9)"
+updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
+category: "위키 지식 관리 (Wiki Governance)"
+tags: ["Wiki Governance", "Distributed Assets", "Stealth Operations", "NAS Integration", "SaaS Ingestion", "Zero-Training"]
+html_view: "distributed_asset_wiki_integration.html"
+--
+
+
+**카테고리**: 위키 지식 관리 (Wiki Governance)  
+*최초 작성일시: 2026-08-22 오후 02:54:30 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+
+-
+
+# 사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드
+*Zero-Friction Enterprise Distributed Asset Integration & Stealth Wiki Operation Guide*
+
+**카테고리**: 위키 지식 관리 (Wiki Governance)  
+
+<context>
+본 문서는 로컬 NAS(견적서, 대외비, 프로젝트, 도구) 및 외부 SaaS(Google Docs, Notion, 설치 매뉴얼, 방문예약 등 행정 절차) 등에 분산된 사내 기존 자산을, 추가적인 업무 증가나 직원 대상 교육 없이 2계층 위키(Markdown SSOT + HTML5 View)로 흡수·연동·전파하기 위한 실무 운영 SSOT 문서입니다.
+</context>
+
+## 1. 개요 및 목적
+- **추진 배경**: 사내 지식이 NAS, 구글 문서, 노션, 개인 PC 등에 파편화되어 있으나, 기존 문서를 위키로 재작성하거나 직원들에게 새로운 툴을 교육하는 것은 심각한 업무 과중과 조직 저항을 유발함.
+- **핵심 목표**:
+  1. **직원 교육 제로화 (0-Hour Training)**: 직원들의 기존 파일 저장 및 작업 습관을 100% 유지.
+  2. **담당자 업무 증가 제로화 (Zero Extra Burden)**: 재작성 대신 에이전트를 통한 메타 색인(Meta-Indexing) 및 요약 카드화.
+  3. **자연스러운 전파 (Passive Link Distribution)**: 질문 수신 시 1초 만에 위키 링크를 회신하여 자발적 북마크 유도.
+
+## 2. 핵심 개념 및 원리
+
+### 2.1 분산 자산-위키 연동 포털 아키텍처
+- **위키의 본질적 역할 전환**: '문서 작성기'가 아닌 분산 저장소의 위치와 사용법을 연결하는 **'중앙 검색 포털 및 메타 인덱스'**로 기능.
+- **패스스루 링크(Pass-through Link) 전략**:
+  - 원본 파일(엑셀, 대외비 PDF 등)은 NAS 및 기존 SaaS 권한 체계에 보류.
+  - 위키는 [메타데이터 + 실행 요약 + 직접 열람 경로]만 제공.
+
+<div class="diagram-container">
+    <h4>[사내 분산 자산의 무부담 위키 연동 및 스텔스 전파 파이프라인]</h4>
+    <svg viewBox="0 0 800 200" style="width: 100%; height: auto;">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd" />
+            </marker>
+        </defs>
+
+        <!-- Box 1: 기존 분산 자산 (변경 없음) -->
+        <rect x="20" y="25" width="220" height="150" rx="8" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5" />
+        <text x="130" y="48" font-size="12" font-weight="bold" text-anchor="middle" fill="#212529">1. 기존 분산 자산 (보관 유지)</text>
+        <text x="35" y="75" font-size="10" fill="#495057">• NAS: 견적서, 대외비, 프로젝트</text>
+        <text x="35" y="98" font-size="10" fill="#495057">• NAS: 도구/스크립트 (*.exe, *.py)</text>
+        <text x="35" y="121" font-size="10" fill="#495057">• Google Docs / Notion: 행정 SOP</text>
+        <text x="35" y="144" font-size="10" fill="#495057">• 인프라: 서버 / DB 설치 매뉴얼</text>
+        <text x="130" y="165" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#198754">★ 직원 업무/보관 방식 100% 불변</text>
+
+        <!-- Arrow 1 to 2 -->
+        <line x1="240" y1="100" x2="275" y2="100" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Box 2: 에이전트 자동 정제 -->
+        <rect x="280" y="25" width="220" height="150" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" />
+        <text x="390" y="48" font-size="12" font-weight="bold" text-anchor="middle" fill="#856404">2. 백엔드 에이전트 정제</text>
+        <text x="295" y="75" font-size="10" fill="#664d03">• 텍스트/경로 원클릭 전달</text>
+        <text x="295" y="98" font-size="10" fill="#664d03">• 대외비/단가 자동 마스킹</text>
+        <text x="295" y="121" font-size="10" fill="#664d03">• 3단계 체크리스트 요약화</text>
+        <text x="295" y="144" font-size="10" fill="#664d03">• 2계층 (*.md + *.html) 생성</text>
+        <text x="390" y="165" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#856404">★ 아저씨 작성 부담 0</text>
+
+        <!-- Arrow 2 to 3 -->
+        <line x1="500" y1="100" x2="535" y2="100" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Box 3: 2계층 위키 및 스텔스 배포 -->
+        <rect x="540" y="25" width="240" height="150" rx="8" fill="#d1e7dd" stroke="#198754" stroke-width="1.5" />
+        <text x="660" y="48" font-size="12" font-weight="bold" text-anchor="middle" fill="#0f5132">3. 2계층 위키 & 스텔스 배포</text>
+        <text x="555" y="75" font-size="10" fill="#0f5132">• Z:\wiki\*.html 메타 검색 포털</text>
+        <text x="555" y="98" font-size="10" fill="#0f5132">• 원본 직접 열람 (Pass-through Link)</text>
+        <text x="555" y="121" font-size="10" fill="#0f5132">• 질문 수신 시 1초 링크 회신</text>
+        <text x="555" y="144" font-size="10" fill="#0f5132">• 직원 자발적 북마크 안착</text>
+        <text x="660" y="165" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#0f5132">★ 직원 추가 교육 0시간</text>
+    </svg>
+</div>
+
+### 2.2 4대 자산군별 연동 매트릭스
+1. **견적서 및 원가 자료 (Estimates & Cost Sheets)**: 민감 단가 노출 방지를 위해 본문 복사를 금지하고 [고객사/프로젝트/일자/NAS 경로] 목록 카드로 관리.
+2. **대외비 및 계약 문서 (Confidential & Legal Docs)**: [문서번호/보안등급/담당자/보관경로] 색인화로 사내 보안 권한과 위키 검색성을 동시 충족.
+3. **프로젝트 산출물 및 도구 (Projects & Utilities)**: 프로젝트 1페이지 브리핑 및 도구 원클릭 실행 매뉴얼(명령어, 옵션, 주의사항) 제공.
+4. **행정 절차 및 기술 매뉴얼 (SOPs & Tech Manuals)**: 구글 문서/노션 원문을 에이전트에 복사하여 [3단계 체크리스트] 및 [복사 가능 코드 블록] 형태로 즉시 표준화.
+
+## 3. 상세 분석 및 데이터
+
+### 3.1 4대 자산별 세부 처리 기준 및 예시
+| 자산 구분 | 원본 위치 | 위키 등록 형태 | 연동 처리 방식 및 보안 기준 |
+| :--- | :--- | :--- | :--- |
+| **견적서 / 원가** | NAS (`*.xlsx`, `*.pdf`) | 메타 색인 카드/테이블 | 단가 등 민감정보 본문 노출 금지, 메타데이터(일자, 거래처/고객사, 품목, 담당자) 및 NAS 직접 경로 링크만 기재 |
+| **대외비 / 계약** | NAS 보안 폴더 | 보안 요약 카드 (문서번호, 보안등급, 보관경로) | 원문 열람은 사내 NAS 접근제어에 위임, 위키는 존재 여부·문서 식별 정보만 색인 |
+| **프로젝트 / 도구** | NAS (`*.zip`, `*.exe`, `*.bat`, `*.py`) | 도구 실행 가이드 & 프로젝트 브리핑 | 도구 실행 커맨드, 필수 파라미터·복사 가능 코드 블록, 산출물 폴더 트리 요약 |
+| **행정 SOP / 매뉴얼** | Google Docs, Notion | 3단계 체크리스트 & 기술 매뉴얼 | 원문 텍스트를 에이전트에 1회 전달하여 표준 HTML5/MD 뷰로 영구 정제·단일화 |
+
+### 3.2 아저씨 전용 1인 주도형 스텔스 3단계 실행 워크플로우
+<details open>
+    <summary>▶ 3단계 실무 실행 워크플로우 펼치기</summary>
+    <ol style="margin-top: 0.5rem;">
+        <li><b>1단계: 원문 복사 및 에이전트 전달 (소요 시간: 10초)</b><br>
+            새로 작성하려 하지 않고, 기존 노션/구글 문서 본문 전체를 복사하거나 NAS 폴더 경로/파일 목록을 복사하여 에이전트 대화창에 전달합니다.<br>
+            <i>(예: "이 구글 문서 방문예약 신청 절차를 위키 3단계 체크리스트로 만들어줘", "이 NAS 폴더에 있는 도구 실행법 정리해줘")</i>
+        </li>
+        <li><b>2단계: 2계층 자동 빌드 및 인덱스 갱신 (소요 시간: 즉시)</b><br>
+            에이전트가 마크다운(<code>*.md</code>)과 반응형 웹(<code>*.html</code>)을 생성하고 메인 인덱스(<code>index.html</code>)에 즉시 등록합니다.
+        </li>
+        <li><b>3단계: 질문 기반 수동적 링크 회신 (소요 시간: 5초)</b><br>
+            전사 공지를 하지 않고, 동료나 팀원이 사용법이나 절차를 물어볼 때 해당 위키 페이지 링크를 회신합니다.<br>
+            <i>(예: "방문예약 신청 양식과 절차는 이 페이지 링크에 NAS 경로랑 같이 정리되어 있습니다.")</i>
+        </li>
+    </ol>
+</details>
+
+### 3.3 전통적 지식 마이그레이션 vs 스텔스 메타 연동 비교
+| 비교 항목 | 전통적 전사 위키 이전 (Migration) | 스텔스 메타 연동 방식 (Stealth Indexing) |
+| :--- | :--- | :--- |
+| **초기 소요 시간 (구축/마이그레이션)** | 수개월 소요 (기존 파일 전체 재작성) | **즉시 (필요 건별 1분 에이전트 자동 생성/변환)** |
+| **직원 교육 비용** | 1인당 수 시간~수일 교육 필수 + 거부감 | **0시간 (기존 업무 방식/사용 습관 100% 유지)** |
+| **조직 저항도** | 극심 (새로운 작성 의무로 인한 거부감) | **0 (강요 없는 무부담 수동적 전파)** |
+| **시스템 이중화 리스크 (Sync 위험)** | 높음, 문서 불일치(Sync) 발생 (NAS 파일과 위키 본문이 따로 놂) | **원천 차단 (원본 보존 + 위키는 메타/경로만 가리키는 인덱스 역할)** |
+| **보안 통제력** | 위키 내 기밀 누출 위험, 권한 별도 재설계 필요 | **기존 NAS/SaaS 보안 권한 계층 100% 그대로 활용** |
+
+<definitions>
+## 4. 용어 정리 및 정의
+- **메타 색인 포털**: **Meta-Indexing Portal**. 원문 데이터를 전부 복사하지 않고 파일의 위치, 요약, 실행법, 메타데이터만 구조화하여 제공하는 단일 진입점 포털.
+- **직통 연결 링크**: **Pass-through Link**. 사내 위키에서 기존 NAS 파일 경로(사내 공유 경로)나 외부 SaaS URL로 직접 연결시키는 링크 방식.
+- **수동적 링크 배포**: **Passive Link Distribution**. 전사 공지 없이 구성원의 실제 질문 및 필요 시점에 맞춤형 웹 링크를 회신하여 저항 없이 침투시키는 배포 방식.
+- **무마찰 데이터 수집**: **Zero-Friction Ingestion**. 작업자나 동료의 추가 입력 부담 없이 기존 자유 텍스트나 원시 파일을 에이전트가 백엔드에서 규격화하는 수집 절차.
+</definitions>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>샨테 시리즈 게임 디자인 및 비평적 분석 - Two-Layer Knowledge Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>샨테 시리즈 게임 디자인 및 비평적 분석</h1>
+        <div class="subtitle">Shantae Series: 20-Year Evolution of Form-Shifting, Level Design Paradigms, and Critical Retrospective</div>
+        <div class="category">카테고리: 일반 지식 및 게임 디자인 (Game Design & Taxonomy)</div>
+        <div class="meta">최초 작성일시: 2026-08-22 오후 10:28:00 (KST, UTC+9) | 최종 수정일시: 2026-08-22 오후 10:55:00 (KST, UTC+9)</div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">홈 (Index)</a>
+            <a href="metroidvania_genre_analysis.html">메인 총론 허브</a>
+            <a href="metroidvania_map_and_spatial_cognition.html">분과 1: 지도·공간 인지공학</a>
+            <a href="metroidvania_mechanics_and_level_design.html">분과 2: 시스템·레벨 디자인</a>
+            <a href="game_controller_input_design_and_standards.html">분과 3: 컨트롤러 입력 표준</a>
+            <a href="alwa_series_analysis.html">분과 비평 1: 알와 시리즈</a>
+            <a href="metroidvania_death_and_respawn_mechanics.html">분과 비평 2: 사망·부활 메커니즘</a>
+            <a href="shantae_series_analysis.html">분과 비평 3: 샨테 시리즈</a>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Two-Layer Knowledge Wiki</div>
+    </nav>
+    <main>
+        <article>
+            <section style="margin-bottom: 2rem;">
+                <h2>메트로이드배니아 지식 클러스터 연계</h2>
+                <div class="section-subtitle">Metroidvania Knowledge Cluster Portal</div>
+                <p>
+                    본 문서는 메트로이드배니아 지식 네트워크의 하위 비평 문서로서 상위 마스터 허브 및 관련 전문 분과와 상호 연계됩니다:
+                </p>
+                <div class="cluster-grid">
+                    <div class="cluster-card" style="border-top: 4px solid #0d6efd;">
+                        <h4>🏛️ 상위 총론 허브: 메트로이드배니아 장르 개요 및 계보학</h4>
+                        <p>장르 20년 계보학(Lineage Bridge), 메트로이드와 캐슬바니아 2대 기둥 유산, 젤다의 전설 설계 모태 영향 및 세대별 발전사 총괄.</p>
+                        <a href="metroidvania_genre_analysis.html" class="btn-link" style="background-color: #0d6efd;">마스터 허브 바로가기 ➔</a>
+                    </div>
+                    <div class="cluster-card" style="border-top: 4px solid #ffc107;">
+                        <h4>⚙️ 전문 분과 2: 시스템 메커니즘 및 레벨 디자인</h4>
+                        <p>능력 기팅(Ability-Gating), 샨테 5부작 동물 변신 진화사, 사소한 보상 배치의 5대 철학, 숏컷·백트래킹 루프.</p>
+                        <a href="metroidvania_mechanics_and_level_design.html" class="btn-link" style="background-color: #b78103;">분과 2 바로가기 ➔</a>
+                    </div>
+                    <div class="cluster-card" style="border-top: 4px solid #198754;">
+                        <h4>🗺️ 전문 분과 1: 지도 설계 및 공간 인지공학</h4>
+                        <p>3대 지도 패러다임, 케빈 린치 공간 인지 5요소, 젤다식 던전과 비선형 오버월드 결합 구조.</p>
+                        <a href="metroidvania_map_and_spatial_cognition.html" class="btn-link" style="background-color: #198754;">분과 1 바로가기 ➔</a>
+                    </div>
+                    <div class="cluster-card" style="border-top: 4px solid #dc3545;">
+                        <h4>🎮 전문 분과 3: 게임 컨트롤러 입력 설계 표준</h4>
+                        <p>버튼 한계 극복 5대 철학, 40년 매핑 표준화 역사, 엄지손가락 해방 및 시스템 버튼군 이원화 철학.</p>
+                        <a href="game_controller_input_design_and_standards.html" class="btn-link" style="background-color: #dc3545;">분과 3 바로가기 ➔</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>1. 개요 및 목적</h2>
+                <div class="section-subtitle">Overview & Purpose</div>
+                <p>
+                    <b>샨테 시리즈(Shantae Series)</b>는 2002년 캡콤(Capcom) 배급의 게임보이 컬러(GBC) 타이틀로 출발하여, 20여 년간 6편의 연작을 통해 독자적인 영역을 구축한 웨이포워드(WayForward)의 대표적 <b>액션 어드벤처 및 메트로이드배니아 프랜차이즈</b>입니다. 2D 횡스크롤 플랫포머가 거치형 3D 콘솔 전환기에 밀려났던 2000년대 '장르의 잠복기' 동안 휴대용 콘솔(GBC, GBA, DSi, 3DS)을 거점으로 2D 도트 스프라이트 장인정신과 비선형 탐험 공식을 계승·발전시켰습니다.
+                </p>
+                <p>
+                    특히 2004년 개발 중단 후 20년 만에 원작 GBA 하드웨어 규격 그대로 복원·출시된 <b>《샨테 어드밴스: 리스키 레볼루션(2024/2025)》</b>은 게임 디자인 역사와 비디오 게임 보존학(Video Game Preservation) 측면에서 매우 희귀하고 독보적인 이정표를 남겼습니다.
+                </p>
+                <p>
+                    본 문서는 동물 변신 폼시프팅(Shapeshifting Dance)과 해적 도구(Pirate Gear) 시스템 간의 설계적 득실, 6대 게임 디자인 접근법, 그리고 리스키 레볼루션의 트레머 엔진(Tremor Engine) 월드 스왑 메커니즘을 총체적으로 규명하는 데 목적이 있습니다.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. 핵심 메커니즘과 능력 기팅 패러다임 진화</h2>
+                <div class="section-subtitle">Core Mechanics & Evolution of Ability-Gating Paradigms</div>
+                <p>
+                    샨테 시리즈의 레벨 디자인은 <b>'주인공의 신체 변형(폼시프팅)'</b>과 <b>'외장형 도구 장착'</b>이라는 두 가지 상반된 능력 기팅(Ability-Gating) 패러다임의 지속적인 실험과 절충으로 요약됩니다<sup class="citation"><a href="#ref-1">[1]</a>, <a href="#ref-2">[2]</a></sup>.
+                </p>
+
+                <div class="diagram-container">
+                    <svg viewBox="0 0 800 230" width="100%" height="230" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="230" fill="#ffffff" rx="8"/>
+                        <!-- Phase 1 -->
+                        <rect x="20" y="30" width="230" height="170" fill="#fdf2e9" stroke="#e67e22" stroke-width="2" rx="6"/>
+                        <text x="135" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="#d35400" text-anchor="middle">1. 댄스 폼시프팅 (2002, 2010)</text>
+                        <text x="135" y="90" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">밸리 댄스 리듬 커맨드 입력</text>
+                        <text x="135" y="115" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">원숭이/코끼리/인어 신체 변형</text>
+                        <text x="135" y="145" font-family="sans-serif" font-size="11" font-weight="bold" fill="#c0392b" text-anchor="middle">[한계: 조작 지연/Friction]</text>
+                        <text x="135" y="175" font-family="sans-serif" font-size="11" fill="#777" text-anchor="middle">Shantae, Risky's Revenge</text>
+
+                        <!-- Arrow 1 -->
+                        <path d="M 260 115 L 285 115" stroke="#6c757d" stroke-width="2" marker-end="url(#arrow)"/>
+
+                        <!-- Phase 2 -->
+                        <rect x="295" y="30" width="230" height="170" fill="#eafaf1" stroke="#27ae60" stroke-width="2" rx="6"/>
+                        <text x="410" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e8449" text-anchor="middle">2. 해적 도구 장비 (2014)</text>
+                        <text x="410" y="90" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">권총/모자/부츠/시미터/대포</text>
+                        <text x="410" y="115" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">단독 버튼 즉각 액션 발동</text>
+                        <text x="410" y="145" font-family="sans-serif" font-size="11" font-weight="bold" fill="#27ae60" text-anchor="middle">[성취: 고속 플랫포밍 완성]</text>
+                        <text x="410" y="175" font-family="sans-serif" font-size="11" fill="#777" text-anchor="middle">Pirate's Curse (최고점)</text>
+
+                        <!-- Arrow 2 -->
+                        <path d="M 535 115 L 560 115" stroke="#6c757d" stroke-width="2" marker-end="url(#arrow)"/>
+
+                        <!-- Phase 3 -->
+                        <rect x="570" y="30" width="210" height="170" fill="#ebf5fb" stroke="#2980b9" stroke-width="2" rx="6"/>
+                        <text x="675" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2471a3" text-anchor="middle">3. 퓨전 & 카드 (2020)</text>
+                        <text x="675" y="90" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">원버튼 인스턴트 환경 변신</text>
+                        <text x="675" y="115" font-family="sans-serif" font-size="12" fill="#333" text-anchor="middle">50종 몬스터 카드 패시브 빌드</text>
+                        <text x="675" y="145" font-family="sans-serif" font-size="11" font-weight="bold" fill="#2980b9" text-anchor="middle">[완성: 하이브리드 절충]</text>
+                        <text x="675" y="175" font-family="sans-serif" font-size="11" fill="#777" text-anchor="middle">Seven Sirens</text>
+
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#6c757d"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+
+                <h3>2.1 밸리 댄스 폼시프팅 시스템</h3>
+                <p>
+                    샨테가 춤을 추어 원숭이(벽 타기), 코끼리(돌벽 파괴), 거미(배경 벽 등반), 게/인어(수중 잠수), 쥐(소형 통로) 등의 동물로 변신합니다. 아라비안 나이트 테마와의 비주얼적 일체감은 뛰어났으나, 변신 시마다 리듬 커맨드를 입력해야 하므로 <b>'탐험의 속도감이 저하되고 빈번한 조작 지연(Input Friction)'</b>이 발생하는 구조적 한계가 존재했습니다<sup class="citation"><a href="#ref-1">[1]</a></sup>.
+                </p>
+
+                <h3>2.2 해적 장비(Pirate Gear) 패러다임: 고속 플랫포밍의 완성</h3>
+                <p>
+                    《샨테와 해적의 저주(2014)》에서는 댄스 변신을 배제하고 즉각 발동하는 5종의 해적 도구(플린트락 권총, 해적 모자 활공, 시미터 하향 찍기, 해적 부츠 돌진, 대포 다단 점프)를 도입했습니다. 딜레이 없는 연속 플랫폼 액션과 정교한 기동성 기팅이 결합하여 <b>시리즈 역사상 가장 높은 비평적 찬사(Metascore 85)</b>를 이끌어냈습니다<sup class="citation"><a href="#ref-1">[1]</a>, <a href="#ref-5">[5]</a></sup>.
+                </p>
+
+                <h3>2.3 퓨전 매직과 몬스터 카드: 현대적 하이브리드 절충</h3>
+                <p>
+                    《샨테와 일곱 요괴(2020)》에서는 환경(물, 특정 벽)과 접촉할 때 별도 댄스 없이 즉시 발동하는 <b>'인스턴트 퓨전 변신'</b>과 50종의 <b>'몬스터 카드 수집 패시브 빌드'</b>를 도입하여 조작 피로도를 없애면서도 폼시프팅의 개성과 RPG적 깊이를 완벽히 조화시켰습니다<sup class="citation"><a href="#ref-3">[3]</a></sup>.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. 샨테 시리즈 6대 게임 디자인 접근법 심층 분석 및 비평</h2>
+                <div class="section-subtitle">In-Depth Critical Analysis of 6 Core Game Design Approaches</div>
+                <p>
+                    샨테 시리즈가 20년간 발전시켜 온 6대 세부 게임 디자인 영역의 접근법, 플레이어 심리 영향 및 비평적 논의는 다음과 같습니다<sup class="citation"><a href="#ref-1">[1]</a>, <a href="#ref-2">[2]</a>, <a href="#ref-3">[3]</a>, <a href="#ref-6">[6]</a></sup>.
+                </p>
+
+                <h3>3.1 지도에 대한 접근법과 공간 인지공학 비평</h3>
+                <p>
+                    <b>1작(2002)의 멘탈 맵핑과 인게임 지도 부재</b>: 1작 《샨테》는 하드웨어 롬 용량 한계로 인게임 지도를 전혀 제공하지 않았습니다. 플레이어는 마을 간의 독특한 시각적 랜드마크(Signposting)와 낮/밤의 시간 변화에만 의존하여 머릿속에 공간 위상(Mental Map)을 구축해야 했습니다. 이는 고전 명작 특유의 환경 몰입을 유도했으나, 지나치게 잦은 미아 현상과 높은 진입 장벽을 초래했다는 비평을 받았습니다.
+                </p>
+                <p>
+                    <b>2작(2010)의 3단 레이어 깊이 축 워프 지도</b>: 《리스키의 복수》는 전경, 중경, 원경의 Z축을 점프대로 넘나드는 '3단 레이어 깊이 지도(3-Layer Depth Map)'를 도입했습니다. 2D 타일맵의 평면성을 극복한 독창적 시도였으나, 3차원 깊이 축의 연결 관계를 2D 인게임 맵 화면에 명확히 투영하지 못해 공간 인지적 혼란을 야기했다는 한계가 지적되었습니다.
+                </p>
+                <p>
+                    <b>3작(2014)의 섬 분할 맵과 5작(2020)의 풀 그리드 회귀</b>: 《해적의 저주》는 전체 세계를 배를 타고 이동하는 여러 '섬(Islands)'으로 분절하여 각 섬별로 독립된 테마와 밀도 높은 젤다식 미궁을 제공하는 '허브 앤 스포크' 위상학을 성공시켰습니다. 이후 《일곱 요괴》는 시리즈 최초로 <b>단일 거대 상호연결 격자 그리드 맵(Full Grid Map)</b>으로 복귀하여, 워프 룸 네트워크와 명확한 방 구획 표시를 통해 현대 게이머의 멘탈 오프로딩(Mental Offloading) 요구를 충족시켰습니다.
+                </p>
+
+                <h3>3.2 아이템과 스킬 아키텍처의 성장 철학</h3>
+                <p>
+                    <b>헤어 윕(Hair Whip)과 미용실 성장 시스템</b>: 샨테의 주 무기인 헤어 윕은 전통 메트로이드배니아의 칼이나 총과 달리, 마을 잡화점/미용실에서 <b>'샴푸(공격력 강화)'</b>와 <b>'트리트먼트(공격 속도 향상)'</b>를 구매하여 단계별로 육성합니다. 진지한 무기 파밍 대신 캐릭터의 개성과 아라비안 나이트 테마를 시스템에 자연스럽게 융합한 탁월한 캐릭터 라이징 사례로 평가받습니다.
+                </p>
+                <p>
+                    <b>마법 서브웨폰과 3대 기동성 스킬 패러다임</b>: 파이어볼(원거리 견제), 파이크볼(회전 실드 및 근접 다단 히트), 폭풍 구름(지속 범위 장판기) 등 마나 소모형 보조 마법을 지원합니다. 기동성 스킬은 1~2작의 동물 변신(원숭이/코끼리/인어) ➔ 3작의 해적 도구 5종(권총/모자/부츠/시미터/대포) ➔ 5작의 퓨전 매직 및 50종 몬스터 카드 패시브 장착으로 진화하며 플레이어 빌드 다양성을 확보했습니다.
+                </p>
+
+                <h3>3.3 메뉴 및 UI/UX 인터랙션 설계</h3>
+                <p>
+                    <b>3DS/Wii U 듀얼 스크린의 극상 UX (Non-modal Flow)</b>: 3작 《해적의 저주》는 상단 스크린으로 순수 플랫폼 액션을 즐기고, 하단 터치스크린으로 인벤토리 포션 소비, 서브웨폰 스왑, 지도 확대를 실시간 터치로 수행했습니다. 메뉴 화면을 열기 위해 게임을 일시정지할 필요가 없어, <b>플레이어의 조작 몰입 흐름(Flow State)이 단 1초도 끊기지 않는 최고의 반응성</b>을 제공했습니다.
+                </p>
+                <p>
+                    <b>싱글 스크린 통합 UI와 몬스터 카드 덱빌딩</b>: 싱글 스크린 환경(4~5작)에서는 탭(Tab) 기반의 메뉴 체계로 재편되었으며, 50종의 몬스터 카드 중 3장을 장착하여 공격 속도 향상, 마나 소모 감소, 수영 속도 증가 등 플레이어 맞춤형 패시브 시너지를 구성하는 덱 빌딩 UI를 완성했습니다.
+                </p>
+
+                <h3>3.4 게임 컨트롤러 조작계와 인체공학적 진화</h3>
+                <p>
+                    <b>GBC 2버튼 제약 극복 (Modal Dance Input)</b>: 2버튼 환경(A, B)에서 공격과 점프 외에 변신을 구현하기 위해, Select 버튼을 눌러 <b>'댄스 모드(Dance State)'</b>라는 별도의 모달 상태로 진입한 뒤 십자키 커맨드로 동물을 선택하는 방식을 취했습니다. 이는 하드웨어 한계를 극복한 창의적 설계였으나 조작 마찰을 유발했습니다.
+                </p>
+                <p>
+                    <b>현대 12버튼 표준과 엄지손가락 해방(Right Thumb Liberation)</b>: 현대 콘솔에서는 L/R 숄더 버튼으로 마법 서브웨폰을 즉각 전환하고, ZR/R2 트리거를 통해 댄스 입력 없이 <b>'원버튼 인스턴트 퓨전'</b>을 발동하도록 발전시켰습니다. 우측 엄지손가락이 점프와 공격에 전념하면서도 검지/중지 트리거로 환경 변신을 즉각 수행하는 인체공학적 조작 완성을 이룩했습니다.
+                </p>
+
+                <h3>3.5 사망 페널티와 실패 상태 밸런스 비평</h3>
+                <p>
+                    <b>소프트 체크포인트(Soft Checkpoint) 원칙</b>: 사망 시 가장 최근에 저장한 세이브 비석이나 던전 입구로 회귀하지만, <b>획득한 화폐(보석)나 수집한 퀘스트 아이템을 절대 몰수하지 않는 무손실 구조</b>를 고수합니다.
+                </p>
+                <p>
+                    <b>오토 포션(Auto-Potion) 시스템의 명암</b>: 인벤토리에 포션이 있으면 체력이 0이 되는 순간 자동으로 포션이 소비되며 풀피로 부활합니다.
+                </p>
+                <ul>
+                    <li><b>[장점] 스트레스 없는 탐험</b>: 사망에 대한 과도한 불안감과 시체 회수의 피로도를 제거하여 라이트 게이머의 진입 장벽을 대폭 낮춤.</li>
+                    <li><b>[단점] 보스전 긴장감 붕괴</b>: 상점에서 포션을 9개씩 사 들고 가면 보스의 패턴을 학습할 필요 없이 무지성 맞딜로 클리어가 가능해져, 하드코어 액션 게이머들에게는 <b>'성취감 없는 싱거운 보스전'</b>이라는 비판을 받았습니다<sup class="citation"><a href="#ref-3">[3]</a>, <a href="#ref-6">[6]</a></sup>.</li>
+                </ul>
+
+                <h3>3.6 보상 체계와 다회차 파고들기(Replayability)</h3>
+                <p>
+                    <b>오징어 심장 (Heart Squids, 젤다 하트 조각 오마주)</b>: 맵 곳곳의 숨겨진 퍼즐 구역에 배치되어 있으며, 4개를 모아 대장장이에게 가져가면 최대 체력 1칸을 영구 확장해 줍니다. 탐색에 대한 직접적이고 강력한 내재적 동기를 제공합니다.
+                </p>
+                <p>
+                    <b>진엔딩(True Ending) 수집 조건</b>: 3작의 다크 매직 20개, 5작의 오징어 심장 전원 수집 등 100% 맵 탐색률을 달성해야만 진정한 결말과 에필로그를 볼 수 있도록 설계되었습니다.
+                </p>
+                <p>
+                    <b>메트로이드식 스피드런 엔딩 갤러리 (Win Screens)</b>: 클리어 타임(스피드런)과 100% 아이템 수집률에 따라 엔딩 크레딧 후 서로 다른 특별 커스텀 일러스트(샨테의 다양한 코스튬 갤러리)를 해금하는 《메트로이드》식 전통 보상 체계를 충실히 계승하여 다회차 플레이 가치를 극대화했습니다<sup class="citation"><a href="#ref-1">[1]</a>, <a href="#ref-5">[5]</a></sup>.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. 리스키 레볼루션과 비디오 게임 보존학 분석</h2>
+                <div class="section-subtitle">Shantae Advance: Risky Revolution - Tremor Engine & Video Game Preservation</div>
+                <p>
+                    <b>20년 만의 부활과 비디오 게임 보존학(Game Preservation)적 쾌거</b>: 《샨테 어드밴스: 리스키 레볼루션(2024/2025)》은 2004년 GBA 하드웨어용으로 개발되다가 배급사 부재로 취소되었던 '잃어버린 2편'입니다. 현대 엔진으로 리메이크한 것이 아니라, <b>당시의 오리지널 GBA 개발 킷과 C 코드베이스를 그대로 복원하여 실제 GBA 실기 롬 카트리지로 완성·출시</b>했습니다. 이는 비디오 게임 역사상 유실 위기에 처한 프로토타입을 원작 플랫폼 규격 그대로 복원·출시한 독보적인 아카이빙 사례로 평가받습니다<sup class="citation"><a href="#ref-5">[5]</a>, <a href="#ref-7">[7]</a></sup>.
+                </p>
+                <p>
+                    <b>트레머 엔진(Tremor Engine)과 공간 스왑 메커니즘</b>: 숙적 리스키 부츠가 지하에 설치한 트레머 엔진을 조작하여 <b>맵의 전경(Foreground)과 원경(Background) 타일을 실시간으로 회전·교체(World-Shifting)</b>하여 숨겨진 경로를 여는 독창적 퍼즐 플랫포밍을 구현했습니다<sup class="citation"><a href="#ref-9">[9]</a></sup>. 이 메커니즘은 훗날 《리스키의 복수(2010)》의 3단 깊이 축 워프로 발전하는 계보적 모태가 되었습니다.
+                </p>
+                <p>
+                    <b>비평적 평가 및 한계</b>: 32비트 GBA 픽셀 아트의 장인정신과 레트로 조작감, 단일 팩 4인 대전 모드는 극찬을 받았으나, 2000년대 초반 기획 그대로 복원된 탓에 인게임 미니맵이 부재하고 현대 메트로이드배니아에 비해 볼륨이 다소 짧다는 평가를 받았습니다<sup class="citation"><a href="#ref-5">[5]</a>, <a href="#ref-9">[9]</a></sup>.
+                </p>
+            </section>
+
+            <section>
+                <h2>5. 시리즈 6대 작품군 연대기 및 맵 아키텍처 변천</h2>
+                <div class="section-subtitle">Chronological Evolution of 6 Titles & Map Architecture</div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>작품명 (발매연도)</th>
+                            <th>플랫폼</th>
+                            <th>맵 구조 및 아키텍처</th>
+                            <th>주요 능력 기팅 방식</th>
+                            <th>비평적 위상 및 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>《샨테》 (2002)</b></td>
+                            <td>GBC</td>
+                            <td>광활한 오픈 오버월드 + 4대 미궁 (낮/밤 변화)</td>
+                            <td>4대 동물 댄스 변신</td>
+                            <td>GBC 한계 초월 명작 (78점)</td>
+                        </tr>
+                        <tr>
+                            <td><b>《리스키 레볼루션》 (2024/2025)</b></td>
+                            <td>GBA, Multi</td>
+                            <td><b>트레머 엔진 전경/원경 레이어 스왑 맵</b></td>
+                            <td>6종 동물 댄스 변신</td>
+                            <td><b>20년 만의 GBA 복원작, 4인 배틀</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>《리스키의 복수》 (2010)</b></td>
+                            <td>DSiWare, PC</td>
+                            <td>3단 레이어 깊이 워프 맵 + 미궁</td>
+                            <td>동물 댄스 변신 (원숭이/코끼리/인어)</td>
+                            <td>세련된 복귀작, 짧은 분량 (82점)</td>
+                        </tr>
+                        <tr>
+                            <td><b>《해적의 저주》 (2014)</b></td>
+                            <td>3DS, Wii U, PC</td>
+                            <td>다도해 섬(Islands) 분절형 오버월드 + 미궁</td>
+                            <td>해적 도구 5종 (즉각 발동)</td>
+                            <td><b>시리즈 최고 걸작으로 평가 (85점)</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>《하프지니 히어로》 (2016)</b></td>
+                            <td>HD 멀티플랫폼</td>
+                            <td>선형 스테이지 선택형 (허브 마을)</td>
+                            <td>12종 다채로운 동물 댄스 변신</td>
+                            <td>그래픽 혁신, 선형성 비판 (81점)</td>
+                        </tr>
+                        <tr>
+                            <td><b>《일곱 요괴》 (2020)</b></td>
+                            <td>Apple Arcade, Multi</td>
+                            <td><b>단일 거대 상호연결 지하 미궁 맵</b></td>
+                            <td>퓨전 매직(인스턴트) + 몬스터 카드</td>
+                            <td>정통 메트로이드배니아 완벽 회귀 (81점)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>6. 게임 디자인 종합 비평 및 학술적 평가</h2>
+                <div class="section-subtitle">Comprehensive Game Design Critique & Academic Value</div>
+
+                <h3>6.1 2D 메트로이드배니아 암흑기의 계보적 가교 역할</h3>
+                <p>
+                    1997년 《월하의 야상곡》 이후 3D 폴리곤 시대로 넘어가는 전환기에, 웨이포워드는 휴대용 콘솔(GBC/GBA/DSi/3DS)을 거점으로 삼아 <b>2D 수작업 도트 애니메이션의 명맥을 잇고 메트로이드배니아의 비선형 탐험 가치를 보존한 핵심 선구자(Pioneer)</b> 역할을 수행했습니다<sup class="citation"><a href="#ref-2">[2]</a>, <a href="#ref-5">[5]</a></sup>.
+                </p>
+
+                <h3>6.2 대중 친화적 메트로이드배니아의 미학</h3>
+                <p>
+                    현대 메트로이드배니아가 소울라이크식 고딕 다크 판타지와 가혹한 사망 페널티에 편중된 반면, 샨테 시리즈는 <b>생동감 넘치는 원색의 비주얼, 디즈니 풍 슬랩스틱 유머, 경쾌한 칩튠 사운드</b>로 남녀노소 누구나 즐길 수 있는 스트레스 없는 탐험의 즐거움을 제공합니다<sup class="citation"><a href="#ref-3">[3]</a>, <a href="#ref-8">[8]</a></sup>.
+                </p>
+
+                <h3>6.3 주요 한계 및 비판점</h3>
+                <ul>
+                    <li><b>전투 긴장감의 부족</b>: 회복 물약과 오토 포션을 대량으로 휴대할 수 있어 후반부 보스전이 단순 소모전으로 전락하는 경향이 있음<sup class="citation"><a href="#ref-3">[3]</a>, <a href="#ref-6">[6]</a></sup>.</li>
+                    <li><b>백트래킹 동선의 불친절성</b>: 퀘스트 진행을 위해 이전에 지나친 맵 구석구석을 무작위로 뒤져야 하는 '맹목적 백트래킹(Blind Backtracking)'이 발생하여 길 찾기 피로도를 유발함<sup class="citation"><a href="#ref-4">[4]</a></sup>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. 용어 정리 및 정의</h2>
+                <div class="section-subtitle">Glossary & Definitions</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">용어</th>
+                            <th style="width: 75%;">정의</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>샨테</b></td>
+                            <td><b>Shantae</b>. 웨이포워드가 개발한 인간과 지니의 혼혈 하프지니(Half-Genie) 수호자 주인공이자 동명의 액션 어드벤처 시리즈.</td>
+                        </tr>
+                        <tr>
+                            <td><b>리스키 레볼루션</b></td>
+                            <td><b>Risky Revolution</b>. 2004년 개발 취소 후 20년 만에 GBA 실기 카트리지 팩 및 현세대 멀티플랫폼으로 완성·발매된 잃어버린 정식 후속작.</td>
+                        </tr>
+                        <tr>
+                            <td><b>트레머 엔진</b></td>
+                            <td><b>Tremor Engine</b>. 《리스키 레볼루션》에서 맵의 전경과 배경 레이어를 실시간으로 회전·교체하여 새로운 경로를 여는 핵심 공간 조작 메커니즘.</td>
+                        </tr>
+                        <tr>
+                            <td><b>오징어 심장</b></td>
+                            <td><b>Heart Squids</b>. 맵에 숨겨진 수집 아이템으로, 4개를 모아 최대 체력 1칸을 확장하는 젤다식 보상 메커니즘.</td>
+                        </tr>
+                        <tr>
+                            <td><b>해적 장비</b></td>
+                            <td><b>Pirate Gear</b>. 《해적의 저주》에서 댄스 변신 대신 도입된 권총, 모자, 부츠, 시미터, 대포 등 즉각 발동형 5종 탐험 도구 체계.</td>
+                        </tr>
+                        <tr>
+                            <td><b>퓨전 매직</b></td>
+                            <td><b>Fusion Magic</b>. 《일곱 요괴》에서 댄스 입력 딜레이를 제거하고 환경 상호작용 시 원버튼으로 즉시 신체 변형을 일으키는 현대화 기술.</td>
+                        </tr>
+                        <tr>
+                            <td><b>몬스터 카드</b></td>
+                            <td><b>Monster Cards</b>. 《일곱 요괴》에서 적을 처치하고 수집하여 패시브 스탯 및 유틸리티 능력을 장착하는 수집형 빌드 시스템.</td>
+                        </tr>
+                        <tr>
+                            <td><b>오토 포션</b></td>
+                            <td><b>Auto-Potion</b>. 체력이 0이 되는 순간 인벤토리의 포션이 자동 소비되며 부활하는 캐주얼 친화적 사망 방지 장치.</td>
+                        </tr>
+                        <tr>
+                            <td><b>게임 보존학</b></td>
+                            <td><b>Game Preservation</b>. 유실 위기에 처한 고전 비디오 게임의 소스 코드와 플랫폼 하드웨어 규격을 복원하여 후대에 전승하는 학술·산업적 보존 활동.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>8. 참고 자료 및 원천 데이터 출처</h2>
+                <div class="section-subtitle">References & Raw Sources</div>
+                <div class="callout">
+                    <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
+                    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20260822_shantae_series_analysis_raw.txt">raw/20260822_shantae_series_analysis_raw.txt</a></code>의 데이터와 교차 검증을 거쳐 작성되었습니다.
+                </div>
+                <ol class="reference-list">
+                    <li id="ref-1">[1] Jeremy Parish (2014). <em>Shantae and the Pirate's Curse Review: The Pinnacle of Modern 2D Action</em>. USgamer & Retronauts. <a href="https://www.usgamer.net/" target="_blank">웹링크</a></li>
+                    <li id="ref-2">[2] Matt Bozon & WayForward (2020). <em>20 Years of Half-Genie Heroics: The Making of Shantae</em>. GDC Vault. <a href="https://gdcvault.com/" target="_blank">웹링크</a></li>
+                    <li id="ref-3">[3] Nintendo Life (2020). <em>Shantae and the Seven Sirens Review: A Triumphant Return to Metroidvania Roots</em>. <a href="https://www.nintendolife.com/reviews/nintendo-switch/shantae_and_the_seven_sirens" target="_blank">웹링크</a></li>
+                    <li id="ref-4">[4] IGN Review (2016). <em>Shantae: Half-Genie Hero Review & Platforming Dynamics</em>. <a href="https://www.ign.com/articles/2016/12/20/shantae-half-genie-hero-review" target="_blank">웹링크</a></li>
+                    <li id="ref-5">[5] Hardcore Gaming 101 (2018). <em>WayForward and the Shantae Lineage Retrospective</em>. <a href="http://www.hardcoregaming101.net/shantae/" target="_blank">웹링크</a></li>
+                    <li id="ref-6">[6] GameSpot (2020). <em>Shantae and the Seven Sirens Review - Dancing in the Dark</em>. <a href="https://www.gamespot.com/reviews/shantae-and-the-seven-sirens-review-dancing-in-the/1900-6417482/" target="_blank">웹링크</a></li>
+                    <li id="ref-7">[7] WayForward & Limited Run Games (2024). <em>Shantae Advance: Risky Revolution Development History & GBA Restoration</em>. <a href="https://wayforward.com/shantae" target="_blank">웹링크</a></li>
+                    <li id="ref-8">[8] Polygon (2014). <em>How Shantae Escaped the Retro Ghetto</em>. <a href="https://www.polygon.com/" target="_blank">웹링크</a></li>
+                    <li id="ref-9">[9] GameLuster (2025). <em>Shantae Advance: Risky Revolution Review - A 20-Year Time Capsule</em>. <a href="https://gameluster.com/" target="_blank">웹링크</a></li>
+                </ol>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>
+            Two-Layer Knowledge Wiki System | 원천 데이터: <a href="raw/20260822_shantae_series_analysis_raw.txt">raw/20260822_shantae_series_analysis_raw.txt</a> | 마크다운 SSOT: <a href="shantae_series_analysis.md">shantae_series_analysis.md</a><br>
+            <a href="index.html">메인 색인 (Index)으로 돌아가기</a>
+        </p>
+    </footer>
+</body>
+</html>

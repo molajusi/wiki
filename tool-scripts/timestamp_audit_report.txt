@@ -1,0 +1,194 @@
+Total MD files: 27
+
+[alwa_series_analysis.md]
+  - FM created: 2026-08-22 오후 09:58:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 09:58:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 09:58:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[children_narrative_politics_and_power_structures.md]
+  - FM created: 2026-08-26 오후 06:00:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-26 오후 06:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-26 오후 06:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[curse_psychological_and_sociological_mechanisms.md]
+  - FM created: 2026-09-01 오전 11:05:40 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-09-01 오전 11:05:40 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-09-01 오전 11:05:40 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[distributed_asset_wiki_integration.md]
+  - FM created: 2026-08-22 오후 02:54:30 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 02:54:30 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 02:54:30 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[game_controller_input_design_and_standards.md]
+  - FM created: 2026-08-22 오후 07:08:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[game_gating_mechanisms.md]
+  - FM created: 2026-08-24 오후 12:35:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-24 오후 12:35:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-24 오후 12:35:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[gender_protagonist_commercial_reception.md]
+  - FM created: 2026-08-27 오후 4:53:56 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-27 오후 4:53:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-27 오후 4:53:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[goryeo_horizontal_fantasy_worldbuilding.md]
+  - FM created: 2026-08-30 오후 09:56:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-30 오후 09:56:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-30 오후 09:56:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[goryeo_military_regime_autonomous_governance.md]
+  - FM created: 2026-08-30 오후 10:00:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-30 오후 10:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-30 오후 10:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[korean_traditional_non_shamanic_magic.md]
+  - FM created: 2026-08-31 오후 09:16:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[library_book_request_prompt.md]
+  - FM created: 2026-08-29 오후 08:16:15 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-29 오후 08:16:15 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-29 오후 08:16:15 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[llm_wiki_construction_guide.md]
+  - FM created: 2026-09-03 오후 09:05:21 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-09-03 오후 09:05:21 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-09-03 오후 09:05:21 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[llm_wiki_format_debate.md]
+  - FM created: 2026-08-22 오후 01:01:01 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 01:01:01 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 01:01:01 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[llm_wiki_system_architecture.md]
+  - FM created: 2026-09-03 오후 08:39:10 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-09-03 오후 08:39:10 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-09-03 오후 08:39:10 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[metroidvania_and_cartography_game_design.md]
+  - FM created: 2026-08-24 오후 12:26:56 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-24 오후 12:26:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-24 오후 12:26:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[metroidvania_death_and_respawn_mechanics.md]
+  - FM created: 2026-08-22 오후 10:12:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 10:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 10:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[metroidvania_genre_analysis.md]
+  - FM created: 2026-08-22 오후 03:09:20 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 03:09:20 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 03:09:20 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[metroidvania_map_and_spatial_cognition.md]
+  - FM created: 2026-08-22 오후 07:08:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[metroidvania_mechanics_and_level_design.md]
+  - FM created: 2026-08-22 오후 07:08:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[possession_curse_and_gossip_psychology.md]
+  - FM created: 2026-08-31 오후 12:51:52 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-31 오후 12:51:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-31 오후 12:51:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[premodern_horizontal_fantasy_governance.md]
+  - FM created: 2026-08-30 오후 10:00:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-30 오후 10:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-30 오후 10:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[raw_data_management_strategy.md]
+  - FM created: 2026-08-22 오후 01:19:58 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (2개):
+      *최초 작성일시: 2026-08-22 오후 01:19:58 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+      <li><b>위키 정제 생성 및 메타데이터 작성</b>: 에이전트는 원천 데이터를 분석하여 <code>*.md</code>(SSOT)와 <code>*.html</code>(View) 문서를 동시 파생 생성하며, 최상단에 12시간 표기법 타임존 메타데이터(<code>최초 작성일시</code>, <code>최종 수정일시</code>)를 필수 명시.</li>
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 01:19:58 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[roguelike_genre_characteristics.md]
+  - FM created: 2026-08-22 오후 02:28:13 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 02:28:13 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 02:28:13 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[shantae_series_analysis.md]
+  - FM created: 2026-08-22 오후 10:28:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 10:28:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 10:28:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[stealth_governance_procedure.md]
+  - FM created: 2026-08-22 오후 02:07:52 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (1개):
+      *최초 작성일시: 2026-08-22 오후 02:07:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 02:07:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+
+[wiki_documentation_standards.md]
+  - FM created: 2026-08-22 오후 01:12:00 (KST, UTC+9)
+  - FM updated: 2026-09-04 오후 02:54:30 (KST, UTC+9)
+  - MD lines with 일시 (11개):
+      *최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+      - **카테고리 독립 배치**: 카테고리는 일시(작성일시/수정일시) 윗줄에 독립 배치하여 식별성을 극대화함.
+      - **필수 표기 항목**: 카테고리, 최초 작성일시, 최종 수정일시.
+      - **(2026-08-27 추가) 최초 작성일시 불변 원칙(Immutability)**: 최초 작성일시는 문서가 처음 생성되는 시점에 단 1회만 기록한다. 이후 그 문서를 아무리 여러 번 수정하더라도 이 값은 **절대 변경하지 않는다** — 최초 작성일시는 "이 문서가 태어난 시점"을 가리키는 불변 값이며, 갱신 대상은 오직 최종 수정일시뿐이다.
+      - **(2026-08-27 추가) 최종 수정일시 갱신 의무(Update-on-Every-Edit)**: 문서 내용을 한 글자라도 고칠 때마다, 그 수정이 실제로 이루어지는 시점의 시·분·초까지 정확히 반영하여 최종 수정일시를 **매번** 갱신한다. "(정확한 시각 미기록)"처럼 시각 기재를 생략·유예하는 플레이스홀더 문구의 사용을 금지한다 — 이 문구는 2026-08-27 이전 다수 문서에서 반복 사용된 관행이었으나, 본 개정으로 폐기한다.
+      ### 3.18 최종 수정일시 개정 내역 부기 금지 규정
+      최종 수정일시를 갱신할 때, 수정일시 뒤에 하이픈/대시(`—`)나 괄호 등을 덧붙여 무엇을 수정했는지 사유나 개정 내역(예: `— 카테고리 체계 표준화 반영`)을 부기하는 것을 엄격히 금지한다. 최종 수정일시는 순수한 한국 표준시 12시간 표기 일시(예: `최종 수정일시: YYYY-MM-DD 오후 hh:mm:ss (KST, UTC+9)`)만을 단독으로 표기한다. 구체적인 수정 내용과 변경 이력은 커밋 메시지, 에이전트 작업 보고, 또는 본문 내부의 독립 변경 이력에서 다루며 일시 메타데이터 필드에 섞지 않는다.
+      - **순수 일시 단독 표기 규정**: **Pure Timestamp Standard**. 최종 수정일시 메타데이터 필드에 개정 사유나 작업 내역 등의 텍스트 부기를 금지하고 순수 일시 문자열만을 단독 기재하도록 강제하는 메타데이터 정합성 표준.
+      - **2026-08-27 일시 표기 규정 강화 근거**: 사용자가 "최초 작성일시·최종 수정일시에 시·분·초까지
+      기재하고, 최종 수정일시는 수정할 때마다 갱신하며, 최초 작성일시는 불변으로 두라"고 직접 지시했다.
+      2.3절에 최초 작성일시 불변 원칙과 최종 수정일시 매회 갱신 의무, 그리고 정확한 시각을 확보할 수
+  - HTML meta: 최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)

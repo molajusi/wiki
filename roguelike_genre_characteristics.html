@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그 계열 장르(Roguelike & Roguelite) 특성 및 시스템 분석</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="wiki.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>로그 계열 게임 장르 특성 및 메커니즘 분석</h1>
+        <div class="subtitle">Roguelike vs Roguelite: Core Taxonomy, Mechanics, and Player Fatigue</div>
+        <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
+        <div class="meta">최초 작성일시: 2026-08-22 오후 02:28:13 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)</div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">← 메인 인덱스로 돌아가기</a>
+            <a href="metroidvania_genre_analysis.html">연관 문서: 메트로이드배니아 장르 분석</a>
+            <a href="AGENTS.md">에이전트 가이드</a>
+        </div>
+        <a href="roguelike_genre_characteristics.md" class="btn-md-source">📄 순수 마크다운 원본(.md) 보기</a>
+    </nav>
+    <main>
+        <article>
+<p>
+    본 문서는 1980년작 게임 '로그(Rogue)'에서 파생된 로그라이크(Roguelike) 및 로그라이트(Roguelite) 장르의 핵심 시스템, 베를린 해석(Berlin Interpretation) 기준, 게임 루프 구조 및 유저가 겪는 심리적·공학적 피로 요인(영구 사망, 완전 초기화, 초반부 반복 피로)을 객관적으로 분석·정리한 단일 진실 공급원(SSOT) 문서입니다.
+</p>
+            <section>
+                <h2>1. 개요 및 목적</h2>
+                <p>
+    <i>Overview & Purpose</i>
+</p>
+                <p>
+    로그 계열 장르는 무작위로 생성되는 환경 속에서 실패 시 모든 진행도를 잃는 극단적 페널티(Permadeath)를 핵심 동력으로 삼습니다. 본 문서는 해당 장르의 정의와 기술적 특징, 전통 로그라이크와 현대 로그라이트의 진화 계보를 분류하고, 영구적 손실 및 반복 플레이로 인해 발생하는 사용자 저항과 심리적 피로의 원인을 인지심리학 및 게임 디자인 관점에서 규명하는 데 목적이 있습니다.
+</p>
+            </section>
+            <section>
+                <h2>2. 핵심 개념 및 원리</h2>
+                <p>
+    <i>Core Concept & Architecture</i>
+</p>
+                <h3>2.1 장르의 기원과 베를린 해석</h3>
+                <p>
+    <i>Origins & the Berlin Interpretation, 2008</i>
+</p>
+                <ul>
+<li><b>기원</b>: 1980년 마이클 토이(Michael Toy), 글렌 위치먼(Glenn Wichman), 켄 아놀드(Ken Arnold)가 개발한 던전 탐색 RPG '로그(Rogue)'의 시스템적 문법에서 출발.</li>
+<li><b>베를린 해석 (2008 International Roguelike Development Conference)</b>:<ul>
+<li><b>고가치 요소 (High-Value Factors)</b>:<ol>
+<li><b>절차적 환경 생성 (Random environment generation)</b>: 맵, 아이템, 몬스터 배치가 매 세션 무작위로 생성됨.</li>
+<li><b>영구적 죽음 (Permadeath)</b>: 사망 시 세이브 파일이 삭제되며, 재도전 시 1층/초기 상태로 강제 복귀.</li>
+<li><b>턴제 시스템 (Turn-based)</b>: 플레이어가 1회 행동할 때 환경/몬스터도 1회 행동(동시적 시간 흐름 배제).</li>
+<li><b>그리드 기반 (Grid-based)</b>: 타일/격자 단위로 이동 및 사거리 계산.</li>
+<li><b>비모달 인터페이스 (Non-modal)</b>: 탐험, 전투, 상호작용이 분리된 모드 없이 단일 화면 인터페이스에서 완결.</li>
+<li><b>시스템 복잡성 (Complexity & Interactivity)</b>: 다양한 상호작용 규칙(불, 물, 부식, 마법 등)이 유기적으로 얽힘.</li>
+<li><b>자원 관리 (Resource management)</b>: 식량(허기), 물약, 주문서, 장비 내구도 등 제한된 자원의 최적화.</li>
+<li><b>해킹앤슬래시 (Hack'n'slash)</b>: 몬스터 처치 및 전술적 생존 중심.</li>
+<li><b>탐험 및 미식별 아이템 (Exploration & Identification)</b>: 물약이나 스크롤의 효과를 직접 사용/감정하기 전까지 은닉.</li>
+</ol></li>
+<li><b>저가치 요소 (Low-Value Factors)</b>: 단일 캐릭터 조작, 몬스터와 플레이어 간 대등한 규칙, 전술적 도전, ASCII 그래픽, 던전 테마.</li>
+</ul></li>
+</ul>
+                <h3>2.2 로그라이크 대 로그라이트 분류 체계</h3>
+                <p>
+    <i>Roguelike vs Roguelite Taxonomy</i>
+</p>
+                <ol>
+<li><b>전통 로그라이크 (Classic / Traditional Roguelike)</b>:<ul>
+<li>베를린 해석의 고가치 요소를 엄격하게 준수.</li>
+<li>세션 간 영구 누적 자산 0% (외부 스펙 전승 없음).</li>
+<li>오직 플레이어의 지식(Game Knowledge)과 상황 판단 능력만이 축적됨.</li>
+</ul></li>
+<li><b>현대 로그라이트 (Modern Roguelite / Rogue-lite)</b>:<ul>
+<li>턴제·타일 제약을 탈피하고 실시간 액션, 덱빌딩, 슈팅 등과 융합.</li>
+<li><b>메타 프로그레션 (Meta-progression, 영구 성장 요소)</b> 도입: 사망 시에도 특정 재화를 보존하여 캐릭터의 기본 체력, 공격력, 신규 아이템 풀을 영구적으로 강화/해금.</li>
+</ul></li>
+</ol>
+                <p>
+    두 계열을 항목별로 요약하면 다음과 같습니다.
+</p>
+                <table>
+<thead><tr><th>구분</th><th>전통 로그라이크</th><th>로그라이트</th></tr></thead>
+<tbody>
+<tr><td><b>대표 타이틀</b></td><td>Rogue(1980), NetHack(1987), Dungeon Crawl Stone Soup(2006)</td><td>Hades(2018), Dead Cells(2018), Slay the Spire(2017)</td></tr>
+<tr><td><b>전투 템포</b></td><td>완전 턴제(Turn-based), 바둑식 수 싸움</td><td>실시간 액션, 덱빌딩, 슈팅 등 다양화</td></tr>
+<tr><td><b>사망 시 손실</b></td><td><b>완전 초기화 (100% 영구 사망)</b></td><td>일부 재화·영구 스펙 계승 (메타 진행도)</td></tr>
+<tr><td><b>외부 성장 요소</b></td><td><b>0%</b> (오직 플레이어 본인의 지식과 숙련도만 누적)</td><td><b>영구 강화 존재</b> (특성 해금, 기본 체력/공격력 증가)</td></tr>
+<tr><td><b>시각 인터페이스</b></td><td>ASCII 텍스트 그래픽 또는 간소한 2D 타일셋</td><td>화려한 그래픽, UI 연출 및 사운드트랙</td></tr>
+</tbody>
+</table>
+                <h3>2.3 게임 루프 및 자산 보존 구조</h3>
+                <p>
+    <i>Game Loop & Asset Persistence Structure</i>
+</p>
+                <ul>
+<li><b>전통 로그라이크 루프</b>: <code>[세션 시작] → [절차적 던전 탐험 &amp; 자원 관리] → [사망 (Permadeath)] → [완전 초기화 (0% 자산)] → [플레이어의 지식만 축적된 상태로 1층 재시작]</code></li>
+<li><b>현대 로그라이트 루프</b>: <code>[세션 시작] → [절차적 전투 &amp; 런 재화 획득] → [사망 (Permadeath)] → [런 자산 소멸 + 메타 재화 정산] → [메타 허브에서 영구 스펙 강화] → [강화된 베이스 스탯으로 1스테이지 재시작]</code></li>
+</ul>
+                <div class="diagram-container">
+    <h4>[로그라이크 단일 세션(Run) 및 영구 사망 순환 루프]</h4>
+    <svg viewBox="0 0 780 240" style="width: 100%; height: auto;">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd" />
+            </marker>
+            <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc3545" />
+            </marker>
+        </defs>
+
+        <!-- Step 1: Start -->
+        <rect x="20" y="30" width="160" height="70" rx="6" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2" />
+        <text x="100" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#084298">1. 런(Run) 시작</text>
+        <text x="100" y="80" font-size="11" text-anchor="middle" fill="#495057">• 기본 스탯 / 1레벨</text>
+
+        <!-- Line 1 -> 2 -->
+        <line x1="180" y1="65" x2="220" y2="65" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Step 2: 절차적 던전 탐색 -->
+        <rect x="225" y="30" width="180" height="70" rx="6" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2" />
+        <text x="315" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#084298">2. 무작위 탐험 & 파밍</text>
+        <text x="315" y="80" font-size="11" text-anchor="middle" fill="#495057">• 아이템/스킬 RNG 획득</text>
+
+        <!-- Line 2 -> 3 -->
+        <line x1="405" y1="65" x2="445" y2="65" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Step 3: 위기 & 사망 분기 -->
+        <rect x="450" y="30" width="170" height="70" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="2" />
+        <text x="535" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#664d03">3. 심층 보스 / 위기</text>
+        <text x="535" y="80" font-size="11" text-anchor="middle" fill="#856404">• 생사 갈림길</text>
+
+        <!-- Line 3 -> 4 (Death) -->
+        <line x1="620" y1="65" x2="660" y2="65" stroke="#dc3545" stroke-width="2" marker-end="url(#arrow-red)" />
+
+        <!-- Step 4: 사망 (Permadeath) -->
+        <rect x="665" y="30" width="100" height="70" rx="6" fill="#f8d7da" stroke="#dc3545" stroke-width="2" />
+        <text x="715" y="60" font-size="13" font-weight="bold" text-anchor="middle" fill="#842029">4. 사망</text>
+        <text x="715" y="80" font-size="10" text-anchor="middle" fill="#842029">100% 증발</text>
+
+        <!-- Return Arc: 4 -> 1 -->
+        <path d="M 715 100 L 715 180 L 100 180 L 100 105" fill="none" stroke="#dc3545" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-red)" />
+        <text x="410" y="170" font-size="12" font-weight="bold" fill="#dc3545" text-anchor="middle">
+            [초기화 루프] 모든 장비·레벨 소멸 → 1번 원점으로 강제 회귀 (초반 지루한 반복 유발)
+        </text>
+    </svg>
+</div>
+            </section>
+            <section>
+                <h2>3. 상세 분석 및 데이터</h2>
+                <p>
+    <i>Detailed Analysis & Data</i>
+</p>
+                <h3>3.1 하위 계열별 핵심 특성 비교 매트릭스</h3>
+                <p>
+    <i>Sub-genre Comparison Matrix</i>
+</p>
+                <table>
+<thead><tr><th>구분</th><th>전통 로그라이크 (Classic Roguelike)</th><th>액션 로그라이트 (Action Roguelite)</th><th>덱빌딩 로그라이트 (Deckbuilding Roguelite)</th><th>소울라이크 (Soulslike - 비교군)</th></tr></thead>
+<tbody>
+<tr><td><b>대표 작품</b></td><td>NetHack, DCSS, ToME, Caves of Qud</td><td>Isaac, Dead Cells, Hades, Rogue Legacy</td><td>Slay the Spire, Monster Train, Balatro</td><td>Dark Souls 시리즈, Elden Ring</td></tr>
+<tr><td><b>전투 방식</b></td><td>턴제 / 타일 격자 기반</td><td>실시간 2D/3D 액션</td><td>턴제 카드 배틀</td><td>실시간 액션 / 스태미나 기반</td></tr>
+<tr><td><b>환경 생성</b></td><td>완전 절차적 무작위 생성</td><td>방 단위 절차적 조합</td><td>노드 기반 절차적 맵 생성</td><td>정교하게 고정된 레벨 디자인</td></tr>
+<tr><td><b>사망 페널티</b></td><td><b>완전 영구 사망 (100% 소멸)</b></td><td>세션 내 빌드 소멸 (메타 재화 유지)</td><td>세션 덱 소멸 (카드 풀 해금 유지)</td><td>체크포인트 복귀 (1회 자원 회수 기회 부여)</td></tr>
+<tr><td><b>외부 누적 성장</b></td><td><b>0% (없음)</b></td><td><b>상 (영구 스탯, 패시브, 무기 해금)</b></td><td><b>중 (신규 카드/유물 풀 해금)</b></td><td><b>최상 (영구 레벨업, 장비 강화 보존)</b></td></tr>
+<tr><td><b>세션 소요 시간</b></td><td>수 시간 ~ 수십 시간</td><td>20분 ~ 60분</td><td>30분 ~ 60분</td><td>비세션형 단일 호흡 진행</td></tr>
+</tbody>
+</table>
+                <h3>3.2 유저 저항 및 심리적·공학적 피로 요인 분석</h3>
+                <p>
+    <i>Player Resistance & Psychological/Systemic Fatigue Factors</i>
+</p>
+                <p>
+    플레이어가 로그 장르에 극심한 반발감과 지루함을 느끼는 주요 요인은 다음과 같습니다.
+</p>
+                <div class="callout-box">
+    <h4>⚠️ 플레이어가 로그 장르에서 느끼는 핵심 피로 기제</h4>
+    <ol>
+        <li><b>손실 회피 편향(Loss Aversion) 및 매몰 비용(Sunk Cost)의 충격</b>: 행동경제학(Kahneman &amp; Tversky, 1979)에 따르면 인간은 동일한 크기의 이득보다 손실에서 느끼는 심리적 고통을 약 2.0~2.5배 더 크게 체감합니다. 수십 분에서 수 시간 동안 집중하여 완성한 장비 세팅, 시너지 빌드가 단 한 번의 실수로 증발할 때 발생하는 심리적 박탈감(Deprivation)이 극대화되며, "지금까지 게임에 쏟은 시간이 물리적으로 아무것도 남지 않았다"는 매몰 비용의 허무감과 겹쳐 장르 이탈의 주원인이 됩니다.</li>
+        <li><b>초반부 루프의 강제 반복(Repetitive Early-game Fatigue)</b>: 사망 시마다 가장 난이도가 낮고 이미 조작에 숙달된 1스테이지/초반 구역을 강제로 다시 통과해야 합니다. 도전 의식을 제공하지 못하는 반복 튜토리얼성 구간에 시간을 소모하게 되어 '지루한 노동(Grind)'으로 인식됩니다.</li>
+        <li><b>난수 생성기(RNG) 의존도와 통제감 상실(Lack of Agency)</b>: 절차적 생성 시스템상 최악의 아이템/스킬 드롭(소위 '억까 시드')이 발생하면, 플레이어의 실력과 무관하게 클리어가 불가능해지는 불합리성이 발생합니다. 이는 플레이어의 뛰어난 피지컬이나 판단과 무관하게 패배가 반복될 때 학습된 무기력감(Learned Helplessness)으로 이어지기도 합니다.</li>
+        <li><b>무형의 학습(Intangible Mastery)과 가시적 보상(Tangible Progress) 간의 괴리</b>: 일반 RPG 유저는 게임 내 데이터(경험치, 레벨, 영구 장비)의 축적을 성장의 기준으로 삼으나, 로그라이크는 플레이어 두뇌의 지식과 반응 숙련도만을 요구하므로 보상 체계의 미스매치가 발생합니다.</li>
+    </ol>
+</div>
+                <h3>3.3 대표 타이틀별 세부 비교</h3>
+                <p>
+    <i>Title-by-Title Comparative Analysis</i>
+</p>
+                <table>
+<thead><tr><th>타이틀</th><th>출시연도</th><th>장르 분류</th><th>영구 사망 페널티</th><th>메타 프로그레션 (영구 강화)</th><th>회차당 평균 소요 시간</th></tr></thead>
+<tbody>
+<tr><td><b>Rogue</b></td><td>1980</td><td>전통 로그라이크</td><td><b>완전 초기화 (100%)</b></td><td><b>전무 (0%)</b></td><td>1~3시간 (생존 시)</td></tr>
+<tr><td><b>NetHack</b></td><td>1987</td><td>전통 로그라이크</td><td><b>완전 초기화 (100%)</b></td><td><b>전무 (0%)</b></td><td>수십 시간</td></tr>
+<tr><td><b>The Binding of Isaac</b></td><td>2011</td><td>로그라이트 (액션)</td><td>완전 초기화</td><td>아이템 풀 해금, 신규 캐릭터 해금</td><td>30~45분</td></tr>
+<tr><td><b>Dead Cells</b></td><td>2018</td><td>로그라이트 (액션 플랫포머)</td><td>골드/세포 일부 유지</td><td>무기 청사진 해금, 영구 능력치 해금</td><td>30~50분</td></tr>
+<tr><td><b>Hades</b></td><td>2020</td><td>로그라이트 (핵앤슬래시)</td><td>어둠/보석/서사 유지</td><td><b>거울 스탯 강화, 무기 양상 강화, 호감도 서사</b></td><td>25~40분</td></tr>
+<tr><td><b>Balatro</b></td><td>2024</td><td>로그라이트 (포커 덱빌딩)</td><td>완전 초기화</td><td>조커/덱/바우처 해금</td><td>20~35분</td></tr>
+</tbody>
+</table>
+                <h3>3.4 현대 게임 디자인의 단점 완화 장치</h3>
+                <p>
+    <i>Mitigation Devices in Modern Game Design</i>
+</p>
+                <p>
+    현대 게임 개발사들은 위와 같은 피로 요인을 완화하기 위해 다음과 같은 기법을 적용하고 있습니다.
+</p>
+                <ul>
+<li><b>메타 프로그레션 강화 (Hades, Rogue Legacy)</b>: 《하데스》의 '밤의 거울(Mirror of Night)'이나 《로그 레거시》의 영지 강화처럼, 런에 실패하더라도 수집한 자원으로 캐릭터의 기본 스펙을 올려 반복 플레이가 '낭비된 시간'이 아닌 '다음 도전을 위한 준비'로 체감되도록 설계.</li>
+<li><b>숏폼 세션화 (Vampire Survivors, Balatro)</b>: 1회의 런 시간을 15~30분 이내로 압축하여 실패 시의 매몰 비용 부담을 경감.</li>
+<li><b>시드 공유 및 데일리 런</b>: 동일한 난수 시드를 공유하여 불공정한 난수 운을 배제하고 실력 기반 경쟁 환경 제공.</li>
+<li><b>어시스트 모드 (God Mode 등)</b>: 《하데스》의 '신 모드(God Mode)'처럼 사망할 때마다 데미지 저항력을 2%씩 누적 부여하여 진입 장벽을 완화.</li>
+</ul>
+            </section>
+            <section>
+                <h2>4. 용어 정리 및 정의</h2>
+
+<p>
+    <i>Terminology & Definitions</i>
+</p>
+
+<ul>
+<li><b>로그라이크</b>: <b>Roguelike</b>. 1980년작 '로그'의 특징인 영구적 죽음, 절차적 맵 생성, 턴제, 외부 성장 배제를 엄격하게 따르는 장르.</li>
+<li><b>로그라이트</b>: <b>Roguelite</b>. 로그라이크의 영구 사망과 무작위성을 일부 차용하되, 실시간 액션 결합 및 영구 성장(메타 프로그레션)을 허용하는 변형 장르.</li>
+<li><b>영구적 죽음</b>: <b>Permadeath</b>. 캐릭터 사망 시 부활이나 이전 세이브 불러오기를 허용하지 않고 세션을 완전히 종료하는 시스템.</li>
+<li><b>절차적 생성</b>: <b>Procedural Generation</b>. 알고리즘과 난수(Seed)를 기반으로 맵, 몬스터, 아이템 배치를 매 세션 자동으로 생성하는 기법.</li>
+<li><b>베를린 해석</b>: <b>Berlin Interpretation</b>. 2008년 국제 로그라이크 개발자 회의(IRDC)에서 정립한 전통 로그라이크 규정 8대 고가치 기준.</li>
+<li><b>메타 진행도</b>: <b>Meta-progression</b>. 세션(Run)이 끝나도 초기화되지 않고 계정 단위로 누적되어 다음 세션에 영향을 주는 영구 강화 시스템.</li>
+<li><b>런</b>: <b>Run</b>. 세션 시작부터 캐릭터 사망 또는 최종 보스 클리어까지의 단일 1회 플레이 단위.</li>
+<li><b>손실 회피</b>: <b>Loss Aversion</b>. 획득의 기쁨보다 상실의 고통을 2배 이상 크게 평가하는 인간의 심리적 편향.</li>
+<li><b>난수 생성기</b>: <b>RNG, Random Number Generator</b>. 게임 내 아이템, 지형, 전투 결과를 무작위로 결정하는 난수 생성 시스템.</li>
+</ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>
+            Machine Backend Source: <a href="roguelike_genre_characteristics.md">Z:\wiki\roguelike_genre_characteristics.md</a> | 
+            Raw Data: <a href="raw/20260822_roguelike_genre_analysis_raw.txt">Z:\wiki\raw\20260822_roguelike_genre_analysis_raw.txt</a> | 
+            Storage Directory: Z:\wiki
+        </p>
+    </footer>
+</body>
+</html>

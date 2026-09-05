@@ -1,0 +1,53 @@
+================================================================================
+원천 데이터: 메트로이드배니아 장르의 사망 및 부활 메커니즘 종합 분석
+수집 일시: 2026-08-22 오후 10:12:00 (KST, UTC+9)
+수집 대상: 메트로이드배니아 대표작군 사망/부활 시스템 및 게임 디자인 비평 자료
+  - Super Metroid (1994) & Castlevania: Symphony of the Night (1997)
+  - Hollow Knight (2017)
+  - Ori and the Blind Forest (2015) & Ori and the Will of the Wisps (2020)
+  - Blasphemous (2019) & Salt and Sanctuary (2016)
+  - Ender Lilies: Quietus of the Knights (2021) & Prince of Persia: The Lost Crown (2024)
+================================================================================
+
+1. 메트로이드배니아 사망/부활의 게임 디자인적 역할
+- 메트로이드배니아에서 사망 메커니즘은 '상호 연결된 거대 비선형 세계(Interconnected Non-linear World)'를 탐험할 때 플레이어가 느끼는 긴장감(Stakes), 공간 이동의 리스크-리워드, 백트래킹의 동기부여를 좌우하는 핵심 축임.
+- 실패 시 지불하는 비용(Cost of Failure)의 종류:
+  1) 시간 및 이동 거리 비용 (Spatial / Traversal Cost): 세이브 포인트에서 사망 지점까지 다시 걸어가야 하는 거리
+  2) 자원 및 화폐 비용 (Resource / Economy Cost): 소지 화폐, 경험치 등의 유실
+  3) 시스템적 능력 제약 비용 (Mechanical Debuff): 최대 체력/마나 감소 등 능력치 락
+  4) 진행도 완전 롤백 (Progress Rollback): 획득한 맵 데이터, 수집 아이템의 소멸
+
+2. 4대 설계 패러다임 비교
+1) 고전적 세이브 룸 롤백 (Save-State Rollback):
+   - 대표작: Super Metroid, Castlevania: SOTN
+   - 특징: 사망 시 직전 세이브 룸 상태로 복귀. 세이브 이후 획득한 맵 탐색도, 아이템, 경험치가 모두 증발.
+   - 의도: 세이브 룸 발견 시의 극적인 안도감, 생존을 위한 신중한 플레이 유도.
+   - 한계: 장시간 탐험 후 사망 시 플레이어의 시간 투자(Time Investment)를 무효화하는 높은 좌절감.
+2) 소울라이크식 영혼 회수 (Corpse Run / Soul Retrieval):
+   - 대표작: Hollow Knight (그림자/Shade), Blasphemous (죄악의 파편/Guilt), Salt and Sanctuary
+   - 특징: 사망 지점에 화폐(지오 등)를 떨구고 마나 최대치 등이 제한됨. 사망 지점으로 돌아가 자신의 그림자를 격파하거나 파편을 회수해야 원상복구. 회수 전 재사망 시 영구 소멸.
+   - 의도: 무모한 탐험 방지, 복수전(Revenge) 동기부여, 높은 긴장감.
+   - 비평/논쟁: 비선형 탐험 맵에서 강제적인 시체 회수 백트래킹이 탐험의 자유도를 억압하고 이중 피로도를 유발함.
+3) 플레이어 주도형 능동적 체크포인트 (Player-Driven Soul Link):
+   - 대표작: Ori and the Blind Forest (1편)
+   - 특징: 에너지를 소비하여 플레이어가 안전한 지반에 즉석 세이브 포인트를 설치.
+   - 의도: 고난도 플랫포밍 전 스스로 리스크를 통제.
+   - 비평/한계: 저장을 깜빡하고 진행하다 죽었을 때 플레이어가 극심한 자책감(Player-induced frustration)을 느낌. 이에 따라 2편 《오리와 도깨비불》에서는 자동 체크포인트로 전면 전환.
+4) 무손실 탐험 보존 (Lossless Progression & Instant Respawn):
+   - 대표작: Ender Lilies, Prince of Persia: The Lost Crown, Axiom Verge, Celeste
+   - 특징: 최근 휴식처로 복귀하지만 경험치, 화폐, 수집물, 맵 탐색도를 100% 보존.
+   - 의도: 탐험의 몰입 흐름(Flow State) 유지, 시체 회수 노동 배제, 순수한 레벨 디자인 돌파에 집중.
+
+3. 게임 디자인 비평 및 학술 논쟁
+- 소울라이크식 시체 회수 메커니즘이 메트로이드배니아에 유익한가에 대한 비평:
+  - Game-Wisdom (Josh Bycer): 선형/준선형 구조의 다크 소울과 달리, 거대 비선형 맵을 탐험하는 메트로이드배니아에 시체 회수를 적용하면 맵 탐색의 즐거움이 '자원 회수를 위한 강제 노역'으로 변질될 위험이 큼.
+  - Ivory Tower & Retronauts: 현대 메트로이드배니아는 《셀레스테》나 《엔더 릴리즈》처럼 사망에 따른 자원 박탈은 최소화하고, 순수 조작 피지컬과 보스전 패턴의 정교함으로 난이도를 조율하는 '무손실 고난도(Lossless Hardcore)' 모델로 진화 중.
+
+4. 참고 자료:
+- Josh Bycer (2019), "The Problem with Corpse Runs in Metroidvanias", Game-Wisdom.
+- Jeremy Parish (2018), "Retronauts: Failure States and Progression in 2D Action", Retronauts.
+- Moon Studios Developer Interview (2020), "Why We Removed Soul Link in Ori and the Will of the Wisps".
+- Team Cherry Official Devlog (2017), "The Mechanics of the Shade in Hollow Knight".
+- Binary Haze Interactive (2021), "Ender Lilies Level Design and Accessibility Philosophy".
+- Ubisoft Montpellier (2024), "Prince of Persia: The Lost Crown Accessibility and Checkpoint Architecture".
+================================================================================

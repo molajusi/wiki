@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1인 주도형 사내 스텔스 거버넌스 실행 절차</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="wiki.js" defer></script>
+</head>
+<body class="admin-theme">
+    <header class="admin-theme">
+        <h1>1인 주도형 사내 스텔스 거버넌스 실행 절차</h1>
+        <div class="subtitle">Single-Driven Enterprise Stealth Governance Procedure</div>
+        <div class="category">카테고리: 위키 지식 관리 (Wiki Governance)</div>
+        <div class="meta">최초 작성일시: 2026-08-22 오후 02:07:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)</div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">← 메인 인덱스로 돌아가기</a>
+            <a href="distributed_asset_wiki_integration.html">분산 자산 연동 가이드</a>
+            <a href="wiki_documentation_standards.html">2계층 작성 표준</a>
+            <a href="AGENTS.md">에이전트 가이드</a>
+        </div>
+        <a href="stealth_governance_procedure.md" class="btn-md-source">📄 순수 마크다운 원본(.md) 보기</a>
+    </nav>
+    <main>
+        <article>
+<p>
+    본 문서는 회사(조직) 차원에서 중앙집중식 지식·보안 거버넌스가 요구되나 실제 추진 인력이 1인(아저씨)뿐인 환경에서 무부담 스텔스 거버넌스(Stealth Governance)를 실무에 안착시키기 위한 기계/인간 공용 단일 진실 공급원(SSOT) 문서입니다.
+</p>
+            <section>
+                <h2>1. 개요 및 목적</h2>
+                <p>
+    동료들에게 복잡한 작성 서식이나 신규 도구 도입을 강요하지 않고, 담당자(1인)와 에이전트가 백엔드 파이프라인에서 보안 규정 및 지식 표준화를 자동 완결하는 5단계 실행 절차를 수립합니다.
+</p>
+            </section>
+            <section>
+                <h2>2. 핵심 개념 및 원리</h2>
+                <h3>2.1 스텔스 거버넌스 철학</h3>
+                <ul>
+<li><b>무부담 원칙 (Zero-Friction Ingestion)</b>: 동료의 입력 단계는 어떤 제약도 두지 않고 평문/자유 원문 그대로 수집.</li>
+<li><b>백그라운드 규격화</b>: 담당자(아저씨)와 에이전트(자네)가 백엔드에서 보안 검증, 마스킹, 표준 서식 컴파일을 대행.</li>
+</ul>
+                <h3>2.2 스텔스 거버넌스 파이프라인</h3>
+                <p>
+    <!-- SVG 5단계 거버넌스 플로우차트 -->
+</p>
+                <div class="diagram-container">
+    <h4>[1인 주도형 스텔스 거버넌스 5단계 파이프라인]</h4>
+    <svg viewBox="0 0 800 130" style="width: 100%; height: auto;">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd" />
+            </marker>
+        </defs>
+
+        <!-- Step 1 -->
+        <rect x="10" y="30" width="135" height="70" rx="6" fill="#e9ecef" stroke="#6c757d" stroke-width="1.5" />
+        <text x="77" y="55" font-size="11" font-weight="bold" text-anchor="middle" fill="#212529">1단계: 무부담 접수</text>
+        <text x="77" y="75" font-size="9" text-anchor="middle" fill="#495057">Z:\wiki\raw\*</text>
+
+        <line x1="145" y1="65" x2="165" y2="65" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Step 2 -->
+        <rect x="170" y="30" width="135" height="70" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="1.5" />
+        <text x="237" y="55" font-size="11" font-weight="bold" text-anchor="middle" fill="#856404">2단계: 스텔스 보안</text>
+        <text x="237" y="75" font-size="9" text-anchor="middle" fill="#856404">개인정보/기밀 마스킹</text>
+
+        <line x1="305" y1="65" x2="325" y2="65" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Step 3 -->
+        <rect x="330" y="30" width="135" height="70" rx="6" fill="#d1e7dd" stroke="#198754" stroke-width="1.5" />
+        <text x="397" y="55" font-size="11" font-weight="bold" text-anchor="middle" fill="#0f5132">3단계: 표준 규격화</text>
+        <text x="397" y="75" font-size="9" text-anchor="middle" fill="#0f5132">*.md &amp; *.html 동시 생성</text>
+
+        <line x1="465" y1="65" x2="485" y2="65" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Step 4 -->
+        <rect x="490" y="30" width="135" height="70" rx="6" fill="#cfe2ff" stroke="#0d6efd" stroke-width="1.5" />
+        <text x="557" y="55" font-size="11" font-weight="bold" text-anchor="middle" fill="#084298">4단계: 룰셋 축적</text>
+        <text x="557" y="75" font-size="9" text-anchor="middle" fill="#084298">AGENTS.md 업데이트</text>
+
+        <line x1="625" y1="65" x2="645" y2="65" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Step 5 -->
+        <rect x="650" y="30" width="140" height="70" rx="6" fill="#d2f4ea" stroke="#20c997" stroke-width="1.5" />
+        <text x="720" y="55" font-size="11" font-weight="bold" text-anchor="middle" fill="#0f5132">5단계: 가치 증명</text>
+        <text x="720" y="75" font-size="9" text-anchor="middle" fill="#0f5132">고품질 HTML5 배포</text>
+    </svg>
+</div>
+            </section>
+            <section>
+                <h2>3. 상세 분석 및 데이터</h2>
+                <h3>3.1 5단계 세부 실행 절차</h3>
+                <details open>
+<summary>▶ 5단계 실행 절차 상세 설명 펼치기</summary>
+
+1. **1단계: 무부담 자료 접수 (Zero-Friction Ingestion)**: 동료들에게 노션이나 정형화된 서식 작성을 강요하지 않고, 메신저·회의록·사내 공유 파일 등 기존 채널의 자유 원문을 담당자가 그대로 수집하여 `Z:\wiki\raw\` 디렉터리에 원문 적재.
+2. **2단계: 스텔스 보안 & 정책 검증 (Stealth Audit & Screening)**: 유입된 자료에 대해 에이전트와 담당자가 뒷단에서 사내 보안 규정(개인정보 마스킹, 기밀 데이터 분류)을 1차적으로 스크리닝하여 자동 정제.
+3. **3단계: 표준 규격 자동 변환 (Automated Standard Compilation)**: 정제된 데이터를 바탕으로 기계용 마크다운 `*.md`(SSOT)와 인간 브라우징용 HTML5 `*.html`(View) 문서를 동시 파생 생성.
+4. **4단계: 1인 거버넌스 룰셋 축적 (Single-Driven Policy Layering)**: 검증 과정에서 도출된 사내 정책과 데이터 가공 규칙을 `AGENTS.md`에 지속적으로 룰셋으로 축적하여 에이전트 자동화 수준을 향상.
+5. **5단계: 가치 증명 및 수동적 조직 공유 (Passive Value Demonstration)**: 완성된 고품질의 정제된 HTML5 산출물 링크만 조직에 공유하여, 조직원들이 자연스럽게 체계화된 지식의 효용과 거버넌스 가치를 체감하도록 유도.
+
+</details>
+                <h3>3.2 기존 거버넌스 vs 1인 스텔스 거버넌스 비교 분석</h3>
+                <table>
+<thead><tr><th>비교 항목</th><th>전통적 조직 거버넌스 (Traditional)</th><th>1인 주도형 스텔스 거버넌스 (Stealth)</th></tr></thead>
+<tbody>
+<tr><td><b>조직 저항도</b></td><td>높음 (새로운 툴·서식 작성 강요)</td><td><b>0 (Zero-Friction, 기존 채널 그대로 접수)</b></td></tr>
+<tr><td><b>초기 구축 비용</b></td><td>높음 (전사 교육, 시스템 도입 예산)</td><td><b>최소 (단일 담당자 + LLM 에이전트 결합)</b></td></tr>
+<tr><td><b>보안/품질 통제</b></td><td>사후 감사 및 수동 점검</td><td><b>유입 즉시 백엔드 자동 정제 및 룰셋 축적</b></td></tr>
+<tr><td><b>결과물 공유</b></td><td>무거운 인트라넷/문서 도구</td><td><b>가벼운 반응형 HTML5 뷰 배포</b></td></tr>
+</tbody>
+</table>
+            </section>
+            <section>
+                <h2>4. 용어 정리 및 정의</h2>
+
+<ul>
+<li><b>1인 주도형 전사 거버넌스</b>: <b>Single-Driven Enterprise Governance</b>. 조직 내 유일한 담당자 1인이 에이전트와 결합하여 사내 중앙집중식 거버넌스를 비동기적으로 수행하는 운영 모델.</li>
+<li><b>스텔스 거버넌스</b>: <b>Stealth Governance</b>. 조직 구성원에게 새로운 도구 사용이나 포맷을 강요하지 않고 뒷단에서 에이전트가 자동 보안/품질 스크리닝 및 규격화를 처리하는 무부담 거버넌스 방식.</li>
+<li><b>무마찰 데이터 수집</b>: <b>Zero-Friction Ingestion</b>. 사용자 및 구성원의 입력 부담을 0으로 만들어 자료 유입 장벽을 완전히 제거하는 데이터 수집 프로토콜.</li>
+</ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>
+            Machine Backend Source: <a href="stealth_governance_procedure.md">Z:\wiki\stealth_governance_procedure.md</a> | 
+            Storage Directory: Z:\wiki
+        </p>
+    </footer>
+</body>
+</html>
