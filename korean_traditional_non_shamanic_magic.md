@@ -2,7 +2,7 @@
 title: "한국 전통 비도교 비무속 주술 및 마법 체계"
 subtitle: "Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence"
 created: "2026-08-31 오후 09:16:00 (KST, UTC+9)"
-updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
+updated: "2026-09-05 오후 08:16:00 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Folk Magic", "Anthropology", "Korean History", "Sympathetic Magic", "Geomantic Bibo", "Zhuyou", "한국역사민속학", "인류학"]
 html_view: "korean_traditional_non_shamanic_magic.html"
@@ -12,7 +12,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 *Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-09-05 오후 08:16:00 (KST, UTC+9)*
 
 본 문서는 한국 전통 사회에서 도교적 방술(부적, 초제, 선도술 등)과 무속/샤머니즘(무당의 강신, 굿거리, 신내림 공수, 신칼·방울 의례 등)을 제외하고, 고대 삼한부터 조선 시대에 이르기까지 실존했던 자생적 민간 자영 양법(양밥), 가신신앙 결계, 풍수 비보, 전통 의학 축유술, 유교 국가 예제 벽사, 불교·밀교 다라니 결계 및 생업·군사 주술의 74가지 실천 사례와 작동 원리를 1차 역사 사료 및 고고학 유물에 근거하여 체계화한 지식 문서입니다.
 
@@ -100,7 +100,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 ## 4. 가신신앙 및 생활 결계 체계
 *Household Deity Faith & Domestic Boundaries*
 
-사제자의 개입 없이 안주인(주부)이 주관하여 가택 내부의 정령들과 교감하며 성속(聖俗)의 경계를 짓는 생활 방어 체계입니다.
+사제자의 개입 없이 안주인(주부)이 주관하여 가택 내부의 정령들과 교감하며 성속(聖俗)의 경계를 짓는 생활 방어 체계입니다. 한국 전통 가신신앙의 10대 신격, 주부 사제권, 신체 조형학 및 서사무가(성주풀이·문전본풀이)에 관한 심층 분석은 [한국 전통 가신신앙 및 가택 수호 체계](korean_traditional_household_deities.html) 문서를 참조하십시오.
 
 ### 4.1 왼새끼 금줄 결계술과 성속 공간 역전
 * **출처 및 근거**: 아키바 다카시·아카마쓰 지조의 《조선무속의 연구》(1938), 국립민속박물관 《한국민속상징사전》(2017).
