@@ -1,7 +1,7 @@
 /* ==========================================================================
    Knowledge Wiki Common Stylesheet (style.css)
    최초 작성일시: 2026-08-22 오후 02:45:14 (KST, UTC+9)
-   최종 수정일시: 2026-09-04 오전 10:16:41 (KST, UTC+9)
+   최종 수정일시: 2026-09-07 오후 01:07:32 (KST, UTC+9)
    ========================================================================== */
 
 :root {
@@ -30,6 +30,8 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 /* Header & Metadata (Normal Flow - Zero Layout Shift, Center-Aligned with Main) */
@@ -189,6 +191,11 @@ article {
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
+article a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 h2 {
     font-size: 1.4rem;
     color: var(--primary-color);
@@ -251,6 +258,8 @@ table, th, td {
 th, td {
     padding: 0.75rem;
     text-align: left;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 th {
@@ -268,6 +277,15 @@ pre {
 
 code {
     font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+code:not(pre code) {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    background-color: var(--code-bg);
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.88em;
 }
 
 /* Lists & Definition Lists */
@@ -700,4 +718,49 @@ nav .nav-links {
 .cluster-card a.btn-link:hover {
     opacity: 0.9;
     text-decoration: none;
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    header .header-container,
+    header h1,
+    header .subtitle,
+    header .category,
+    header .meta {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    nav {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 0.75rem;
+    }
+
+    article {
+        padding: 1.25rem 1rem;
+    }
+
+    .sticky-header-bar {
+        left: 0.75rem;
+        max-width: calc(100vw - 1.5rem);
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
