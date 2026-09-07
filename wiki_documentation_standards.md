@@ -2,7 +2,7 @@
 title: "2계층 위키 문서 작성 및 관리 표준"
 subtitle: "Two-Layer Wiki Documentation & Governance Standards"
 created: "2026-08-22 오후 01:12:00 (KST, UTC+9)"
-updated: "2026-09-07 오후 01:07:32 (KST, UTC+9)"
+updated: "2026-09-07 오후 01:21:00 (KST, UTC+9)"
 category: "위키 지식 관리 (Wiki Governance)"
 tags: ["Documentation Standards", "Two-Layer Wiki", "Markdown SSOT", "HTML5 View", "CSS Specs", "Visual Standards", "style.css", "Terminology Standards", "Evidence and Grounding", "Raw Sources", "Dual-File Parity", "Markdown Escaping", "Timestamp Immutability", "Framework Card", "Cross-Platform Portability", "Knowledge Ingestion Boundary", "Semantic Contradiction", "Pure Timestamp"]
 html_view: "wiki_documentation_standards.html"
@@ -12,7 +12,7 @@ html_view: "wiki_documentation_standards.html"
 *Two-Layer Wiki Documentation & Governance Standards*
 
 **카테고리**: 위키 지식 관리 (Wiki Governance)  
-*최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-07 오후 01:07:32 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-07 오후 01:21:00 (KST, UTC+9)*
 
 <context>
 본 문서는 지식위키 저장소(Z:\wiki) 내에 축적되는 모든 지식 문서의 2계층 이중 파일 구조(Markdown SSOT + HTML5 View), 제목/영문부제목 표기 규정, 카테고리/일시 표기법, 공통 스타일시트(style.css) 전체 코드셋, 5대 필수 섹션 구조, 원천 데이터 및 참고 문헌 명시 규정, 용어 정리 및 정의 표 표기 표준, 시맨틱 태그 구조 및 관리 원칙을 규정한 단일 진실 공급원(SSOT) 기술 명세서입니다.
