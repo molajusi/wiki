@@ -2,7 +2,7 @@
 title: "한국 전통 가신신앙 및 가택 수호 체계"
 subtitle: "Korean Traditional Household Deity Worship and Domestic Sanctuary Systems: Spatiality, Priesthood, and Ritual Artifacts"
 created: "2026-09-05 오후 08:11:09 (KST, UTC+9)"
-updated: "2026-09-05 오후 08:46:30 (KST, UTC+9)"
+updated: "2026-09-07 오후 01:40:52 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Household Deities", "Anthropology", "Korean Folklore", "Housewife Priesthood", "Spatial Sanctuary", "Material Culture", "한국민속학", "가신신앙", "가정신앙"]
 html_view: "korean_traditional_household_deities.html"
@@ -12,7 +12,7 @@ html_view: "korean_traditional_household_deities.html"
 *Korean Traditional Household Deity Worship and Domestic Sanctuary Systems: Spatiality, Priesthood, and Ritual Artifacts*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-09-05 오후 08:11:09 (KST, UTC+9) | 최종 수정일시: 2026-09-05 오후 08:46:30 (KST, UTC+9)*
+*최초 작성일시: 2026-09-05 오후 08:11:09 (KST, UTC+9) | 최종 수정일시: 2026-09-07 오후 01:40:52 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 전통 사회에서 가옥(家屋)이라는 사적 생활 공간을 무대로 하여, 주부(안주인) 중심의 자영적(自營的) 사제권, 가택 처소별 신격 좌정 질서, 곡령(穀靈) 숭배의 물질 조형학, 세시 안택고사 및 서사무가(성주풀이·문전본풀이)를 포괄하는 가신신앙(가정신앙)의 총체적 구조와 원천 사료를 체계화한 지식 문서입니다.
@@ -97,7 +97,7 @@ html_view: "korean_traditional_household_deities.html"
 - **관장 영역**: 부엌의 불씨(화기) 보존, 음식 조리, 식생활, 주부의 보건, 가내 선악 감시.
 - **좌정 처소**: 부엌 아궁이 뒤편 흙벽의 작은 선반(조왕선반).
 - **신체 형태**: '조왕보시기(조왕중발)'라 불리는 작은 사발에 매일 새벽 첫 우물물(정화수)을 담아 올림.
-- **사제 및 금기**: 주부와 가장 밀착된 화신(火神). 부뚜막에 발 디디기 금지, 아궁이에 침 뱉기 금지, 부엌 내 폭언 및 욕설 금지, 머리카락 등 부정한 물질 소각 금지.
+- **사제 및 금기**: 주부와 가장 밀착된 화신(火神). 부뚜막에 발 디디기 금지, 아궁이에 침 뱉기 금지, 부엌 내 폭언 및 욕설 금지, 머리카락 등 부정한 물질 소각 금지. (※ 부뚜막 디디기·침 뱉기·머리카락 소각 금지의 위생공학적·열역학적·실내생태학적 심층 기제는 독립 전문 문서 [한국 전통 부엌 금기담의 위생공학 및 생태학적 분석](korean_traditional_kitchen_taboos.html) 참조)
 
 ### 3.3 삼신
 *Samsin (Goddess of Childbirth & Infant Life)*
