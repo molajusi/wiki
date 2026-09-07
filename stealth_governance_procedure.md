@@ -6,18 +6,13 @@ updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
 category: "위키 지식 관리 (Wiki Governance)"
 tags: ["Governance", "Stealth Governance", "Enterprise Architecture", "Single-Driven", "Zero-Friction"]
 html_view: "stealth_governance_procedure.html"
---
-
-
-**카테고리**: 위키 지식 관리 (Wiki Governance)  
-*최초 작성일시: 2026-08-22 오후 02:07:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
-
--
+---
 
 # 1인 주도형 사내 스텔스 거버넌스 실행 절차
 *Single-Driven Enterprise Stealth Governance Procedure*
 
 **카테고리**: 위키 지식 관리 (Wiki Governance)  
+*최초 작성일시: 2026-08-22 오후 02:07:52 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
 
 <context>
 본 문서는 회사(조직) 차원에서 중앙집중식 지식·보안 거버넌스가 요구되나 실제 추진 인력이 1인(아저씨)뿐인 환경에서 무부담 스텔스 거버넌스(Stealth Governance)를 실무에 안착시키기 위한 기계/인간 공용 단일 진실 공급원(SSOT) 문서입니다.
@@ -107,4 +102,6 @@ html_view: "stealth_governance_procedure.html"
 - **1인 주도형 전사 거버넌스**: **Single-Driven Enterprise Governance**. 조직 내 유일한 담당자 1인이 에이전트와 결합하여 사내 중앙집중식 거버넌스를 비동기적으로 수행하는 운영 모델.
 - **스텔스 거버넌스**: **Stealth Governance**. 조직 구성원에게 새로운 도구 사용이나 포맷을 강요하지 않고 뒷단에서 에이전트가 자동 보안/품질 스크리닝 및 규격화를 처리하는 무부담 거버넌스 방식.
 - **무마찰 데이터 수집**: **Zero-Friction Ingestion**. 사용자 및 구성원의 입력 부담을 0으로 만들어 자료 유입 장벽을 완전히 제거하는 데이터 수집 프로토콜.
+</definitions>
+히 제거하는 데이터 수집 프로토콜.
 </definitions>

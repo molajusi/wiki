@@ -523,7 +523,7 @@ def render_blocks(md_text):
 
 def read_frontmatter(md_text):
     md_text = md_text.lstrip("\ufeff")
-    m = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", md_text, re.S)
+    m = re.match(r"^---\s*\n(.*?)\n---+\s*\n(.*)$", md_text, re.S)
     if not m:
         return {}, md_text
     fm = {}

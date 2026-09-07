@@ -6,18 +6,13 @@ updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Narratology", "Political Philosophy", "Children Literature", "Media Studies", "Fairy Tales", "Animation", "Civic Education"]
 html_view: "children_narrative_politics_and_power_structures.html"
---
-
-
-**카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-26 오후 06:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
-
--
+---
 
 # 아동 서사의 정치철학과 권력 구조 비판
 *Political Philosophy of Children's Narratives and the Critique of Power Structures: From Monarchical Tropes to Republican Assemblies*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
+*최초 작성일시: 2026-08-26 오후 06:00:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
 
 <context>
 본 문서는 21세기 민주·공화정 문화권의 아동 서사(동화, 소설, 애니메이션)에 잔존하는 군주정·혈통주의 권력 모델을 비판적으로 해부하고, 인지 발달 및 정치 사회화 이론에 기반하여 대안적 공화주의·분산형 앙상블 서사 모델을 체계화한 심층 연구 위키 문서입니다.
@@ -328,4 +323,6 @@ html_view: "children_narrative_politics_and_power_structures.html"
     <li id="ref-6">[6] Cooperative Children's Book Center (CCBC) (2024–2025). <em>Diversity Statistics in Children's and Young Adult Books</em>. School of Education, University of Wisconsin-Madison. <a href="https://ccbc.education.wisc.edu/literature-resources/ccbc-diversity-statistics/" target="_blank">웹링크</a></li>
     <li id="ref-7">[7] Centre for Literacy in Primary Education (CLPE) (2024/2025). <em>Reflecting Realities: Survey of Ethnic Representation within UK Children's Literature</em>. CLPE Report. <a href="https://clpe.org.uk/research/reflecting-realities" target="_blank">웹링크</a></li>
     <li id="ref-8">[8] Henry Jenkins (2006). <em>Convergence Culture: Where Old and New Media Collide</em>. NYU Press.</li>
+</ol>
+ce Culture: Where Old and New Media Collide</em>. NYU Press.</li>
 </ol>

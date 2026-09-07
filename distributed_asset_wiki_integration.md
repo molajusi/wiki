@@ -6,18 +6,13 @@ updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
 category: "위키 지식 관리 (Wiki Governance)"
 tags: ["Wiki Governance", "Distributed Assets", "Stealth Operations", "NAS Integration", "SaaS Ingestion", "Zero-Training"]
 html_view: "distributed_asset_wiki_integration.html"
---
-
-
-**카테고리**: 위키 지식 관리 (Wiki Governance)  
-*최초 작성일시: 2026-08-22 오후 02:54:30 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
-
--
+---
 
 # 사내 분산 자산의 무부담 위키 연동 및 스텔스 운영 가이드
 *Zero-Friction Enterprise Distributed Asset Integration & Stealth Wiki Operation Guide*
 
 **카테고리**: 위키 지식 관리 (Wiki Governance)  
+*최초 작성일시: 2026-08-22 오후 02:54:30 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
 
 <context>
 본 문서는 로컬 NAS(견적서, 대외비, 프로젝트, 도구) 및 외부 SaaS(Google Docs, Notion, 설치 매뉴얼, 방문예약 등 행정 절차) 등에 분산된 사내 기존 자산을, 추가적인 업무 증가나 직원 대상 교육 없이 2계층 위키(Markdown SSOT + HTML5 View)로 흡수·연동·전파하기 위한 실무 운영 SSOT 문서입니다.
@@ -131,4 +126,6 @@ html_view: "distributed_asset_wiki_integration.html"
 - **직통 연결 링크**: **Pass-through Link**. 사내 위키에서 기존 NAS 파일 경로(사내 공유 경로)나 외부 SaaS URL로 직접 연결시키는 링크 방식.
 - **수동적 링크 배포**: **Passive Link Distribution**. 전사 공지 없이 구성원의 실제 질문 및 필요 시점에 맞춤형 웹 링크를 회신하여 저항 없이 침투시키는 배포 방식.
 - **무마찰 데이터 수집**: **Zero-Friction Ingestion**. 작업자나 동료의 추가 입력 부담 없이 기존 자유 텍스트나 원시 파일을 에이전트가 백엔드에서 규격화하는 수집 절차.
+</definitions>
+ 백엔드에서 규격화하는 수집 절차.
 </definitions>

@@ -6,18 +6,13 @@ updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Gender Representation", "Box Office", "Metroidvania", "Film Industry", "Media Studies", "Commercial Performance", "Availability Bias", "Samus Aran", "Shantae"]
 html_view: "gender_protagonist_commercial_reception.html"
---
-
-
-**카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-27 오후 4:53:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
-
--
+---
 
 # 게임·영화 산업의 여성 주인공과 상업적 흥행·비평 평가 상관관계
 *Female Protagonists, Box Office & Critical Reception: A Cross-Media Data Review (Games & Film)*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
+*최초 작성일시: 2026-08-27 오후 4:53:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
 
 <context>
 본 문서는 "여성 주인공은 상업적 흥행에 불리하다"는 통설이 게임(메트로이드배니아 장르)과 영화(블록버스터) 두 매체에서 실제 데이터로 뒷받침되는지를 검증한 비교 조사 문서입니다. 개별 사례의 인상적 서사가 아니라 판매량·박스오피스·비평 점수 등 확인 가능한 수치와, 그 수치를 다룬 데이터 저널리즘·산업 연구를 근거로 삼습니다.
@@ -191,5 +186,8 @@ html_view: "gender_protagonist_commercial_reception.html"
     <li id="ref-19">[19] Install Base Forum (2023). <em>Bloodstained: Ritual of the Night sells over 2 million units worldwide</em>. <a href="https://www.installbaseforum.com/forums/threads/bloodstained-ritual-of-the-night-sells-over-2-million-units-worldwide.1925/" target="_blank">웹링크</a></li>
     <li id="ref-20">[20] TVTropes. <em>Castlevania: Order of Ecclesia</em>. <a href="https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/CastlevaniaOrderOfEcclesia" target="_blank">웹링크</a> (중급 출처: 게임 팬 위키, 편집 검증 수준 낮음)</li>
     <li id="ref-21">[21] ResetEra. <em>Metroidvania Games With Female Main Characters?</em>. <a href="https://www.resetera.com/threads/metroidvania-games-with-female-main-characters.1014552/" target="_blank">웹링크</a> (하급 출처: 비검증 커뮤니티 포럼)</li>
+</ol>
+</references>
+(하급 출처: 비검증 커뮤니티 포럼)</li>
 </ol>
 </references>
