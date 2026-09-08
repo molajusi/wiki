@@ -182,7 +182,7 @@ html_view: "{slug}.html"
                 </table>
             </section>
 
-            <section>
+            <section id="references">
                 <h2>5. 참고 자료 및 원천 데이터 출처</h2>
                 <div class="section-subtitle">References & Raw Sources</div>
                 <div class="callout">
@@ -210,7 +210,7 @@ html_view: "{slug}.html"
                     <span class="footer-btn-icon">📄</span>
                     <span class="footer-btn-text">마크다운 정본</span>
                 </a>
-                <a href="raw/{raw_filename}" class="footer-btn">
+                <a href="#references" class="footer-btn">
                     <span class="footer-btn-icon">📁</span>
                     <span class="footer-btn-text">원천 데이터</span>
                 </a>

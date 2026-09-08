@@ -732,25 +732,21 @@ def resolve_raw_paths(basename, md_text, old_html):
 
 def build_footer(basename, old_html="", md_text="", footer_attrs=""):
     """위키 표준 2계층 바닥글 UI를 생성한다 (방안 A: 네비게이션 버튼 1개로 원천 데이터 완전 통합).
-    - 메인 색인, 마크다운 정본(.md), 검증된 대표 원천 데이터(raw/*), 에이전트 가이드, 맨 위로 네비게이션 버튼
+    - 메인 색인, 마크다운 정본(.md), 원천 데이터(#references 섹션 이동), 에이전트 가이드, 맨 위로 네비게이션 버튼
     - 저장소 식별자 및 보좌 에이전트 메타데이터
     - 하단의 중복된 footer-raw-info 블록은 제거하고, 네비게이션 바의 [📁 원천 데이터] 단일 버튼으로 통합한다.
-      (복수 파일 상세 목록은 본문 9절 '참고 자료 및 원천 데이터 출처' 섹션에서 제공)"""
+      (클릭 시 본문 '참고 자료 및 원천 데이터 출처' 섹션 #references 로 부드럽게 스크롤 이동)"""
     raw_paths = resolve_raw_paths(basename, md_text, old_html)
+    has_ref_section = bool(re.search(r"참고\s*자료|원천\s*데이터|References", md_text))
 
     raw_btns_html = ""
-    if raw_paths:
-        # 대표 원천 링크 선택: README.txt, index.txt 우선, 아니면 첫 번째 파일
-        rep_path = raw_paths[0]
-        for p in raw_paths:
-            if p.endswith("README.txt") or p.endswith("index.txt"):
-                rep_path = p
-                break
+    # 원천 데이터 경로가 존재하거나 문서에 참고자료 섹션이 있는 경우 버튼 노출
+    if raw_paths or has_ref_section:
         raw_btns_html = (
-            '\n                <a href="%(path)s" class="footer-btn">\n'
+            '\n                <a href="#references" class="footer-btn">\n'
             '                    <span class="footer-btn-icon">📁</span>\n'
             '                    <span class="footer-btn-text">원천 데이터</span>\n'
-            '                </a>' % {"path": rep_path}
+            '                </a>'
         )
 
     return (
@@ -794,22 +790,33 @@ def build_footer(basename, old_html="", md_text="", footer_attrs=""):
 
 def group_into_sections(html_pieces):
     """h2로 시작하는 묶음마다 <section>으로 감싼다(기존 관행과 맞춤).
+    참고 자료 및 원천 데이터 출처 섹션에는 id="references" 앵커를 부여한다.
     첫 h2 이전에 나온 조각(있다면)은 감싸지 않고 그대로 둔다."""
     out = []
     current = None
+
+    def wrap_section(pieces):
+        if not pieces:
+            return ""
+        first = pieces[0]
+        # 참고 자료 및 원천 데이터 출처 섹션 판별
+        if re.search(r"참고\s*자료|원천\s*데이터|References", first):
+            sec_tag = '<section id="references">'
+        else:
+            sec_tag = '<section>'
+        return f"            {sec_tag}\n                " + "\n                ".join(pieces) + "\n            </section>"
+
     for piece in html_pieces:
         if re.match(r"^<h2[ >]", piece):
             if current is not None:
-                out.append("            <section>\n                " +
-                           "\n                ".join(current) + "\n            </section>")
+                out.append(wrap_section(current))
             current = [piece]
         elif current is not None:
             current.append(piece)
         else:
             out.append(piece)
     if current is not None:
-        out.append("            <section>\n                " +
-                   "\n                ".join(current) + "\n            </section>")
+        out.append(wrap_section(current))
     return out
 
 
