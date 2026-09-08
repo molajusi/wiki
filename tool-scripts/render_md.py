@@ -104,7 +104,7 @@ def inline_md_to_html(text):
     text = re.sub(r"\[\[(\d+)\]\]\(([^)]+)\)", r'<sup class="citation"><a href="\2">[\1]</a></sup>', text)
 
     links = []
-    href_shape = r"(?:https?://|file:///|mailto:|#|\.\./|\./)[^)]*|[^)]*\.(?:html|md)(?:#[^)]*)?"
+    href_shape = r"(?:https?://|file:///|mailto:|#|\.\./|\./|raw/)[^)]*|[^)]*\.(?:html|md|txt)(?:#[^)]*)?"
     text = re.sub(r"\[([^\]]*)\]\((" + href_shape + r")\)",
                   lambda m: links.append((m.group(1), m.group(2))) or "\x00L%d\x00" % (len(links) - 1), text)
 

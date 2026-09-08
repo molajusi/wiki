@@ -93,7 +93,7 @@ def check_pair_parity(basename):
     # href 모양 제한(render_md.py의 href_shape와 동일)도 똑같이 걸어야 한다 — 안 그러면 예시 텍스트로
     # 쓴 "[텍스트](URL)"·"[텍스트](괄호주석)" 같은 문장(마크다운 이스케이프 함정 절 등)까지 링크로
     # 잘못 세어 렌더러는 안 만든 링크를 감사만 있다고 우기는 자기모순이 생긴다.
-    href_shape = r"(?:https?://|file:///|mailto:|#|\.\./|\./)[^)]*|[^)]*\.(?:html|md)(?:#[^)]*)?"
+    href_shape = r"(?:https?://|file:///|mailto:|#|\.\./|\./|raw/)[^)]*|[^)]*\.(?:html|md|txt)(?:#[^)]*)?"
     md_links = sorted(re.findall(r"\]\((" + href_shape + r")\)", md_text) + re.findall(r'href="([^"]+)"', md_text))
     # 모바일용 반응형 정의 목록(<dl class="mobile-table-list">...<dl>)은 데스크톱 표의 모바일 전용
     # 파생 표현이므로 감사 시 링크를 이중 집계하지 않도록 임시 제거 후 대조한다.
