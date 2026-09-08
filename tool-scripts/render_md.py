@@ -178,20 +178,29 @@ def build_responsive_table(headers, rows, raw_table_html=None):
     - 2열 표: 용어/정의 또는 키/값 구조의 <dt class="mobile-table-term"> + <dd class="mobile-table-desc">
     - 3열 이상 다열 표: 첫 열(대표 엔티티) <dt> + 각 컬럼별 라벨(<dt>)과 값(<dd>)으로 구성된 카드
     """
+    col_count = len(headers)
+
     # 1. 데스크톱 뷰 (HTML5 <table>)
+    is_glossary = (col_count == 2)
+    table_class = ' class="table-glossary"' if is_glossary else ''
+
     if raw_table_html:
-        desktop_table = raw_table_html.strip()
+        if is_glossary and 'class="table-glossary"' not in raw_table_html:
+            desktop_table = re.sub(r"^<table(\s+[^>]*)?>", r'<table\1 class="table-glossary">', raw_table_html.strip(), count=1)
+            # 중복된 class 속성 정리
+            desktop_table = re.sub(r'class="([^"]*)"\s+class="([^"]*)"', r'class="\1 \2"', desktop_table)
+        else:
+            desktop_table = raw_table_html.strip()
     else:
         thead = "<tr>" + "".join("<th>%s</th>" % inline_md_to_html(h) for h in headers) + "</tr>"
         tr_list = []
         for r in rows:
             padded = r + [""] * max(0, len(headers) - len(r))
             tr_list.append("<tr>" + "".join("<td>%s</td>" % inline_md_to_html(c) for c in padded) + "</tr>")
-        desktop_table = "<table>\n<thead>%s</thead>\n<tbody>\n%s\n</tbody>\n</table>" % (thead, "\n".join(tr_list))
+        desktop_table = "<table%s>\n<thead>%s</thead>\n<tbody>\n%s\n</tbody>\n</table>" % (table_class, thead, "\n".join(tr_list))
 
     # 2. 모바일 뷰 (<dl class="mobile-table-list">)
     dl_cards = []
-    col_count = len(headers)
 
     if col_count <= 2:
         for r in rows:

@@ -166,11 +166,11 @@ html_view: "{slug}.html"
             <section>
                 <h2>4. 용어 정리 및 정의</h2>
                 <div class="section-subtitle">Glossary & Definitions</div>
-                <table>
+                <table class="table-glossary">
                     <thead>
                         <tr>
-                            <th style="width: 25%;">용어</th>
-                            <th style="width: 75%;">정의</th>
+                            <th>용어</th>
+                            <th>정의</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -224,7 +224,7 @@ html_view: "{slug}.html"
                 </a>
             </div>
             <div class="footer-meta">
-                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>지식 저장소: <code>Z:\\wiki</code></span>
                 <span>•</span>
                 <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
             </div>
@@ -252,10 +252,6 @@ if __name__ == "__main__":
     parser.add_argument("--subtitle", required=True, help="English subtitle without parentheses")
     parser.add_argument("--category", default="일반 지식 및 게임 디자인 (Game Design & Taxonomy)", help="Wiki category")
     parser.add_argument("--tags", default="", help="Comma separated tags")
-    args = parser.parse_args()
-
-    create_wiki_page(args.slug, args.title, args.subtitle, args.category, args.tags)
-er.add_argument("--tags", default="", help="Comma separated tags")
     args = parser.parse_args()
 
     create_wiki_page(args.slug, args.title, args.subtitle, args.category, args.tags)
