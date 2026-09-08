@@ -223,9 +223,6 @@ html_view: "{slug}.html"
                     <span class="footer-btn-text">맨 위로</span>
                 </a>
             </div>
-            <div class="footer-raw-info">
-                <strong>원천 데이터 보존:</strong> <a href="raw/{raw_filename}"><code>raw/{raw_filename}</code></a>
-            </div>
             <div class="footer-meta">
                 <span>지식 저장소: <code>Z:\wiki</code></span>
                 <span>•</span>
@@ -255,6 +252,10 @@ if __name__ == "__main__":
     parser.add_argument("--subtitle", required=True, help="English subtitle without parentheses")
     parser.add_argument("--category", default="일반 지식 및 게임 디자인 (Game Design & Taxonomy)", help="Wiki category")
     parser.add_argument("--tags", default="", help="Comma separated tags")
+    args = parser.parse_args()
+
+    create_wiki_page(args.slug, args.title, args.subtitle, args.category, args.tags)
+er.add_argument("--tags", default="", help="Comma separated tags")
     args = parser.parse_args()
 
     create_wiki_page(args.slug, args.title, args.subtitle, args.category, args.tags)

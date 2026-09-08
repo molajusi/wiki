@@ -731,12 +731,11 @@ def resolve_raw_paths(basename, md_text, old_html):
 
 
 def build_footer(basename, old_html="", md_text="", footer_attrs=""):
-    """위키 표준 2계층 바닥글 UI를 생성한다.
-    - 메인 색인, 마크다운 정본(.md), 검증된 원천 데이터(raw/*), 에이전트 가이드, 맨 위로 네비게이션 버튼
-    - 원천 데이터 보존 경로 상세 표기
+    """위키 표준 2계층 바닥글 UI를 생성한다 (방안 A: 네비게이션 버튼 1개로 원천 데이터 완전 통합).
+    - 메인 색인, 마크다운 정본(.md), 검증된 대표 원천 데이터(raw/*), 에이전트 가이드, 맨 위로 네비게이션 버튼
     - 저장소 식별자 및 보좌 에이전트 메타데이터
-    - 상단 네비게이션에는 [📁 원천 데이터] 단일 대표 버튼 1개만 배치하여 버튼 중복 증식을 방지하고,
-      복수 파일의 구체적 목록은 하단 footer-raw-info 블록에 단일화하여 상세 제공한다."""
+    - 하단의 중복된 footer-raw-info 블록은 제거하고, 네비게이션 바의 [📁 원천 데이터] 단일 버튼으로 통합한다.
+      (복수 파일 상세 목록은 본문 9절 '참고 자료 및 원천 데이터 출처' 섹션에서 제공)"""
     raw_paths = resolve_raw_paths(basename, md_text, old_html)
 
     raw_btns_html = ""
@@ -753,17 +752,6 @@ def build_footer(basename, old_html="", md_text="", footer_attrs=""):
             '                    <span class="footer-btn-text">원천 데이터</span>\n'
             '                </a>' % {"path": rep_path}
         )
-
-    raw_info_block = ""
-    if raw_paths:
-        raw_links_str = ", ".join(
-            '<a href="%(p)s"><code>%(p)s</code></a>' % {"p": p} for p in raw_paths
-        )
-        raw_info_block = (
-            '\n            <div class="footer-raw-info">\n'
-            '                <strong>원천 데이터 보존:</strong> %(links)s\n'
-            '            </div>'
-        ) % {"links": raw_links_str}
 
     return (
         '    <footer%(attrs)s>\n'
@@ -789,7 +777,7 @@ def build_footer(basename, old_html="", md_text="", footer_attrs=""):
         '                    <span class="footer-btn-icon">⬆️</span>\n'
         '                    <span class="footer-btn-text">맨 위로</span>\n'
         '                </a>\n'
-        '            </div>%(raw_info)s\n'
+        '            </div>\n'
         '            <div class="footer-meta">\n'
         '                <span>지식 저장소: <code>Z:\\wiki</code></span>\n'
         '                <span>•</span>\n'
@@ -801,7 +789,6 @@ def build_footer(basename, old_html="", md_text="", footer_attrs=""):
         "attrs": footer_attrs,
         "basename": basename,
         "raw_btns": raw_btns_html,
-        "raw_info": raw_info_block,
     }
 
 
