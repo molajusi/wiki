@@ -1,0 +1,303 @@
+---
+title: "한국 도시 행정단위의 역사적 계보와 계층 체계"
+subtitle: "Historical Genealogy and Hierarchical Evolution of Korean Urban Units"
+created: "2026-09-08 오후 02:46:22 (KST, UTC+9)"
+updated: "2026-09-08 오후 02:59:37 (KST, UTC+9)"
+category: "한국 제도사 및 도시사 (Institutional History & Urban Evolution)"
+tags: ["Urban Hierarchy", "Walled-town State", "Myeon-ri System", "Administrative Unit", "Historical Evolution"]
+html_view: "korean_urban_administrative_hierarchy_evolution.html"
+---
+
+# 한국 도시 행정단위의 역사적 계보와 계층 체계
+*Historical Genealogy and Hierarchical Evolution of Korean Urban Units*
+
+**카테고리**: 한국 제도사 및 도시사 (Institutional History & Urban Evolution)  
+*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-09-08 오후 02:59:37 (KST, UTC+9)*
+
+<context>
+본 문서는 한반도 역사상 도시와 마을을 규정했던 행정단위의 명칭, 위계, 그리고 변천 궤적을 고찰한 제도사·도시사 단일 진실 공급원(SSOT) 문서입니다. 청동기~초기 철기시대의 독립된 도시국가였던 '성읍(城邑)'이 고대 왕국에 복속되어 군현 거점으로 재편된 과정, 고려시대의 주현·속현 및 향·소·부곡 체계, 조선시대의 전 군현 주현화와 읍치-면리제(面里制) 및 수도 한성부의 부방제도(部坊制度), 그리고 전통시대 시장(Marketplace)을 뜻하던 '시(市)'라는 어휘가 일제강점기 부(府)·읍(邑) 제도를 거쳐 1949년 대한민국 지방자치법을 통해 최상위 도시 행정단위로 정착된 전 과정을 상세하고 풍부한 문장으로 집대성합니다.
+</context>
+
+<overview>
+## 1. 개요 및 목적
+*Overview & Purpose*
+
+오늘날 한국인에게 '시(市)', '군(郡)', '구(區)', '읍(邑)', '면(面)', '동(洞)', '리(里)'는 태어날 때부터 주어진 불변의 자연스러운 공간 단위처럼 인식됩니다. 그러나 이 단어들은 역사적으로 동일한 위상이나 동일한 의미를 가졌던 적이 없으며, 시대마다 사회경제적 잉여의 집중도, 지배 권력의 통치 역량, 대외적 교섭 질서에 따라 끊임없이 격(格)이 오르내리고 명칭이 바뀌어 왔습니다.
+
+특히 현대 국가에서 가장 대표적인 도시 단위로 쓰이는 '시(市)'는 전근대 고려와 조선 왕조의 법전에는 행정단위로서 전혀 존재하지 않았습니다. 당시의 '시(市)'는 오로지 물화를 교환하던 저잣거리나 상설 시장(Market)만을 뜻하는 경제적 장소 명칭이었습니다. 반대로 오늘날 농촌 지역의 중심지로 인식되는 '읍(邑)'은 고대에는 토성과 목책을 두른 독립된 도시국가(성읍국가) 자체를 가리키는 최고 권력의 도성이었으며, 조선시대에는 성곽과 관아가 있는 군현의 심장부를 지칭하는 일반명사였습니다.
+
+본 문서의 목적은 한국사 전반을 관통하며 도시와 마을을 가리켰던 행정단위의 계보를 추적하고, 각각의 단위가 어떻게 형성·승격·분화되었는지를 명확히 밝히는 데 있습니다. 성읍국가에서 출발하여 주(州)·목(牧)·부(府)로 이어지는 읍격 승강(州郡陞降)의 메커니즘, 읍치를 둘러싸고 농촌을 규율했던 면리제와 한성부의 특수한 부·방·계·동 체계, 그리고 근대의 식민지적 도농 분리를 거쳐 1949년 민국시대 '시(市)'로 안착하기까지의 역사적 계보를 사료에 입각하여 체계적으로 서술합니다.
+</overview>
+
+## 2. 핵심 개념 및 원리
+*Core Concepts & Principles*
+
+한국 도시 행정단위의 변천은 **'도시국가의 중앙집권적 흡수'**, **'읍격의 법정 승강 사다리'**, 그리고 **'상업 시장에서 법정 도시 단위로의 어휘적 전이'**라는 3가지 기본 원리를 축으로 전개되었습니다.
+
+### 2.1 도시 행정단위의 시대별 진화 궤적
+*Evolutionary Trajectory of Urban Units Across Eras*
+
+<div class="diagram-container">
+<h4>[한국 도시 행정단위 및 중심 도시 지칭 어휘의 시대별 변천도]</h4>
+<svg viewBox="0 0 800 200" style="width: 100%; height: auto;">
+    <defs>
+        <marker id="arrow-navy" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f2b48" />
+        </marker>
+    </defs>
+
+    <!-- Era 1: Ancient -->
+    <rect x="20" y="40" width="130" height="110" rx="6" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5" />
+    <text x="85" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#212529">고대 (삼국 이전)</text>
+    <text x="85" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#0d6efd">성읍(城邑)</text>
+    <text x="85" y="110" font-size="10" text-anchor="middle" fill="#495057">• 독립 도시국가</text>
+    <text x="85" y="125" font-size="10" text-anchor="middle" fill="#495057">• 성벽·해자 도성</text>
+
+    <line x1="150" y1="95" x2="175" y2="95" stroke="#0f2b48" stroke-width="2" marker-end="url(#arrow-navy)" />
+
+    <!-- Era 2: Goryeo -->
+    <rect x="180" y="40" width="130" height="110" rx="6" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5" />
+    <text x="245" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#212529">중세 (고려)</text>
+    <text x="245" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#0d6efd">경·목·주 (京·牧·州)</text>
+    <text x="245" y="110" font-size="10" text-anchor="middle" fill="#495057">• 계수관 광역 거점</text>
+    <text x="245" y="125" font-size="10" text-anchor="middle" fill="#495057">• 주현-속현 체제</text>
+
+    <line x1="310" y1="95" x2="335" y2="95" stroke="#0f2b48" stroke-width="2" marker-end="url(#arrow-navy)" />
+
+    <!-- Era 3: Joseon -->
+    <rect x="340" y="40" width="130" height="110" rx="6" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5" />
+    <text x="405" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#212529">근세 (조선)</text>
+    <text x="405" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#0d6efd">부·목·읍치 (府·牧)</text>
+    <text x="405" y="110" font-size="10" text-anchor="middle" fill="#495057">• 전 군현 주현화</text>
+    <text x="405" y="125" font-size="10" text-anchor="middle" fill="#495057">• 면리제(면-리-통)</text>
+
+    <line x1="470" y1="95" x2="495" y2="95" stroke="#0f2b48" stroke-width="2" marker-end="url(#arrow-navy)" />
+
+    <!-- Era 4: Colonial -->
+    <rect x="500" y="40" width="130" height="110" rx="6" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5" />
+    <text x="565" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#212529">일제강점기</text>
+    <text x="565" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#dc3545">부(府) vs 읍·면</text>
+    <text x="565" y="110" font-size="10" text-anchor="middle" fill="#495057">• 1914년 도농 분리</text>
+    <text x="565" y="125" font-size="10" text-anchor="middle" fill="#495057">• 1931년 읍제 실시</text>
+
+    <line x1="630" y1="95" x2="655" y2="95" stroke="#0f2b48" stroke-width="2" marker-end="url(#arrow-navy)" />
+
+    <!-- Era 5: Modern Republic -->
+    <rect x="660" y="40" width="120" height="110" rx="6" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2" />
+    <text x="720" y="65" font-size="12" font-weight="bold" text-anchor="middle" fill="#084298">현대 (대한민국)</text>
+    <text x="720" y="90" font-size="13" font-weight="bold" text-anchor="middle" fill="#0d6efd">시(市)·광역시</text>
+    <text x="720" y="110" font-size="10" text-anchor="middle" fill="#084298">• 1949 지방자치법</text>
+    <text x="720" y="125" font-size="10" text-anchor="middle" fill="#084298">• 읍 ➔ 시 순차 승격</text>
+</svg>
+</div>
+
+### 2.2 주군승강제: 도시 위계의 가변적 사다리
+*The Hierarchy Ladder of County Elevation and Demotion*
+
+전근대 고을의 위계(읍격, 邑格)는 영구불변한 것이 아니었습니다. 국왕과 조정은 특정 고을의 정치적 기여도, 군사적 요충성, 인구 규모, 반역 발생이나 효행 여부, 왕실과의 인연(왕비·국왕의 본향)에 따라 고을의 등급을 올리거나 내리는 **'주군승강법(州郡陞降法)'**을 상시 가동했습니다.
+
+* **승격의 사다리 (관등 및 읍격 서열)**:
+  `소현(현감 종6품)` ➔ `대현(현령 종5품)` ➔ `군(군수 종4품)` ➔ `주(지주사 종4품)` ➔ `도호부(부사 종3품) / 목(목사 정3품)` ➔ `부(부윤 종2품)` ➔ `경(유수 정2품)`
+
+```
+[주군승강제 읍격 사다리 단계]
+소현 (현감 종6품)
+ └──▶ 대현 (현령 종5품)
+       └──▶ 군 (군수 종4품)
+             └──▶ 주 (지주사 종4품)
+                   └──▶ 도호부 (부사 종3품) / 목 (목사 정3품)
+                         └──▶ 부 (부윤 종2품)
+                               └──▶ 경 (유수 정2품)
+```
+* 이러한 승강 제도는 고대의 작은 성읍에서 출발한 지방 거점이 국가의 발전과 함께 광역 거점 대도시인 '목(牧)'이나 '부(府)'로 성장하고, 마침내 근현대의 '시(市)'로 도약할 수 있었던 제도적 발판이 되었습니다.
+
+## 3. 고대 성읍국가와 초기 도시 단위의 형성
+*Ancient Walled-Town States and the Genesis of Urban Nodes*
+
+한반도 도시사의 출발점은 청동기 시대 후기부터 초기 철기 시대에 걸쳐 한반도 전역에 등장한 **'성읍국가(城邑國家, Walled-town State)'**였습니다.
+
+### 3.1 한자 읍(邑)의 본질과 소국 체제
+*The Nature of Eup and City-States in the Proto-Three Kingdoms Period*
+
+* **어원적 상형**: 한자 '읍(邑)'은 성곽을 둘러싼 형태(囗) 아래에 무릎을 꿇고 있는 사람(卩)을 그린 글자로, 본래 그 자체로 **"성벽을 높이 쌓아 외적을 막고 군주가 군림하는 도성"**을 뜻했습니다.
+* **성읍국가의 실체**: 천관우, 이병도, 김철준 등의 고대사학자들이 규명한 바와 같이, 원삼국시대 삼한(마한 54국, 진한 12국, 변한 12국)의 78개 소국들은 거대한 영토를 가진 국가가 아니라, 중심에 토성과 목책을 둘러친 하나의 으뜸 성곽(성읍)과 그에 딸린 주변 농경 촌락들로 이루어진 전형적인 **그리스 폴리스형 '독립 도시국가'**였습니다.
+* 사로국(신라의 모태), 백제국(백제의 모태), 구야국(가야의 모태), 압독국(경산), 골벌국(영천), 척번국 등 고대 문헌에 나타나는 국(國)들은 모두 독립된 단일 성읍(도시)이었습니다.
+
+### 3.2 고대 제국의 통합과 군현 거점화
+*Absorption into Centralized Kingdoms and County Node Conversion*
+
+고구려, 백제, 신라가 정복 전쟁을 통해 주변 소국들을 병합하면서, 수백 개의 독립 도시국가들은 중앙집권 왕국의 지방 행정 거점으로 흡수되었습니다.
+* **거점의 격하 및 재편**: 과거 도시국가의 지배자였던 군장(신지, 읍차 등)은 중앙 귀족으로 흡수되거나 지방 토착 세력(촌주)으로 격하되었습니다. 도시국가의 도성이었던 중심 성곽은 고대 제국의 군사적 거점인 **'성(城)'**이나 행정 단위인 **'현(縣)', '군(郡)'**으로 편입되었습니다.
+* **광역 거점 '주(州)'의 출현**: 통일신라는 영토가 확장되자 전국을 9개 주(州)로 나누고 5개 소경(小京)을 배치했습니다. 이때 주의 치소가 되거나 소경이 된 곳(금관경, 서원경, 중원경, 남원경, 북원경)은 과거 독립 소국들의 도읍이었던 핵심 거점들이었습니다. '주(州)'라는 글자가 들어간 고을(광주, 전주, 나주, 진주, 충주, 청주 등)은 이때부터 지역을 대표하는 수위 대도시로서의 위상을 확립하기 시작했습니다.
+
+## 4. 고려시대 다층적 도시와 마을 계서제
+*Multitiered Urban and Village Hierarchies in the Goryeo Dynasty*
+
+고려시대는 국왕의 행정력이 전국에 균등하게 미치지 못했기 때문에, 지방관이 파견된 소수의 **'주현(主縣)'**이 지방관이 없는 다수의 **'속현(屬縣)'**과 차별적 특수 구역인 **'향·소·부곡(鄕·所·部曲)'**을 지배하는 다단계 계서제(Hierarchy)로 운영되었습니다.
+
+### 4.1 고려의 읍격 체계와 계수관제
+*The Goryeo Urban Ranks and the Gyesugwan System*
+
+고려 현종 9년(1018년) 지방제도가 정비되면서 전국은 5도 양계 아래에 다음과 같은 엄격한 읍격으로 조직되었습니다 (『고려사』 백관지 외관조 실증):
+1. **수도 및 배도**: 개경(수도 개성부)과 3경(서경 평양, 동경 경주, 남경 서울).
+2. **계수관(界首官)**: 대도호부(안동·안서·안북·안남대도호부), 8목(광주·충주·청주·진주·상주·전주·나주·황주), 도호부. 계수관은 도(道) 내에서 하위 주현들의 사법 재심(覆審), 군사 징발, 도량형 검수를 총괄하는 최고 수위 대도시 거점이었습니다.
+3. **일반 주현**: 지주부사(知州府事), 지군사(知郡事), 현령(縣令, 5~6품), 감무(監務, 7~9품). 중앙에서 외관이 직접 파견된 고을이었습니다.
+
+### 4.2 주현-속현 체제와 향·소·부곡
+*The Master-Subordinate County System and Special Enclaves*
+
+* **속현의 실태**: 고려 전기에는 외관이 파견된 주현(약 130개)보다 외관이 없는 속현(약 330개)이 훨씬 많았습니다. 속현은 인근 주현에 예속되어 조세를 바쳤으며, 고을의 실질적인 행정은 토착 세력인 **향리(호장, 부호장)**가 이끄는 **읍사(邑司)**에서 자율적으로 처리했습니다.
+* **향·소·부곡**: 일반 군현보다 더 무거운 신분적·재정적 차별을 받던 특수 거점이었습니다. 향과 부곡은 주로 농경에 종사하며 과중한 공납을 바쳤고, 소(所)는 금, 은, 철, 자기, 종이 등 왕실과 국가가 필요한 물품을 생산해 바치는 수공업 전담 취락이었습니다.
+* **면리제의 부재**: **고려시대에는 행정단위로서의 '면(面)'이나 '리(里)'가 존재하지 않았습니다.** 말단 촌락 단위는 자연촌락인 **'촌(村)'**이었으며, 신라계 촌주(村主) 또는 초기 형태의 이정(里正)이 향리의 지휘 아래 정호(직역 부담 계층)와 백정(일반 농민)을 관장했습니다.
+
+## 5. 조선시대 군현 일원화와 읍치-면리제
+*Unified Counties and the Myeon-Ri System in the Joseon Dynasty*
+
+조선왕조는 개국 직후 고려의 속현과 향·소·부곡을 전면 폐지하고, 전국의 모든 고을에 국왕의 대리인인 수령을 직접 파견하는 **'전 군현 주현화(全郡縣主縣化)'**를 달성했습니다.
+
+### 5.1 부·목·군·현의 관제 일원화와 품계 체계
+*The Six-Tier County Officialdom in Gyeongguk Daejeon*
+
+조선은 건국 초 군현 통폐합을 단행하여 전국 약 330여 개 고을 모두에 중앙 관인을 파견했습니다. 『경국대전』 이전에 규정된 수령의 직제는 고을의 읍격에 따라 엄격히 차등화되었습니다:
+* **부윤(府尹, 종2품)**: 관찰사와 품계가 같은 최고 대도시 거점 (전주, 경주, 평양, 의주, 함흥 등).
+* **대도호부사(大都護府使, 정3품 당상)**: 군사적 요충 대읍 (안동, 강릉, 영흥).
+* **목사(牧使, 정3품 당하)**: 광역 중심 거점 (전국 20개 목: 광주, 충주, 청주, 나주, 진주, 제주 등).
+* **도호부사(都護府使, 종3품)**: 전국 82개소의 주요 군사·행정 거점.
+* **군수(郡守, 종4품)**: 전국 82개소의 일반 군 거점.
+* **현령(縣令, 종5품)**: 전국 34개소의 대규모 현.
+* **현감(縣監, 종6품)**: 전국 140여 개소의 일반 소규모 현.
+
+수령은 행정, 사법, 군사권을 한 손에 쥔 목민관으로서 부임지에서 국왕의 명령을 집행하는 절대적 거점 지배자였습니다.
+
+### 5.2 읍치와 면리제(面里制)의 정착
+*Eupchi and the Rural Hierarchy: Myeon, Ri, and Tong*
+
+수령이 파견되면서 고을 내부의 통치 구조도 새롭게 재편되었습니다.
+1. **중심 도시 읍치(본면 / 읍내면)**: 수령 관아와 객사, 향교, 5일장이 위치한 성곽 도시를 보통 **'본면(本面)'** 또는 **'읍내면(邑內面)'**이라 칭하며 고을 전체의 도시 핵으로 삼았습니다.
+2. **외곽 면(面)과 리(里)**: 태종~세종 대에 군현 아래에 방위적 취락군인 면(동면, 서면, 남면, 북면)과 사(社), 방(坊)을 설치하기 시작했습니다.
+3. **오가작통법(五家作統法)**: 『경국대전』 호전에 명시된 바와 같이, **5호(戶) = 1통(統)**으로 묶어 통수(統首)를 두고, **5통 = 1리(里)**로 묶어 이정(里正)을 두었으며, **수 개 리를 합쳐 1면(面)**을 구성하여 권농관(勸農官)이나 면임(풍헌·존위)을 두었습니다.
+4. **영역화로의 진화**: 17~18세기 대동법 시행으로 토지 결당 세금을 부과하게 되자, 단순한 인구 통제용 취락군이었던 면과 리는 토지 결수(結數)와 경계를 갖는 **실질적인 영역적 행정구역**으로 굳건히 정착되었습니다.
+
+## 6. 수도 한성부의 도시 행정체계
+*Urban Administrative Hierarchy of Capital Hanseongbu: Bu, Bang, Gye, and Dong*
+
+수도 한양은 지방의 군현(면리제)과 완전히 구분되는 독립된 수도권 도시 관리 제도인 **'부방제도(部坊制度)'**로 운영되었습니다.
+
+```
+[수도] 한성부 (최고 책임자: 판윤 정2품)
+  │
+  ├─ [1단계: 광역 구역] 5부 (동부·서부·남부·북부·중부, 책임자: 부사 종5품)
+  │
+  ├─ [2단계: 법정 도시구역] 방(坊, 49~52개 방, 책임자: 관령)
+  │     * 호적 파악, 치안, 도로 관리 집행
+  │
+  ├─ [3단계: 방역 주민조직] 계(契, 책임자: 계주 / 유사)
+  │     * 성곽 보수, 도로 청소 등 노동력(방역) 징발 단위
+  │
+  └─ [4단계: 생활 골목단위] 동(洞) / 리(里)
+        * 자연발생적 골목·동네 ➔ 1895년 갑오개혁 이후 공식 말단화
+```
+
+* **방(坊)의 성격**: 오늘날의 행정동(洞)과 유사한 단위로, 방마다 관령(管領)이 배치되어 호구를 조사하고 범죄를 단속했습니다.
+* **계(契)와 동(洞)**: '계(契)'는 도성 주민들에게 부역(방역)을 부과하기 위한 주민 조직이었으나 시간이 흐르며 상설 행정단위로 굳어졌습니다. 반면 '동(洞)'은 본래 계곡이나 골목, 명승지를 뜻하는 생활공간이었는데, 조선 후기로 갈수록 골목 생활 단위로 정착하여 1895년 갑오개혁을 거치며 마침내 공식 최말단 행정구역 명칭으로 법제화되었습니다.
+
+## 7. 근현대 행정단위의 재편과 '시(市)'의 탄생
+*Modern Reorganization and the Emergence of Si (City)*
+
+전통시대에 결코 도시를 뜻하지 않았던 '시(市)'가 오늘날 국가의 최상위 도시 행정단위로 등극한 과정은 세 차례의 역사적 단절과 개편을 통해 이루어졌습니다.
+
+### 7.1 1914년 조선총독부의 '부제(府制)'와 도농 분리
+*The 1914 Bu System: Deliberate Separation of Urban and Rural Areas*
+
+일제는 1914년 부군면 통폐합을 단행하면서, 전통적인 군현의 도농 결합체를 강제로 해체했습니다.
+* **부(府)의 탄생**: 일본인 거류민이 밀집하고 상공업이 발달한 개항장과 유력 거점 도시의 중심부(읍치)만을 오려내어 **'부(府)'**라는 순수 도시 행정단위로 독립시켰습니다 (경성부, 부산부, 대구부, 평양부, 인천부, 전주부, 광주부 등 12~22개 부).
+* **배후 농촌의 군(郡) 격하**: 읍치를 빼앗긴 외곽 농촌 면들은 '군(郡)'으로 잔류시켰습니다 (전주부 vs 완주군, 대구부 vs 달성군, 광주부 vs 광산군 등 도농 분리).
+
+### 7.2 1931년 '읍제(邑制)'의 실시
+*The 1931 Eup System: Institutionalization of Town Centers*
+
+군(郡) 산하의 농촌 면들 중에서 인구가 1만 명 이상으로 늘어나고 상업과 시장이 발달한 중심 면(지정면)을 1931년부터 법정 단위인 **'읍(邑)'**으로 지정했습니다. 이로써 고을 전체를 부르던 옛말 '읍'은 **'군 아래의 중심 소도시'**라는 근대적 법정 단위로 공식 재정의되었습니다.
+
+### 7.3 1949년 대한민국 지방자치법과 '시(市)'의 공식 정착
+*The Local Autonomy Act of 1949: Universal Establishment of Si*
+
+해방 후 대한민국 정부는 1949년 7월 4일 법률 제32호로 **「지방자치법」**을 제정·공포하고 8월 15일부터 전격 시행했습니다.
+* **부(府) ➔ 시(市) 일괄 개칭**: 일제 식민 통치의 상징이었던 '부(府)' 명칭을 전면 폐지하고, 전국의 19개 '부'를 일제히 **'시(市)'**로 개칭했습니다 (부산부 ➔ 부산시, 대구부 ➔ 대구시, 광주부 ➔ 광주시, 전주부 ➔ 전주시 등). 수도는 1946년 '서울특별자유시'를 거쳐 **'서울특별시'**로 확정되었습니다.
+* **읍(邑) ➔ 시(市) 승격 경로**: 이후 산업화와 도시화가 진행됨에 따라, 군 산하에서 인구 5만 명 이상으로 성장한 '읍(邑)'들이 군에서 분리되어 차례로 '시(市)'로 승격하는 전형적인 현대 도시 발전 사다리가 완성되었습니다 (예: 수원읍 ➔ 수원시, 포항읍 ➔ 포항시, 춘천읍 ➔ 춘천시, 원주읍 ➔ 원주시).
+
+<definitions>
+## 8. 용어 정리 및 정의
+*Terminology & Definitions*
+
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>성읍국가</b></td>
+<td><b>Walled-town State</b>. 청동기~초기 철기시대(원삼국시대)에 토성이나 목책을 둘러친 중심 성곽(성읍)과 배후 농경 촌락으로 구성된 초기 단계의 독립적인 도시국가.</td>
+</tr>
+<tr>
+<td><b>주군승강제</b></td>
+<td><b>Hierarchical Elevation and Demotion of Counties</b>. 고려와 조선 시대에 고을의 공로, 반역, 인구 변동, 왕실과의 인연 등에 따라 고을의 행정 등급(현 ➔ 군 ➔ 주 ➔ 목 ➔ 부 ➔ 경)을 상향하거나 강등하던 제도.</td>
+</tr>
+<tr>
+<td><b>주현과 속현</b></td>
+<td><b>Master and Subordinate Counties</b>. 고려시대에 중앙 조정에서 외관(지방관)을 직접 파견한 고을(주현)과, 외관이 파견되지 않아 인근 주현에 예속되어 향리 읍사가 자율 통치하던 고을(속현)의 이원적 지방 지배 체제.</td>
+</tr>
+<tr>
+<td><b>면리제</b></td>
+<td><b>Myeon-Ri System</b>. 조선 태종~세종 대에 정비되어 성종 대 『경국대전』으로 법제화된 지방 군현 하부 행정체계로, 5호를 1통, 5통을 1리, 수 개 리를 1면으로 조직한 촌락 통제 및 조세 수취 제도.</td>
+</tr>
+<tr>
+<td><b>부방제도</b></td>
+<td><b>Bu-Bang System</b>. 조선시대 수도 한성부에서 운영된 독자적 도시 행정체계로, 한성부 아래에 5부(동·서·남·북·중), 그 아래에 49~52개의 방(坊), 방 아래에 방역 주민조직인 계(契)와 말단 골목인 동(洞)·리(里)를 둔 다층 구조.</td>
+</tr>
+<tr>
+<td><b>부제</b></td>
+<td><b>Bu System of 1914</b>. 1914년 조선총독부가 부군면 통폐합을 단행하며 상업과 일본인 거류지가 밀집한 주요 도시 읍치만을 오려내어 군(농촌)과 분리시킨 식민지 도시 행정단위.</td>
+</tr>
+<tr>
+<td><b>시</b></td>
+<td><b>Si (City)</b>. 1949년 대한민국 「지방자치법」 제정을 통해 기존의 식민지 행정단위인 '부(府)'를 일괄 개칭하여 확립된 대한민국의 공식 최상위 도시 행정단위.</td>
+</tr>
+</tbody>
+</table>
+</definitions>
+
+<references>
+## 9. 참고 자료 및 원천 데이터 출처
+*References & Raw Sources*
+
+### 로컬 원천 데이터 아카이브
+- [`raw/korean_administrative_hierarchy/README.txt`](raw/korean_administrative_hierarchy/README.txt) — 원천 데이터 아카이브 총괄 색인 및 수집 일시 기록
+- [`raw/korean_administrative_hierarchy/02_goryeo_local_hierarchy_raw.txt`](raw/korean_administrative_hierarchy/02_goryeo_local_hierarchy_raw.txt) — 고려시대 읍격 계서제, 주현-속현, 계수관, 향소부곡 사료 원문
+- [`raw/korean_administrative_hierarchy/03_joseon_myeon_ri_system_raw.txt`](raw/korean_administrative_hierarchy/03_joseon_myeon_ri_system_raw.txt) — 조선시대 전 군현 주현화 및 면리제 편제 사료 원문
+- [`raw/korean_administrative_hierarchy/04_hanseongbu_urban_hierarchy_raw.txt`](raw/korean_administrative_hierarchy/04_hanseongbu_urban_hierarchy_raw.txt) — 한성부 5부-방-계-동 체계 및 부방제도 원문 사료
+- [`raw/korean_administrative_hierarchy/07_user_dialogue_transcript_raw.txt`](raw/korean_administrative_hierarchy/07_user_dialogue_transcript_raw.txt) — 세션 사용자-에이전트 질의응답 전수 대화록 덤프
+- [`raw/korean_administrative_hierarchy/08_academic_citations_and_primary_sources.txt`](raw/korean_administrative_hierarchy/08_academic_citations_and_primary_sources.txt) — 『경국대전』, 『고려사』 1차 사료 및 법령 원문
+- [`raw/korean_administrative_hierarchy/09_evolution_of_city_nomenclature_raw.txt`](raw/korean_administrative_hierarchy/09_evolution_of_city_nomenclature_raw.txt) — 한국사 최고 도시 지칭 어휘 변천(경·목·주·부 ➔ 읍 ➔ 시) 사료
+- [`raw/korean_administrative_hierarchy/10_walled_town_state_and_urban_elevation_raw.txt`](raw/korean_administrative_hierarchy/10_walled_town_state_and_urban_elevation_raw.txt) — 고대 성읍국가(도시국가) 기원 및 읍격 승강제 사료
+- [`raw/korean_administrative_hierarchy/11_gun_hyeon_urban_character_raw.txt`](raw/korean_administrative_hierarchy/11_gun_hyeon_urban_character_raw.txt) — 군·현 읍치의 소도시성과 도농복합체 구조 사료
+
+### 1차 역사 사료 및 법령
+- 국사편찬위원회 한국사데이터베이스: 『경국대전』 이전(외관직), 호전(호적)
+- 국사편찬위원회 한국사데이터베이스: 『고려사』 권76~77 백관지 외관조
+- 조선총독부 관보 제423호 (1913. 12. 29.): 「조선총독부령 제111호」
+- 대한민국 법률 제32호 (1949. 7. 4. 공포, 8. 15. 시행): 「지방자치법」 제3조 및 부칙
+
+### 전문 학술 연구 문헌
+- 천관우 (1976). 『한국 고대사 연구』, 일조각 — 성읍국가 개념의 이론적 정립.
+- 고동환 (2007). 『조선후기 서울 도시공간 연구』, 지식산업사 — 한성부 5부·방·계·동의 형성과 전개.
+- 손승호 (2012). 「조선시대 읍치 경관의 형성과 변화」, 『문화역사지리』 24권 2호, pp. 1-22.
+- 이기석 (2002). 『한국의 도시지리학 연구』, 서울대학교 출판부 — 전통 읍치에서 근대 도시로의 전이.
+
+### 사내 위키 연계 문서
+- [한국 전근대 공간 지배와 점 선 네트워크](premodern_spatial_governance_and_networks.html) — 점과 선, 허브앤스포크, 비지/월경지, 영역화
+- [한국 수위도시의 역사적 계보와 도시체계 변천](korean_primary_cities_and_urban_systems.html) — 국가 및 권역별 수위도시와 종주도시화 분석
+- [위키 메인 인덱스](index.html)
+</references>

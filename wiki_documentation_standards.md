@@ -2,7 +2,7 @@
 title: "2계층 위키 문서 작성 및 관리 표준"
 subtitle: "Two-Layer Wiki Documentation & Governance Standards"
 created: "2026-08-22 오후 01:12:00 (KST, UTC+9)"
-updated: "2026-09-07 오후 01:21:00 (KST, UTC+9)"
+updated: "2026-09-08 오후 02:58:48 (KST, UTC+9)"
 category: "위키 지식 관리 (Wiki Governance)"
 tags: ["Documentation Standards", "Two-Layer Wiki", "Markdown SSOT", "HTML5 View", "CSS Specs", "Visual Standards", "style.css", "Terminology Standards", "Evidence and Grounding", "Raw Sources", "Dual-File Parity", "Markdown Escaping", "Timestamp Immutability", "Framework Card", "Cross-Platform Portability", "Knowledge Ingestion Boundary", "Semantic Contradiction", "Pure Timestamp"]
 html_view: "wiki_documentation_standards.html"
@@ -12,7 +12,7 @@ html_view: "wiki_documentation_standards.html"
 *Two-Layer Wiki Documentation & Governance Standards*
 
 **카테고리**: 위키 지식 관리 (Wiki Governance)  
-*최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-07 오후 01:21:00 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 01:12:00 (KST, UTC+9) | 최종 수정일시: 2026-09-08 오후 02:58:48 (KST, UTC+9)*
 
 <context>
 본 문서는 지식위키 저장소(Z:\wiki) 내에 축적되는 모든 지식 문서의 2계층 이중 파일 구조(Markdown SSOT + HTML5 View), 제목/영문부제목 표기 규정, 카테고리/일시 표기법, 공통 스타일시트(style.css) 전체 코드셋, 5대 필수 섹션 구조, 원천 데이터 및 참고 문헌 명시 규정, 용어 정리 및 정의 표 표기 표준, 시맨틱 태그 구조 및 관리 원칙을 규정한 단일 진실 공급원(SSOT) 기술 명세서입니다.
@@ -287,9 +287,9 @@ header .meta {
    괄호가 오는 인용·부연 표기는 마크다운 링크 문법 `[텍스트](URL)`으로 오인된다. **각주 번호
    (`[^1]`)나 "— 저자, 연도" 형태의 인라인 표기로 대체한다.** 대괄호+괄호를 나란히 쓸 일이 있으면
    괄호 안이 실제 URL/경로일 때만 그렇게 쓴다.
-
-두 문제 다 렌더링 후 시각적으로 확인하면 바로 티가 난다(원치 않는 코드 서식이 걸리거나, 이상한
-링크가 생김) — 새 문서를 쓴 뒤에는 한 번 렌더링해서 확인한다.
+3. **`$$...$$` 또는 `$...$` 모양의 미지원 LaTeX 수식 문법** — 위키 프론트엔드는 현재 KaTeX나 MathJax 같은 무거운 외부 JS 라이브러리를 번들링하지 않고 공용 CSS 기반 순수 정적 HTML5로 가볍게 동작한다. 따라서 마크다운에 `$$...$$`나 `\text{...}`, `\;\longrightarrow\;` 같은 LaTeX 수식을 날것으로 적으면 수식으로 렌더링되지 않고 TeX 소스 코드가 브라우저에 흉하게 노출된다.
+   - **단계/위계/흐름 표현**: TeX 화살표 대신 유니코드 화살표(`➔`)와 인라인 강조(`**...**`), 또는 원시 HTML5 인라인 배지/플로우차트 다이어그램을 사용한다.
+   - **수학 공식/비율 수식**: 인라인 코드(<code>`...`</code>)나 `<i>P</i><sub>1</sub> / <i>P</i><sub>2</sub>` 같은 표준 HTML5 태그(`<sub>`, `<sup>`, `<i>`, `<b>`), 또는 아스키 프레임워크 카드/표를 활용하여 순수 HTML/CSS로 직관적 렌더링을 구현한다.
 
 ### 3.11 이중 파일(.md/.html) 정합성 검증 규정 (Dual-File Parity Verification)
 
