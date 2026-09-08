@@ -95,7 +95,10 @@ def check_pair_parity(basename):
     # 잘못 세어 렌더러는 안 만든 링크를 감사만 있다고 우기는 자기모순이 생긴다.
     href_shape = r"(?:https?://|file:///|mailto:|#|\.\./|\./)[^)]*|[^)]*\.(?:html|md)(?:#[^)]*)?"
     md_links = sorted(re.findall(r"\]\((" + href_shape + r")\)", md_text) + re.findall(r'href="([^"]+)"', md_text))
-    html_links = sorted(re.findall(r'href="([^"]+)"', html_body))
+    # 모바일용 반응형 정의 목록(<dl class="mobile-table-list">...<dl>)은 데스크톱 표의 모바일 전용
+    # 파생 표현이므로 감사 시 링크를 이중 집계하지 않도록 임시 제거 후 대조한다.
+    clean_html_body = re.sub(r'<dl class=["\']mobile-table-list["\']>.*?</dl>', '', html_body, flags=re.S)
+    html_links = sorted(re.findall(r'href="([^"]+)"', clean_html_body))
     if md_links != html_links:
         errors.append(
             f"link mismatch (.md {len(md_links)}개 vs .html {len(html_links)}개)"

@@ -135,7 +135,9 @@
                 <p>
     지식 검색 아키텍처는 데이터의 인덱싱 방식과 저장 구조에 따라 <b>전통적 청킹 RAG</b>, <b>마이크로소프트 GraphRAG</b>, 그리고 <b>LLM Wiki 기반 RAG(Wiki-RAG)</b>의 세 가지 패러다임으로 분화됩니다.
 </p>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead>
 <tr>
 <th>비교 차원</th>
@@ -189,6 +191,117 @@
 </tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>인덱싱 방식</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value">고정 길이 토큰 분할 및 단순 벡터 임베딩</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value">LLM 엔티티/관계 추출 후 그래프 클러스터링</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>LLM 컴파일러에 의한 사전 주제 종합 및 백링크 연결</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>저장소 형태</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value">벡터 데이터베이스 (Pinecone, Chroma 등)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value">그래프 DB (Neo4j) + 벡터 DB + 커뮤니티 요약</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>순수 파일 시스템 (*.md SSOT + *.html View)</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>글로벌 질의 대응력</b><br>(전체 요약, 트렌드)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value"><b>매우 취약</b> (개별 청크 유사도만 계산하여 거시 맥락 파악 불가)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value"><b>우수</b> (계층적 커뮤니티 요약 인출)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>우수</b> (상위 허브 위키 페이지 및 메인 색인 탐색)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>증분 갱신 난이도</b><br>(Incremental Update)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value">보통 (신규 청크 임베딩 추가)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value"><b>극도로 어려움</b> (그래프 재색인 및 클러스터링 재계산 필요)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>우수</b> (Git diff 방식의 특정 위키 문서 섹션 편집)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>인덱싱 토큰 비용</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value"><b>최소</b> (임베딩 모델 비용만 소모)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value"><b>극대</b> (수십~수백 배의 LLM 프롬프트 토큰 소모)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>적정</b> (신규 유입 데이터 증분 처리 시에만 LLM 호출)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>추론 시점 토큰 소모</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value">높음 (관련성 낮은 중복 청크 다수 유입)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value">보통~높음 (커뮤니티 요약문 크기 과다)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>최소 (이미 정제·구조화된 핵심 섹션만 타겟 인출)</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>인간 검토 가능성</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 청크 기반 RAG (Chunk-based)</dt>
+                <dd class="mobile-field-value">불가능 (벡터 임베딩 공간의 블랙박스화)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마이크로소프트 GraphRAG</dt>
+                <dd class="mobile-field-value">제한적 (복잡한 그래프 시각화 도구 필요)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">LLM 위키 기반 RAG (Wiki-RAG)</dt>
+                <dd class="mobile-field-value"><b>100% 투명 (웹 브라우저 및 마크다운 리더 즉시 열람)</b></dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
                 <h3>3.2 추론 시점 토큰 예산 및 검색 레이턴시 최적화</h3>
                 <p>
     <i>Inference-Time Token Budget & Latency Optimization</i>
@@ -292,7 +405,9 @@
                 <p>
     <i>Terminology & Definitions</i>
 </p>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead>
 <tr>
 <th>용어</th>
@@ -334,6 +449,44 @@
 </tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>거대 언어 모델 위키</b></dt>
+            <dd class="mobile-table-desc"><b>LLM Wiki</b>. 거대 언어 모델이 단순 질의응답기가 아닌 지식의 사서이자 컴파일러로 기능하며 직접 읽고, 합성하고, 백링크를 갱신하는 자가 유지형 장기 지식 저장소 체계.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>위키 기반 검색 증강 생성</b></dt>
+            <dd class="mobile-table-desc"><b>Wiki-RAG</b>. 파편화된 원시 청크 대신 사전 종합·컴파일된 위키 페이지를 검색 단위로 활용하여 추론 토큰을 절감하고 맥락 완성도를 극대화하는 검색 증강 패러다임.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>사전 컴파일 지식</b></dt>
+            <dd class="mobile-table-desc"><b>Pre-compiled Knowledge</b>. 쿼리 유입 시점에 정보를 종합하지 않고, 데이터 유입 시점에 에이전트가 미리 모순 해결과 요약을 완료해 둔 구조화 지식.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>양방향 백링크</b></dt>
+            <dd class="mobile-table-desc"><b>Bidirectional Wikilinks</b>. 문서 간 전진 링크와 역링크를 상호 추적 가능하게 구성하여 파일 시스템 내에서 지식 그래프 순회를 지원하는 하이퍼링크 구조.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>환각 연쇄</b></dt>
+            <dd class="mobile-table-desc"><b>Hallucination Cascading</b>. 에이전트가 잘못 생성한 명제가 위키에 한 번 영속화되면 후속 에이전트들이 이를 진실로 신뢰하고 재참조하여 오염이 기하급수적으로 확산되는 현상.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>문맥 부패</b></dt>
+            <dd class="mobile-table-desc"><b>Context Rot</b>. 컨텍스트 윈도우 내에 불필요한 태그 노이즈나 과도한 비구조화 정보가 누적되어 모델의 주의 집중력이 분산되고 지시 불이행이 발생하는 현상.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>지식 증류</b></dt>
+            <dd class="mobile-table-desc"><b>Knowledge Distillation</b>. 방대한 원천 텍스트로부터 노이즈를 제거하고 원자적 핵심 사실과 개념적 인과관계를 단계적으로 응축하는 정제 과정.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>단일 진실 공급원</b></dt>
+            <dd class="mobile-table-desc"><b>Single Source of Truth, SSOT</b>. 동일한 주제에 대해 복수의 모순된 사본을 두지 않고 모든 파생 뷰와 추론이 기준점으로 삼는 단일한 원본 데이터.</dd>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>7. 참고 자료 및 원천 데이터 출처</h2>
@@ -365,10 +518,50 @@
         </article>
     </main>
     <footer>
-        <p>
-            Two-Layer Knowledge Wiki System | 원천 데이터: <a href="raw/20260903_llm_wiki_system_architecture_raw.txt">raw/20260903_llm_wiki_system_architecture_raw.txt</a> | 마크다운 SSOT: <a href="llm_wiki_system_architecture.md">llm_wiki_system_architecture.md</a><br>
-            <a href="index.html">메인 색인 (Index)으로 돌아가기</a>
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="llm_wiki_system_architecture.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="raw/20260903_llm_wiki_system_architecture_raw.txt" class="footer-btn" title="raw/20260903_llm_wiki_system_architecture_raw.txt">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터 (1)</span>
+                </a>
+                <a href="raw/20260822_raw_data_management_strategy_raw.txt" class="footer-btn" title="raw/20260822_raw_data_management_strategy_raw.txt">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터 (2)</span>
+                </a>
+                <a href="raw/20260822_llm_wiki_format_debate_raw.txt" class="footer-btn" title="raw/20260822_llm_wiki_format_debate_raw.txt">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터 (3)</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-raw-info">
+                <strong>원천 데이터 보존:</strong> <a href="raw/20260903_llm_wiki_system_architecture_raw.txt"><code>raw/20260903_llm_wiki_system_architecture_raw.txt</code></a>, <a href="raw/20260822_raw_data_management_strategy_raw.txt"><code>raw/20260822_raw_data_management_strategy_raw.txt</code></a>, <a href="raw/20260822_llm_wiki_format_debate_raw.txt"><code>raw/20260822_llm_wiki_format_debate_raw.txt</code></a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

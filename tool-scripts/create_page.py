@@ -196,10 +196,42 @@ html_view: "{slug}.html"
         </article>
     </main>
     <footer>
-        <p>
-            Two-Layer Knowledge Wiki System | 원천 데이터: <a href="raw/{raw_filename}">raw/{raw_filename}</a> | 마크다운 SSOT: <a href="{slug}.md">{slug}.md</a><br>
-            <a href="index.html">메인 색인 (Index)으로 돌아가기</a>
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="{slug}.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="raw/{raw_filename}" class="footer-btn">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-raw-info">
+                <strong>원천 데이터 보존:</strong> <a href="raw/{raw_filename}"><code>raw/{raw_filename}</code></a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

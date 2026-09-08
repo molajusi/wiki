@@ -105,7 +105,9 @@
                 <p>
     <i>Core Argument Comparative Matrix</i>
 </p>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead>
 <tr>
 <th>비교 항목</th>
@@ -131,6 +133,45 @@
 </tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>주요 옹호</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">HTML5 찬성론 (Agentic UX)</dt>
+                <dd class="mobile-field-value">Anthropic Claude Code 팀</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">Markdown 유지론 (Token Economy)</dt>
+                <dd class="mobile-field-value">RAG 시스템 엔지니어, 토큰 비용 최적화 연구진</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>주요 장점</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">HTML5 찬성론 (Agentic UX)</dt>
+                <dd class="mobile-field-value">시각적 상호작용성(아코디언, 임베디드 UI), DOM 계층 구조를 통한 논리적 계획 강제</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">Markdown 유지론 (Token Economy)</dt>
+                <dd class="mobile-field-value"><b>토큰 효율성(HTML 대비 3~10배 절감)</b>, RAG 임베딩 및 데이터 추출 정밀도 우수, Git diff 용이</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>주요 단점</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">HTML5 찬성론 (Agentic UX)</dt>
+                <dd class="mobile-field-value">태그 노이즈로 인한 토큰 낭비 및 Context Rot 유발</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">Markdown 유지론 (Token Economy)</dt>
+                <dd class="mobile-field-value">단순 텍스트 기반으로 인터랙티브 시각화 표현 불가</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
                 <h3>3.2 거대 언어 모델 저장용 백엔드 레이어 핵심 원칙</h3>
                 <p>
     <i>LLM Storage Backend Layer Core Principles</i>
@@ -148,7 +189,9 @@
     <i>Terminology & Definitions</i>
 </p>
 
-<table>
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead>
 <tr>
 <th>용어</th>
@@ -178,6 +221,32 @@
 </tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>이계층 아키텍처</b></dt>
+            <dd class="mobile-table-desc"><b>Two-Layer Architecture</b>. 저장/기계 메모리용 Markdown SSOT와 인간 검토/인터랙션용 HTML5 View를 분리하는 운영 방식.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>단일 파일 웹문서</b></dt>
+            <dd class="mobile-table-desc"><b>Single-file HTML</b>. 외부 의존성 없이 CSS와 SVG가 내장되어 독립 실행 가능한 HTML5 단일 파일 포맷.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>문맥 부패</b></dt>
+            <dd class="mobile-table-desc"><b>Context Rot</b>. 불필요한 마크업 및 태그 노이즈가 컨텍스트 윈도우를 오염시켜 LLM의 지시 준수율이 저하되는 현상.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>오픈 지식 포맷</b></dt>
+            <dd class="mobile-table-desc"><b>Open Knowledge Format, OKF</b>. YAML Frontmatter와 순수 Markdown을 결합한 LLM 지식베이스 표준 포맷.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>위키 기반 검색 증강 생성</b></dt>
+            <dd class="mobile-table-desc"><b>Wiki-RAG</b>. 파편화된 청크 대신 사전 종합된 위키 페이지를 검색 단위로 활용하는 패러다임.</dd>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>5. 참고 자료 및 원천 데이터 출처</h2>
@@ -207,10 +276,42 @@
         </article>
     </main>
     <footer>
-        <p>
-            Machine Backend Source: <a href="llm_wiki_format_debate.md">Z:\wiki\llm_wiki_format_debate.md</a> | 
-            Storage Directory: Z:\wiki
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="llm_wiki_format_debate.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="raw/20260822_llm_wiki_format_debate_raw.txt" class="footer-btn">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-raw-info">
+                <strong>원천 데이터 보존:</strong> <a href="raw/20260822_llm_wiki_format_debate_raw.txt"><code>raw/20260822_llm_wiki_format_debate_raw.txt</code></a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

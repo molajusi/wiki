@@ -10,8 +10,9 @@
 - <header> 블록(h1/subtitle/category/meta)은 .md의 frontmatter에서 다시 만든다.
 - <article> 안쪽 본문은 .md 본문(frontmatter 뒤, 프론트매터를 사람이 읽기 좋게 반복한
   "# 제목/*부제*/**카테고리**.../*일시*" 4줄은 건너뛰고 <context> 블록부터)을 렌더링해 채운다.
-- <nav>와 <footer>는 건드리지 않는다 — 문서마다 다른 관련 링크를 어떤 규칙으로 만들어야
-  하는지 정해진 게 없어서, 억지로 만들면 오히려 잘못된 링크를 심을 위험이 있다.
+- <footer> 블록은 2계층 위키 표준 UI(메인 색인, 마크다운 정본, 원천 데이터, 에이전트 가이드,
+  맨 위로 이동 버튼 및 원천 데이터 파일 경로)로 자동 생성·동기화한다.
+- <nav>는 건드리지 않는다 — 문서마다 다른 고유 상호 참조 링크망을 보존하기 위함이다.
 
 무엇이 마크다운 문법이고 무엇이 원시 HTML 그대로인가(wiki_documentation_standards.md 3.9절):
 - 변환: `#`~`######` 헤딩(섹션은 `<section>`으로 묶는다), 문단, 목록(중첩 지원), 파이프 표,
@@ -29,9 +30,7 @@
 - 파이프 표 셀 안의 이스케이프된 파이프 문자(백슬래시+세로줄)는 지원하지 않는다(현재 위키에 그런 사례 없음).
 - frontmatter 뒤 "# 제목/*부제*/**카테고리**.../*일시*" 4줄은 정확히 그 4가지 패턴에 매칭될 때만
   건너뛴다 — 그 사이에 실제 문장(예: 관련 문서 링크)이 끼어 있으면 정상적으로 본문에 남는다.
-- `<nav>`/`<footer>`는 절대 건드리지 않는다 — 문서마다 다른 관련 링크를 렌더러가 지어내면
-  더 위험하다고 판단했다. 이 두 곳을 고칠 일이 있으면 사람이 직접 `.html`을 편집한다(단, 다음
-  `rebuild`에서 이 부분은 보존되지만, `<header>`/`<article>`/`<main>`은 매번 덮어써진다).
+- `<nav>`는 문서 고유 링크망 보호를 위해 수동 관리하며, `<header>`/`<article>`/`<footer>`는 렌더러가 자동 관리한다.
 
 실행: python render_md.py <이름, 확장자 없이>   예) python render_md.py llm_wiki_format_debate
       python render_md.py --all   (index.html 자신은 카드 그리드 레이아웃이라 제외)
@@ -171,7 +170,107 @@ def render_list_block(lines):
     return _render_list_entries(_parse_list_entries(lines))
 
 
-# ── 파이프 표 ────────────────────────────────────────────────────────
+# ── 반응형 표 및 모바일 정의 목록 (<dl>/<dt>/<dd>) 변환 ─────────────
+
+def build_responsive_table(headers, rows, raw_table_html=None):
+    """표(table)를 데스크톱용 HTML5 <table> 및 모바일용 시맨틱 정의 목록(<dl>/<dt>/<dd>)으로 구성된
+    반응형 이중 구조(.table-responsive-wrapper)로 렌더링한다.
+    - 2열 표: 용어/정의 또는 키/값 구조의 <dt class="mobile-table-term"> + <dd class="mobile-table-desc">
+    - 3열 이상 다열 표: 첫 열(대표 엔티티) <dt> + 각 컬럼별 라벨(<dt>)과 값(<dd>)으로 구성된 카드
+    """
+    # 1. 데스크톱 뷰 (HTML5 <table>)
+    if raw_table_html:
+        desktop_table = raw_table_html.strip()
+    else:
+        thead = "<tr>" + "".join("<th>%s</th>" % inline_md_to_html(h) for h in headers) + "</tr>"
+        tr_list = []
+        for r in rows:
+            padded = r + [""] * max(0, len(headers) - len(r))
+            tr_list.append("<tr>" + "".join("<td>%s</td>" % inline_md_to_html(c) for c in padded) + "</tr>")
+        desktop_table = "<table>\n<thead>%s</thead>\n<tbody>\n%s\n</tbody>\n</table>" % (thead, "\n".join(tr_list))
+
+    # 2. 모바일 뷰 (<dl class="mobile-table-list">)
+    dl_cards = []
+    col_count = len(headers)
+
+    if col_count <= 2:
+        for r in rows:
+            term = r[0] if len(r) > 0 else ""
+            desc = r[1] if len(r) > 1 else ""
+            term_html = inline_md_to_html(term) if not raw_table_html else term
+            desc_html = inline_md_to_html(desc) if not raw_table_html else desc
+            dl_cards.append(
+                '        <div class="mobile-table-card">\n'
+                '            <dt class="mobile-table-term">%(term)s</dt>\n'
+                '            <dd class="mobile-table-desc">%(desc)s</dd>\n'
+                '        </div>' % {"term": term_html, "desc": desc_html}
+            )
+    else:
+        for r in rows:
+            term = r[0] if len(r) > 0 else ""
+            term_html = inline_md_to_html(term) if not raw_table_html else term
+            fields = []
+            for col_idx in range(1, max(len(headers), len(r))):
+                h_name = headers[col_idx] if col_idx < len(headers) else "항목 %d" % (col_idx + 1)
+                val = r[col_idx] if col_idx < len(r) else ""
+                h_html = inline_md_to_html(h_name) if not raw_table_html else h_name
+                val_html = inline_md_to_html(val) if not raw_table_html else val
+                fields.append(
+                    '            <div class="mobile-field-row">\n'
+                    '                <dt class="mobile-field-label">%(lbl)s</dt>\n'
+                    '                <dd class="mobile-field-value">%(val)s</dd>\n'
+                    '            </div>' % {"lbl": h_html, "val": val_html}
+                )
+            fields_html = "\n".join(fields)
+            dl_cards.append(
+                '        <div class="mobile-table-card">\n'
+                '            <dt class="mobile-table-term">%(term)s</dt>\n'
+                '%(fields)s\n'
+                '        </div>' % {"term": term_html, "fields": fields_html}
+            )
+
+    mobile_dl = '<dl class="mobile-table-list">\n' + "\n".join(dl_cards) + '\n    </dl>'
+
+    return (
+        '<div class="table-responsive-wrapper">\n'
+        '    <div class="desktop-table-view">\n'
+        '        %(table)s\n'
+        '    </div>\n'
+        '    <div class="mobile-table-view">\n'
+        '        %(dl)s\n'
+        '    </div>\n'
+        '</div>'
+    ) % {"table": desktop_table, "dl": mobile_dl}
+
+
+def parse_html_table(table_html):
+    """원시 HTML <table>에서 thead/th 및 tbody/tr/td 셀 데이터를 파싱한다."""
+    headers = []
+    thead_m = re.search(r"<thead[^>]*>(.*?)</thead>", table_html, re.S)
+    if thead_m:
+        headers = [re.sub(r"^\s*<th[^>]*>(.*?)</th>\s*$", r"\1", th, flags=re.S).strip()
+                   for th in re.findall(r"<th[^>]*>.*?</th>", thead_m.group(1), re.S)]
+    else:
+        first_tr = re.search(r"<tr[^>]*>(.*?)</tr>", table_html, re.S)
+        if first_tr and "<th" in first_tr.group(1):
+            headers = [re.sub(r"^\s*<th[^>]*>(.*?)</th>\s*$", r"\1", th, flags=re.S).strip()
+                       for th in re.findall(r"<th[^>]*>.*?</th>", first_tr.group(1), re.S)]
+
+    rows = []
+    tbody_m = re.search(r"<tbody[^>]*>(.*?)</tbody>", table_html, re.S)
+    body_content = tbody_m.group(1) if tbody_m else table_html
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", body_content, re.S):
+        if "<th" in tr and not tbody_m:
+            continue
+        cells = [re.sub(r"^\s*<td[^>]*>(.*?)</td>\s*$", r"\1", td, flags=re.S).strip()
+                 for td in re.findall(r"<td[^>]*>.*?</td>", tr, re.S)]
+        if cells:
+            rows.append(cells)
+
+    if headers and rows:
+        return headers, rows
+    return None, None
+
 
 def render_table_block(lines):
     def cells(line):
@@ -179,12 +278,9 @@ def render_table_block(lines):
 
     header = cells(lines[0])
     body_lines = [l for l in lines[2:] if l.strip()]
-    thead = "<tr>" + "".join("<th>%s</th>" % inline_md_to_html(h) for h in header) + "</tr>"
-    rows = []
-    for line in body_lines:
-        row = cells(line)
-        rows.append("<tr>" + "".join("<td>%s</td>" % inline_md_to_html(c) for c in row) + "</tr>")
-    return "<table>\n<thead>%s</thead>\n<tbody>\n%s\n</tbody>\n</table>" % (thead, "\n".join(rows))
+    rows = [cells(line) for line in body_lines]
+    return build_responsive_table(header, rows)
+
 
 
 # ── 코드 블록 및 아스키 구조도 / 개념 프레임워크 변환 ────────────────────
@@ -317,26 +413,12 @@ def render_code_fence_block(raw_code, lang=""):
                 header = parsed["header"]
                 body = parsed["body"]
 
-                thead_html = ""
-                if header:
-                    ths = "".join(f"<th>{inline_md_to_html(h)}</th>" for h in header)
-                    thead_html = f"        <thead>\n            <tr>{ths}</tr>\n        </thead>\n"
-
-                tbody_rows = []
-                for row in body:
-                    # 열 개수 맞추기
-                    if header and len(row) < len(header):
-                        row = row + [""] * (len(header) - len(row))
-                    tds = "".join(f"<td>{inline_md_to_html(c)}</td>" for c in row)
-                    tbody_rows.append(f"            <tr>{tds}</tr>")
-
-                tbody_html = "        <tbody>\n" + "\n".join(tbody_rows) + "\n        </tbody>\n"
-                table_html = f"    <table>\n{thead_html}{tbody_html}    </table>\n"
+                table_html = build_responsive_table(header, body)
 
                 return (
                     '<div class="diagram-container">\n'
                     f'{title_html}'
-                    f'{table_html}'
+                    f'{table_html}\n'
                     '</div>'
                 )
 
@@ -428,7 +510,13 @@ def render_blocks(md_text):
             end = _find_block_end(whole_rest, open_m.end(), tag)
             block_text = whole_rest[:end]
             consumed = block_text.count("\n") + 1
-            if tag in KNOWN_HTML_TAGS:
+            if tag == "table":
+                headers, rows = parse_html_table(block_text)
+                if headers and rows:
+                    out.append(build_responsive_table(headers, rows, raw_table_html=block_text))
+                else:
+                    out.append(block_text)
+            elif tag in KNOWN_HTML_TAGS:
                 out.append(block_text)
             else:
                 inner_html = "\n\n".join(render_blocks(_inner(block_text, tag)))
@@ -588,6 +676,130 @@ def build_header(fm, header_attrs=""):
     }
 
 
+def resolve_raw_paths(basename, md_text, old_html):
+    """문서에 연관된 로컬 원천 데이터(raw/*) 상대 경로 목록을 우선순위대로 수집·검증한다.
+    1) old_html 안의 기존 raw 링크
+    2) md_text 본문에서 발견되는 raw/ 경로
+    3) Z:\\wiki\\raw 디렉터리 내 basename 기반 탐색
+    실제 파일시스템에 존재하는 유효한 상대 경로만 중복 없이 반환한다."""
+    candidates = []
+
+    def add_candidate(path):
+        clean = path.replace("\\", "/").strip().rstrip(".,;:)\"\'")
+        clean = re.sub(r'[^\w\./\-]', '', clean)
+        clean_no_slash = clean.rstrip("/")
+        if not clean or clean_no_slash == "raw":
+            return
+        if clean_no_slash.endswith("_backup") or "backup" in clean_no_slash:
+            return
+        if clean_no_slash.startswith("raw/YYYY"):
+            return
+        if clean not in candidates and clean_no_slash not in candidates:
+            candidates.append(clean)
+
+    if old_html:
+        for m in re.finditer(r'href=[\'"](raw/[^\'"]+)[\'"]', old_html):
+            add_candidate(m.group(1))
+
+    if md_text:
+        for m in re.finditer(r'raw/[a-zA-Z0-9_\-\./]+', md_text):
+            add_candidate(m.group(0))
+
+    raw_dir = os.path.join(WIKI_DIR, "raw")
+    if os.path.exists(raw_dir):
+        for f in os.listdir(raw_dir):
+            if f.endswith("_raw.txt") and basename in f:
+                add_candidate(f"raw/{f}")
+
+    valid_paths = []
+    for rel in candidates:
+        clean_rel = rel.rstrip("/")
+        full = os.path.join(WIKI_DIR, clean_rel)
+        if os.path.exists(full):
+            if clean_rel not in valid_paths:
+                valid_paths.append(clean_rel)
+
+    valid_paths.sort(key=lambda p: (0 if basename in p else 1, 0 if p.endswith("_raw.txt") else 1))
+    return valid_paths
+
+
+def build_footer(basename, old_html="", md_text="", footer_attrs=""):
+    """위키 표준 2계층 바닥글 UI를 생성한다.
+    - 메인 색인, 마크다운 정본(.md), 검증된 원천 데이터(raw/*), 에이전트 가이드, 맨 위로 네비게이션 버튼
+    - 원천 데이터 보존 경로 상세 표기
+    - 저장소 식별자 및 보좌 에이전트 메타데이터"""
+    raw_paths = resolve_raw_paths(basename, md_text, old_html)
+
+    raw_buttons = []
+    if len(raw_paths) == 1:
+        raw_buttons.append(
+            '                <a href="%(path)s" class="footer-btn">\n'
+            '                    <span class="footer-btn-icon">📁</span>\n'
+            '                    <span class="footer-btn-text">원천 데이터</span>\n'
+            '                </a>' % {"path": raw_paths[0]}
+        )
+    elif len(raw_paths) > 1:
+        for idx, path in enumerate(raw_paths, 1):
+            raw_buttons.append(
+                '                <a href="%(path)s" class="footer-btn" title="%(path)s">\n'
+                '                    <span class="footer-btn-icon">📁</span>\n'
+                '                    <span class="footer-btn-text">원천 데이터 (%(idx)d)</span>\n'
+                '                </a>' % {"path": path, "idx": idx}
+            )
+
+    raw_btns_html = "\n" + "\n".join(raw_buttons) if raw_buttons else ""
+
+    raw_info_block = ""
+    if raw_paths:
+        raw_links_str = ", ".join(
+            '<a href="%(p)s"><code>%(p)s</code></a>' % {"p": p} for p in raw_paths
+        )
+        raw_info_block = (
+            '\n            <div class="footer-raw-info">\n'
+            '                <strong>원천 데이터 보존:</strong> %(links)s\n'
+            '            </div>'
+        ) % {"links": raw_links_str}
+
+    return (
+        '    <footer%(attrs)s>\n'
+        '        <div class="footer-container">\n'
+        '            <div class="footer-brand">\n'
+        '                <span class="footer-title">Knowledge Wiki System</span>\n'
+        '                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>\n'
+        '            </div>\n'
+        '            <div class="footer-nav">\n'
+        '                <a href="index.html" class="footer-btn">\n'
+        '                    <span class="footer-btn-icon">🏠</span>\n'
+        '                    <span class="footer-btn-text">메인 색인</span>\n'
+        '                </a>\n'
+        '                <a href="%(basename)s.md" class="footer-btn">\n'
+        '                    <span class="footer-btn-icon">📄</span>\n'
+        '                    <span class="footer-btn-text">마크다운 정본</span>\n'
+        '                </a>%(raw_btns)s\n'
+        '                <a href="AGENTS.md" class="footer-btn">\n'
+        '                    <span class="footer-btn-icon">🤖</span>\n'
+        '                    <span class="footer-btn-text">에이전트 가이드</span>\n'
+        '                </a>\n'
+        '                <a href="#" class="footer-btn">\n'
+        '                    <span class="footer-btn-icon">⬆️</span>\n'
+        '                    <span class="footer-btn-text">맨 위로</span>\n'
+        '                </a>\n'
+        '            </div>%(raw_info)s\n'
+        '            <div class="footer-meta">\n'
+        '                <span>지식 저장소: <code>Z:\\wiki</code></span>\n'
+        '                <span>•</span>\n'
+        '                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>\n'
+        '            </div>\n'
+        '        </div>\n'
+        '    </footer>'
+    ) % {
+        "attrs": footer_attrs,
+        "basename": basename,
+        "raw_btns": raw_btns_html,
+        "raw_info": raw_info_block,
+    }
+
+
 def group_into_sections(html_pieces):
     """h2로 시작하는 묶음마다 <section>으로 감싼다(기존 관행과 맞춤).
     첫 h2 이전에 나온 조각(있다면)은 감싸지 않고 그대로 둔다."""
@@ -651,6 +863,12 @@ def render_page(basename):
         new_main = "<main%s>\n%s\n        </main>" % (main_m.group(1), article_inner)
         new_html = new_html[:main_m.start()] + new_main + new_html[main_m.end():]
 
+    # 줄 앞의 들여쓰기 포함 매칭으로 footer 갱신 (멱등성 보장)
+    footer_m = re.search(r"[ \t]*<footer([^>]*)>.*?</footer>", new_html, re.S)
+    if footer_m:
+        new_footer = build_footer(basename, old_html, md_text, footer_m.group(1))
+        new_html = new_html[:footer_m.start()] + new_footer + new_html[footer_m.end():]
+
     io.open(html_path, "w", encoding="utf-8", newline="\n").write(new_html)
     print("[완료] %s.html 재생성 (본문 %d자 -> HTML %d자)" % (basename, len(body_md), len(article_inner)))
     return True
@@ -664,7 +882,7 @@ if __name__ == "__main__":
         names = sorted({
             os.path.splitext(f)[0] for f in os.listdir(WIKI_DIR)
             if f.endswith(".md") and os.path.splitext(f)[0] not in EXCLUDE_BASENAMES
-            and f not in ("AGENTS.md", "README.md", "wiki_documentation_standards.md")
+            and f not in ("AGENTS.md", "README.md")
         })
         ok = sum(render_page(n) for n in names)
         print("=== 총 %d / %d 페이지 재생성 ===" % (ok, len(names)))

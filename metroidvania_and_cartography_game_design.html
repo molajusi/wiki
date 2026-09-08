@@ -126,7 +126,9 @@
 <li><b>미니맵 (Minimap):</b> 화면 한구석에 실시간 탐색 및 위험 요소 보조를 위해 상시 표시되는 국소 UI.</li>
 </ol>
                 <h4>장르별 지도 설계 철학 비교</h4>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>장르</th><th>지도의 기능적 역할</th><th>설계 철학 및 특징</th></tr></thead>
 <tbody>
 <tr><td><b>RPG</b></td><td>정보 인터페이스 (Information Interface)</td><td>퀘스트, 상점, NPC 등 시스템 데이터의 종합 브라우저 역할 수행</td></tr>
@@ -138,6 +140,89 @@
 <tr><td><b>워킹 시뮬레이터</b></td><td>몰입형 촉각 지도 (Tactile Map)</td><td>UI 오버레이를 배제하고 종이 지도, 나침반 등 물리적 소품 활용</td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>RPG</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">정보 인터페이스 (Information Interface)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">퀘스트, 상점, NPC 등 시스템 데이터의 종합 브라우저 역할 수행</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>액션 어드벤처</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">공간감 전달 (Spatial Sense)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">플레이어 이동 궤적 시각화 및 경로 탐색 보조</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>MMORPG</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">전략 정보 (Strategic Data)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">레이드 경로, 파티원 위치, 자원 분포의 실시간 동기화</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>오픈 월드</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">임무 관리 (Task Management)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">수많은 관심 지점(POI)과 퀘스트 웨이포인트의 계층적 관리</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>호러 / 잠입</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">의도적 불완전성 (Intentional Incompleteness)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">지도 정보를 제한하여 미지의 공포 및 취약성(Vulnerability) 극대화</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>SF</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">다이어제틱 오브젝트 (Diegetic Object)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">3D 홀로그램, 슈트 헬멧 HUD 등 세계관 내 실존 장비로 연출</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>워킹 시뮬레이터</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">지도의 기능적 역할</dt>
+                <dd class="mobile-field-value">몰입형 촉각 지도 (Tactile Map)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">설계 철학 및 특징</dt>
+                <dd class="mobile-field-value">UI 오버레이를 배제하고 종이 지도, 나침반 등 물리적 소품 활용</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
                 <ul>
 <li><b>《Hollow Knight》의 특수 사례 분석:</b> 지도를 기본 UI로 제공하지 않고, 미지의 구역을 탐험하여 지도 제작자(코니퍼)를 찾아 지도를 구매한 뒤, 휴식처(벤치)에서 깃펜으로 직접 갱신하게 설계되었습니다. 이를 통해 '지도 획득 및 완성 자체를 탐험의 직접적 인게임 보상'으로 승화시킨 대표 사례로 평가받습니다.</li>
 </ul>
@@ -260,7 +345,9 @@
                 <p>
     <i>Dungeon Substitution & Gating Mechanisms by Space Type</i>
 </p>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>대체 공간 유형</th><th>구현 및 배경 설정</th><th>게이팅 메커니즘 (진입 장벽 및 해제 도구)</th><th>대표 적용 사례</th></tr></thead>
 <tbody>
 <tr><td><b>자연 생태계 및 외계 환경</b></td><td>가혹한 기후, 독성 식생, 심해, 용암 지대 등 자연물로 구성된 유기적 지형</td><td><b>환경 저항력 및 생존 장비:</b><br>- 고온 구역 → 방열복(Varia Suit)<br>- 심해 수압/저항 → 중력복(Gravity Suit)<br>- 유독성 늪지 → 수질 정화 기믹 또는 공중 활강 스킬</td><td>《메트로이드 시리즈(Metroid Series)》(1986~), 《오리 시리즈(Ori Series)》(2015/2020)</td></tr>
@@ -269,13 +356,81 @@
 <tr><td><b>개념적·인지적 도메인</b></td><td>물리적 건축물이 아닌 텍스트, 규칙, 생체 네트워크 자체를 탐색 공간화</td><td><b>플레이어의 지식 축적 및 정보 해독:</b><br>- 숨겨진 커맨드 발견 → 미지의 조작법 입력<br>- 암호 체계 해독 → 환경 내 상호작용 규칙 갱신</td><td>《튜닉(Tunic)》(2022), 《애니멀 웰(Animal Well)》(2024), 《액시엄 버지 2(Axiom Verge 2)》(2021)</td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>자연 생태계 및 외계 환경</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">구현 및 배경 설정</dt>
+                <dd class="mobile-field-value">가혹한 기후, 독성 식생, 심해, 용암 지대 등 자연물로 구성된 유기적 지형</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">게이팅 메커니즘 (진입 장벽 및 해제 도구)</dt>
+                <dd class="mobile-field-value"><b>환경 저항력 및 생존 장비:</b><br>- 고온 구역 → 방열복(Varia Suit)<br>- 심해 수압/저항 → 중력복(Gravity Suit)<br>- 유독성 늪지 → 수질 정화 기믹 또는 공중 활강 스킬</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 적용 사례</dt>
+                <dd class="mobile-field-value">《메트로이드 시리즈(Metroid Series)》(1986~), 《오리 시리즈(Ori Series)》(2015/2020)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>기능성 인공 구조물</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">구현 및 배경 설정</dt>
+                <dd class="mobile-field-value">본래 실용적 목적(연구, 군사, 생산)이 있었으나 사고로 봉쇄된 시설</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">게이팅 메커니즘 (진입 장벽 및 해제 도구)</dt>
+                <dd class="mobile-field-value"><b>보안 및 산업 인프라 제어:</b><br>- 잠긴 방화벽 → 보안 인가 카드(Keycard)<br>- 작동 중단 구역 → 발전기 재가동 및 전력망 복구<br>- 붕괴된 통로 → 산업용 폭약(C4), 배관 덕트 해킹</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 적용 사례</dt>
+                <dd class="mobile-field-value">《섀도우 컴플렉스(Shadow Complex)》(2009), 《더 미이라 디마스터드(The Mummy Demastered)》(2017), 《고스트 송(Ghost Song)》(2022), 《하이쿠 더 로봇(Haiku, the Robot)》(2022)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>문화적·신화적 공간</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">구현 및 배경 설정</dt>
+                <dd class="mobile-field-value">서구 판타지를 탈피한 비서구권 토착 신화 및 종교관 기반 공간</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">게이팅 메커니즘 (진입 장벽 및 해제 도구)</dt>
+                <dd class="mobile-field-value"><b>영적 상태 전환 및 전통 무예:</b><br>- 도교 사당/연금술 시설 → 부적(Talisman), 기(Chi) 조작<br>- 저승/이승 차원 분리 → 차원 전환 기믹, 루차 리브레 기술</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 적용 사례</dt>
+                <dd class="mobile-field-value">《나인 솔즈(Nine Sols)》(2024), 《과카밀레!(Guacamelee!)》(2013)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>개념적·인지적 도메인</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">구현 및 배경 설정</dt>
+                <dd class="mobile-field-value">물리적 건축물이 아닌 텍스트, 규칙, 생체 네트워크 자체를 탐색 공간화</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">게이팅 메커니즘 (진입 장벽 및 해제 도구)</dt>
+                <dd class="mobile-field-value"><b>플레이어의 지식 축적 및 정보 해독:</b><br>- 숨겨진 커맨드 발견 → 미지의 조작법 입력<br>- 암호 체계 해독 → 환경 내 상호작용 규칙 갱신</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 적용 사례</dt>
+                <dd class="mobile-field-value">《튜닉(Tunic)》(2022), 《애니멀 웰(Animal Well)》(2024), 《액시엄 버지 2(Axiom Verge 2)》(2021)</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>6. 용어 정리 및 정의</h2>
                 <p>
     <i>Glossary & Definitions</i>
 </p>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>용어</th><th>정의</th></tr></thead>
 <tbody>
 <tr><td><b>게이팅</b></td><td><b>Gating</b>. 게임 디자인 및 레벨 설계에서 플레이어의 공간 이동이나 콘텐츠 접근을 특정 조건 달성 시점까지 구조적으로 통제·차단하는 메커니즘.</td></tr>
@@ -287,6 +442,40 @@
 <tr><td><b>지도학</b></td><td><b>Cartography</b>. 게임 내 공간 정보를 평면, 벡터, 다이어제틱 소품 등으로 시각화하여 플레이어의 인지 및 길찾기를 보조하는 인터페이스 설계 분야.</td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>게이팅</b></dt>
+            <dd class="mobile-table-desc"><b>Gating</b>. 게임 디자인 및 레벨 설계에서 플레이어의 공간 이동이나 콘텐츠 접근을 특정 조건 달성 시점까지 구조적으로 통제·차단하는 메커니즘.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>능력 게이팅</b></dt>
+            <dd class="mobile-table-desc"><b>Ability Gating</b>. 캐릭터 자체의 물리적·운동학적 이동 스킬(이단 점프, 공중 대시, 벽 타기, 모프볼 변신 등)을 <b>'능력 획득'</b>함으로써 조작 레퍼토리가 영구 확장되어 공간의 물리적 장벽을 돌파하는 메트로이드배니아의 표준 구조.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>아이템 게이팅</b></dt>
+            <dd class="mobile-table-desc"><b>Item Gating</b>. 캐릭터의 기본 조작 메커니즘을 변경하지 않고, 인벤토리에 특정 열쇠, 보안 인가 카드(Keycard), 퀘스트 도구, 방호 장비 등을 <b>'아이템 획득'</b>하여 소지 여부 조건 판정(Key-Lock Check)을 통해 잠긴 문이나 특정 구역을 통과하는 구조.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>지식 게이팅</b></dt>
+            <dd class="mobile-table-desc"><b>Knowledge Gating</b>. 캐릭터의 물리적 스펙 상승 없이, 플레이어가 세계관의 규칙, 조작 커맨드, 언어 암호를 학습하여 돌파하는 구조 (메트로이드브레이니아의 핵심).</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>깃팅 및 깃 구드</b></dt>
+            <dd class="mobile-table-desc"><b>Git Gud / Gitting</b>. "Get good(실력을 길러라)"을 왜곡한 인터넷 밈에서 유래한 용어로, 캐릭터의 스탯 상승이나 장비에 의존하지 않고 플레이어 자신의 순수한 조작 정밀도, 반사 신경, 보스 패턴 숙달만으로 장애물을 돌파하는 플레이 행위 및 설계 양식.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>메트로이드브레이니아</b></dt>
+            <dd class="mobile-table-desc"><b>Metroidbrainia</b>. Metroidvania와 Brain의 합성어. 메트로이드배니아 특유의 비선형적 맵 탐색과 잠금-해제 구조를 차용하되, 캐릭터의 물리적 능력 확장 대신 플레이어 자신의 인지적 지식 축적을 유일한 진행 도구로 사용하는 서브장르. Ending-From-Beginning 구조, 1회성 탐험 경험, 외부 기억 매체 의존성이 핵심 특징임.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>지도학</b></dt>
+            <dd class="mobile-table-desc"><b>Cartography</b>. 게임 내 공간 정보를 평면, 벡터, 다이어제틱 소품 등으로 시각화하여 플레이어의 인지 및 길찾기를 보조하는 인터페이스 설계 분야.</dd>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>7. 참고 자료 및 원천 데이터 출처</h2>
@@ -311,10 +500,42 @@
         </article>
     </main>
     <footer>
-        <p>
-            Two-Layer Knowledge Wiki System | 원천 데이터: <a href="raw/20260824_metroidvania_and_cartography_game_design_raw.txt">raw/20260824_metroidvania_and_cartography_game_design_raw.txt</a> | 마크다운 SSOT: <a href="metroidvania_and_cartography_game_design.md">metroidvania_and_cartography_game_design.md</a><br>
-            <a href="index.html">메인 색인 (Index)으로 돌아가기</a>
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="metroidvania_and_cartography_game_design.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="raw/20260824_metroidvania_and_cartography_game_design_raw.txt" class="footer-btn">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-raw-info">
+                <strong>원천 데이터 보존:</strong> <a href="raw/20260824_metroidvania_and_cartography_game_design_raw.txt"><code>raw/20260824_metroidvania_and_cartography_game_design_raw.txt</code></a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

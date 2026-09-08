@@ -284,7 +284,9 @@
 
 <h3>5.1 초기 무감독 위키 vs 거버넌스 위키 실측 비교</h3>
 
-<table>
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
     <thead>
         <tr>
             <th>비교 평가 지표</th>
@@ -320,6 +322,67 @@
         </tr>
     </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>환각 오염 제어</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">초기 무감독 LLM 위키 (Before)</dt>
+                <dd class="mobile-field-value">취약. 초기 환각이 위키에 영구 고착되어 후속 세션으로 지속 증폭됨.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">개선된 거버넌스 LLM 위키 (After)</dt>
+                <dd class="mobile-field-value"><b>완전 차단.</b> <code>raw/</code> 1:1 매핑 및 정기 린트 스크립트로 팩트 정박 강제.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>인간 검증 피로도</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">초기 무감독 LLM 위키 (Before)</dt>
+                <dd class="mobile-field-value">극심. 변경 위치를 알 수 없어 문서 전체를 매번 정독 대조해야 함.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">개선된 거버넌스 LLM 위키 (After)</dt>
+                <dd class="mobile-field-value"><b>최소화.</b> Git diff 단위 정량 보고 및 30초 내 부분 승인 큐 운용.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>문서 중복 및 팽창</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">초기 무감독 LLM 위키 (Before)</dt>
+                <dd class="mobile-field-value">심각. 에이전트의 생성 편향으로 유사 파일 난립 및 모순 누적.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">개선된 거버넌스 LLM 위키 (After)</dt>
+                <dd class="mobile-field-value"><b>원천 방지.</b> 사전 검색 의무화 및 기존 문서 <code>diff</code> 증분 병합 강제.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>추론 토큰 경제성</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">초기 무감독 LLM 위키 (Before)</dt>
+                <dd class="mobile-field-value">전통 RAG 대비 70~80% 절감.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">개선된 거버넌스 LLM 위키 (After)</dt>
+                <dd class="mobile-field-value"><b>전통 RAG 대비 80~90% 절감 유지</b> (필요 섹션만 고속 인출).</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>도구 및 뷰 안정성</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">초기 무감독 LLM 위키 (Before)</dt>
+                <dd class="mobile-field-value">불안정. LLM의 마크다운/HTML 태그 실수로 렌더링 깨짐 빈발.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">개선된 거버넌스 LLM 위키 (After)</dt>
+                <dd class="mobile-field-value"><b>100% 견고.</b> 파이썬 결정론적 렌더러 및 파시티 감사 스크립트 강제.</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
 
 <h3>5.2 4단계 표준 구축 및 운영 라이프사이클 체크리스트</h3>
 
@@ -350,7 +413,9 @@
     <i>Terminology & Definitions</i>
 </p>
 
-<table>
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
     <thead>
         <tr>
             <th style="width: 25%;">용어</th>
@@ -392,6 +457,44 @@
         </tr>
     </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>엘엘엠 위키</b></dt>
+            <dd class="mobile-table-desc"><b>LLM Wiki</b>. 거대 언어 모델이 단순한 일회성 질의응답기가 아닌 지식의 사서이자 컴파일러로 기능하며, 원천 자료를 지속적으로 읽어 정제된 마크다운 문서로 축적하고 자가 유지하는 장기 지속형 지식 저장소 체계.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>사전 컴파일 패러다임</b></dt>
+            <dd class="mobile-table-desc"><b>Pre-compilation Paradigm</b>. 질의 시점마다 원시 문서를 청킹하여 유사도 검색하는 RAG의 런타임 비효율을 극복하기 위해, 수집 시점에 미리 고품질 위키로 종합·구조화해 두는 지식 관리 기법.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>환각 고착화</b></dt>
+            <dd class="mobile-table-desc"><b>Hallucination Solidification</b>. 컴파일 단계에서 발생한 LLM의 오작동이나 잘못된 수치가 위키 문서에 기록됨으로써, 이후 세션에서 검증된 정답으로 오인되어 영구 전파되는 현상.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>유지보수 함정</b></dt>
+            <dd class="mobile-table-desc"><b>The Maintenance Trap</b>. AI에게 정리를 전적으로 일임했을 때 발생하는 링크 깨짐, 팩트 덮어쓰기 삭제를 인간이 끊임없이 감시하고 교정해야 함으로써 발생하는 검증 피로(Audit Fatigue) 현상.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>증분 병합 프로토콜</b></dt>
+            <dd class="mobile-table-desc"><b>Incremental Merge Protocol</b>. 신규 지식 유입 시 새 파일을 무분별하게 신설하지 않고, 기존 위키 문서의 특정 섹션을 찾아 <code>diff</code> 단위로 정밀하게 덧붙이거나 갱신하는 지식 유지보수 원칙.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>양방향 지식 결속</b></dt>
+            <dd class="mobile-table-desc"><b>Bidirectional Knowledge Cohesion</b>. 메인 색인, 상위 허브 문서, 하위 분과 문서 간에 전진 링크(Forward Link)와 회신 역링크(Backlink)를 촘촘히 엮어 단독 고립 노드(Orphan Page)를 원천 차단하는 링크망 구조.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>하이브리드 위키-알에이지</b></dt>
+            <dd class="mobile-table-desc"><b>Hybrid Wiki-RAG</b>. 장기 보존 가치가 높은 핵심 설계 원리와 거버넌스는 위키로 컴파일하고, 수명이 짧고 방대한 로그·대화록은 전통 벡터 RAG로 분리하여 위키 오염을 방지하는 이원화 아키텍처.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>결정론적 툴체인</b></dt>
+            <dd class="mobile-table-desc"><b>Deterministic Toolchain</b>. 파일 초기화, HTML 파생 렌더링, 정합성 검증 등 형식적 작업은 파이썬 스크립트에 전담시키고, LLM은 지능적 요약과 비평에만 집중시키는 공학적 분업 체계.</dd>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>7. 참고 자료 및 원천 데이터 출처</h2>
@@ -419,10 +522,42 @@
         </article>
     </main>
     <footer>
-        <p>
-            Two-Layer Knowledge Wiki System | 원천 데이터: <a href="raw/20260903_llm_wiki_construction_guide_raw.txt">raw/20260903_llm_wiki_construction_guide_raw.txt</a> | 마크다운 SSOT: <a href="llm_wiki_construction_guide.md">llm_wiki_construction_guide.md</a><br>
-            <a href="index.html">메인 색인 (Index)으로 돌아가기</a>
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="llm_wiki_construction_guide.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="raw/20260903_llm_wiki_construction_guide_raw.txt" class="footer-btn">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-raw-info">
+                <strong>원천 데이터 보존:</strong> <a href="raw/20260903_llm_wiki_construction_guide_raw.txt"><code>raw/20260903_llm_wiki_construction_guide_raw.txt</code></a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

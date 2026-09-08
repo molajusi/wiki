@@ -103,7 +103,9 @@
 
 </details>
                 <h3>3.2 기존 거버넌스 vs 1인 스텔스 거버넌스 비교 분석</h3>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>비교 항목</th><th>전통적 조직 거버넌스 (Traditional)</th><th>1인 주도형 스텔스 거버넌스 (Stealth)</th></tr></thead>
 <tbody>
 <tr><td><b>조직 저항도</b></td><td>높음 (새로운 툴·서식 작성 강요)</td><td><b>0 (Zero-Friction, 기존 채널 그대로 접수)</b></td></tr>
@@ -112,6 +114,56 @@
 <tr><td><b>결과물 공유</b></td><td>무거운 인트라넷/문서 도구</td><td><b>가벼운 반응형 HTML5 뷰 배포</b></td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>조직 저항도</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 조직 거버넌스 (Traditional)</dt>
+                <dd class="mobile-field-value">높음 (새로운 툴·서식 작성 강요)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">1인 주도형 스텔스 거버넌스 (Stealth)</dt>
+                <dd class="mobile-field-value"><b>0 (Zero-Friction, 기존 채널 그대로 접수)</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>초기 구축 비용</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 조직 거버넌스 (Traditional)</dt>
+                <dd class="mobile-field-value">높음 (전사 교육, 시스템 도입 예산)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">1인 주도형 스텔스 거버넌스 (Stealth)</dt>
+                <dd class="mobile-field-value"><b>최소 (단일 담당자 + LLM 에이전트 결합)</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>보안/품질 통제</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 조직 거버넌스 (Traditional)</dt>
+                <dd class="mobile-field-value">사후 감사 및 수동 점검</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">1인 주도형 스텔스 거버넌스 (Stealth)</dt>
+                <dd class="mobile-field-value"><b>유입 즉시 백엔드 자동 정제 및 룰셋 축적</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>결과물 공유</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">전통적 조직 거버넌스 (Traditional)</dt>
+                <dd class="mobile-field-value">무거운 인트라넷/문서 도구</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">1인 주도형 스텔스 거버넌스 (Stealth)</dt>
+                <dd class="mobile-field-value"><b>가벼운 반응형 HTML5 뷰 배포</b></dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>4. 용어 정리 및 정의</h2>
@@ -128,10 +180,35 @@
         </article>
     </main>
     <footer>
-        <p>
-            Machine Backend Source: <a href="stealth_governance_procedure.md">Z:\wiki\stealth_governance_procedure.md</a> | 
-            Storage Directory: Z:\wiki
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="stealth_governance_procedure.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

@@ -128,7 +128,9 @@
                 <p>
     메트로이드배니아 장르에서 지도를 시각적으로 렌더링하는 기법은 하드웨어 성능과 게임 디자인 철학의 진화에 따라 다음과 같은 <b>4대 시각 표현 양식</b>으로 발전해 왔습니다:
 </p>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>시각 표현 양식</th><th>대표 타이틀</th><th>렌더링 및 인터페이스 특성</th><th>장점 및 인지적 한계 (Pros & Cons)</th></tr></thead>
 <tbody>
 <tr><td><b>① 2D 추상 격자 타일 맵</b><br><i>(Abstract Grid Tile Map)</i></td><td>《슈퍼 메트로이드》(1994)<br>《캐슬바니아: SOTN》(1997)<br>《악마성 효월의 원무곡》(2003)</td><td>화면을 일정한 사각 타일로 분할하여 <b>1타일 = 1방(Room)</b> 단위로 1:1 매핑. 문, 세이브 포인트, 미발견 통로를 단순 색상 픽셀로 코딩.</td><td><b>장점</b>: 공간 구조의 직관성 극상, 탐색률(200.6%) 수치화를 통한 성취감 자극.<br><b>한계</b>: 지형의 세부 굴곡/고저차 왜곡, 미니맵만 보며 달리는 'GPS 의존증' 유발.</td></tr>
@@ -137,6 +139,72 @@
 <tr><td><b>④ 레이어드 고해상도 단면도 맵</b><br><i>(Layered High-Res Schematic Map)</i></td><td>《오리 앤 더 윌 오브 더 위스프》(2020)<br>《메트로이드 드레드》(2021)<br>《페르시아의 왕자: 잃어버린 왕관》(2024)</td><td>실제 인게임의 정밀 2D/3D 물리 지형 단면과 벽면 두께, 문 잠금장치 유형을 <b>실시간 고해상도 벡터 그래픽</b>으로 다층 레이어 렌더링.</td><td><b>장점</b>: 실제 물리 지형과 1:1 완벽 일치, 문 기믹 및 플랫폼 높이의 즉각적 식별.<br><b>한계</b>: 미지의 신비감 다소 감소, 대형 맵 로딩 및 GPU 렌더링 부하 증가.</td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>① 2D 추상 격자 타일 맵</b><br><i>(Abstract Grid Tile Map)</i></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 타이틀</dt>
+                <dd class="mobile-field-value">《슈퍼 메트로이드》(1994)<br>《캐슬바니아: SOTN》(1997)<br>《악마성 효월의 원무곡》(2003)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">렌더링 및 인터페이스 특성</dt>
+                <dd class="mobile-field-value">화면을 일정한 사각 타일로 분할하여 <b>1타일 = 1방(Room)</b> 단위로 1:1 매핑. 문, 세이브 포인트, 미발견 통로를 단순 색상 픽셀로 코딩.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">장점 및 인지적 한계 (Pros & Cons)</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 공간 구조의 직관성 극상, 탐색률(200.6%) 수치화를 통한 성취감 자극.<br><b>한계</b>: 지형의 세부 굴곡/고저차 왜곡, 미니맵만 보며 달리는 'GPS 의존증' 유발.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>② 3D 홀로그램 / 벡터 맵</b><br><i>(3D Holographic Vector Map)</i></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 타이틀</dt>
+                <dd class="mobile-field-value">《메트로이드 프라임》(2002)<br>《스타워즈 제다이: 오더의 몰락》(2019)<br>《배트맨: 아캄 수용소》(2009)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">렌더링 및 인터페이스 특성</dt>
+                <dd class="mobile-field-value">3차원 공간의 다층 구조와 경사로, 수직 엘리베이터 통로를 <b>반투명 와이어프레임 및 3D 폴리곤 벡터 모델</b>로 입체 투영.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">장점 및 인지적 한계 (Pros & Cons)</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 복잡한 다층 수직 구조의 명확한 가시화, SF 바이저 HUD 몰입감 극대화.<br><b>한계</b>: 지도 조작(회전, 줌, 틸트) 자체의 조작 피로, 나선형 미로 시 시각적 혼잡(Clutter).</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>③ 지연된 다이제틱 손그림 양피지 맵</b><br><i>(Diegetic Hand-Drawn Map)</i></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 타이틀</dt>
+                <dd class="mobile-field-value">《할로우 나이트》(2017)<br>《엘든 링》(2022)<br>《시즘 (Chasm)》(2018)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">렌더링 및 인터페이스 특성</dt>
+                <dd class="mobile-field-value">게임 세계관 내부의 탐험가(코니퍼 등)가 <b>직접 잉크와 양피지에 손으로 스케치한 듯한 아날로그 일러스트</b> 형태로 렌더링.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">장점 및 인지적 한계 (Pros & Cons)</dt>
+                <dd class="mobile-field-value"><b>장점</b>: '직접 발로 밟아 세계를 기록한다'는 정서적 몰입 극대화, 인지적 오프로딩 조율.<br><b>한계</b>: 정밀 충돌선 부재로 미세한 비밀 통로나 숨겨진 벽 판별에 직접 탐색 필요.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>④ 레이어드 고해상도 단면도 맵</b><br><i>(Layered High-Res Schematic Map)</i></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">대표 타이틀</dt>
+                <dd class="mobile-field-value">《오리 앤 더 윌 오브 더 위스프》(2020)<br>《메트로이드 드레드》(2021)<br>《페르시아의 왕자: 잃어버린 왕관》(2024)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">렌더링 및 인터페이스 특성</dt>
+                <dd class="mobile-field-value">실제 인게임의 정밀 2D/3D 물리 지형 단면과 벽면 두께, 문 잠금장치 유형을 <b>실시간 고해상도 벡터 그래픽</b>으로 다층 레이어 렌더링.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">장점 및 인지적 한계 (Pros & Cons)</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 실제 물리 지형과 1:1 완벽 일치, 문 기믹 및 플랫폼 높이의 즉각적 식별.<br><b>한계</b>: 미지의 신비감 다소 감소, 대형 맵 로딩 및 GPU 렌더링 부하 증가.</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>4. 메트로이드배니아 3대 지도 설계 패러다임</h2>
@@ -215,7 +283,9 @@
 <li><b>현대적 확장: 《페르시아의 왕자: 잃어버린 왕관》의 '기억의 파편(Memory Shards)'</b><sup class="citation"><a href="#ref-9">[9]</a></sup>: 능동적 지도 제작에 실제 지형 스크린샷 썸네일을 부착하는 핀 시스템을 결합하여, 뇌의 작업 기억 부담을 완벽히 제거하는 현대 인지공학적 QoL의 정점을 달성했습니다.</li>
 </ul>
                 <h3>4.4 3대 지도 설계 패러다임 종합 비교 매트릭스</h3>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>비교 항목</th><th>① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></th><th>② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></th><th>③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></th></tr></thead>
 <tbody>
 <tr><td><b>대표 타이틀</b></td><td>《슈퍼 메트로이드》(1994)<br>《캐슬바니아: SOTN》(1997)</td><td>《다크 소울 1》(2011)<br>《솔트 앤 생추어리》(2016)</td><td>《할로우 나이트》(2017)<br>《페르시아의 왕자》(2024)</td></tr>
@@ -227,6 +297,117 @@
 <tr><td><b>접근성 및 편의성</b></td><td>매우 높음 (대중적 표준)</td><td>매우 낮음 (극단적 하드코어)</td><td><b>높음 (가이드 모드 / 기억의 파편 옵션 결합)</b></td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>대표 타이틀</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">《슈퍼 메트로이드》(1994)<br>《캐슬바니아: SOTN》(1997)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value">《다크 소울 1》(2011)<br>《솔트 앤 생추어리》(2016)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value">《할로우 나이트》(2017)<br>《페르시아의 왕자》(2024)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>핵심 설계 철학</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">데카르트 격자 정복 및 탐색률 수치화</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value">원초적 고립감 및 공간의 신체적 체화</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value"><b>탐험의 의식화(Ritual) 및 능동적 카토그래피</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>지도 획득 방식</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">게임 시작 즉시 1:1 자동 드로잉 활성화</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value"><b>외부 HUD 지도 일체 미제공</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value"><b>미지 구역 박탈 ➔ 상인 구매 ➔ 벤치 사후 갱신</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>플레이어 주 시선</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">우측 상단 2인치 미니맵 레이더 격자</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value">화면 중앙 환경 미술, 조명, 랜드마크</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value"><b>환경 직접 관찰 후 필요 시 전체 지도 확인</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>백트래킹 동력</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">지도 빈칸 채우기(200.6%) 완벽주의</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value">뇌내 인지 기억 + 숏컷 개방 카타르시스</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value"><b>플레이어 마커 핀 & 미탐색 지형 재방문 계획</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>인지 부하 수준</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">극소 (길찾기 스트레스 제로)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value">극대 (심각한 피로 및 방향 상실)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value"><b>최적 조율 (미지의 공포 ➔ 획득의 안도감)</b></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>접근성 및 편의성</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">① 직관적 전지적 격자 <i>(Automated Cartesian Grid)</i></dt>
+                <dd class="mobile-field-value">매우 높음 (대중적 표준)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">② 다이제틱 극단적 몰입 <i>(Radical Diegetic No-Map)</i></dt>
+                <dd class="mobile-field-value">매우 낮음 (극단적 하드코어)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">③ 능동적 지도 제작 <i>(Active Cartography Hybrid)</i></dt>
+                <dd class="mobile-field-value"><b>높음 (가이드 모드 / 기억의 파편 옵션 결합)</b></dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>5. 플레이어 주도 지도 마커와 기억의 파편: 설계 철학과 인지공학적 비평</h2>
@@ -292,7 +473,9 @@
 <li><b>다이제틱 서사 결합(Time Magic)</b>: 외재적 치트 기능이 아니라 카프 산(Mount Qaf)의 뒤틀린 '시간 마법'이라는 세계관 설정으로 정당화하여 게임의 몰입감을 훼손하지 않았습니다.</li>
 </ul>
                 <h3>5.8 5대 대표작별 마커 구현 패러다임 비교 매트릭스</h3>
-                <table>
+                <div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
 <thead><tr><th>대표 타이틀</th><th>마커 시스템 명칭 및 입력 방식</th><th>핵심 설계 메커니즘 및 자원 규칙</th><th>인지공학적 장점 및 한계 분석</th></tr></thead>
 <tbody>
 <tr><td>《할로우 나이트》(2017)</td><td>지도 핀 (Map Pins)<br><i>상점 메뉴 수동 배치</i></td><td>이슬다 상점에서 4~6종의 색상 핀을 지오(Geo)로 유상 구매. 지도 화면에서 수동 배치.</td><td><b>장점</b>: 마킹 행위를 인게임 경제와 다이제틱 투자로 편입.<br><b>한계</b>: 핀 수량 부족 및 추상적 색상으로 인한 의미 맥락 망각.</td></tr>
@@ -302,6 +485,87 @@
 <tr><td>《페르시아의 왕자: 잃어버린 왕관》(2024)</td><td><b>기억의 파편 (Memory Shards)</b><br><i>D-Pad Down 0.5초 즉각 캡처</i></td><td>실제 게임 화면 스크린샷 썸네일을 지도 좌표에 핀으로 직접 부착 (최대 수량 업그레이드 지원).</td><td><b>장점</b>: 0.1초 만에 시각적 맥락 완벽 복원, 인지적 오프로딩의 완성.<br><b>한계</b>: 핀 최대 수량(초기 15개) 제한에 따른 메타 자원 관리 마찰.</td></tr>
 </tbody>
 </table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">《할로우 나이트》(2017)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마커 시스템 명칭 및 입력 방식</dt>
+                <dd class="mobile-field-value">지도 핀 (Map Pins)<br><i>상점 메뉴 수동 배치</i></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">핵심 설계 메커니즘 및 자원 규칙</dt>
+                <dd class="mobile-field-value">이슬다 상점에서 4~6종의 색상 핀을 지오(Geo)로 유상 구매. 지도 화면에서 수동 배치.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">인지공학적 장점 및 한계 분석</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 마킹 행위를 인게임 경제와 다이제틱 투자로 편입.<br><b>한계</b>: 핀 수량 부족 및 추상적 색상으로 인한 의미 맥락 망각.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">《젤다: 야생의 숨결 / 왕국의 눈물》(2017/2023)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마커 시스템 명칭 및 입력 방식</dt>
+                <dd class="mobile-field-value">망원경 핀 & 스탬프<br><i>R 스틱 망원경 + 맵 메뉴</i></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">핵심 설계 메커니즘 및 자원 규칙</dt>
+                <dd class="mobile-field-value">망원경으로 육안 랜드마크 관찰 후 빛기둥 핀 5개 사출. 지도 메뉴에서 100개 아이콘 스탬프 배치.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">인지공학적 장점 및 한계 분석</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 3D 육안 관찰을 강제하여 인지 지도 형성 극대화.<br><b>한계</b>: 원거리 시야가 차단된 동굴/사당 내부에서의 마킹 한계.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">《엘든 링》(2022)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마커 시스템 명칭 및 입력 방식</dt>
+                <dd class="mobile-field-value">빛기둥 비콘 & 100개 마커<br><i>전체 지도 화면 수동 배치</i></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">핵심 설계 메커니즘 및 자원 규칙</dt>
+                <dd class="mobile-field-value">미니맵과 퀘스트 마커를 전면 삭제. 플레이어가 직접 100개의 심볼 마커와 5개의 빛기둥 비콘으로 경로 개척.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">인지공학적 장점 및 한계 분석</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 고전 탐험의 원초적 성취감과 주체성 극대화.<br><b>한계</b>: NPC 위치를 수동 기록하지 않으면 퀘스트 증발 스트레스 유발.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">《메트로이드 드레드》(2021)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마커 시스템 명칭 및 입력 방식</dt>
+                <dd class="mobile-field-value">스마트 아이콘 하이라이트<br><i>지도 커서 클릭 자동 필터링</i></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">핵심 설계 메커니즘 및 자원 규칙</dt>
+                <dd class="mobile-field-value">특정 유형의 문(예: 차지 빔 도어)이나 블록을 지도에서 클릭하면, 맵 전체의 동일 오브젝트가 일괄 점등.</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">인지공학적 장점 및 한계 분석</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 수동 핀 배치 피로 없이 획득한 능력의 사용처를 즉각 식별.<br><b>한계</b>: 개발자가 정한 오브젝트 외의 개인 메모 불가능.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">《페르시아의 왕자: 잃어버린 왕관》(2024)</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">마커 시스템 명칭 및 입력 방식</dt>
+                <dd class="mobile-field-value"><b>기억의 파편 (Memory Shards)</b><br><i>D-Pad Down 0.5초 즉각 캡처</i></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">핵심 설계 메커니즘 및 자원 규칙</dt>
+                <dd class="mobile-field-value">실제 게임 화면 스크린샷 썸네일을 지도 좌표에 핀으로 직접 부착 (최대 수량 업그레이드 지원).</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">인지공학적 장점 및 한계 분석</dt>
+                <dd class="mobile-field-value"><b>장점</b>: 0.1초 만에 시각적 맥락 완벽 복원, 인지적 오프로딩의 완성.<br><b>한계</b>: 핀 최대 수량(초기 15개) 제한에 따른 메타 자원 관리 마찰.</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
             </section>
             <section>
                 <h2>6. 용어 정리 및 정의</h2>
@@ -351,12 +615,42 @@
         </article>
     </main>
     <footer>
-        <p>
-            Machine Backend Source: <a href="metroidvania_map_and_spatial_cognition.md">Z:\wiki\metroidvania_map_and_spatial_cognition.md</a> | 
-            Raw Data Source: <a href="raw/20260822_metroidvania_genre_analysis_raw.txt">Z:\wiki
-aw60822_metroidvania_genre_analysis_raw.txt</a> | 
-            Storage Directory: Z:\wiki
-        </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="metroidvania_map_and_spatial_cognition.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="raw/20260822_metroidvania_genre_analysis_raw.txt" class="footer-btn">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-raw-info">
+                <strong>원천 데이터 보존:</strong> <a href="raw/20260822_metroidvania_genre_analysis_raw.txt"><code>raw/20260822_metroidvania_genre_analysis_raw.txt</code></a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
