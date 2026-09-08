@@ -2,7 +2,7 @@
 title: "한국 도시 행정단위의 역사적 계보와 계층 체계"
 subtitle: "Historical Genealogy and Hierarchical Evolution of Korean Urban Units"
 created: "2026-09-08 오후 02:46:22 (KST, UTC+9)"
-updated: "2026-09-08 오후 02:59:37 (KST, UTC+9)"
+updated: "2026-09-08 오후 06:15:57 (KST, UTC+9)"
 category: "한국 제도사 및 도시사 (Institutional History & Urban Evolution)"
 tags: ["Urban Hierarchy", "Walled-town State", "Myeon-ri System", "Administrative Unit", "Historical Evolution"]
 html_view: "korean_urban_administrative_hierarchy_evolution.html"
@@ -12,7 +12,7 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 *Historical Genealogy and Hierarchical Evolution of Korean Urban Units*
 
 **카테고리**: 한국 제도사 및 도시사 (Institutional History & Urban Evolution)  
-*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-09-08 오후 02:59:37 (KST, UTC+9)*
+*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-09-08 오후 06:15:57 (KST, UTC+9)*
 
 <context>
 본 문서는 한반도 역사상 도시와 마을을 규정했던 행정단위의 명칭, 위계, 그리고 변천 궤적을 고찰한 제도사·도시사 단일 진실 공급원(SSOT) 문서입니다. 청동기~초기 철기시대의 독립된 도시국가였던 '성읍(城邑)'이 고대 왕국에 복속되어 군현 거점으로 재편된 과정, 고려시대의 주현·속현 및 향·소·부곡 체계, 조선시대의 전 군현 주현화와 읍치-면리제(面里制) 및 수도 한성부의 부방제도(部坊制度), 그리고 전통시대 시장(Marketplace)을 뜻하던 '시(市)'라는 어휘가 일제강점기 부(府)·읍(邑) 제도를 거쳐 1949년 대한민국 지방자치법을 통해 최상위 도시 행정단위로 정착된 전 과정을 상세하고 풍부한 문장으로 집대성합니다.
@@ -223,6 +223,7 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 
 해방 후 대한민국 정부는 1949년 7월 4일 법률 제32호로 **「지방자치법」**을 제정·공포하고 8월 15일부터 전격 시행했습니다.
 * **부(府) ➔ 시(市) 일괄 개칭**: 일제 식민 통치의 상징이었던 '부(府)' 명칭을 전면 폐지하고, 전국의 19개 '부'를 일제히 **'시(市)'**로 개칭했습니다 (부산부 ➔ 부산시, 대구부 ➔ 대구시, 광주부 ➔ 광주시, 전주부 ➔ 전주시 등). 수도는 1946년 '서울특별자유시'를 거쳐 **'서울특별시'**로 확정되었습니다.
+* **시 승격 요건과 자본주의적 기준**: 당시 지방자치법 및 승격 규정은 인구 5만 명 이상과 더불어 **"전 가구의 60% 이상이 상업·공업 등 비농업 도시적 생업에 종사할 것"**과 **재정자립도(지방세 납세 실적)**를 필수 요건으로 규정했습니다. 이는 본래 물화 교환 장소(저잣거리)였던 '시(市)'가 농경 장원 질서에서 탈피하여 화폐 유통과 산업 자본주의가 생산과 소비를 지배하는 공간을 공인하는 행정단위로 완전히 정착했음을 증명합니다 (상세한 역사사회학적 기원과 메커니즘은 [시장과 근대 자본주의적 도시 행정단위의 형성](urban_municipality_and_capitalism_genesis.html) 참조).
 * **읍(邑) ➔ 시(市) 승격 경로**: 이후 산업화와 도시화가 진행됨에 따라, 군 산하에서 인구 5만 명 이상으로 성장한 '읍(邑)'들이 군에서 분리되어 차례로 '시(市)'로 승격하는 전형적인 현대 도시 발전 사다리가 완성되었습니다 (예: 수원읍 ➔ 수원시, 포항읍 ➔ 포항시, 춘천읍 ➔ 춘천시, 원주읍 ➔ 원주시).
 
 <definitions>
@@ -297,6 +298,7 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 - 이기석 (2002). 『한국의 도시지리학 연구』, 서울대학교 출판부 — 전통 읍치에서 근대 도시로의 전이.
 
 ### 사내 위키 연계 문서
+- [시장과 근대 자본주의적 도시 행정단위의 형성](urban_municipality_and_capitalism_genesis.html) — 시장(市)의 어휘 전이와 자본주의적 조세·도농분리 메커니즘
 - [한국 전근대 공간 지배와 점 선 네트워크](premodern_spatial_governance_and_networks.html) — 점과 선, 허브앤스포크, 비지/월경지, 영역화
 - [한국 수위도시의 역사적 계보와 도시체계 변천](korean_primary_cities_and_urban_systems.html) — 국가 및 권역별 수위도시와 종주도시화 분석
 - [위키 메인 인덱스](index.html)
