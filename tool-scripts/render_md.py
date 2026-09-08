@@ -677,10 +677,10 @@ def build_header(fm, header_attrs=""):
 
 
 def resolve_raw_paths(basename, md_text, old_html):
-    """문서에 연관된 로컬 원천 데이터(raw/*) 상대 경로 목록을 우선순위대로 수집·검증한다.
-    1) old_html 안의 기존 raw 링크
-    2) md_text 본문에서 발견되는 raw/ 경로
-    3) Z:\\wiki\\raw 디렉터리 내 basename 기반 탐색
+    """문서에 연관된 로컬 원천 데이터(raw/*) 상대 경로 목록을 수집·검증한다.
+    1) md_text 본문(특히 참고자료 섹션)에서 명시적으로 링크·언급된 raw/ 경로 우선 수집 (SSOT)
+    2) old_html 안의 기존 raw 링크 (이전 버전 호환)
+    3) md_text/html 어디에도 raw 경로가 명시되지 않은 경우에만 Z:\\wiki\\raw 디렉터리 내 basename 기반 fallback 탐색
     실제 파일시스템에 존재하는 유효한 상대 경로만 중복 없이 반환한다."""
     candidates = []
 
@@ -697,19 +697,26 @@ def resolve_raw_paths(basename, md_text, old_html):
         if clean not in candidates and clean_no_slash not in candidates:
             candidates.append(clean)
 
+    # 1) md_text 본문 우선 탐색 (SSOT)
+    if md_text:
+        # 참고자료 섹션 우선 탐색
+        ref_m = re.search(r'##\s+\d+\.\s+참고\s*자료.*', md_text, re.S)
+        scope = ref_m.group(0) if ref_m else md_text
+        for m in re.finditer(r'raw/[a-zA-Z0-9_\-\./]+', scope):
+            add_candidate(m.group(0))
+
+    # 2) old_html 안의 기존 raw 링크
     if old_html:
         for m in re.finditer(r'href=[\'"](raw/[^\'"]+)[\'"]', old_html):
             add_candidate(m.group(1))
 
-    if md_text:
-        for m in re.finditer(r'raw/[a-zA-Z0-9_\-\./]+', md_text):
-            add_candidate(m.group(0))
-
-    raw_dir = os.path.join(WIKI_DIR, "raw")
-    if os.path.exists(raw_dir):
-        for f in os.listdir(raw_dir):
-            if f.endswith("_raw.txt") and basename in f:
-                add_candidate(f"raw/{f}")
+    # 3) md나 html 어디에도 명시된 raw가 없을 때만 디렉터리 폴백 탐색
+    if not candidates:
+        raw_dir = os.path.join(WIKI_DIR, "raw")
+        if os.path.exists(raw_dir):
+            for f in os.listdir(raw_dir):
+                if f.endswith("_raw.txt") and basename in f:
+                    add_candidate(f"raw/{f}")
 
     valid_paths = []
     for rel in candidates:
@@ -727,27 +734,25 @@ def build_footer(basename, old_html="", md_text="", footer_attrs=""):
     """위키 표준 2계층 바닥글 UI를 생성한다.
     - 메인 색인, 마크다운 정본(.md), 검증된 원천 데이터(raw/*), 에이전트 가이드, 맨 위로 네비게이션 버튼
     - 원천 데이터 보존 경로 상세 표기
-    - 저장소 식별자 및 보좌 에이전트 메타데이터"""
+    - 저장소 식별자 및 보좌 에이전트 메타데이터
+    - 상단 네비게이션에는 [📁 원천 데이터] 단일 대표 버튼 1개만 배치하여 버튼 중복 증식을 방지하고,
+      복수 파일의 구체적 목록은 하단 footer-raw-info 블록에 단일화하여 상세 제공한다."""
     raw_paths = resolve_raw_paths(basename, md_text, old_html)
 
-    raw_buttons = []
-    if len(raw_paths) == 1:
-        raw_buttons.append(
-            '                <a href="%(path)s" class="footer-btn">\n'
+    raw_btns_html = ""
+    if raw_paths:
+        # 대표 원천 링크 선택: README.txt, index.txt 우선, 아니면 첫 번째 파일
+        rep_path = raw_paths[0]
+        for p in raw_paths:
+            if p.endswith("README.txt") or p.endswith("index.txt"):
+                rep_path = p
+                break
+        raw_btns_html = (
+            '\n                <a href="%(path)s" class="footer-btn">\n'
             '                    <span class="footer-btn-icon">📁</span>\n'
             '                    <span class="footer-btn-text">원천 데이터</span>\n'
-            '                </a>' % {"path": raw_paths[0]}
+            '                </a>' % {"path": rep_path}
         )
-    elif len(raw_paths) > 1:
-        for idx, path in enumerate(raw_paths, 1):
-            raw_buttons.append(
-                '                <a href="%(path)s" class="footer-btn" title="%(path)s">\n'
-                '                    <span class="footer-btn-icon">📁</span>\n'
-                '                    <span class="footer-btn-text">원천 데이터 (%(idx)d)</span>\n'
-                '                </a>' % {"path": path, "idx": idx}
-            )
-
-    raw_btns_html = "\n" + "\n".join(raw_buttons) if raw_buttons else ""
 
     raw_info_block = ""
     if raw_paths:
