@@ -1,7 +1,7 @@
 /* ==========================================================================
    Knowledge Wiki Common Stylesheet (style.css)
    최초 작성일시: 2026-08-22 오후 02:45:14 (KST, UTC+9)
-   최종 수정일시: 2026-09-08 오후 05:35:42 (KST, UTC+9)
+   최종 수정일시: 2026-09-22 오후 02:23:17 (KST, UTC+9)
    ========================================================================== */
 
 *, *::before, *::after {
@@ -668,6 +668,22 @@ details[open] {
 }
 
 /* Index Page Specific Layout */
+.index-overview {
+    max-width: 760px;
+    margin: 0.5rem auto 1.5rem auto;
+    padding: 0 1.5rem;
+    color: #495057;
+    line-height: 1.7;
+    font-size: 0.98rem;
+}
+
+.category-desc {
+    margin: -0.5rem 0 0.9rem 0;
+    color: #6c757d;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
 .section-title {
     font-size: 1.3rem;
     margin: 1.8rem 0 1rem 0;
