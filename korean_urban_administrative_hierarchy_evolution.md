@@ -2,7 +2,7 @@
 title: "한국 도시 행정단위의 역사적 계보와 계층 체계"
 subtitle: "Historical Genealogy and Hierarchical Evolution of Korean Urban Units"
 created: "2026-09-08 오후 02:46:22 (KST, UTC+9)"
-updated: "2026-09-08 오후 06:15:57 (KST, UTC+9)"
+updated: "2026-09-23 오전 07:13:10 (KST, UTC+9)"
 category: "한국 제도사 및 도시사 (Institutional History & Urban Evolution)"
 tags: ["Urban Hierarchy", "Walled-town State", "Myeon-ri System", "Administrative Unit", "Historical Evolution"]
 html_view: "korean_urban_administrative_hierarchy_evolution.html"
@@ -12,11 +12,13 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 *Historical Genealogy and Hierarchical Evolution of Korean Urban Units*
 
 **카테고리**: 한국 제도사 및 도시사 (Institutional History & Urban Evolution)  
-*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-09-08 오후 06:15:57 (KST, UTC+9)*
+*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-09-23 오전 07:13:10 (KST, UTC+9)*
 
 <context>
 본 문서는 한반도 역사상 도시와 마을을 규정했던 행정단위의 명칭, 위계, 그리고 변천 궤적을 고찰한 제도사·도시사 단일 진실 공급원(SSOT) 문서입니다. 청동기~초기 철기시대의 독립된 도시국가였던 '성읍(城邑)'이 고대 왕국에 복속되어 군현 거점으로 재편된 과정, 고려시대의 주현·속현 및 향·소·부곡 체계, 조선시대의 전 군현 주현화와 읍치-면리제(面里制) 및 수도 한성부의 부방제도(部坊制度), 그리고 전통시대 시장(Marketplace)을 뜻하던 '시(市)'라는 어휘가 일제강점기 부(府)·읍(邑) 제도를 거쳐 1949년 대한민국 지방자치법을 통해 최상위 도시 행정단위로 정착된 전 과정을 상세하고 풍부한 문장으로 집대성합니다.
 </context>
+
+**관련 문서**: [고려 호족·향리와 지방세력가 호칭 고증](goryeo_hojok_hyangni_terminology.html)(본 문서의 향리·호장·속현 제도를 호족 기원부터 심화 고증한 심층 분과)
 
 <overview>
 ## 1. 개요 및 목적

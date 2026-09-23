@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획 - Two-Layer Knowledge Wiki</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="wiki.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획</h1>
+        <div class="subtitle">Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production</div>
+        <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
+        <div class="meta">최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-09-23 오전 08:00:36 (KST, UTC+9)</div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">← 메인 인덱스로 돌아가기</a>
+            <a href="AGENTS.md">에이전트 가이드</a>
+        </div>
+        <a href="cinematic_library_metroidvania_game_design.md" class="btn-md-source">📄 순수 마크다운 원본(.md) 보기</a>
+    </nav>
+    <main>
+        <article>
+<p>
+    본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관은 중세 고려시대풍이되 실제 고려는 아닌 가상 판타지이며, 왕-중앙관료-지방세력가-지방관료-양인-천민의 6단 신분 계층을 핵심 갈등 축으로 삼습니다. 본 문서는 아저씨와의 기획 논의(원문: <code>raw/20260923_cinematic_library_metroidvania_game_design_raw.txt</code>)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
+</p>
+<p>
+    <b>관련 문서</b>: <a href="metroidvania_genre_analysis.html">메트로이드배니아 장르 개요 및 계보학</a>(장르 이론·용어 근거) · <a href="metroidvania_mechanics_and_level_design.html">메트로이드배니아 시스템 메커니즘 및 레벨 디자인</a>(능력 게이팅 근거) · <a href="goryeo_horizontal_fantasy_worldbuilding.html">고려 중세풍 수평적 판타지 세계관과 아동 서사 모델</a>(설계 철학이 상반되는 자매 세계관, 3.1절 참조) · <a href="children_narrative_politics_and_power_structures.html">아동 서사의 정치철학과 권력 구조 비판</a>(신분제 서사 선택의 배경 이론)
+</p>
+            <section>
+                <h2>1. 개요 및 목적</h2>
+
+<p>
+    <i>Overview & Purpose</i>
+</p>
+
+<p>
+    이 기획은 두 개의 산출물을 하나의 코드베이스로 동시에 만족시키려 합니다.
+</p>
+
+<ol>
+<li><b>본 게임(Playable Game)</b>: 픽셀 도트 아트의 플랫폼 기반 메트로이드배니아. 능력 획득에 따른 맵 게이팅과 탐험이 실제로 작동하는 완결된 플레이 경험.</li>
+<li><b>연출 라이브러리/API(Cinematic Direction Layer)</b>: 게임 로직과 분리된 계층으로, "이 캐릭터가 이 감정을 지으며 이 대사를 이 카메라 구도에서 말한다"는 연출 단위를 데이터로 기술·재생·녹화할 수 있는 재사용 가능한 인터페이스. 이 계층이 쇼츠 영상 제작의 실질적 핵심이며, 동시에 게임 본편의 컷신·NPC 대화에도 그대로 사용됩니다.</li>
+</ol>
+
+<p>
+    목적은 두 산출물을 분리 개발하지 않고, <b>연출 이벤트를 게임 상태와 동일한 데이터 모델로 다뤄 한쪽에서 만든 연출 자산이 다른 쪽에서도 그대로 재생되도록</b> 만드는 데 있습니다. 이렇게 설계하면 쇼츠용으로 만든 장면이 나중에 게임 본편의 컷신으로 재사용되고, 반대로 게임 플레이 중 만들어진 상황도 별도 작업 없이 쇼츠용으로 재녹화할 수 있습니다.
+</p>
+
+<div class="callout">
+<strong>1차 평가에서 확정된 방향 전환</strong>: 최초 브리핑에서는 "쇼츠 연출용 무대"가 목적이고 메트로이드배니아는 장르적 외피에 가까웠으나, 아저씨가 "플레이 가능하고, 이후 이를 기반으로 게임도 만들고 싶다"고 명시하면서 메트로이드배니아의 능력 게이팅·탐험 시스템도 더 이상 선택적 요소가 아니라 <b>정식 설계 대상</b>이 되었습니다. 이에 따라 이전 평가에서 "게이팅 밸런스는 후순위"라 했던 판단은 이 문서에서 철회합니다.
+</div>
+            </section>
+            <section>
+                <h2>2. 핵심 개념 및 원리 — 이중 목적 아키텍처</h2>
+
+<p>
+    <i>Core Concepts — The Dual-Purpose Architecture</i>
+</p>
+
+<h3>2.1 연출 이벤트를 게임 상태의 일부로 모델링</h3>
+
+<p>
+    핵심 설계 원칙은 "연출은 게임과 별도로 스크립팅되는 컷신이 아니라, 게임이 이미 다루는 상태(캐릭터 위치, 감정, 대사, 카메라)를 시간 축 위에 기록·재생하는 것"이라는 관점입니다. 이렇게 하면 연출 라이브러리가 게임 엔진 위에 얹힌 부가 기능이 아니라, 게임 자체의 상태 직렬화(state serialization) 메커니즘을 재사용하는 형태가 됩니다.
+</p>
+
+<div class="diagram-container">
+    <h4>[연출 라이브러리/API의 위치]</h4>
+    <div class="framework-card">
+        <ul class="framework-list">
+            <li>게임 로직 (Game Logic)</li>
+            <li>플레이어 입력 → 물리/충돌 → 능력 게이팅 → 맵 상태 전이</li>
+            <li>연출 라이브러리/API (Cinematic Layer)</li>
+            <li><b>- 타임라인 기록기(Recorder)</b> : 실제 플레이 중 상태 스냅샷 채집</li>
+            <li><b>- 연출 스크립트 재생기(Player)</b> : 사전 작성된 연출 데이터 재생</li>
+            <li><b>- 카메라 리그</b> : 프레이밍/줌/트래킹을 독립 제어</li>
+            <li><b>- 대사풍선 렌더러</b> : 화자·감정 태그에 따라 스타일 자동 결정</li>
+        </ul>
+    </div>
+</div>
+
+<h3>2.2 두 가지 진입 경로</h3>
+
+<ul>
+<li><b>레코더 경로</b>: 실제 플레이 세션 중 특정 구간을 타임라인으로 채집(캐릭터 좌표, 애니메이션 클립, 감정 태그, 대사 텍스트, 카메라 값)하여 이후 그대로 재생하거나 영상으로 뽑아냅니다. 우연히 나온 좋은 상황을 "재현 가능한 자산"으로 박제하는 경로입니다.</li>
+<li><b>연출 스크립트 경로</b>: 실제 플레이 없이 연출 데이터를 직접 작성(또는 툴로 편집)해 특정 장면을 처음부터 연출합니다. 게임 본편의 고정 컷신은 이 경로로 만들어집니다.</li>
+</ul>
+
+<p>
+    두 경로가 동일한 데이터 스키마(캐릭터 ID, 좌표, 감정 태그, 대사, 카메라 파라미터의 시간축 배열)를 공유해야 위 1절의 목적("한쪽 자산이 다른 쪽에서도 재생됨")이 성립합니다. 이것이 이 아키텍처에서 가장 먼저 확정해야 할 기술적 결정입니다.
+</p>
+
+<h3>2.3 API로 노출할 것인가, 내부 라이브러리로만 둘 것인가</h3>
+
+<p>
+    "라이브러리 혹은 API"라는 원 브리핑의 표현대로, 두 가지 노출 수준이 가능하며 우선순위가 다릅니다.
+</p>
+
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
+<thead><tr><th>구분</th><th>내부 라이브러리</th><th>외부 API</th></tr></thead>
+<tbody>
+<tr><td>대상</td><td>게임 자체(본편 컷신 재생)</td><td>외부 도구(별도 녹화 프로그램, 커뮤니티 제작 연출 등)에서 이 게임의 연출 엔진을 호출</td></tr>
+<tr><td>구현 비용</td><td>낮음(게임 내부 모듈)</td><td>높음(직렬화 포맷 고정, 버전 호환, 문서화, 보안/샌드박싱 필요)</td></tr>
+<tr><td>이 시점의 판단</td><td><b>우선 이것부터</b></td><td>게임과 연출 레이어의 데이터 스키마가 안정화된 이후 2단계 과제</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">대상</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내부 라이브러리</dt>
+                <dd class="mobile-field-value">게임 자체(본편 컷신 재생)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">외부 API</dt>
+                <dd class="mobile-field-value">외부 도구(별도 녹화 프로그램, 커뮤니티 제작 연출 등)에서 이 게임의 연출 엔진을 호출</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">구현 비용</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내부 라이브러리</dt>
+                <dd class="mobile-field-value">낮음(게임 내부 모듈)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">외부 API</dt>
+                <dd class="mobile-field-value">높음(직렬화 포맷 고정, 버전 호환, 문서화, 보안/샌드박싱 필요)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">이 시점의 판단</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내부 라이브러리</dt>
+                <dd class="mobile-field-value"><b>우선 이것부터</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">외부 API</dt>
+                <dd class="mobile-field-value">게임과 연출 레이어의 데이터 스키마가 안정화된 이후 2단계 과제</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
+
+<p>
+    내부 라이브러리 수준의 완성도를 먼저 확보하고, 외부 API 공개는 스키마가 안정된 다음 단계로 미루는 것을 권장합니다. 처음부터 외부 공개용 API로 설계하면 스키마 변경 비용이 커져 초기 반복 속도가 떨어집니다.
+</p>
+            </section>
+            <section>
+                <h2>3. 세계관 및 정치 체제 설계 — 연출 레이어와 게임 레이어의 분리</h2>
+
+<p>
+    <i>Worldbuilding: Divergent Political Systems Between the Cinematic Layer and the Game Layer</i>
+</p>
+
+<h3>3.1 시대 분위기와 이 위키의 기존 고려풍 세계관과의 관계</h3>
+
+<p>
+    세계관은 마법(주술·도술)과 냉병기(칼·창·활)가 공존하는 중세 고려시대풍 가상 판타지입니다. 실제 고려사를 배경으로 삼지 않고 질감만 차용하는 방식은, 이 위키에 이미 존재하는 <code>goryeo_horizontal_fantasy_worldbuilding.html</code>의 2.1절 "고전풍 공화주의와 미학·체제의 분리" 원칙과 방법론적으로 동일합니다. 다만 이 기획은 정치 체제를 <b>게임 레이어(공화체제로 고정)와 연출 레이어(체제에 구애받지 않는 자유 소재)로 분리</b>해 다룹니다.
+</p>
+
+<div class="callout">
+<p><strong>연출 레이어는 정치 체제에 고정되지 않는 범용 무대</strong>: 연출 레이어(쇼츠/지식영상)는 신분제 하나에 묶이지 않습니다. 다룰 수 있는 소재는 최소 세 갈래입니다 — ① <b>현실 역사</b>(신분제 사회를 포함한 임의의 시대), ② <b>게임이 실제로 채택한 공화체제 세계 그 자체</b>, ③ <b>그 공화체제 세계 안팎에 존재할 수 있는 왕정적 소재</b>(예: 공화정 수립 이전의 역사, 국경 너머 이웃 왕국, 몰락한 옛 왕조 등). 게임의 정식 세계관이 공화체제라 해도, 연출 레이어는 그 세계의 과거나 주변국으로 왕정을 얼마든지 무대에 올릴 수 있습니다.</p>
+<p>이렇게 설계하는 이유는 연출 라이브러리/API가 특정 한 편의 영상 전용 도구가 아니라, 임의의 시대·체제·인물 구성을 기록·재생할 수 있는 범용 세트 라이브러리(2장 아키텍처)이기 때문입니다. 3.2절의 6단 신분 계층 구조는 그 다양한 소재 중 <b>신분제를 다룰 때 쓰는 데이터셋 하나</b>일 뿐이며, 연출 레이어가 항상 따라야 하는 고정 설정은 아닙니다.</p>
+<p>반면 <b>플레이어블 게임 본편</b>이 실제로 진행되는 정식 세계·정치 체제는 여전히 <b>공화체제 하나로 고정</b>합니다. 게임 시스템(세력 관계, 진행 동기, 능력 게이팅의 서사적 근거)이 여러 체제를 동시에 지원하도록 설계하면 범위가 지나치게 커지므로, 게임 자체의 정치 체제는 단일하게 유지하는 편이 합리적입니다. 이 점에서 게임 레이어는 <code>goryeo_horizontal_fantasy_worldbuilding.html</code>의 "혈통 군주정 거부" 노선과 방향은 같아지지만, 그 문서와 세계관을 공유하는 것은 아니며 이 프로젝트만의 별도 공화체제입니다.</p>
+<p>정리하면: <b>게임 레이어는 공화체제로 고정, 연출 레이어는 체제 무관하게 자유</b>입니다. 연출 레이어가 다루는 왕정 소재(신분제 사회 등)가 게임 세계의 과거사로 시간적으로 연결되는지, 완전히 별개의 역사·세계선으로 다뤄지는지는 아직 미확정이며 다음 단계에서 결정이 필요한 항목입니다.</p>
+</div>
+
+<h3>3.2 6단 신분 계층 구성(연출 레이어가 다루는 신분제 소재 데이터셋 예시, 1차 정의, 세부 미확정)</h3>
+
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
+<thead><tr><th>계층</th><th>호칭</th><th>비고(에이전트 해석, 확정 아님)</th></tr></thead>
+<tbody>
+<tr><td>왕</td><td><b>왕(王)</b></td><td>국가 최고 권위. 등장 빈도·직접 조작 가능 여부 미정.</td></tr>
+<tr><td>중앙관료</td><td><b>문벌(門閥)</b></td><td>고려 전기 중앙 정계를 장악한 가문·관료 집단. 흔히 "문벌귀족"이라 불리나, 고려가 실제로 "귀족사회"였는지(음서 근거) "관료사회"였는지(과거 근거)는 학계 논쟁이 있고, 세습 작위(봉작) 자체도 없었다는 학설이 있어 "귀족"이라는 표현을 빼고 "문벌"만 쓰는 쪽을 채택(2015 개정 교과서 표기와 일치). <b>대중적으로는 "양반(兩班)"으로도 흔히 불리나</b>, 양반은 원래 조회 시 국왕을 기준으로 동편에 선 문반(文班)과 서편에 선 무반(武班)을 합친 관제 용어로 고려 성종대 등장했고, 이 시기엔 세습 신분 개념이 아니라 재직자 지칭이었음(세습 신분화는 후대 조선의 현상). 세계관 정식 호칭은 "문벌", "양반"은 구어적 별칭으로 병용 가능. 지방세력가와의 긴장 관계 설정 여지.</td></tr>
+<tr><td>지방세력가</td><td><b>호장(戶長)</b></td><td>성종 2년(983) 12목 설치·외관 파견과 함께 종전 신라식 호칭(당대등)을 개칭해 제도화된 향리의 우두머리. 세습적이나 법제적으로는 귀족이 아님 — 부와 문화자본(자제의 과거 응시 자격 등)은 있으나 공식 특권은 없는 애매한 위치. 역사적 근거는 별도 문서(3.2.1절) 참조. 갈등의 주요 발화점으로 활용 가능.</td></tr>
+<tr><td>지방관료</td><td><b>외관(外官)</b> — 목사(牧使) 등</td><td>중앙 조정에서 지방에 파견한 관료의 총칭. 고려 8목·12목에는 정3품 목사가 파견됨(이 위키의 한국 도시 행정단위 계보 문서 참조). 중앙-지방 권력 구조의 실무 접점이며, 호장(향리)과 구조적으로 긴장 관계.</td></tr>
+<tr><td>양인</td><td><b>양인(良人)</b></td><td>평민. 지식영상 속 등장인물 출신으로 활용.</td></tr>
+<tr><td>천민</td><td><b>천민(賤民)</b></td><td>최하층. 지식영상 속 신분 갈등·저항 서사의 자연스러운 소재.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">왕</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">호칭</dt>
+                <dd class="mobile-field-value"><b>왕(王)</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">비고(에이전트 해석, 확정 아님)</dt>
+                <dd class="mobile-field-value">국가 최고 권위. 등장 빈도·직접 조작 가능 여부 미정.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">중앙관료</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">호칭</dt>
+                <dd class="mobile-field-value"><b>문벌(門閥)</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">비고(에이전트 해석, 확정 아님)</dt>
+                <dd class="mobile-field-value">고려 전기 중앙 정계를 장악한 가문·관료 집단. 흔히 "문벌귀족"이라 불리나, 고려가 실제로 "귀족사회"였는지(음서 근거) "관료사회"였는지(과거 근거)는 학계 논쟁이 있고, 세습 작위(봉작) 자체도 없었다는 학설이 있어 "귀족"이라는 표현을 빼고 "문벌"만 쓰는 쪽을 채택(2015 개정 교과서 표기와 일치). <b>대중적으로는 "양반(兩班)"으로도 흔히 불리나</b>, 양반은 원래 조회 시 국왕을 기준으로 동편에 선 문반(文班)과 서편에 선 무반(武班)을 합친 관제 용어로 고려 성종대 등장했고, 이 시기엔 세습 신분 개념이 아니라 재직자 지칭이었음(세습 신분화는 후대 조선의 현상). 세계관 정식 호칭은 "문벌", "양반"은 구어적 별칭으로 병용 가능. 지방세력가와의 긴장 관계 설정 여지.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">지방세력가</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">호칭</dt>
+                <dd class="mobile-field-value"><b>호장(戶長)</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">비고(에이전트 해석, 확정 아님)</dt>
+                <dd class="mobile-field-value">성종 2년(983) 12목 설치·외관 파견과 함께 종전 신라식 호칭(당대등)을 개칭해 제도화된 향리의 우두머리. 세습적이나 법제적으로는 귀족이 아님 — 부와 문화자본(자제의 과거 응시 자격 등)은 있으나 공식 특권은 없는 애매한 위치. 역사적 근거는 별도 문서(3.2.1절) 참조. 갈등의 주요 발화점으로 활용 가능.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">지방관료</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">호칭</dt>
+                <dd class="mobile-field-value"><b>외관(外官)</b> — 목사(牧使) 등</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">비고(에이전트 해석, 확정 아님)</dt>
+                <dd class="mobile-field-value">중앙 조정에서 지방에 파견한 관료의 총칭. 고려 8목·12목에는 정3품 목사가 파견됨(이 위키의 한국 도시 행정단위 계보 문서 참조). 중앙-지방 권력 구조의 실무 접점이며, 호장(향리)과 구조적으로 긴장 관계.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">양인</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">호칭</dt>
+                <dd class="mobile-field-value"><b>양인(良人)</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">비고(에이전트 해석, 확정 아님)</dt>
+                <dd class="mobile-field-value">평민. 지식영상 속 등장인물 출신으로 활용.</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">천민</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">호칭</dt>
+                <dd class="mobile-field-value"><b>천민(賤民)</b></dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">비고(에이전트 해석, 확정 아님)</dt>
+                <dd class="mobile-field-value">최하층. 지식영상 속 신분 갈등·저항 서사의 자연스러운 소재.</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
+
+<p>
+    "호칭" 열은 원 브리핑이 이미 그 단어를 쓴 왕·양인·천민을 제외하면 모두 에이전트가 역사 조사로 덧붙인 해석입니다(중앙관료→양반, 지방관료→외관/목사는 이번에 보강, 지방세력가→호장은 아저씨가 직접 지정). 실제 설정 확정 전 별도 검토가 필요합니다. 특히 "지방세력가"는 원문에서 유일하게 상세 정의가 주어진 계층이라, 이 기획에서 서사적 비중이 가장 클 가능성이 있습니다(문화·예술 혜택이라는 설정 자체가 "화려한 무대/의상/대사"를 요구하므로 감정표현·연출 시스템과 직결).
+</p>
+
+<h3>3.2.1 지방세력가의 역사적 원형(요약)</h3>
+
+<p>
+    "지방세력가"는 고려 호족(豪族) — 정확히는 그 후예 중 개경 진출에 실패하고 지방에 남아 세습적 지배층이 된 계열(제도명 <b>호장 戶長</b>/향리 鄕吏) — 에 대응합니다. 이들은 귀족은 아니되 사유지·지방민의 존숭·과거 응시 자격 등 실질적 특권을 누렸고, 성종 2년(983) 이후 중앙에서 파견된 목사(牧使) 등 외관과 구조적으로 긴장 관계에 있었습니다. 다만 "호족"이라는 단어 자체는 1차 사료(삼국사기·고려사)에 없는 현대 학계의 소급 조어이며, 사료상의 실제 용어는 시기에 따라 성주(城主)·장군(將軍, 건국 전후) 또는 호장·향리(제도화 이후)로 갈립니다. 유럽식 "영주"와의 동일시도 학계에서는 신중히 다뤄집니다.
+</p>
+
+<p>
+    상세 근거·용어 논쟁·시기별 호칭 비교표는 별도 문서 <a href="goryeo_hojok_hyangni_terminology.html">고려 호족·향리와 지방세력가 호칭 고증</a>으로 분리했습니다.
+</p>
+
+<h3>3.3 마법 체계 재사용 검토</h3>
+
+<p>
+    <code>goryeo_horizontal_fantasy_worldbuilding.html</code> 5장에는 이미 "통합 도술 체계"(공학·염원·대가 3대 원동력, 목화토금수 오행 4대 원소 변환술)가 설계되어 있습니다. 신분 구조는 다르지만 마법 체계 자체는 세계관 공유 자산으로 재사용하거나 변형해 쓰는 편이 처음부터 새로 설계하는 것보다 효율적입니다. 이 기획에서 별도 마법 체계를 새로 만들 필요가 있는지, 위 체계를 차용할지는 아직 결정되지 않았습니다.
+</p>
+            </section>
+            <section>
+                <h2>4. 캐릭터 감정표현 및 대사풍선 시스템</h2>
+
+<p>
+    <i>Character Expression and Speech Bubble System</i>
+</p>
+
+<p>
+    이 두 항목이 쇼츠 연출의 실질적 본체이므로, 게이팅·전투 시스템보다 먼저 프로토타이핑 우선순위를 가져야 합니다.
+</p>
+
+<h3>4.1 감정표현 구현 방식의 선택지</h3>
+
+<ul>
+<li><b>스프라이트 단독 표현</b>: 도트 해상도 안에서 표정을 직접 그림. 표현 폭이 좁고 프레임 수가 많이 필요.</li>
+<li><b>과장 기호 이펙트</b>: 땀방울, 분노 혈관, 반짝임, 물음표 등 만화적 기호를 감정 태그에 따라 자동 배치. 구현이 가장 가볍고 도트 스타일과 궁합이 좋음.</li>
+</ul>
+
+<p>
+    두 방식은 상호 배타적이지 않으며, 2장의 "감정 태그" 데이터 모델에 여러 표현 계층(스프라이트 포즈 + 기호 이펙트)을 동시에 연결하는 조합 설계가 가능합니다.
+</p>
+
+<div class="callout">
+<p><strong>현재 채택하지 않음 — 초상화 인셋 병행</strong>: 대사풍선 옆이나 화면 구석에 별도 초상화(버스트) 스프라이트를 두어 표정을 전담시키는 방식은 매력적이나, 스프라이트 포즈와는 별개로 초상화 전용 그림을 감정 태그·신분 계층별로 꾸준히 제작해야 해 작화 리소스 부담이 큽니다. 지금은 이를 전담할 작업자가 없어 <b>채택하지 않기로 결정</b>했습니다. 인력이 확보되면 2장의 "감정 태그" 데이터 모델에 세 번째 표현 계층으로 다시 추가할 수 있도록, 폐기가 아니라 보류로 남겨둡니다.</p>
+</div>
+
+<h3>4.2 대사풍선 렌더러</h3>
+
+<p>
+    "무대에서 바로 대사풍선으로 보여준다"는 요구는 화면 밖 UI 레이어(하단 텍스트박스 등)가 아니라 <b>캐릭터 머리 위 월드 스페이스 풍선</b>을 의미하는 것으로 해석됩니다. 이 경우:
+</p>
+
+<ul>
+<li>풍선 위치가 카메라 프레이밍과 충돌하지 않아야 하므로, 카메라 리그(2.1절 아키텍처의 카메라 리그)와 풍선 배치 로직이 서로의 상태를 참조해야 합니다.</li>
+<li>감정 태그에 따라 풍선 형태(테두리 삐죽삐죽=분노, 점선=속삭임, 물결=떨림 등)를 자동 변형하면 4.1절의 감정표현 이펙트와 시각적으로 중복되지 않게 역할을 나눌 수 있습니다(몸짓=포즈/기호, 말투=풍선 형태).</li>
+</ul>
+
+<h3>4.3 확정이 필요한 항목</h3>
+
+<ul>
+<li>감정 태그의 분류 체계(예: 기쁨/분노/슬픔/놀람/경멸 등 몇 종을 1차로 지원할지)</li>
+<li>대사풍선이 다국어(한국어/영어 등) 텍스트를 다룰지, 세로쓰기 등 시대극 감성의 서체 연출을 넣을지</li>
+</ul>
+            </section>
+            <section>
+                <h2>5. 기술 스택 결정 — Godot 엔진 채택</h2>
+
+<p>
+    <i>Technology Stack Decision — Adopting the Godot Engine</i>
+</p>
+
+<h3>5.1 비교 후보와 판단 기준</h3>
+
+<p>
+    아저씨와의 논의에서 "이 프로젝트를 저(에이전트)와 함께 구현하는 데 적합한가"를 1차 기준으로 삼아 무료 2D 게임엔진을 비교했습니다. 판단 기준은 다음 네 가지였습니다: ① 프로젝트 파일이 텍스트 기반이라 에이전트가 직접 읽고 편집할 수 있는가, ② CLI/헤드리스 실행으로 자동화가 가능한가, ③ 룸(타일맵) 디자인 도구가 얼마나 통합되어 있는가, ④ 커뮤니티/자료 규모.
+</p>
+
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table class="table-glossary">
+<thead><tr><th>후보</th><th>비교 결과</th></tr></thead>
+<tbody>
+<tr><td><b>Godot</b></td><td><code>.tscn</code>/<code>.tres</code>가 텍스트 기반, CLI 헤드리스 지원, <code>TileSet</code>/<code>TileMap</code> 내장 에디터로 룸디자인이 엔진 하나로 완결. 커뮤니티 최대.</td></tr>
+<tr><td><b>LÖVE (Love2D)</b></td><td>프로젝트가 100% 코드라 에이전트 협업 적합도는 이론상 가장 높음. 다만 내장 에디터가 없어 룸디자인은 별도 툴 Tiled + 로더 라이브러리(STI) 조합이 필요.</td></tr>
+<tr><td><b>Defold</b></td><td>Godot·LÖVE와 마찬가지로 텍스트 기반 프로젝트에 CLI 빌드 지원. 다만 세 후보 중 커뮤니티·자료가 가장 작음.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>Godot</b></dt>
+            <dd class="mobile-table-desc"><code>.tscn</code>/<code>.tres</code>가 텍스트 기반, CLI 헤드리스 지원, <code>TileSet</code>/<code>TileMap</code> 내장 에디터로 룸디자인이 엔진 하나로 완결. 커뮤니티 최대.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>LÖVE (Love2D)</b></dt>
+            <dd class="mobile-table-desc">프로젝트가 100% 코드라 에이전트 협업 적합도는 이론상 가장 높음. 다만 내장 에디터가 없어 룸디자인은 별도 툴 Tiled + 로더 라이브러리(STI) 조합이 필요.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>Defold</b></dt>
+            <dd class="mobile-table-desc">Godot·LÖVE와 마찬가지로 텍스트 기반 프로젝트에 CLI 빌드 지원. 다만 세 후보 중 커뮤니티·자료가 가장 작음.</dd>
+        </div>
+    </dl>
+    </div>
+</div>
+
+<h3>5.2 제외 및 채택 경위</h3>
+
+<ol>
+<li><b>Defold 제외</b>: 아저씨가 "커뮤니티가 Godot보다도 작다면 피하고 싶다"고 명시해, 세 후보 중 커뮤니티 규모가 가장 작은 Defold을 1차로 제외했습니다.</li>
+<li><b>Godot vs LÖVE 비교</b>: 에이전트 협업 적합도만 보면 LÖVE가 이론적으로 우위이나(에디터 자체가 없어 프로젝트 전체가 코드), 아저씨가 "룸디자인·타일맵에 전혀 감이 없다"고 밝힌 상태에서는 LÖVE의 Tiled+STI 외부 툴 조합이 실질적 진입장벽으로 작용한다고 판단했습니다. 반면 Godot은 룸디자인 도구가 엔진에 내장되어 있어 툴 하나로 해결되고, 이 격차가 "Godot의 <code>.tscn</code>/<code>.tres</code>도 이미 텍스트 기반이라 LÖVE 대비 에이전트 협업 격차는 크지 않다"는 점과 합쳐져 Godot 쪽으로 저울이 기울었습니다.</li>
+<li><b>기존 친숙도</b>: 아저씨가 Godot을 "이미지로나마 이미 친숙해서 선호하고 싶다"고 밝힌 기존 선호와도 위 판단이 일치했습니다.</li>
+</ol>
+
+<div class="callout">
+<strong>최종 결정</strong>: <b>Godot 엔진</b>을 이 프로젝트의 기술 스택으로 채택합니다. 결정 근거는 커뮤니티 규모가 아니라(그건 Defold 제외 사유였을 뿐), <b>룸디자인 도구의 엔진 내장 여부</b>가 최종 결정 요인이었습니다. 다만 Tiled는 Godot에서도 임포터 플러그인으로 쓸 수 있으므로, 내장 TileMap 에디터가 부족하다고 느껴지면 언제든 전환 가능한 대안으로 남겨둡니다.
+</div>
+            </section>
+            <section>
+                <h2>6. 미확정 설계 항목(오픈 이슈)</h2>
+
+<p>
+    <i>Open Design Decisions</i>
+</p>
+
+<p>
+    다음 항목은 이번 논의에서 언급되지 않았으며, 근거 없이 임의로 확정하지 않고 목록으로만 남깁니다.
+</p>
+
+<ul>
+<li><b>해상도/팔레트 목표</b>: 순수 레트로(저해상도·제한 팔레트) vs Eastward·Sea of Stars류 HD-2D 절충 중 어느 쪽인지.</li>
+<li><b>플레이어 캐릭터 구성</b>: 단일 캐릭터인지, 신분별 복수 캐릭터(3.2절의 계층 구조를 살리려면 유리)인지.</li>
+<li><b>전투 시스템 유무 및 형태</b>: 칼·창·활이 등장한다고 명시되었으나, 실시간 액션 전투인지 다른 형태인지는 미정.</li>
+<li><b>팀 규모/개발 리소스</b>: 1인 개발인지 협업인지에 따라 4장의 감정표현 구현 방식 우선순위가 달라짐.</li>
+<li><b>맵/게이팅 설계 범위</b>: 2장에서 게이팅이 정식 설계 대상으로 승격되었으나, 구체적 능력 목록·게이팅 순서는 아직 없음(<code>metroidvania_mechanics_and_level_design.html</code>의 능력 게이팅·폼시프팅 이론을 참고해 다음 단계에서 설계 필요).</li>
+</ul>
+            </section>
+            <section>
+                <h2>7. 용어 정리 및 정의</h2>
+
+<p>
+    <i>Terminology & Definitions</i>
+</p>
+
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table class="table-glossary">
+<thead><tr><th>용어</th><th>정의</th></tr></thead>
+<tbody>
+<tr><td><b>연출 라이브러리</b></td><td><b>Cinematic Direction Library</b>. 캐릭터 위치·감정·대사·카메라를 시간축 데이터로 기록·재생하는, 게임 로직과 분리된 계층. 본 기획의 핵심 아키텍처.</td></tr>
+<tr><td><b>레코더 경로</b></td><td><b>Recorder Path</b>. 실제 플레이 세션의 상태를 그대로 채집해 연출 자산으로 재현하는 진입 경로.</td></tr>
+<tr><td><b>연출 스크립트 경로</b></td><td><b>Scripted Path</b>. 플레이 없이 연출 데이터를 직접 작성해 장면을 구성하는 진입 경로.</td></tr>
+<tr><td><b>감정 태그</b></td><td><b>Emotion Tag</b>. 캐릭터의 표정·포즈·대사풍선 형태를 동시에 구동하는 공통 데이터 키.</td></tr>
+<tr><td><b>지방세력가</b></td><td>귀족은 아니나 양인보다 문화·예술적 혜택을 누리는 호화 가문. 세계관 내 호칭은 <b>호장(戶長)</b>. 역사적 원형은 별도 문서 <a href="goryeo_hojok_hyangni_terminology.html">고려 호족·향리와 지방세력가 호칭 고증</a> 참조.</td></tr>
+<tr><td><b>문벌</b></td><td><b>Munbeol</b>(門閥). 세계관 내 중앙관료의 정식 호칭. 고려 전기 중앙 정계를 장악한 가문·관료 집단. "귀족" 표현은 학계 귀족제/관료제 논쟁과 세습 작위 부재 학설을 반영해 배제(2015 개정 교과서 표기와 일치). 대중적 별칭은 양반(兩班, 원래 문반·무반을 합친 관제 용어).</td></tr>
+<tr><td><b>외관</b></td><td><b>Oegwan</b>(外官). 세계관 내 지방관료의 호칭. 중앙 조정이 지방에 파견한 관료의 총칭이며, 대표 직위는 목사(牧使, 8목·12목 정3품).</td></tr>
+<tr><td><b>능력 게이팅</b></td><td><b>Ability Gating</b>. 메트로이드배니아 장르의 핵심 진행 메커니즘으로, 특정 능력 획득 전까지 맵의 일부 경로를 봉쇄하는 설계. 상세는 <code>metroidvania_mechanics_and_level_design.html</code> 참조.</td></tr>
+<tr><td><b>Godot 엔진</b></td><td>이 프로젝트의 채택 기술 스택. 텍스트 기반 씬(<code>.tscn</code>)·리소스(<code>.tres</code>) 포맷과 내장 <code>TileMap</code> 에디터가 채택 결정의 핵심 근거. 상세는 5장 참조.</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>연출 라이브러리</b></dt>
+            <dd class="mobile-table-desc"><b>Cinematic Direction Library</b>. 캐릭터 위치·감정·대사·카메라를 시간축 데이터로 기록·재생하는, 게임 로직과 분리된 계층. 본 기획의 핵심 아키텍처.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>레코더 경로</b></dt>
+            <dd class="mobile-table-desc"><b>Recorder Path</b>. 실제 플레이 세션의 상태를 그대로 채집해 연출 자산으로 재현하는 진입 경로.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>연출 스크립트 경로</b></dt>
+            <dd class="mobile-table-desc"><b>Scripted Path</b>. 플레이 없이 연출 데이터를 직접 작성해 장면을 구성하는 진입 경로.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>감정 태그</b></dt>
+            <dd class="mobile-table-desc"><b>Emotion Tag</b>. 캐릭터의 표정·포즈·대사풍선 형태를 동시에 구동하는 공통 데이터 키.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>지방세력가</b></dt>
+            <dd class="mobile-table-desc">귀족은 아니나 양인보다 문화·예술적 혜택을 누리는 호화 가문. 세계관 내 호칭은 <b>호장(戶長)</b>. 역사적 원형은 별도 문서 <a href="goryeo_hojok_hyangni_terminology.html">고려 호족·향리와 지방세력가 호칭 고증</a> 참조.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>문벌</b></dt>
+            <dd class="mobile-table-desc"><b>Munbeol</b>(門閥). 세계관 내 중앙관료의 정식 호칭. 고려 전기 중앙 정계를 장악한 가문·관료 집단. "귀족" 표현은 학계 귀족제/관료제 논쟁과 세습 작위 부재 학설을 반영해 배제(2015 개정 교과서 표기와 일치). 대중적 별칭은 양반(兩班, 원래 문반·무반을 합친 관제 용어).</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>외관</b></dt>
+            <dd class="mobile-table-desc"><b>Oegwan</b>(外官). 세계관 내 지방관료의 호칭. 중앙 조정이 지방에 파견한 관료의 총칭이며, 대표 직위는 목사(牧使, 8목·12목 정3품).</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>능력 게이팅</b></dt>
+            <dd class="mobile-table-desc"><b>Ability Gating</b>. 메트로이드배니아 장르의 핵심 진행 메커니즘으로, 특정 능력 획득 전까지 맵의 일부 경로를 봉쇄하는 설계. 상세는 <code>metroidvania_mechanics_and_level_design.html</code> 참조.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>Godot 엔진</b></dt>
+            <dd class="mobile-table-desc">이 프로젝트의 채택 기술 스택. 텍스트 기반 씬(<code>.tscn</code>)·리소스(<code>.tres</code>) 포맷과 내장 <code>TileMap</code> 에디터가 채택 결정의 핵심 근거. 상세는 5장 참조.</dd>
+        </div>
+    </dl>
+    </div>
+</div>
+            </section>
+            <section id="references">
+                <h2>8. 참고 자료 및 원천 데이터 출처</h2>
+
+<p>
+    <i>References & Raw Sources</i>
+</p>
+
+<div class="callout">
+<p><strong>📁 로컬 원천 데이터 보존 경로:</strong> 본 위키 문서는 아저씨가 대화 세션에서 직접 제시한 기획 브리핑 원문을 원천으로 하며, 해당 원문은 <code><a href="raw/20260923_cinematic_library_metroidvania_game_design_raw.txt">raw/20260923_cinematic_library_metroidvania_game_design_raw.txt</a></code>에 변경 없이 보존되어 있습니다. 3.2.1절 지방세력가의 역사적 근거(고려 호족·향리 웹 조사)는 별도 문서 <a href="goryeo_hojok_hyangni_terminology.html">고려 호족·향리와 지방세력가 호칭 고증</a>으로 분리되었으며, 그 문서 자신의 원천데이터(<code>raw/20260923_goryeo_hojok_local_power_research_raw.txt</code>)를 따로 갖습니다.</p>
+<p>본 문서는 그 원문을 넘어서는 기술적 해석(2장 아키텍처, 4장 구현 선택지 등)을 포함하며, 이러한 해석 부분은 본문에서 "미확정"·"에이전트 해석" 등으로 명시적으로 구분했습니다.</p>
+</div>
+
+<ol class="reference-list">
+    <li id="ref-1">[1] 이 위키. 〈메트로이드배니아 장르 개요 및 계보학〉. <a href="metroidvania_genre_analysis.html">metroidvania_genre_analysis.html</a> — 능력 게이팅·비선형 탐험 정의의 근거.</li>
+    <li id="ref-2">[2] 이 위키. 〈메트로이드배니아 시스템 메커니즘 및 레벨 디자인〉. <a href="metroidvania_mechanics_and_level_design.html">metroidvania_mechanics_and_level_design.html</a> — 5장 오픈 이슈의 게이팅 설계 참고 자료.</li>
+    <li id="ref-3">[3] 이 위키. 〈고려 중세풍 수평적 판타지 세계관과 아동 서사 모델〉. <a href="goryeo_horizontal_fantasy_worldbuilding.html">goryeo_horizontal_fantasy_worldbuilding.html</a> — 미학·체제 분리 방법론 및 통합 도술 체계 재사용 후보.</li>
+    <li id="ref-4">[4] 이 위키. 〈아동 서사의 정치철학과 권력 구조 비판〉. <a href="children_narrative_politics_and_power_structures.html">children_narrative_politics_and_power_structures.html</a> — 신분제 서사 채택의 배경 대조 이론.</li>
+    <li id="ref-5">[5] Godot Engine 공식 문서. <a href="https://docs.godotengine.org/" target="_blank">https://docs.godotengine.org/</a> — 5장 기술 스택 결정의 TileMap/TileSet, 씬 파일 포맷 근거.</li>
+    <li id="ref-6">[6] 이 위키. 〈고려 호족·향리와 지방세력가 호칭 고증〉. <a href="goryeo_hojok_hyangni_terminology.html">goryeo_hojok_hyangni_terminology.html</a> — 3.2.1절 지방세력가 역사적 원형의 상세 근거(호족 용어 적절성 논쟁, 시기별 호칭 비교, 목사와의 갈등 구도).</li>
+    <li id="ref-7">[7] 위키백과. 〈양반〉 항목. <a href="https://ko.wikipedia.org/wiki/%EC%96%91%EB%B0%98" target="_blank">양반</a> — 3.2절 중앙관료 별칭(양반=문반·무반)의 근거.</li>
+    <li id="ref-8">[8] 이 위키. 〈한국 도시 행정단위의 역사적 계보와 계층 체계〉. <a href="korean_urban_administrative_hierarchy_evolution.html">korean_urban_administrative_hierarchy_evolution.html</a> — 3.2절 지방관료 호칭(외관·목사)의 근거.</li>
+    <li id="ref-9">[9] 우리역사넷(국사편찬위원회). 〈귀족·귀족제의 개념〉·〈귀족제사회설의 논거〉·〈관료제 및 가산관료제설과 그에 대한 비판〉. <a href="https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_012_0020_0040_0020" target="_blank">https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_012_0020_0040_0020</a> — 3.2절 "문벌" 채택 근거(귀족제/관료제 논쟁).</li>
+    <li id="ref-10">[10] 나무위키. 〈문벌귀족〉 항목. <a href="https://namu.wiki/w/%EB%AC%B8%EB%B2%8C%EA%B7%80%EC%A1%B1" target="_blank">문벌귀족</a> — 2015 개정 교과서의 "문벌" 단독 표기 전환 서술의 근거.</li>
+</ol>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-title">Knowledge Wiki System</span>
+                <span class="footer-desc">2계층 지식 아키텍처 (Markdown SSOT + HTML5 View)</span>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html" class="footer-btn">
+                    <span class="footer-btn-icon">🏠</span>
+                    <span class="footer-btn-text">메인 색인</span>
+                </a>
+                <a href="cinematic_library_metroidvania_game_design.md" class="footer-btn">
+                    <span class="footer-btn-icon">📄</span>
+                    <span class="footer-btn-text">마크다운 정본</span>
+                </a>
+                <a href="#references" class="footer-btn">
+                    <span class="footer-btn-icon">📁</span>
+                    <span class="footer-btn-text">원천 데이터</span>
+                </a>
+                <a href="AGENTS.md" class="footer-btn">
+                    <span class="footer-btn-icon">🤖</span>
+                    <span class="footer-btn-text">에이전트 가이드</span>
+                </a>
+                <a href="#" class="footer-btn">
+                    <span class="footer-btn-icon">⬆️</span>
+                    <span class="footer-btn-text">맨 위로</span>
+                </a>
+            </div>
+            <div class="footer-meta">
+                <span>지식 저장소: <code>Z:\wiki</code></span>
+                <span>•</span>
+                <span>보좌 에이전트: <code>jane (Antigravity CLI)</code></span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -2,7 +2,7 @@
 title: "고려 중세풍 수평적 판타지 세계관과 아동 서사 모델"
 subtitle: "Goryeo-Inspired Medieval Horizontal Fantasy Worldbuilding and Child Narrative Models: The Seven Stars Duregye Confederation"
 created: "2026-08-30 오후 09:56:00 (KST, UTC+9)"
-updated: "2026-09-10 오전 08:46:07 (KST, UTC+9)"
+updated: "2026-09-23 오전 05:56:16 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Worldbuilding", "Goryeo History", "Narratology", "Children Literature", "Egalitarianism", "Daoist Fantasy", "Sense of Wonder", "Restorative Justice"]
 html_view: "goryeo_horizontal_fantasy_worldbuilding.html"
@@ -12,11 +12,13 @@ html_view: "goryeo_horizontal_fantasy_worldbuilding.html"
 *Goryeo-Inspired Medieval Horizontal Fantasy Worldbuilding and Child Narrative Models: The Seven Stars Duregye Confederation*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-30 오후 09:56:00 (KST, UTC+9) | 최종 수정일시: 2026-09-10 오전 08:46:07 (KST, UTC+9)*
+*최초 작성일시: 2026-08-30 오후 09:56:00 (KST, UTC+9) | 최종 수정일시: 2026-09-23 오전 05:56:16 (KST, UTC+9)*
 
 <context>
 본 문서는 12~13세기 고려 무신정권기 민중 자치(산성 입보, 노비문서 소각, 제철소 코뮌, 향도 만민평의회)의 역사적 실재성을 바탕으로, 군주정·혈통주의를 극복하고 고려 특유의 성별 평등, 직관적인 현대 단어를 주 표기로 하고 고려시대 실제 사료 용어와 현대·고려 결합용어를 보조 표기한 직능 체계, 마력의 자연과학적 탈신비화, 인과적 책임 윤리, 전통 굿의 인문학적 기능과 구술 역사가(구술사관 본풀이꾼) 모델, 마법의 3대 다원적 관점(공학: 가온, 염원: 바우, 대가: 장인), 그리고 도교적 공간 도술(그림 포털, 공간 압축 호리병, 공간 도약 신발)을 융합한 대안적 아동·청소년 판타지 세계관 《자치연합 칠성두레계(향도 자치연합)》를 체계화한 지식 문서입니다.
 </context>
+
+**관련 문서**: [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)(같은 고려풍 판타지 질감을 쓰되 신분제를 의식적으로 채택한 자매 프로젝트, 3.1절 참조)
 
 <overview>
 ## 1. 개요 및 목적
