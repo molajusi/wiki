@@ -19,3 +19,6 @@ ehthumbs.db
 # Editor directories
 .vscode/
 .idea/
+
+# Synology Drive sync client metadata
+.Synology*/
