@@ -1,0 +1,137 @@
+================================================================================
+원천 데이터(원문 발췌): '상인(商人)'·'商' 어원 관련 비(非)중국어권 학자(영어권·유럽권) 연구 재조사(3차 조사)
+수집 일시: 2026-09-23 (KST, UTC+9)
+수집 대상: 1~2차 조사가 주로 중국어·한국어 매체 및 중국인 학자(郭沫若, 王國維 등)에 의존했던 것을 보강하기 위해, 영어권·유럽권 학자의 한자 어원학(historical linguistics)·갑골학(oracle bone studies)·상대사(商代史) 연구를 검색한 결과. Bernhard Karlgren(스웨덴), Axel Schuessler(오스트리아 출신, 미국 활동), William Baxter(미국)·Laurent Sagart(프랑스) Old Chinese 재구팀, David Keightley(미국), Sarah Allan(미국), Kwang-chih Chang(대만계 미국인, 하버드/예일大), Ulrich Theobald(독일, chinaknowledge.de 편집자), James Legge(스코틀랜드, 19세기 고전 번역가) 등의 저작·데이터베이스 검색 결과 중심.
+비고: 본 파일은 검색·조회 도구 결과에 나타난 원문(영어) 표현을 재해석하지 않고 그대로 옮긴 발췌 모음이다. 도구가 "원문 인용"이라고 명시한 부분은 큰따옴표로 표시하였다.
+================================================================================
+
+1. 수집 자료 요약 및 핵심 논점
+
+1-1. 서구 역사언어학(comparative historical linguistics)의 독자적 어원설 - 중국 '유민 상업설'과 계통이 다른 설명
+
+이번 조사에서 확인된 가장 중요한 보강 사항은, 영어권 비교언어학자들이 '商'의 어원을 중국 전통의 '상나라 유민 행상설'과는 **전혀 다른 계통**으로 설명한다는 점이다. 즉 역사적 서사(주나라의 상나라 정복 → 유민의 행상)로 설명하는 대신, 한장어족(漢藏語族, Sino-Tibetan) 비교언어학의 형태론적 파생(derivational morphology)으로 설명한다.
+
+(1) Axel Schuessler, ABC Etymological Dictionary of Old Chinese (2007) 계통 어원 정보(Wiktionary 경유 재확인)
+- 검색 결과 확인 서술: "商 (shang) derives from 賒 plus terminative suffix *-ŋ according to Schuessler (2007)."
+- 즉 '商'(상, 상업/상인)은 '賒'(사, 외상으로 거래하다/신용거래하다)에 종결접미사(terminative suffix) '*-ŋ'이 붙어 파생된 단어라는 설명이며, 이는 상나라(商朝)라는 고유명사에서 파생된 것이 아니라 '거래/교환'을 뜻하는 어근에서 파생된 일반 어휘라는 설명 구조를 취함.
+- 재구음: 商 (OC *hljaŋ, Zhengzhang 재구), 商 (Baxter–Sagart 재구: /\*s-taŋ/, 검색 도구가 제시한 형태)
+
+(2) STEDT(Sino-Tibetan Etymological Dictionary and Thesaurus, UC Berkeley 소재 데이터베이스) 계통 어원 정보
+- 검색 결과 확인 서술: "According to STEDT, 賒 comes from Proto-Sino-Tibetan *g/m/s-laj ~ r/s-lej ~ b-rej ('to change, exchange, buy'), which also produced related words like 移 (OC *lal, 'change, alter') and 易 (OC *leɡ, 'change, exchange')."
+- 즉 '賒'(상거래의 어원이 되는 글자) 자체가 원시 한장어족(Proto-Sino-Tibetan)의 '바꾸다/교환하다/사다'를 뜻하는 어근 *g/m/s-laj ~ r/s-lej ~ b-rej 에서 유래했으며, 이는 '바꾸다'는 뜻의 '易(역/이)', '移(이)'와 동일 어근 계열(word family)이라는 설명.
+- 출처: https://stedt.berkeley.edu/ (STEDT 데이터베이스), https://en.wiktionary.org/wiki/%E8%B3%92 (賒 항목)
+
+(3) Wiktionary 영어판 '商' 항목의 어원(Etymology) 서술 요약(도구 응답에 따른 재정리; 저작권상 전문 인용은 도구가 거부함)
+- 도구가 제시한 요약: "The character has uncertain original semantics, though early inscriptions often used it for what later became 賞 (reward), suggesting connections to marking, recognizing, or manifesting"
+- "There are noted comparisons to related characters like 章, 彰, 尚, and 上 that involve concepts of something conspicuous or elevated"
+- "The 'trade/merchant' sense derives from 賒 (to barter on credit) plus a terminative suffix"
+- "The 'discuss' meaning is semantically derived from the 'trade' sense"
+- "Old Chinese reconstructions are provided (Baxter-Sagart: /\*s-taŋ/; Zhengzhang: /\*hljaŋ/)"
+- 출처: https://en.wiktionary.org/wiki/%E5%95%86 (영문 위키낱말사전 '商' 항목)
+- 신뢰도 단서: Wiktionary는 저작권(CC-BY-SA) 문제로 도구가 원문 전체를 그대로 인용하지 않고 요약하였으므로, 정밀한 원문 대조가 필요할 경우 위 URL에 직접 접속해야 함.
+
+1-2. 영어권 백과사전·문헌 번역 계통의 '商人=상나라 사람' 어의 확장 서술
+
+(1) Wiktionary 영어판 '商人(shāngrén)' 항목
+- 도구 응답 요약: "商人" 어원은 "person of the Shang dynasty"로 설명되며, 《書經》(Book of Documents, 尙書의 영역명)에 가장 오래된 기록이 있고, 이후 《左傳》(Zuozhuan)에서 "merchant, trader"로 의미가 확장되었다는 서술.
+- 도구가 제시한 인용문(영문 고전 번역, 출처 불명— 제임스 레게(James Legge) 등 19세기 서구 고전 한적(漢籍) 번역 전통과 문체가 일치): "From ancient times the men of Shang, as also our King Wen of the Zhou dynasty..."
+- 이 문장은 상(商)나라 사람 일반을 가리키는 'men of Shang'이라는 표현이 후대에 '상인(商人)=merchant'라는 의미로 굳어지는 과정을 예시로 보여주는 것으로 제시됨.
+- 출처: https://en.wiktionary.org/wiki/%E5%95%86%E4%BA%BA
+- 신뢰도 단서: 이 인용문의 정확한 원저자(제임스 레게 역 《서경》 또는 《춘추좌씨전》일 가능성이 높으나 이번 조사에서 원저자·원문 페이지 확정까지는 이르지 못함)는 별도 확인이 필요함.
+
+1-3. 商賈(행상/좌고) 구분에 대한 고전 주석 및 서구 한학 번역 전통에서의 재확인
+- 검색 결과 요약: 행상(行商)과 좌고(坐賈, 정주형 상인)의 구분은 정현(鄭玄, 동한東漢시대 경학자)의 《주례(周禮)》 주석에서 유래하며, "those who travel are called 'shang', those who settle are called 'gu'"라는 취지로 설명됨.
+- 또한 商賈라는 복합어 표현이 최초로 등장하는 문헌은 《맹자(孟子)》 양혜왕(梁惠王) 상편이라는 서술이 확인됨: "The compound term first appeared in Mencius: King Hui of Liang, Part I."
+- 이는 서구 한학(Sinology)의 고전 번역·주석 전통(정현 주석에 대한 영어권 재서술)에서 확인된 것으로, 1~2차 조사에서 확인된 중국어권 자료의 商賈 구분 서술(商=行商, 賈=坐賈)과 내용상 일치하며 상호 검증됨.
+
+1-4. 서구 갑골학(Oracle Bone Studies)·상대사 연구자들의 왕해(王亥) 관련 서술
+
+(1) David Keightley 계통
+- Keightley는 영문 위키백과 "David Keightley" 항목에서 "the foremost Western authority" in oracle bone inscription studies로 소개되며, 대표 저작은 《Sources of Shang History: The Oracle-Bone Inscriptions of Bronze Age China》(1978, California대학출판부)로 확인됨. 이 저작이 "the most influential for oracle text studies in the West"로 서술됨.
+- 이번 조사에서는 Keightley의 저작이 '商人' 어휘 기원 문제를 직접 논한 구체적 문장까지는 확인하지 못했으며, 왕해 관련 서술은 주로 영문 위키백과 "Wang Hai of Shang" 항목 및 Sarah Allan 관련 서술에서 간접적으로 확인됨(아래 (2) 참조).
+
+(2) Sarah Allan(미국, Dartmouth大) 계통
+- 영문 위키백과 "Sarah Allan" 항목 검색 결과: "Sarah Allan has researched the Shang dynasty based on evidence from a number of sources, including Shang inscriptions primarily from oracle bones, as well as bronzes, myths and stories recorded during the Zhou and Han dynasties that appear derived from Shang sources, and archaeological data."
+- 앨런의 가설 관련 서술: "Sarah Allan introduced a hypothesis that Shang divination was not a two-party communication between human beings and spirits, but a one-party interpretive act on the part of humans, meaning that Shang diviners were not communicating with spirits but reading the cosmic signs revealed on oracle-bones."
+- (※ 이 가설은 점복 해석 방법론에 관한 것으로, 상업·상인 어원과 직접 관련은 없으나, 왕해 관련 갑골문 해석의 학술적 맥락을 이해하는 데 참고 자료로 함께 수록)
+
+(3) 영문 위키백과 "Wang Hai of Shang" 항목 재확인(영문 원문)
+- "Little is known about Wang Hai's reign outside of posthumous accounts, which detail him domesticating horses and oxen, and pioneering Shang dynasty trade practices. He is therefore seen as the 'Ancestor of Chinese merchants,' even being seen as the origin of Chinese words relating to commerce."
+- "Wang Hai is mentioned on over 100 oracle bone inscriptions, typically in the settings of liao and you sacrifices, where he is hailed as a high ancestor among the most powerful deities of the Shang state religion's pantheon."
+- 출처: https://en.wikipedia.org/wiki/Wang_Hai_of_Shang
+- 신뢰도 단서: "He is therefore seen as..." 및 "even being seen as..."라는 표현 자체가 이 항목의 서술 방식이 '확정된 학술적 정설'이 아니라 '그렇게 여겨진다(seen as)'는 전승·평가 차원의 서술임을 문장 구조상 명시하고 있음.
+
+1-5. 독일어권 학술 사이트(Ulrich Theobald, chinaknowledge.de)의 상대(商代) 경제사 서술
+- 검색 결과 재확인(WebFetch의 SSL 오류로 직접 원문 인용은 실패하였고, WebSearch 스니펫을 통해 간접 재확인): 상대(商代)의 '사다/구매하다'를 뜻하는 글자가 그물(网)과 조개(貝, cowry shell)의 조합으로 구성되며, 이는 현대 한자 '買'에 대응한다는 서술.
+- "Cowry shells were counted in units of peng 朋 ... which scholars believe corresponded to ten pieces. Shang tombs include not only genuine cowry shells, but also imitations made of bone, stone, or bronze."
+- "Hoarding of values was usual, in the shape of bronze vessels or cowry shells, be it in hoards for the living, or as tomb furnishing."
+- 출처: http://www.chinaknowledge.de/History/Myth/shang-econ.html (독일 튀빙겐大 계열 한학자 Ulrich Theobald 편집·운영 사이트로 알려짐; 이번 조사에서 편집자 신원까지 원문 대조로 직접 검증하지는 못함)
+- 신뢰도 단서: 해당 페이지는 WebFetch 직접 접속이 SSL 핸드셰이크 오류로 실패하였으므로, 상기 인용문은 검색엔진 스니펫을 경유한 간접 재확인 자료임. 원문 전체 대조를 위해서는 별도 접속 방법(예: 다른 네트워크 환경, 브라우저 직접 접속)이 필요함.
+
+1-6. 스웨덴 한학자 Bernhard Karlgren의 고음운학(古音韻學) 관련 일반 서술(商 자 직접 언급은 확인되지 않음)
+- Karlgren의 《Grammata Serica》(1940)/《Grammata Serica Recensa》(1957/1964)는 중고한어(Middle Chinese)·상고한어(Old Chinese) 재구의 고전적 저작으로, "the initials of characters sharing a phonetic component had a common point of articulation"라는 '동성계 원리(諧聲原則, homorganic principle)'로 유명함.
+- 검색 결과에서 商 자에 대한 Karlgren의 구체적 재구음이나 어원 논의는 직접 확인되지 않았으며, 다만 "the earlier script forms of the Yin (Shang) and Chou eras known through inscriptions on tortoise shell, bone and bronze are frequently very different from the Seal forms"(은·주 시대 갑골·금문 자형이 후대 소전체와 상당히 다르다는 일반적 서술)이 확인됨. 商 자에 대한 Karlgren의 직접 재구 데이터는 원저(Grammata Serica Recensa, PDF 원문: https://starlingdb.org/Texts/Students/Karlgren,%20Bernhard/Grammata%20Serica%20Recensa%20(1964).pdf )를 별도로 대조해야 함(이번 조사에서는 목차·서지 확인 수준에 그침).
+
+1-7. K.C.(장광직張光直, Kwang-chih Chang) 저작 - 서지 확인 수준(내용 미확인)
+- 張光直(대만 출신, 하버드大 교수 역임, 영어로 저술)의 《Shang Civilization》(Yale University Press, 1980)이 상대(商代) 경제·정치질서를 다루는 것으로 확인되었으나, 검색 결과에서는 목차 수준("Economy and the Political Order of the State" 등 챕터명)만 확인되었고, '상인' 어휘 기원에 관한 張光直의 구체적 서술은 이번 조사에서 직접 인용을 확보하지 못함. 원저(dokumen.pub 등에 PDF 사본 존재 확인) 대조가 필요한 항목으로 남김.
+
+================================================================================
+2. 참고 문헌 및 조사 자료 출처(3차 조사, 영어권·유럽권 중심)
+
+[1] Wiktionary(英文). "商" 항목(Etymology 섹션).
+    https://en.wiktionary.org/wiki/%E5%95%86
+[2] Wiktionary(英文). "商人" 항목(Etymology 섹션).
+    https://en.wiktionary.org/wiki/%E5%95%86%E4%BA%BA
+[3] Wiktionary(英文). "賒" 항목(Etymology 섹션, STEDT 재구 인용 포함).
+    https://en.wiktionary.org/wiki/%E8%B3%92
+[4] STEDT(Sino-Tibetan Etymological Dictionary and Thesaurus), UC Berkeley.
+    https://stedt.berkeley.edu/
+[5] Axel Schuessler. ABC Etymological Dictionary of Old Chinese. University of Hawai'i Press, 2007. (서지 확인; Starling DB 경유 PDF: https://starlingdb.org/Texts/schuessl.pdf )
+[6] Wikipedia(英文). "Axel Schuessler" 항목.
+    https://en.wikipedia.org/wiki/Axel_Schuessler
+[7] Wikipedia(英文). "Old Chinese" 항목.
+    https://en.wikipedia.org/wiki/Old_Chinese
+[8] Wikipedia(英文). "Grammata Serica Recensa" 항목.
+    https://en.wikipedia.org/wiki/Grammata_Serica_Recensa
+[9] Bernhard Karlgren. Grammata Serica Recensa(1964) 원문 PDF.
+    https://starlingdb.org/Texts/Students/Karlgren,%20Bernhard/Grammata%20Serica%20Recensa%20(1964).pdf
+[10] UMass Amherst. "Gallery of Philologists: Bernhard Karlgren".
+    https://www.umass.edu/wsp/method/philology/gallery/karlgren.html
+[11] Wikipedia(英文). "David Keightley" 항목.
+    https://en.wikipedia.org/wiki/David_Keightley
+[12] David N. Keightley. Sources of Shang History: The Oracle-Bone Inscriptions of Bronze Age China. University of California Press, 1978. (Internet Archive 서지: https://archive.org/details/keightley-sources-of-shang-history-1978 )
+[13] Wikipedia(英文). "Sarah Allan" 항목.
+    https://en.wikipedia.org/wiki/Sarah_Allan
+[14] Wikipedia(英文). "Wang Hai of Shang" 항목.
+    https://en.wikipedia.org/wiki/Wang_Hai_of_Shang
+[15] chinaknowledge.de(Ulrich Theobald 편집). "Shang Period Economy".
+    http://www.chinaknowledge.de/History/Myth/shang-econ.html
+[16] chinaknowledge.de. "Zhouli 周禮" 항목.
+    http://www.chinaknowledge.de/Literature/Classics/zhouli.html
+[17] chinaknowledge.de. "Zheng Xuan 鄭玄" 항목.
+    http://www.chinaknowledge.de/History/Han/personszhengxuan.html
+[18] Wikipedia(英文). "Zheng Xuan" 항목.
+    https://en.wikipedia.org/wiki/Zheng_Xuan
+[19] Wikipedia(英文). "Rites of Zhou" 항목.
+    https://en.wikipedia.org/wiki/Rites_of_Zhou
+[20] Wikipedia(英文). "Kwang-chih Chang" 항목.
+    https://en.wikipedia.org/wiki/Kwang-chih_Chang
+[21] Wikipedia(英文). "Shang Civilization" 항목(장광직 저서명과 동일).
+    https://en.wikipedia.org/wiki/Shang_Civilization
+[22] Kwang-chih Chang. Shang Civilization. Yale University Press, 1980. (전문 사본: https://dokumen.pub/shang-civilization-0300024282-9780300024289.html )
+[23] chinasage.info. "Chinese character shāng 商 commerce".
+    https://www.chinasage.info/chars/fch_shang_commerce.htm
+[24] Wikipedia(英文). "William H. Baxter" 항목.
+    https://en.wikipedia.org/wiki/William_H._Baxter
+[25] Wikipedia(英文). "Laurent Sagart" 항목.
+    https://en.wikipedia.org/wiki/Laurent_Sagart
+================================================================================
+
+3. 1~2차 조사 대비 보강 사항 및 신뢰도 평가(위키 작성 전 판단 참고용)
+
+- **핵심 보강점**: 영어권·유럽권 비교언어학자(Schuessler, STEDT 데이터베이스, Baxter-Sagart, Zhengzhang 등)는 '商'을 상나라(商朝)라는 고유명사·역사적 사건(유민의 행상)에서 파생된 말로 설명하지 않고, 원시 한장어족(Proto-Sino-Tibetan) 단계의 '바꾸다/교환하다'를 뜻하는 어근(*g/m/s-laj 등)에서 '賒'(신용거래하다)를 거쳐 종결접미사 *-ŋ이 붙어 파생된 형태론적 결과물로 설명한다. 이는 1~2차 조사에서 확인된 중국어권 통설(곽말약의 《상서·주고》 해석, 왕해王亥 전설, 상나라 유민 행상설 등)과 **설명의 층위 자체가 다르다** — 전자는 '역사적 사건에서 비롯된 명명(命名)'이라는 설명이고, 후자(서구 비교언어학)는 '음운·형태론적 파생'이라는 설명이다. 두 설명은 상호 배타적이라기보다, "왜 商이라는 특정 글자가 상나라 국호로도 쓰이고 상업을 뜻하는 말로도 쓰이게 되었는가"라는 질문에 대해 서로 다른 방법론(역사서사 vs 비교언어학)으로 접근한 것으로 볼 수 있으며, 위키 문서 작성 시 이 두 설명 체계를 혼동하지 않고 병렬적으로 소개하는 것이 바람직함.
+- 서구 갑골학(Keightley, Sarah Allan)은 왕해(王亥)의 갑골문상 실재와 제사 대상으로서의 위상을 뒷받침하나, '商人'이라는 어휘 자체의 기원을 왕해와 직접 연결하는 서술은 중국어권 대중매체(163.com, 澎湃 등)의 서술에 더 크게 의존하고 있으며, 서구 학술 저작(Keightley 1978 등) 원문에서 이 어휘기원론까지 명시적으로 다루는지는 이번 조사에서 확정하지 못함(원저 전문 대조 필요).
+- chinaknowledge.de(독일어권 한학자 편집) 자료는 WebFetch 직접 접속이 기술적으로 실패(SSL 오류)하여 검색엔진 스니펫을 통한 간접 재확인에 그쳤으므로, 정밀 인용이 필요할 경우 원문 재접속이 요구됨.
+- Karlgren·K.C. Chang의 저작은 상(商) 자 어원 또는 상인 어휘 기원을 직접 논하는 구체적 문장까지는 확보하지 못했으며, 서지 정보 확인 수준에 머물렀음을 명시함. 위키 작성 시 이 두 출처는 "상대사·고음운학의 고전적 권위자"라는 맥락 정보로만 활용하고, 상인 어원에 대한 직접 근거로는 사용하지 않아야 함.
+- Wiktionary '商人' 항목의 "From ancient times the men of Shang..." 인용문은 출처(역자·원저)가 이번 조사에서 확정되지 않았으므로, 위키 작성 시 이 인용문을 사용할 경우 출처 미상임을 표기하거나 별도 검증 후 사용해야 함.
+================================================================================
