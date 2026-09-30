@@ -71,3 +71,4 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
   - [🗺️ [분과 연구] 메트로이드배니아 및 카토그래피 게임 디자인 종합 연구 아카이브](metroidvania_and_cartography_game_design.html)
   - [🚪 [분과 연구] 비디오 게임 게이팅 이론 및 설계 메커니즘](game_gating_mechanisms.html)
 - [🎬 영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)
+  - [🏯 [세계관 분과] 영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)

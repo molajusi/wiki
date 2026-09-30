@@ -2,7 +2,7 @@
 title: "고려 호족·향리와 지방세력가 호칭 고증"
 subtitle: "Terminology of Goryeo Local Power-Holders: Hojok, Hyangni, and the Search for an Accurate Historical Title"
 created: "2026-09-23 오전 07:10:20 (KST, UTC+9)"
-updated: "2026-09-23 오전 07:10:20 (KST, UTC+9)"
+updated: "2026-09-30 오후 05:14:12 (KST, UTC+9)"
 category: "한국 전근대 공간·도시·제도사 (Institutional History & Urban Evolution)"
 tags: ["Goryeo History", "Hojok", "Hyangni", "Hojang", "Local Administration", "Historical Terminology", "Institutional History"]
 html_view: "goryeo_hojok_hyangni_terminology.html"
@@ -12,13 +12,13 @@ html_view: "goryeo_hojok_hyangni_terminology.html"
 *Terminology of Goryeo Local Power-Holders: Hojok, Hyangni, and the Search for an Accurate Historical Title*
 
 **카테고리**: 한국 전근대 공간·도시·제도사 (Institutional History & Urban Evolution)  
-*최초 작성일시: 2026-09-23 오전 07:10:20 (KST, UTC+9) | 최종 수정일시: 2026-09-23 오전 07:10:20 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 07:10:20 (KST, UTC+9) | 최종 수정일시: 2026-09-30 오후 05:14:12 (KST, UTC+9)*
 
 <context>
-본 문서는 "귀족은 아니지만 그 지방에서 위력을 강하게 행사하는 집단"을 가리킬 역사적으로 정확한 호칭을 찾기 위해, 흔히 쓰이는 "호족(豪族)"이라는 용어 자체의 학술적 적절성 문제와, 시기별로 더 정확할 수 있는 대안 호칭(성주·장군·호장·향리)을 조사·정리한 한국 제도사·역사언어학 지식 문서입니다. 이 조사는 원래 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 "지방세력가" 계층에 역사적 근거를 부여하기 위해 시작되었으며, 독립 주제로 분리되어 이 위키의 [한국 도시 행정단위의 역사적 계보와 계층 체계](korean_urban_administrative_hierarchy_evolution.html)·[고려시대 도시 인식과 계층별 지칭 어휘](goryeo_urban_perceptions_and_terminology.html) 문서와 교차 참조합니다.
+본 문서는 "귀족은 아니지만 그 지방에서 위력을 강하게 행사하는 집단"을 가리킬 역사적으로 정확한 호칭을 찾기 위해, 흔히 쓰이는 "호족(豪族)"이라는 용어 자체의 학술적 적절성 문제와, 시기별로 더 정확할 수 있는 대안 호칭(성주·장군·호장·향리)을 조사·정리한 한국 제도사·역사언어학 지식 문서입니다. 이 조사는 원래 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 "지방세력가" 계층에 역사적 근거를 부여하기 위해 시작되었으며(해당 세계관은 이후 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리됨), 독립 주제로 분리되어 이 위키의 [한국 도시 행정단위의 역사적 계보와 계층 체계](korean_urban_administrative_hierarchy_evolution.html)·[고려시대 도시 인식과 계층별 지칭 어휘](goryeo_urban_perceptions_and_terminology.html) 문서와 교차 참조합니다.
 </context>
 
-**관련 문서**: [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)(이 조사의 최초 계기가 된 게임 기획) · [한국 도시 행정단위의 역사적 계보와 계층 체계](korean_urban_administrative_hierarchy_evolution.html)(속현·향리·읍사 제도의 상세 근거)
+**관련 문서**: [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)(이 조사의 최초 계기가 된 "지방세력가" 계층이 실제로 정의된 세계관 문서) · [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)(위 세계관이 속한 게임 기획 본문서) · [한국 도시 행정단위의 역사적 계보와 계층 체계](korean_urban_administrative_hierarchy_evolution.html)(속현·향리·읍사 제도의 상세 근거)
 
 <overview>
 ## 1. 개요 및 목적

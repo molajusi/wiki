@@ -1,0 +1,176 @@
+================================================================================
+원천 데이터: 레벨 디자인·시퀀스 디자인(게이팅 탐험 + 추격 시퀀스) 신뢰성 보강 조사
+수집 일시: 2026-09-30 (KST, UTC+9)
+수집 대상: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획" 위키 문서 7장("레벨 디자인과 시퀀스 디자인 — 게이팅 탐험과 추격 시퀀스")을 뒷받침하기 위해, 스크립트 시퀀스(scripted sequence)·추격 시퀀스(chase sequence)·탈출 시퀀스(escape sequence)·스텔스 시야콘(vision cone) 설계 이론과 실제 게임 사례(슈퍼 메트로이드, 오리 시리즈, 리틀 나이트메어)를 조사한 웹 검색 및 웹페이지 발췌
+================================================================================
+
+1. 수집 자료 요약 및 핵심 논점
+
+1-1. "스크립트 시퀀스(Scripted Sequence)"의 공식 정의(위키백과)
+- 검색 결과에서 확인된 정의: "In video games, a scripted sequence is a pre-defined series of events that occur when triggered by player location or actions that play out in the game engine."
+  (번역: 비디오 게임에서 스크립트 시퀀스란, 플레이어의 위치나 행동에 의해 트리거되어 게임 엔진 안에서 재생되는 미리 정의된 일련의 사건이다.)
+- 짧은 컷신을 재생하는 데도 쓰이지만, 《하프라이프》나 《콜 오브 듀티》 같은 게임에서는 플레이어가 계속 조작하는 도중에 새로운 적·도전 과제를 "놀랍게" 들여오는 데 흔히 쓰인다는 서술이 확인됨. 컷신으로 끊지 않고도 추가 플롯 포인트를 제시할 수 있다는 목적도 언급됨.
+- 의도된 효과는 몰입감 증대와 매끄러운 흐름 유지로 서술됨.
+- 신뢰도 유의점: 이 정의는 WebSearch 스니펫을 통해 확인했으며, 원문 페이지(en.wikipedia.org/wiki/Scripted_sequence) 직접 접속은 이번 조사에서 2회 시도했으나 모두 404 오류로 실패함. 위키백과 문서가 최근 삭제/이동되었을 가능성이 있어, 재확인이 필요한 항목으로 남김.
+
+1-2. "추격 시퀀스(Chase Sequence)"의 정의와 설계 기법(Game Developer/Gamasutra, "Creating Horror through Level Design: Tension, Jump Scares, and Chase Sequences")
+- 정의(원문): "A largely linear level where tension is present from an enemy pursuing the player as well as a lack of alternate paths."
+  (번역: 적이 플레이어를 추격한다는 사실과 대안 경로의 부재로부터 긴장감이 발생하는, 대체로 선형적인 레벨.)
+- 핵심 설계 원리:
+  - **프리뷰(Preview) 기법**: 플레이어가 추격이 시작되기 전에 해당 환경을 미리 경험하게 하여, 이후 실제 추격 중에는 낯선 지형과 씨름하지 않고 위협 자체에 집중하게 만듦. 적의 행동 양식을 미리 경험했을 때 추격 시퀀스가 더 효과적이라는 서술도 확인됨.
+  - **위험-보상 구조**: 문을 막거나 이전 경로로 되돌아가는 선택지를 제공해, 더 많은 탈출 공간(시간)을 확보할 수 있게 하는 대신 위험을 감수하게 함.
+  - **완전 선형이 기본이나, 부분적 분기도 가능**: Amnesia의 사례에서는 두 지점에서 서로 다른 경로를 제시하되 결국 하나로 수렴시키는 설계를 통해, 스트레스는 유지하면서도 플레이어의 실패(막다른 길)를 최소화함.
+  - **메커니즘을 통한 진행 속도 조절**: 문 폐쇄 장치 등으로 추격자를 일시적으로 따돌리거나 반대로 따라잡히게 하는 완급 조절이 가능함.
+  - 음악 트랙과 결합해 "괜찮아질 것 같다가 다시 몰아붙이는" 비트를 설계하는 것이 효과적인 추격 시퀀스의 기반이라는 서술도 확인됨.
+
+1-3. 슈퍼 메트로이드 최종 탈출 시퀀스 분석(bosnan.net, "The Timed Escape and Samus's Reveal — Super Metroid")
+- 마더 브레인 격파 후 제브스 행성이 자폭 카운트다운에 들어가며 시작되는 탈출 시퀀스가, "타이머드 시퀀스는 보통 카운트다운 시계로 불안감을 만드는데, 슈퍼 메트로이드는 환경(벽 붕괴, 바닥 붕괴, 사운드트랙이 측정된 긴장에서 완전한 공포로 전환)을 통해 이를 구현한다"는 점에서 전통적 타이머 연출과 차별화된다는 분석이 확인됨.
+- **창발적(emergent) 연출**: 제브스의 생물들이 플레이어와 함께 탈출을 향해 달아나는 장면은 의도된 스크립트가 아니라, 폭발 시퀀스에서 자동 발동된 프로그래밍된 이동 패턴의 부산물(창발적 비주얼)이었다는 분석이 확인됨. 플레이어들은 이를 "연대감"으로 해석했고 게임의 상징적 순간 중 하나가 되었음.
+- **완성도 기반 보상**: 완료 시간을 엔딩(사무스가 헬멧을 벗고 손을 흔드는 정도)과 연동하는 관행은 오리지널 《메트로이드》(1986)의 "빠른 클리어 시 사무스의 성별을 보상으로 공개"에서 기원했고, 슈퍼 메트로이드는 이를 3단계로 확장해 "플레이어의 기술이 주인공이 어떻게 표현되는지를 결정"하게 했다는 서술이 확인됨.
+- **후대 영향**: "슈퍼 메트로이드의 엔딩이 헤일로(2001)와 수많은 액션 게임의 탈출 시퀀스에 직접적으로 영향을 미쳤다"는 서술이 확인되어, 이 설계가 이후 장르 전반의 템플릿이 되었음을 시사함.
+- 또한 탈출 시퀀스 도중 샤인스파크(shinespark) 기술로 특정 구간을 단축할 수 있다는 점(암묵적 스킬 유저를 위한 여유 공간을 레벨이 미리 마련해 둠)도 확인되어, "정속 강제 스크롤"이 아니라 "숙련도에 따라 시간 여유가 달라지는" 설계라는 점이 시사됨.
+
+1-4. 오리 시리즈 관련 확인 사항(제한적)
+- 《오리 앤 더 블라인드 포레스트》에는 총 3개의 탈출 시퀀스(escape sequence)가 있으며, 짧지만 도전적이라는 커뮤니티 서술이 확인됨. 긴소나무(Ginso Tree) 탈출 구간은 지도상에 표시되는 구역에서 진행된다는 서술도 확인됨.
+- 후속작 《오리 앤 더 윌 오브 더 위습스》의 추격 시퀀스는 호평을 받았으나, "암기가 필요한 구간이라 같은 구간을 열 번 반복하면 피로가 쌓일 수 있다"는 비판도 동시에 확인됨.
+- Moon Studios CEO 토마스 말러(Thomas Mahler)의 Game Developer 인터뷰(Q&A: Designing the gorgeous metroidvania Ori and the Will of the Wisps)를 직접 조회했으나, 추격/탈출 시퀀스나 거대 생물 위협에 대한 구체적 설계 논의는 포함되어 있지 않았음(대신 플랫포밍 정밀도 반복 폴리싱, 레벨 디자인 프로세스(종이 기획→폴리곤 블록아웃→플레이테스트→아트 드레싱 순서), 적 디자인의 어려움, Spirit Shards 커스텀 로드아웃 시스템, 시퀀스 브레이킹 방지를 위한 물리 상호작용 관리 등을 다룸). 이 인터뷰는 7.1절(게이팅 탐험 모드)의 일반적 신뢰도 보강 자료로는 유효하나, 7.2절(추격 시퀀스)의 직접 근거로는 부적합함.
+- 거대 부엉이 쿠로(Kuro)의 시야 회피 구간에 대한 개발자 인터뷰나 GDC 발표는 이번 조사에서 확보하지 못함(추가 조사 필요 항목으로 남김).
+
+1-5. 스텔스(시선 회피형) 설계 이론 — 시야콘(Vision Cone)의 기원과 원리
+- **시야콘 메커닉의 기원**: 1981년 세가의 아케이드 게임 《005》가 "시야콘(vision cone)" 메커닉을 도입한 최초의 게임으로 확인됨. 플레이어가 적의 정확한 시야 범위를 볼 수 있게 한 최초의 사례이며, 기네스 세계기록으로 "최초의 스텔스 게임"으로 공인되었다는 서술도 확인됨. 탑다운 시점으로 창고에 잠입해 문서를 훔친 뒤 헬리콥터로 탈출하는 게임이며, 적에게 시야콘을 부여해 순찰 경로를 피해갈 수 있게 한 최초의 게임으로 서술됨.
+- **탐지 알고리즘 일반**: 적은 일반적으로 시야(line of sight), 거리 감지, 조도(light level) 등의 알고리즘으로 플레이어를 탐지한다는 서술이 확인됨. 《어쌔신 크리드》류 게임에서는 적 시야의 범위와 각도가 탐지 여부에 영향을 미치며, 플레이어는 적의 시야콘을 관찰해 안전한 경로를 판단할 수 있다는 서술도 확인됨.
+- **스텔스 게임 디자인의 핵심 원칙**(gamedesignskills.com, 직접 fetch는 403으로 실패했으나 WebSearch 스니펫으로 확인): 탐지 회피가 스텔스 게임의 중심 설계 기둥이며, 레벨 배치·적 AI·플레이어 툴셋·보상 체계 전부가 은신·잠입을 지원해야 한다는 서술. 탐지 시스템을 플레이어에게 명확히 전달해(시야콘, 소음 반경, 경계 상태 등의 아이코노그래피) 계획을 즉시 수정할 수 있어야 한다는 서술도 확인됨.
+- 일부 시야콘은 탐지 가능한 정확한 범위를 그대로 보여주지만, 일부는 근사치로만 표시되어 시야콘 밖에 있어도 발각되거나 의심을 살 수 있다는 설계상의 변형도 확인됨.
+
+1-6. 리틀 나이트메어 시리즈 — 거대 추격자 + 플랫포머 + 은신의 결합 사례(직접 fetch는 403으로 실패했으나 WebSearch 스니펫으로 확인)
+- 1편의 한 구간에서는 손님들이 방에서 기어 나와 플레이어를 뒤쫓는데, 압도적인 수의 추격자가 식탁 위를 질주하는 플레이어를 향해 몰려드는 연출이 확인됨.
+- **디자인 철학**: 적의 행동 패턴은 일관되고 예측 가능하게 설계되며("never unpredictable"), 위험은 시각적 애니메이션과 고조되는 음악으로 충분히 예고(telegraph)된다는 서술이 확인됨. 발각되었을 때도 즉사가 아니라 도망치거나 숨어서 벗어날 기회가 주어진다는 점이 명시됨.
+- **2편의 '선생님(The Teacher)'**: 목을 늘려 벽을 부수고 추격하는 거대 추격자이며, 추격 내내 동일한 미소를 유지해 불쾌한 위화감을 조성한다는 서술 확인. 주인공은 작고 환경은 거대하며 괴물은 초거대하다는 스케일 대비가 의도적 설계 요소로 서술됨.
+- **스텔스 구간(The Lair 챕터)**: 퍼즐 중심에서 타이밍·은신 중심으로 전환되며, 플레이어가 작은 은신 구역을 활용해 쌍둥이 요리사(Twin Chefs)나 관리인(Janitor) 같은 추격자를 피한다는 서술이 확인됨 — 이는 이 기획의 "시선 회피형" 범주와 구조적으로 유사한 실제 구현 사례임.
+
+1-7. 《오리 앤 더 블라인드 포레스트》 쿠로(Kuro) 시퀀스 심층 재조사(2차 조사)
+
+**스토리 맥락**(위키백과):
+- 쿠로는 거대한 그림자 올빼미이며, 오리가 태어날 때 정령나무(Spirit Tree)가 방출한 강한 빛이 쿠로의 새끼들을 모두 죽인 사건의 피해자로 설정됨. 이 사건이 숲 전체의 황폐화를 초래했다는 서술이 확인됨. 이 때문에 쿠로가 오리를 적대시하며 추적하는 서사적 동기가 부여됨.
+- 최종적으로 쿠로는 자신의 마지막 남은 알을 지키기 위해 세인(Sein, 오리와 동행하는 빛의 정령)을 정령나무에 돌려주고, 그 과정에서 밝은 빛에 의해 소멸한다는 결말이 확인됨.
+
+**게임 내 쿠로 관련 시퀀스는 최소 2개로 확인됨(단일 시퀀스가 아님)**:
+
+(1) 중반부 탈출 시퀀스("Forlorn Ruins and Kuro's Escape" 등으로 불림) — **순수 시선 회피형**
+- 다수의 공략·워크스루 자료(Gamerheadquarters, N4G, soloplayguide.com)에서 공통적으로 확인된 진행 순서: 착지 직후 쿠로에게 발각되면 즉사하므로 얼음을 밟아 깨고 물속에 숨음 → 오른쪽으로 헤엄쳐 올라옴 → 나무 뒤에 숨음 → 쓰러진 통나무 아래 몸을 숨긴 뒤 오른쪽으로 밀어 이동 경로 겸 엄폐물로 사용 → 뛰쳐나가 오른쪽으로 도주 → 쿠로가 급강하해 덮치려는 순간 바위가 굴러떨어져 둘 사이를 가로막으며 시퀀스 종료.
+- 핵심 규칙(원문 인용 취지): "if you are in Kuro's sight for too long, you'll instantly be dead"(쿠로의 시야에 너무 오래 노출되면 즉시 사망). 은신 오브젝트(물, 나무, 통나무)를 순차적으로 활용해 이동하는 구조로, 이 기획의 "시선 회피형(규칙 세트 B)"과 정확히 일치함.
+
+(2) 게임 후반부(마운트 호루 화산, 최종 요소 '온기' 복원 직후) 탈출 시퀀스 — **연속 도주형과 시선 회피형의 혼합**
+- 위키백과 서술: "Kuro attacks Ori and Sein as the fire from Horu spreads."(호루 화산의 불길이 번지는 가운데 쿠로가 오리와 세인을 공격한다).
+- 검색 결과에서 확인된 진행 요소: 불타는 굵은 나뭇가지 위를 활공하고, 활공보다 낙하가 더 빠르므로 일부러 떨어지기도 하며, 물속을 헤엄치며 물고기 떼를 들이받아 통과하고, 불타는 장애물을 계속 헤쳐 나가야 함.
+- **중요한 발견**: 이 후반부 시퀀스는 (1)의 "쿠로 시야에 오래 노출되면 즉사"라는 시선 회피형 규칙과, 불타는 환경을 계속 뚫고 전진해야 하는 연속 도주형 규칙이 **동시에 겹쳐 적용**되는 것으로 확인됨. 즉 쿠로 시퀀스는 이 기획의 규칙 세트 A(연속 도주형)·B(시선 회피형)가 상호 배타적이지 않고 **한 시퀀스 안에서 레이어처럼 중첩 적용**될 수 있음을 보여주는 실제 사례임.
+
+**비평적 수용 — 잘 알려진 설계상의 결함**(Steam 커뮤니티, ResetEra, NeoGAF, ExLudico 리뷰 등 다수 독립 출처에서 일관되게 확인):
+- 탈출 시퀀스 도중에는 세이브 포인트(체크포인트)가 없어, 도중에 실패하면 시퀀스 전체를 처음부터 다시 해야 한다는 비판이 다수 확인됨.
+- "트라이얼 앤 에러(trial and error)"형 난이도에 대한 비판이 광범위하게 확인됨 — 원문 인용 취지: "players couldn't have known a hazard was approaching and responded adequately without first dying to it"(플레이어는 위험이 다가오는 것을 미리 알 방법이 없어, 최소 한 번은 죽어봐야만 그 위험에 적절히 대응할 수 있었다). 즉 예고 없는 즉사형 함정이 상당수 존재했다는 비판.
+- 일부 즉사 메커닉은 "최소 한 번은 죽어야 회피법을 알 수 있는" 방식으로 설계되었다는 비판도 확인됨.
+- 반론도 존재: 일부 플레이어는 이 비판이 과장되었다며 "중간 난이도의 플랫포밍"에 불과하다고 평가했고, 긴장감 있고 기억에 남는 시퀀스로 즐겼다는 반응도 확인됨. 다만 왜 많은 플레이어가 좌절했는지는 이해한다는 절충적 반응도 함께 확인됨.
+
+**이 기획에 대한 시사점**: 위 비평은 7.2절에서 이미 인용한 Game Developer의 "프리뷰 기법"(추격 시작 전 환경을 미리 보여줘 위협 자체에 집중하게 하는 기법) 원칙을 오리가 실제로는 지키지 못한 사례로 읽을 수 있음 — 즉 "프리뷰 기법 없이 예고 없는 즉사 함정을 배치하면 트라이얼 앤 에러 비판을 받는다"는 반면교사 사례로 인용 가능함.
+
+1-8. 《오리 앤 더 윌 오브 더 위습스》 슈리크(Shriek) 시퀀스 조사(3차 조사) — 쿠로와의 혼동 정정
+
+**중요한 정정**: 쿠로(Kuro)는 1편 《오리 앤 더 블라인드 포레스트》 전용 캐릭터이며, 후속작 《오리 앤 더 윌 오브 더 위습스》의 거대 올빼미 적대 캐릭터는 **슈리크(Shriek)**로, 서로 다른 캐릭터임이 확인됨. 이전 조사(1-7절)에서 "오리 시리즈"로 뭉뚱그려 서술했던 일부 표현은 부정확했으며, 정확히는 쿠로=블라인드 포레스트, 슈리크=윌 오브 더 위습스로 구분해야 함.
+
+**슈리크의 외형·설정**(thegamer.com, 위키백과):
+- 슈리크는 부패(the Decay)의 영향으로 극단적인 기형을 갖고 태어난 올빼미로, 몸에 돌 층이 덮여 있고 두 개의 돌 죽마(다리)로 걷는다는 설정이 확인됨.
+- Moon Studios 아트 디렉터 제레미 그리튼(Jeremy Gritton)이 "돌처럼 굳고 뒤틀린 날개를 죽마처럼 짚고 걸으며 오리를 짓밟으려 하는, 석화된 올빼미"라는 비주얼 콘셉트를 먼저 구상했고, 이 캐릭터 없이는 속편의 스토리 자체가 존재하지 않았을 것이라는 서술이 확인됨(즉 적대 캐릭터의 비주얼 디자인이 서사보다 먼저 나온 사례).
+- 가족이 없고 다른 올빼미들과 다르게 생겨 철저히 소외된 채로 자랐다는 배경 설정도 확인됨.
+
+**슈리크 관련 시퀀스는 최소 2단계로 확인됨**:
+(1) 조용한 숲(Silent Woods) 최초 조우 시퀀스 — 짧은 플랫포밍 추격이며, 멈춰서 슈리크로부터 숨어야 하는 지점들이 있고, 한 곳이라도 놓치면 즉사한다는 서술이 확인됨. 쿠로의 중반부 은신 시퀀스(1-7절)와 구조적으로 동일한 "시선 회피형" 패턴이며, 이는 이 패턴이 쿠로 한 편에 국한된 우연이 아니라 Moon Studios가 반복 사용하는 검증된 설계 패턴임을 시사함.
+(2) 최종 보스전 중 추격 단계 — 슈리크 체력의 1/3을 깎으면 슈리크가 일련의 플랫포밍 챌린지를 통해 오리를 추격하며, 특정 타이밍에 공격을 가하므로 플레이어는 공격 패턴을 암기해 피해야 한다는 서술이 확인됨. 이는 쿠로 시퀀스(순수 환경 탈출 또는 순수 은신)와 달리, **보스전에 내장된 추격이자 패턴 암기형 전투-추격 결합**이라는 제3의 하위 유형으로 분류할 수 있음.
+
+**서사적 결말 비교**(Game Developer, "Ori and the Will of the Wisps: Destroying Hope" 칼럼):
+- 이 칼럼은 상실(loss)·적응(adaption)·재생(rebirth)이라는 3단계 구조로 두 안타고니스트를 비교하며, 슈리크에게는 "재생" 단계가 완전히 결여되어 있다고 비판함(원문 취지: "The problem is that Shriek has no rebirth.").
+- 비교: 전작의 쿠로는 자신의 새끼를 마지막으로 보고 오리와 나루(Naru)의 유대를 목격한 뒤 희생적 결말(세인을 정령나무로 돌려주며 소멸)을 선택한 반면, 슈리크는 그런 기회 없이 어둠 속에 남아 죽는다는 서술이 확인됨.
+- 이는 순수 게임플레이 설계보다 서사 비평에 가까운 자료이나, 두 안타고니스트의 서사적 기능 차이를 명확히 뒷받침하는 신뢰도 있는 출처로 판단됨.
+
+1-9. 긴소나무(Ginso Tree) 탈출 시퀀스("물 탈출") 심층 조사(4차 조사)
+
+**개요**(Fandom Ori 위키, Steam 커뮤니티, GameFAQs 공략 등 다수 독립 출처에서 일관되게 확인):
+- 긴소나무 최심부에서 오리가 물의 원소(Element of Waters)를 되살리면 나무 내부를 따라 거대한 홍수가 차오르며 "물 탈출(Water Escape)" 시퀀스가 시작됨.
+- 물에 닿는 횟수가 누적되면 피해를 입고 결국 사망하며, 그동안 배운 모든 능력(대시·이중 점프·벽점프·번쩍임/bash 등)을 총동원해야 한다는 서술이 확인됨.
+
+**핵심 메커니즘 — 적응형 페이싱(Dynamic Pacing)**:
+- 원문 인용 취지: "the rising water slows down with you if you go slow"(플레이어가 천천히 움직이면 차오르는 물도 함께 느려진다). 즉 정속 강제 스크롤이 아니라, **위협의 속도가 플레이어 자신의 이동 속도에 연동되어 조절되는 적응형 설계**임이 확인됨. 이 때문에 플레이어가 1~2초 멈춰서 상황을 파악해도 괜찮다는 서술이 확인됨(다만 전체적으로는 빠른 판단이 필요).
+- 진행 방식: 초반에는 랜턴 등을 향해 위로 bash하며 상승하고, 이후에는 적과 적의 투사체를 이용해 계속 bash하며 상승, 이중 점프를 자주 사용하며 bash를 놓쳤을 때는 벽점프로 만회하는 구조라는 서술이 확인됨 — 게임이 가르쳐온 이동 기술을 총동원하는 "졸업 시험"적 구성.
+
+**체크포인트 설계와 개발사의 실제 대응(중요 발견)**:
+- 오리지널판과 Definitive Edition의 Normal 이상 난이도에서는, 탈출 도중 어느 지점에서 죽든 구간 전체를 처음부터 다시 시작해야 한다는 서술이 확인됨.
+- **Definitive Edition의 Easy 난이도에서는 추가 체크포인트가 삽입되어 이 구간을 더 쉽게 돌파할 수 있도록 만들었다는 서술이 확인됨.** 이는 "세이브 포인트 부재로 인한 트라이얼 앤 에러" 비판(1-4절)에 대해 Moon Studios가 재판(Definitive Edition)에서 난이도별 체크포인트 옵션으로 실제 대응한 구체적 사례로 해석할 수 있음.
+- 이 구간의 난이도는 플레이어가 그 시점까지 어떤 능력을 해금했는지, 라이프 셀을 얼마나 모았는지에 따라서도 달라진다는 서술이 확인되어, 순수 반사신경 숙련도뿐 아니라 빌드/수집 진행도도 난이도 변수로 작용함을 시사함.
+
+**쿠로와의 연결**: 오리가 나무 꼭대기에 도달한 직후 쿠로가 나타나 오리를 나무 꼭대기에서 떨어뜨려 명백한 파멸로 몰아넣는다는 서술이 확인됨 — 즉 긴소나무 탈출 자체는 쿠로의 즉사 시야 판정(규칙 세트 B)이 섞이지 않은 **순수한 규칙 세트 A(연속 도주형)** 시퀀스이며, 그 직후 별도 컷신/시퀀스로 쿠로가 개입하는 구조임이 확인됨. 이는 1-7절에서 확인한 "마운트 호루 탈출(A+B 중첩)"보다 더 전형적이고 순수한 규칙 세트 A의 예시임.
+
+================================================================================
+2. 참고 문헌 및 조사 자료 출처
+
+[1] Wikipedia. "Scripted sequence" 항목(WebSearch 스니펫으로 확인, 직접 fetch 2회 실패).
+    https://en.wikipedia.org/wiki/Scripted_sequence
+[2] Game Developer(Gamasutra). "Creating Horror through Level Design: Tension, Jump Scares, and Chase Sequences".
+    https://www.gamedeveloper.com/design/creating-horror-through-level-design-tension-jump-scares-and-chase-sequences
+[3] Bosnan.net. "The Timed Escape and Samus's Reveal — Super Metroid".
+    https://www.bosnan.net/endings/super-metroid-escape-samus-reveal
+[4] Wikipedia. "005" 항목(1981년 세가 아케이드 게임, 시야콘 기원).
+    https://en.wikipedia.org/wiki/005
+[5] GameDesignSkills.com. "Stealth Game Design (Principles, Mechanics, Template)"(WebSearch 스니펫으로 확인, 직접 fetch 403 실패).
+    https://gamedesignskills.com/game-design/stealth/
+[6] Giant Bomb Wiki. "Line of Sight Stealth (Concept)".
+    https://www.giantbomb.com/line-of-sight-stealth/3015-5689/
+[7] Game Developer(Gamasutra). "Q&A: Designing the gorgeous metroidvania Ori and the Will of the Wisps"(Thomas Mahler 인터뷰).
+    https://www.gamedeveloper.com/design/q-a-designing-the-gorgeous-metroidvania-i-ori-and-the-will-of-the-wisps-i-
+[8] DualShockers 외 종합. 리틀 나이트메어 시리즈의 추격/스텔스 구간 관련 대중 게임 저널리즘 서술(WebSearch 스니펫 종합).
+    https://www.dualshockers.com/best-horror-game-chase-sequences/
+[9] Web.cs.dal.ca(달하우지대학교 호스팅 개인/연구 블로그). "Level and Puzzle Design in Little Nightmares"(직접 fetch 403 실패, 제목만 확인).
+    https://web.cs.dal.ca/~marzlin/tabea/blog/level-puzzle-design-little-nightmares/index.html
+[10] Wikipedia. "Ori and the Blind Forest" 항목(WebFetch로 직접 확인).
+    https://en.wikipedia.org/wiki/Ori_and_the_Blind_Forest
+[11] Gamerheadquarters. "Ori and the Blind Forest Walkthrough Part 10: Kuro Chase".
+    https://gamerheadquarters.com/walkthrough/part/ori-and-the-blind-forest-part-10-kuro-chase.html
+[12] N4G. "How to Escape the Kuro Bird in Ori and the Blind Forest".
+    https://n4g.com/news/1688977/how-to-escape-the-kuro-bird-in-ori-and-the-blind-forest
+[13] Soloplayguide.com. "21 - Escape Kuro - Ori and the Blind Forest: Definitive Edition".
+    https://www.soloplayguide.com/games/ori-and-the-blind-forest-definitive-edition/complete-guide/21-escape-kuro
+[14] Steam Community(Ori and the Blind Forest 토론). "Escape Sequences=Bad Game Design".
+    https://steamcommunity.com/app/261570/discussions/0/458606877309244752/
+[15] ResetEra. "LTTP: Ori and the Blind Forest (AKA, the worst escape sequences in gaming?)".
+    https://www.resetera.com/threads/lttp-ori-and-the-blind-forest-aka-the-worst-escape-sequences-in-gaming.1299783/
+[16] NeoGAF. "LTTP: Ori and the Blind Forest (or how I can't stand trial and error)".
+    https://www.neogaf.com/threads/lttp-ori-and-the-blind-forest-or-how-i-cant-stand-trial-and-error.1421364/
+[17] ExLudico. "Review: Ori and the Blind Forest".
+    https://exludi.co/2021/04/13/review-ori-and-the-blind-forest/
+[18] TheGamer. "Ori And The Will Of The Wisps' Story Was Reverse-Engineered From The Final Boss Fight".
+    https://www.thegamer.com/ori-and-the-will-of-the-wisps-story-was-reverse-engineered-from-the-final-boss-fight/
+[19] Fandom(Ori and the Blind Forest Wiki). "Shriek" 항목.
+    https://oriandtheblindforest.fandom.com/wiki/Shriek
+[20] NoobFeed. "Ori and the Will of the Wisps Boss Guide - Shriek".
+    https://www.noobfeed.com/articles/ori-and-the-will-of-the-wisps-boss-guide-shriek
+[21] PC Gamer. "How to escape Shriek in the Silent Woods - Ori and the Will of the Wisps"(직접 fetch는 회원가입 페이지만 반환되어 실패, WebSearch 스니펫으로만 확인).
+    https://www.pcgamer.com/ori-and-the-will-of-the-wisps-guide-how-to-escape-shriek-in-the-silent-woods/
+[22] Game Developer. "Ori and the Will of the Wisps: Destroying Hope"(서사 비평 칼럼).
+    https://www.gamedeveloper.com/design/ori-and-the-will-of-the-wisps-destroying-hope
+[23] Fandom(Ori and the Blind Forest Wiki). "Ginso Tree" 항목.
+    https://oriandtheblindforest.fandom.com/wiki/Ginso_Tree
+[24] Steam Community(Ori and the Blind Forest: Definitive Edition 토론). "Ginso tree escape tips?".
+    https://steamcommunity.com/app/387290/discussions/0/154645214958681380/
+[25] Steam Community(Ori and the Blind Forest: Definitive Edition 토론). "Noob question: Ginso Tree Escape Ori DE".
+    https://steamcommunity.com/app/387290/discussions/0/1621726179573617464/?ctp=3
+[26] Steam Community(Ori and the Blind Forest 토론). "My thoughts on the Ginso Tree Difficulty.".
+    https://steamcommunity.com/app/261570/discussions/0/412446890558315732/
+[27] GameFAQs(Andrew_Testa). "Ori and the Blind Forest - Guide and Walkthrough".
+    https://gamefaqs.gamespot.com/xboxone/805488-ori-and-the-blind-forest/faqs/71410
+
+3. 조사 방법론 및 신뢰도 메모
+
+- 이번 조사는 WebSearch 스니펫과 일부 WebFetch 성공 사례(bosnan.net)에 기반했습니다. 여러 출처(Wikipedia 스크립트 시퀀스 문서, gamedesignskills.com, web.cs.dal.ca)는 WebFetch 직접 접속이 404/403 오류로 실패해 WebSearch 스니펫 또는 제목 수준으로만 확인했습니다 — 이는 완전한 원문 대조가 아니므로, 위키 본문에서 이 출처들을 인용할 때는 "검색 스니펫으로 확인"임을 명시해야 합니다.
+- 오리 시리즈 쿠로 시퀀스에 대한 1차 개발자 인터뷰·GDC 발표는 여전히 확보하지 못했습니다. 다만 2차 조사(1-7절)를 통해 위키백과의 스토리·구조 서술, 다수의 독립 공략 사이트(Gamerheadquarters, N4G, soloplayguide.com)의 일치하는 메커니즘 서술, 그리고 Steam 커뮤니티·ResetEra·NeoGAF·ExLudico 등 다수 독립 출처에서 일관되게 확인되는 비평(트라이얼 앤 에러 비판)을 확보해, "잘 알려진 사례" 수준을 넘어 상당히 신뢰도 있는 2차 자료 기반 서술이 가능해졌습니다 — 1차 개발자 코멘터리만큼의 권위는 아니지만, 다수 독립 소스의 교차 일치라는 점에서 신뢰도를 인정할 만합니다.
+- 슈퍼 메트로이드 탈출 시퀀스와 리틀 나이트메어 추격/은신 구간은 각각 "연속 도주형"·"시선 회피형" 범주에 대해 비교적 구체적이고 신뢰도 있는 분석 자료를 확보했다고 판단합니다.
+- 1-8절 3차 조사에서 "오리 시리즈"로 뭉뚱그렸던 표현이 부정확했음을 확인·정정했습니다: 쿠로=《블라인드 포레스트》, 슈리크=《윌 오브 더 위습스》로 명확히 구분됩니다. 또한 슈리크의 보스전 추격(패턴 암기형 전투-추격)은 기존 규칙 세트 A/B와 다른 제3의 하위 유형 후보로 확인되었으나, 이 기획에 정식 도입할지는 별도 판단이 필요한 사안으로 남깁니다.
+- 1-9절 4차 조사(긴소나무 탈출)는 Fandom 위키·복수의 Steam 커뮤니티 토론·GameFAQs 공략 등 다수 독립 출처가 세부 진행·난이도·체크포인트 사양에서 일관되게 일치해 신뢰도가 높다고 판단됩니다. 특히 "Definitive Edition Easy 난이도에 체크포인트 추가"는 개발사가 트라이얼 앤 에러 비판에 실제로 대응한 사례로, 단순 커뮤니티 의견이 아니라 게임 자체의 난이도 옵션 차이로 확인되는 비교적 단단한 근거입니다.
+================================================================================

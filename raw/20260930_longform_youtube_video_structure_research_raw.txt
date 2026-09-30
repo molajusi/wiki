@@ -1,0 +1,61 @@
+================================================================================
+원천 데이터: 일반(롱폼) 유튜브 영상 연출 구조·리텐션·챕터·트레일러 편집 원칙 조사
+수집 일시: 2026-09-30 (KST, UTC+9)
+수집 대상: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획" 위키 문서 7장에, 쇼츠(세로 숏폼)뿐 아니라 일반 가로형 롱폼 유튜브 영상 연출에도 게이팅 탐험·추격 시퀀스 구조가 유효하게 작동하도록 하는 설계 기준을 보강하기 위해, 롱폼 영상 길이·리텐션·챕터 관행과 게임 트레일러 편집 구조를 조사한 웹 검색 결과 발췌
+================================================================================
+
+1. 수집 자료 요약 및 핵심 논점
+
+1-1. 롱폼 영상 훅과 초반 리텐션
+- 처음 30초 안의 강한 오프닝이 리텐션을 크게 개선한다는 서술이 확인됨.
+- 구체 수치(원문 인용 취지): "15초 안에 시청자를 사로잡은 영상은 3분 지점까지 시청자의 65%를 유지하지만, 15초 안에 훅이 없으면 리텐션이 45% 이하로 떨어진다"는 조사 결과가 확인됨.
+- "콜드 오픈 + 명확한 약속(clear promise) + 2~4분마다의 챕터별 미니 페이오프(mini payoff)"로 리텐션을 의도적으로 설계하라는 서술이 확인됨.
+
+1-2. 챕터(Chapters)와 탐색성
+- 1시간 분량 영상은 10~15개 챕터, 평균 4~6분 간격이 적절하다는 서술이 확인됨.
+- 챕터가 없는 롱폼 영상은 이탈률이 40~60% 더 높다는 서술이 확인됨 — 시청자가 원하는 구간을 찾지 못해 인내심을 잃는다는 설명과 함께 제시됨.
+
+1-3. 적정 영상 길이
+- 2026년 기준 15~25분이 이상적인 길이로 제시되며, 튜토리얼·인터뷰·스토리텔링류는 최대 45분까지도 고성과를 낸다는 서술이 확인됨.
+- "긴 영상이 더 잘 되는 것이 아니라 구조·페이싱·진짜 가치가 있어야 이긴다"는 원칙, "지루한 1분이 짧지만 몰입감 있는 스토리텔링보다 성과를 더 해친다"는 서술도 확인됨.
+
+1-4. 페이싱 기법
+- 늘어지는 장광설이나 멈춤 없이 경쾌한 페이스를 유지하고, 편집 중 느리게 느껴지는 부분은 잘라내라는 서술이 확인됨.
+
+1-5. 게임 트레일러의 표준 구조
+- 훅(0~5초, 즉각적인 주의 환기) → 빌드(5~30초, 기능·게임플레이 다양성·월드 디자인 노출) → 코어 루프 → 고조(escalation) → 엔드카드로 이어지는 구조가 확인됨.
+- 씬 전환의 리듬과 흐름, 기대감 조성, 보상감 있는 순간 전달이 편집의 핵심이며, 너무 느리지도 빠르지도 않은 속도로 이야기가 펼쳐져야 한다는 서술이 확인됨. 페이싱이 혼란스러우면 시청자가 게임이 무엇인지 이해하지 못해 이탈한다는 지적도 확인됨.
+
+1-6. 탐험(Exploration)과 액션(Action) 소재의 배합 — 이 기획에 가장 중요한 발견
+- 모바일 게임 트레일러는 빠르고 신나는 액션을 강조하는 반면, 전략 게임은 느린 페이싱과 스케일감 강조에서 이득을 본다는 대조가 확인됨 — 장르·게임 성격에 따라 최적 배합이 다름을 시사.
+- **핵심 서술**: "지나치게 시네마틱 연출에 치우치면 실제 플레이 경험을 오도할 수 있고, 반대로 순수 게임플레이 릴은 흥미가 떨어질 수 있다 — 가장 뛰어난 트레일러는 시네마틱한 페이싱과 진짜 게임 메커닉을 결합한다"는 서술이 확인됨.
+- 편집 실무에서는 클립을 전투·탐험·보스전 등 콘텐츠 유형별 폴더로 분류해 관리한다는 서술도 확인됨.
+- **이 기획에 대한 함의**: 쇼츠(7.4절)에서는 게이팅 탐험이 구조적 약점이었던 반면, 롱폼·트레일러에서는 탐험(느린 빌드/월드 노출)과 추격 시퀀스(빠른 액션/고조)를 **의도적으로 배합**하는 것이 업계 표준 권장 사항으로 확인됨 — 정반대의 요구가 확인된 셈.
+
+================================================================================
+2. 참고 문헌 및 조사 자료 출처
+
+[1] Teleprompter.com. "YouTube Audience Retention Guide (2026)".
+    https://www.teleprompter.com/blog/youtube-audience-retention
+[2] Humble & Brag. "YouTube Audience Retention Benchmarks 2026: What's Good?".
+    https://humbleandbrag.com/blog/youtube-audience-retention-benchmarks
+[3] InstantViews. "YouTube Chapters for Long Videos: Complete Guide for 1+ Hour Content (2026)".
+    https://instantviews.net/youtube-chapters-long-videos
+[4] StackInfluence. "How Long Can a YouTube Video Be in 2026? Best Length Guide".
+    https://stackinfluence.com/blog/how-long-can-a-youtube-video-be-in-2026
+[5] Medium(Purity Muriuki). "Long Videos vs Shorts: What Really Wins on YouTube in 2026?".
+    https://medium.com/@nkatha.muriuki/long-videos-vs-shorts-what-really-wins-on-youtube-in-2026-695b5fbcbe43
+[6] Frame.io(blog). "How to Make a Great Game Trailer or Promo (and What to Avoid)".
+    https://blog.frame.io/2023/03/27/editing-game-promo-trailer/
+[7] Derek Lieu Creative. "How to Think About Pacing in a Trailer".
+    https://www.derek-lieu.com/blog/2020/11/16/how-to-think-about-pacing-in-a-trailer
+[8] Kert Gartner. "Making Entertaining and Engaging Video Game Trailers".
+    http://www.kertgartner.com/making-entertaining-and-engaging-video-game-trailers
+[9] Game-Ace. "Video Game Trailer Production: The Full Guide".
+    https://game-ace.com/blog/video-game-trailer-production/
+
+3. 조사 방법론 및 신뢰도 메모
+
+- 본 조사는 마케팅·크리에이터 가이드 블로그(Teleprompter, Humble & Brag, InstantViews, StackInfluence 등)와 게임 트레일러 전문 편집자/스튜디오 블로그(Frame.io, Derek Lieu, Kert Gartner, Game-Ace)에 기반했습니다. 유튜브 공식 정책 문서 수준은 아니며, 리텐션 수치(65%/45%, 40~60% 이탈률 등)는 각 업체의 자체 분석·업계 통념으로 다뤄야 합니다.
+- 다만 "탐험과 액션을 배합하는 것이 좋은 트레일러의 핵심"이라는 서술은 게임 트레일러 편집 전문가 자료(Frame.io, Kert Gartner)에서 확인된 것으로, 7.4절(쇼츠)의 조사 결과와 대조했을 때 이 기획에 실질적 설계 함의를 주는 신뢰도 있는 발견으로 판단합니다.
+================================================================================
