@@ -1,0 +1,68 @@
+================================================================================
+원천 데이터: 도트 아트(픽셀 아트) 캐릭터·오브젝트 아웃라인(테두리) 기법 조사
+수집 일시: 2026-09-30 (KST, UTC+9)
+수집 대상: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획" 위키 문서의 6장(아트스타일과 무대 연출 파이프라인)을 보강하기 위해, 도트 아트에서 캐릭터/오브젝트에 검은색 아웃라인을 두는 전통적 방식과 아웃라인 없이 표현하는 방식의 명칭·원리·장단점을 조사한 웹 검색 및 웹페이지 발췌
+================================================================================
+
+1. 수집 자료 요약 및 핵심 논점
+
+1-1. 아웃라인 기법의 4가지 분류(영문 픽셀 아트 커뮤니티 자료 종합: pixnote.net, pixel-editor.com, lospec.com)
+검색 결과에서 일관되게 확인된 분류는 다음과 같음:
+
+(1) 하드 블랙 아웃라인(Hard Black Outline)
+- 원리: 오브젝트 전체를 순수 검은색 선으로 완전히 둘러싸는 방식.
+- 특징(원문 인용 취지): "graphic and high-contrast... maximum readability, slightly heavy, comic/UI flavored." (그래픽적이고 고대비, 가독성 최대, 다소 무겁고 만화/UI적 느낌)
+- 장점: 어떤 배경 위에서도 실루엣이 확실히 분리되어 보임. 특히 스크롤 환경에서 배경이 계속 바뀌는 상황에 강함(원문: "Outlines guarantee separation regardless of what is behind the sprite — crucial in scrolling environments where the background changes constantly between frames.")
+- 단점: 시각적으로 다소 무겁고 만화적인 인상을 줌.
+
+(2) 아웃라인 없음(No Outline)
+- 원리: 별도의 테두리선 없이 전적으로 배경과의 색상 대비에 의존해 형태를 구분.
+- 특징: 색상 전환만으로 표현하므로 더 부드럽고 자연스러운(페인팅에 가까운) 느낌을 줌.
+- 단점: 배경이 복잡하거나 스프라이트와 색이 겹칠 경우 실루엣 구분이 어려워질 수 있음. 작은 크기의 도트일수록 이 문제가 두드러짐.
+
+(3) 선택적 아웃라인(Selective Outlining, 줄여서 Sel-Out)
+- 원리: 배경과 맞닿는 그림자 쪽(어두운 면)에는 진한 선을 넣고, 빛을 받는 쪽(밝은 면)은 오브젝트 자체의 밝은 내부색을 그대로 살려 테두리를 흐리게 처리. "음영에 따라 다른 색으로 칠해진 아웃라인"을 쓰는 방식.
+- 특징(원문 인용 취지): "The pro default — light yet readable." (전문가들이 기본으로 쓰는 방식 — 가볍지만 가독성 있음). "shaded outline"(음영진 아웃라인)으로도 불림.
+- 장점: 명도 대비를 전체적으로 유지하면서도 하드 블랙 아웃라인보다 정교하고 자연스러운("painterly and cohesive") 인상을 줌.
+- 단점: 배경색이 바뀌면 아웃라인 색도 그에 맞춰 재조정해야 할 수 있어, 제작 난도가 하드 블랙 아웃라인보다 높음.
+
+(4) 색상 맞춤 아웃라인(Colored/Shade-Matched Outline)
+- 원리: 순수 검은색 대신, 칠해진 면의 색상과 같은 색상군에서 더 어두운 톤을 아웃라인 색으로 사용(예: 녹색 덤불이라면 더 어두운 녹색으로 테두리).
+- 장점: 하드 블랙보다 부드럽고 오브젝트 색과 조화를 이루며, 선택적 아웃라인보다는 구현이 간단함.
+- 단점: 배경 자체가 어두운 색일 경우 아웃라인과 배경 간의 명도 대비가 떨어져 실루엣 구분력이 낮아질 수 있음.
+
+(5) 참고: 내부 선(Internal Lines)
+- 오브젝트의 외곽 실루엣이 아니라 내부 디테일을 표현하는 가는 선. 배경과 맞닿지 않으므로 외곽 아웃라인보다 더 밝은 톤을 쓸 수 있으며, "1픽셀보다 작은 디테일을 암시하는" 기법과 함께 쓰이는 경우가 많음. 이는 외곽 아웃라인 선택(위 1~4)과는 별개의 문제로 다뤄짐.
+
+1-2. 실무적 판단 기준(검색 결과 종합)
+- 아웃라인은 제한된 팔레트 안에서 가독성을 지키기 위해 필요한 경우가 많으며, 특히 빠르고 즉각적인 반응이 필요한 게임(액션/플랫포머)에서는 스프라이트를 배경과 확실히 구분시켜 "읽기 쉽게" 만드는 데 유리하다는 서술이 확인됨.
+- 다만 검색 범위 내에서 특정 개별 게임(예: Shovel Knight, Owlboy, Celeste, Stardew Valley 등)이 위 4가지 기법 중 정확히 어느 것을 썼는지에 대한 기술적으로 검증된 개별 사례 분석은 확보하지 못했음 — 각 게임의 비주얼이 일반적으로 고평가된다는 서술은 확인되었으나, 아웃라인 기법 종류에 대한 구체적 기술 분석 자료까지는 이번 조사에서 확인하지 못함(추가 조사 필요 항목으로 남김).
+
+1-3. 한국어 자료(나무위키·도트 커뮤니티) 확인 사항
+- 한국어권 도트 아트 입문 자료에서도 "아웃라인이 있으면 실루엣이 명확해지고 시각적으로 두드러지며, 없으면 색상 전환만으로 표현해 더 부드럽고 자연스러운 느낌을 준다"는 동일한 취지의 설명이 확인되어, 영문 자료의 분류와 상호 일치함.
+
+================================================================================
+2. 참고 문헌 및 조사 자료 출처
+
+[1] Pixnote. 〈Pixel Art Outlines & Anti-Aliasing — Selective Outline (Sel-Out) Guide〉.
+    https://pixnote.net/en/learn/outlines/
+[2] Pixel-Editor.com. 〈Pixel Art Outlines & Anti-Aliasing — Complete Guide〉.
+    https://www.pixel-editor.com/articles/pixel-art-outlines
+[3] Lospec. 〈Pixel Art Outlines Part 2: Using Color〉.
+    https://lospec.com/articles/pixel-art-outlines-part-2-using-color/
+[4] 2D Will Never Die. 〈Line weight thickness in sprites〉.
+    https://2dwillneverdie.com/tutorial/line-weight-thickness-in-sprites/
+[5] Yarrninja. 〈So You Want To Be A Pixel Artist? (Chapter 12)〉.
+    http://www.yarrninja.com/pixeltutorial/chapter12.htm
+[6] itch.io 커뮤니티. 〈pixel tutorial selective outlines〉.
+    https://itch.io/t/2422252/pixel-tutorial-selective-outlines
+[7] 클립스튜디오(그림 꿀팁사전). 〈픽셀 아트 만드는 법〉.
+    https://www.clipstudio.net/drawing/archives/161292
+[8] 나무위키. 〈픽셀 아트〉 항목.
+    https://namu.wiki/w/%ED%94%BD%EC%85%80%20%EC%95%84%ED%8A%B8
+
+3. 조사 방법론 및 신뢰도 메모
+
+- 본 조사는 픽셀 아트 실무자 커뮤니티(Lospec, Pixnote, Pixel-Editor.com, itch.io)의 튜토리얼·가이드 문서와 한국어 도트 아트 입문 자료의 검색 스니펫에 기반했습니다. 이들은 학술 논문이 아니라 실무 크리에이터 커뮤니티의 기법 정리 문서이며, 이 분야(게임 아트 제작 기법)에서는 이러한 커뮤니티 자료가 사실상 표준 레퍼런스 역할을 하는 것으로 판단해 채택했습니다.
+- 개별 게임(Shovel Knight, Owlboy, Celeste, Stardew Valley 등)이 구체적으로 어떤 아웃라인 기법을 썼는지에 대한 검증된 기술 분석은 확보하지 못했습니다 — 위키 본문에서 특정 게임을 "이 기법의 예시"로 단정하지 않고, 기법 자체의 명칭과 원리만 신뢰도 있게 서술하는 방향으로 작성했습니다.
+================================================================================
