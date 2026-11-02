@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:21:52 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:49:32 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:21:52 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:49:32 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
@@ -292,7 +292,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 이 게임의 레벨은 성격이 다른 두 모드를 오갑니다: 플레이어가 자유롭게 되돌아다니는 **게이팅 탐험 모드**(표준 메트로이드배니아)와, 연출 라이브러리가 카메라·판정을 강제로 넘겨받는 **스크립트 시퀀스 모드**(추격전 등)입니다. 위키백과 "Scripted sequence" 항목은 이를 "플레이어의 위치나 행동에 의해 트리거되어 게임 엔진 안에서 재생되는 미리 정의된 일련의 사건"으로 정의하며, 컷신으로 끊지 않고도 새로운 위협·플롯 포인트를 매끄럽게 들여오는 데 쓰인다고 설명합니다 — 아저씨와의 논의에서 도출한 "탐험 모드 vs 시퀀스 모드" 구분이 게임 디자인 업계에서 이미 공식 용어로 존재하는 구분임을 확인한 것입니다. [[15]](#ref-15)
 
 <div class="callout">
-<p><strong>출처 신뢰도 안내</strong>: 이 절은 6장(아트스타일)과 달리 전용 웹 조사를 거쳤습니다(원문: `raw/20260930_chase_sequence_level_design_research_raw.txt`, 쿠로·슈리크 시퀀스 2~3차 조사 포함). 다만 일부 출처(위키백과 Scripted sequence 문서, gamedesignskills.com, 리틀 나이트메어 레벨 디자인 블로그, PC Gamer)는 원문 직접 접속이 404/403 오류나 회원가입 장벽으로 실패해 검색 스니펫으로만 확인했습니다 — 완전한 원문 대조는 아닙니다. 쿠로·슈리크 시퀀스(7.2.1·7.2.2절)는 1차 개발자 인터뷰는 아니지만, 위키백과의 스토리·구조 서술과 다수의 독립 공략·비평 사이트가 일관되게 교차 확인해 준 2차 자료를 근거로 삼았습니다. 쿠로는 《블라인드 포레스트》, 슈리크는 《윌 오브 더 위습스》 전용의 별개 캐릭터입니다. 7.4절의 쇼츠 연출 연계는 `raw/20260930_shorts_vertical_video_format_research_raw.txt`를, 7.5절의 롱폼 연출 연계는 `raw/20260930_longform_youtube_video_structure_research_raw.txt`를 근거로 하며, 두 출처 모두 유튜브 공식 문서가 아니라 크리에이터 가이드·트레일러 편집 전문 블로그 콘텐츠라 구체 수치(3초 훅, 20~40초 권장, 15초/65% 리텐션 등)는 업계 통념 수준으로 다뤄야 합니다. 7.1.1절의 코요테 타임·입력 버퍼링 등 조작감 보강 기법은 별도 raw 파일 없이 웹 검색으로 확인했으며, 매디 소슨(Maddy Thorson)의 1차 서술(X 스레드·Medium)이 핵심 근거이고 프레임 수치 범위는 개발 가이드·블로그 수준의 경험적 참고치입니다. 7.1.2절의 히트박스·콜라이더 분리 원칙은 《HunterX》의 실제 소스코드나 개발사 공식 확인이 아니라, 별도 분석 문서(<a href="hunterx_combat_hitbox_analysis.html">HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</a>, 원문: <code>raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</code>)에서 도출한 동일 장르 일반 원인 패턴에 대한 추정입니다. 7.1.3절의 이동 플랫폼 속도 상속 원칙도 같은 성격으로, 《BioGun》의 실제 소스코드가 아니라 별도 분석 문서(<a href="biogun_moving_platform_jump_analysis.html">BioGun 이동 플랫폼 점프 오작동 분석</a>, 원문: <code>raw/20261102_biogun_moving_platform_jump_analysis_raw.txt</code>)에서 도출한 추정입니다.</p>
+<p><strong>출처 신뢰도 안내</strong>: 이 절은 6장(아트스타일)과 달리 전용 웹 조사를 거쳤습니다(원문: `raw/20260930_chase_sequence_level_design_research_raw.txt`, 쿠로·슈리크 시퀀스 2~3차 조사 포함). 다만 일부 출처(위키백과 Scripted sequence 문서, gamedesignskills.com, 리틀 나이트메어 레벨 디자인 블로그, PC Gamer)는 원문 직접 접속이 404/403 오류나 회원가입 장벽으로 실패해 검색 스니펫으로만 확인했습니다 — 완전한 원문 대조는 아닙니다. 쿠로·슈리크 시퀀스(7.2.1·7.2.2절)는 1차 개발자 인터뷰는 아니지만, 위키백과의 스토리·구조 서술과 다수의 독립 공략·비평 사이트가 일관되게 교차 확인해 준 2차 자료를 근거로 삼았습니다. 쿠로는 《블라인드 포레스트》, 슈리크는 《윌 오브 더 위습스》 전용의 별개 캐릭터입니다. 7.4절의 쇼츠 연출 연계는 `raw/20260930_shorts_vertical_video_format_research_raw.txt`를, 7.5절의 롱폼 연출 연계는 `raw/20260930_longform_youtube_video_structure_research_raw.txt`를 근거로 하며, 두 출처 모두 유튜브 공식 문서가 아니라 크리에이터 가이드·트레일러 편집 전문 블로그 콘텐츠라 구체 수치(3초 훅, 20~40초 권장, 15초/65% 리텐션 등)는 업계 통념 수준으로 다뤄야 합니다. 7.1.1절의 코요테 타임·입력 버퍼링 등 조작감 보강 기법은 별도 raw 파일 없이 웹 검색으로 확인했으며, 매디 소슨(Maddy Thorson)의 1차 서술(X 스레드·Medium)이 핵심 근거이고 프레임 수치 범위는 개발 가이드·블로그 수준의 경험적 참고치입니다. 7.1.2절의 히트박스·콜라이더 분리 원칙은 《HunterX》의 실제 소스코드나 개발사 공식 확인이 아니라, 별도 분석 문서(<a href="hunterx_combat_hitbox_analysis.html">HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</a>, 원문: <code>raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</code>)에서 도출한 동일 장르 일반 원인 패턴에 대한 추정입니다. 7.1.3절의 이동 플랫폼 속도 상속 원칙도 같은 성격으로, 《BioGun》의 실제 소스코드가 아니라 별도 분석 문서(<a href="biogun_moving_platform_jump_analysis.html">BioGun 이동 플랫폼 점프 오작동 분석</a>, 원문: <code>raw/20261102_biogun_moving_platform_jump_analysis_raw.txt</code>)에서 도출한 추정입니다. 두 절 모두 스트리트 파이터 V·Pouchie the Cat의 공식 패치노트·개발자 서술이라는 타 게임 확인 사례로 교차 검증했으며(원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code>), HunterX·BioGun 자체에 대한 확인은 아니지만 두 예방 원칙이 장르 공통의 설계 함정에 대응한다는 근거는 보강되었습니다.</p>
 </div>
 
 ### 7.1 게이팅 탐험 모드 — 표준 메트로이드배니아 규칙
@@ -324,6 +324,10 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 
 이 세 원칙은 2장 아키텍처의 "연출 레이어/게임 레이어 분리"와 같은 사고방식입니다 — 공격 판정(게임 로직)과 몸체 충돌 처리를 서로 다른 책임을 가진 별개 시스템으로 설계해야, 같은 프레임에서 서로 경쟁하며 생기는 이런 유형의 버그를 피할 수 있습니다.
 
+<div class="callout">
+<p><strong>타 게임 선례</strong>: 이 유형의 버그는 HunterX만의 특이 현상이 아닙니다. 《스트리트 파이터 V》는 2020년 3월 Champion Edition 패치(공식 패치노트)에서 "상대가 너무 가까우면 여러 기술이 빗나간다(whiff)"는 문제를 인정하고, 해당 기술들의 히트박스를 안쪽·아래쪽으로 확장해 수정했습니다 <sup class="citation"><a href="#ref-69">[69]</a></sup> — 위 표의 "히트박스의 전방 고정 오프셋" 원인·"근접 데드존 제거" 예방 원칙과 구조적으로 일치하는 공식 확인 사례입니다. 상세: <a href="hunterx_combat_hitbox_analysis.html">HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</a> 3.2절.</p>
+</div>
+
 #### 7.1.3 이동 플랫폼 속도 상속 설계 원칙 — 코너 보정의 실패 모드
 
 7.1.1절의 "코너 보정"은 이동 플랫폼 위에서 점프할 때 플랫폼의 운동량을 점프 속도에 가산하는 기법으로 이미 도입이 확정되어 있습니다. 같은 장르의 《BioGun》(Dapper Dog Digital, 2024)에서 "이동 플랫폼에서 점프 시 경우에 따라 실패하거나 엉뚱한 방향으로 튕겨 나간다"는 증상이 제보되어 별도로 분석했습니다(상세: [BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html) [[68]](#ref-68)). 7.1.2절과 마찬가지로 이 게임의 실제 소스코드를 확인한 것은 아니며 일반적인 원인 패턴에 근거한 추정이지만, 코너 보정을 실제로 구현할 때 같은 실패 모드를 피하기 위한 설계 지침으로 미리 반영합니다.
@@ -335,6 +339,10 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 | **부모-자식 분리(unparent) 시점 문제** | 캐릭터를 플랫폼의 자식 노드로 붙이는 구현에서, 분리 시점이 속도 상속 전/후 중 언제냐에 따라 플랫폼의 운동량이 더해지거나 빠짐 | 분리 시점을 "속도 상속 직후·점프 임펄스 적용 직전"으로 고정 |
 
 이 원칙은 7.1.2절의 히트박스·콜라이더 분리 원칙과 같은 계열의 교훈입니다 — 서로 다른 책임을 가진 두 시스템(플랫폼의 이동 로직과 캐릭터의 점프 로직)이 같은 프레임에서 처리 순서가 흔들리면, 겉보기엔 사소한 타이밍 문제가 "경우에 따라 다른" 불규칙한 버그로 나타납니다.
+
+<div class="callout">
+<p><strong>타 게임 선례</strong>: 이 유형의 버그도 BioGun만의 특이 현상이 아닙니다. 인디 게임 《Pouchie the Cat》 개발자는 "원웨이 콜리전이 이동 플랫폼과 결합하면서 캐릭터가 뛰어오른 플랫폼을 가끔 뚫고 가라앉는" 버그를 데브로그에서 직접 서술하고 수정했습니다 <sup class="citation"><a href="#ref-70">[70]</a></sup> — 이동 플랫폼의 충돌·물리 처리가 장르 전반에서 반복적으로 취약한 영역이라는 점을 뒷받침합니다. 상세: <a href="biogun_moving_platform_jump_analysis.html">BioGun 이동 플랫폼 점프 오작동 분석</a> 3.2절.</p>
+</div>
 
 ### 7.2 스크립트 시퀀스 모드 — 추격 시퀀스의 두 하위 유형
 
@@ -603,6 +611,8 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 | **방향 락** | **Facing Lock**. 공격 방향을 매 프레임 재계산하지 않고 공격 개시 시점의 방향으로 고정하는 설계. 밀착 거리에서 공격 방향이 흔들리는 버그를 예방함. 7.1.2절 참조. |
 | **속도 상속** | **Velocity Inheritance**. 이동 중인 플랫폼 위의 캐릭터가 점프할 때 플랫폼의 현재 속도를 자신의 속도에 가산해 받는 메커니즘. 7.1.1절 "코너 보정"의 구현 기반. 7.1.3절 참조. |
 | **왕복 플랫폼** | **Ping-Pong Platform**. 경로의 양 끝에서 이동 방향을 반전시키며 왕복하는 이동 플랫폼. 반전 순간의 속도 상속 처리가 "엉뚱한 방향으로 점프됨" 버그의 흔한 원천. 7.1.3절 참조. |
+| **휘프** | **Whiff**. 공격이 피격 판정 없이 허공을 가르는 것을 가리키는 격투 게임 전문 용어. 스트리트 파이터 V의 근접 거리 판정 누락 선례(7.1.2절)를 서술하는 데 쓰임. |
+| **원웨이 콜리전** | **One-Way Collision**. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례, 7.1.3절). |
 | **Godot 엔진** | 이 프로젝트의 채택 기술 스택. 텍스트 기반 씬(`.tscn`)·리소스(`.tres`) 포맷과 내장 `TileMap` 에디터가 채택 결정의 핵심 근거. 상세는 5장 참조. |
 | **HD-2D** | 도트 스프라이트와 3D 환경·동적 조명·피사계심도를 결합한 렌더링 방식. 스퀘어에닉스가 옥토패스 트래블러에서 명명. 6.2절 참조. |
 | **디더링** | **Dithering**. 제한된 색상 수로 그레이디언트·명암을 표현하기 위해 색상을 번갈아 찍어 중간 색조처럼 보이게 하는 기법. 하이파이 모던 도트의 의사 조명 구현에 흔히 쓰임. 6.1절 참조. |
@@ -642,7 +652,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 *References & Raw Sources*
 
 <div class="callout">
-<p><strong>📁 로컬 원천 데이터 보존 경로:</strong> 본 위키 문서는 아저씨가 대화 세션에서 직접 제시한 기획 브리핑 원문을 원천으로 하며, 해당 원문은 <code><a href="raw/20260923_cinematic_library_metroidvania_game_design_raw.txt">raw/20260923_cinematic_library_metroidvania_game_design_raw.txt</a></code>에 변경 없이 보존되어 있습니다. 3장 세계관 및 정치 체제 설계(신분 계층·지방세력가 역사적 근거 포함)는 별도 문서 <a href="cinematic_library_metroidvania_worldbuilding.html">영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제</a>로 분리되었으며, 분할 전 원본 전문은 <code><a href="raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md">raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md</a></code>에 동결 보존되어 있습니다. 6.3절 아웃라인 기법 조사는 <code><a href="raw/20260930_pixel_art_outline_technique_research_raw.txt">raw/20260930_pixel_art_outline_technique_research_raw.txt</a></code>에, 7장 레벨·시퀀스 디자인 조사는 <code><a href="raw/20260930_chase_sequence_level_design_research_raw.txt">raw/20260930_chase_sequence_level_design_research_raw.txt</a></code>에, 7.4절 쇼츠 연출 연계 조사는 <code><a href="raw/20260930_shorts_vertical_video_format_research_raw.txt">raw/20260930_shorts_vertical_video_format_research_raw.txt</a></code>에, 7.5절 롱폼 연출 연계 조사는 <code><a href="raw/20260930_longform_youtube_video_structure_research_raw.txt">raw/20260930_longform_youtube_video_structure_research_raw.txt</a></code>에, 8장 음악·음향 디자인 조사는 <code><a href="raw/20260930_music_sound_design_medieval_electronic_fusion_raw.txt">raw/20260930_music_sound_design_medieval_electronic_fusion_raw.txt</a></code>에 보존되어 있습니다.</p>
+<p><strong>📁 로컬 원천 데이터 보존 경로:</strong> 본 위키 문서는 아저씨가 대화 세션에서 직접 제시한 기획 브리핑 원문을 원천으로 하며, 해당 원문은 <code><a href="raw/20260923_cinematic_library_metroidvania_game_design_raw.txt">raw/20260923_cinematic_library_metroidvania_game_design_raw.txt</a></code>에 변경 없이 보존되어 있습니다. 3장 세계관 및 정치 체제 설계(신분 계층·지방세력가 역사적 근거 포함)는 별도 문서 <a href="cinematic_library_metroidvania_worldbuilding.html">영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제</a>로 분리되었으며, 분할 전 원본 전문은 <code><a href="raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md">raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md</a></code>에 동결 보존되어 있습니다. 6.3절 아웃라인 기법 조사는 <code><a href="raw/20260930_pixel_art_outline_technique_research_raw.txt">raw/20260930_pixel_art_outline_technique_research_raw.txt</a></code>에, 7장 레벨·시퀀스 디자인 조사는 <code><a href="raw/20260930_chase_sequence_level_design_research_raw.txt">raw/20260930_chase_sequence_level_design_research_raw.txt</a></code>에, 7.4절 쇼츠 연출 연계 조사는 <code><a href="raw/20260930_shorts_vertical_video_format_research_raw.txt">raw/20260930_shorts_vertical_video_format_research_raw.txt</a></code>에, 7.5절 롱폼 연출 연계 조사는 <code><a href="raw/20260930_longform_youtube_video_structure_research_raw.txt">raw/20260930_longform_youtube_video_structure_research_raw.txt</a></code>에, 8장 음악·음향 디자인 조사는 <code><a href="raw/20260930_music_sound_design_medieval_electronic_fusion_raw.txt">raw/20260930_music_sound_design_medieval_electronic_fusion_raw.txt</a></code>에, 7.1.2·7.1.3절의 HunterX·BioGun 선례 조사는 <code><a href="raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt">raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</a></code>에 보존되어 있습니다.</p>
 <p>본 문서는 그 원문을 넘어서는 기술적 해석(2장 아키텍처, 4장 구현 선택지 등)을 포함하며, 이러한 해석 부분은 본문에서 "미확정"·"에이전트 해석" 등으로 명시적으로 구분했습니다.</p>
 </div>
 
@@ -704,5 +714,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
     <li id="ref-66">[66] Supagames Learn. 〈Platformer Feel, Coyote Time and Jump Buffering〉. <a href="https://supagamesai.com/learn/platformer-feel-coyote-time.html" target="_blank">Platformer Feel</a> — 7.1.1절 프레임 수치 범위 교차 확인의 근거.</li>
     <li id="ref-67">[67] 이 위키. 〈HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석〉. <a href="hunterx_combat_hitbox_analysis.html">hunterx_combat_hitbox_analysis.html</a> — 7.1.2절 히트박스·콜라이더 분리 원칙의 근거.</li>
     <li id="ref-68">[68] 이 위키. 〈BioGun 이동 플랫폼 점프 오작동 분석〉. <a href="biogun_moving_platform_jump_analysis.html">biogun_moving_platform_jump_analysis.html</a> — 7.1.3절 이동 플랫폼 속도 상속 원칙의 근거.</li>
+    <li id="ref-69">[69] EventHubs(2020). <em>What Exactly Does "Extended Hitbox Inward" Mean? — Street Fighter 5 Champion Edition's New Update</em>. <a href="https://www.eventhubs.com/news/2020/mar/25/what-exactly-does-extended-hitbox-inward-mean-street-fighter-5-champion-editions-new-update" target="_blank">eventhubs.com</a> — 7.1.2절 타 게임 선례(스트리트 파이터 V)의 근거.</li>
+    <li id="ref-70">[70] Pouchie the Cat 개발자(itch.io). <em>Alpha 0.5 Quick Fix!</em>(데브로그, 2024-08-03). <a href="https://thatelfnerd.itch.io/pouchie-the-cat-public-demo/devlog/775982/alpha-05-quick-fix" target="_blank">thatelfnerd.itch.io</a> — 7.1.3절 타 게임 선례(원웨이 콜리전)의 근거.</li>
 </ol>
 </references>
