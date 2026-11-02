@@ -12,7 +12,7 @@
         <h1>HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</h1>
         <div class="subtitle">HunterX: Combat Hit-Detection Architecture and the Point-Blank Attack-Miss Bug</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:08:04 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:39:19 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -154,7 +154,79 @@
     이 세 평가는 서로 다른 방향(빠름/그럭저럭/보스 판정 이슈)을 가리켜 일관된 결론을 주지 않으며, 사용자 제보 증상을 직접 뒷받침하거나 반박하지 않습니다.
 </p>
 
-<h3>3.2 예방적 설계 원칙(일반화)</h3>
+<h3>3.2 다른 게임의 확인된 선례</h3>
+
+<p>
+    HunterX 자체의 1차 자료는 못 찾았으나, 같은 유형(근접 거리에서 공격이 빗나가는 버그)이 다른 게임에서 공식적으로 확인·수정된 사례를 추가 조사했습니다(원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code>). 이 선례들은 1절의 원인 추정이 HunterX만의 특이 현상이 아니라 장르 공통의 설계 함정이라는 정황을 뒷받침합니다.
+</p>
+
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
+<thead><tr><th>게임</th><th>확인 수준</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td><b>《스트리트 파이터 V》(캡콤)</b></td><td>공식 패치노트(2020년 3월, Champion Edition CE202003)</td><td>상대가 너무 가까우면 여러 기술이 빗나가는(whiff) 문제를 캡콤이 공식 인정, 해당 기술들의 히트박스를 안쪽·아래쪽으로 확장해 수정 <sup class="citation"><a href="#ref-5">[5]</a></sup></td></tr>
+<tr><td><b>《Ginger's Wrath》(인디)</b></td><td>패치노트(버전 0.2)</td><td>"Hitbox has been fixed"(플레이어), "Increased attack hitbox for enemy AI"(적) — 히트박스 확대로 근접 판정 문제를 수정 <sup class="citation"><a href="#ref-6">[6]</a></sup></td></tr>
+<tr><td><b>개발 블로그 사례(ehe.gamedev.net, 2018)</b></td><td>개발자 1차 서술</td><td>"플레이어의 근접 타격 시스템에, 적이 너무 가까워지면 맞출 수 없게 되는 버그가 있었다"고 직접 서술하며 수정 <sup class="citation"><a href="#ref-7">[7]</a></sup></td></tr>
+<tr><td><b>《Fallout》 커뮤니티(베데스다)</b></td><td>유저 제보 단계(devtracker)</td><td>"근접 빌드가 피해를 보는 근접 판정 버그를 인지하고 있는지" 묻는 커뮤니티 글 — 개발사의 공식 수정 확인까지는 이르지 못함 <sup class="citation"><a href="#ref-7">[7]</a></sup></td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>《스트리트 파이터 V》(캡콤)</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">확인 수준</dt>
+                <dd class="mobile-field-value">공식 패치노트(2020년 3월, Champion Edition CE202003)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내용</dt>
+                <dd class="mobile-field-value">상대가 너무 가까우면 여러 기술이 빗나가는(whiff) 문제를 캡콤이 공식 인정, 해당 기술들의 히트박스를 안쪽·아래쪽으로 확장해 수정 <sup class="citation"><a href="#ref-5">[5]</a></sup></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>《Ginger's Wrath》(인디)</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">확인 수준</dt>
+                <dd class="mobile-field-value">패치노트(버전 0.2)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내용</dt>
+                <dd class="mobile-field-value">"Hitbox has been fixed"(플레이어), "Increased attack hitbox for enemy AI"(적) — 히트박스 확대로 근접 판정 문제를 수정 <sup class="citation"><a href="#ref-6">[6]</a></sup></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>개발 블로그 사례(ehe.gamedev.net, 2018)</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">확인 수준</dt>
+                <dd class="mobile-field-value">개발자 1차 서술</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내용</dt>
+                <dd class="mobile-field-value">"플레이어의 근접 타격 시스템에, 적이 너무 가까워지면 맞출 수 없게 되는 버그가 있었다"고 직접 서술하며 수정 <sup class="citation"><a href="#ref-7">[7]</a></sup></dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>《Fallout》 커뮤니티(베데스다)</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">확인 수준</dt>
+                <dd class="mobile-field-value">유저 제보 단계(devtracker)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내용</dt>
+                <dd class="mobile-field-value">"근접 빌드가 피해를 보는 근접 판정 버그를 인지하고 있는지" 묻는 커뮤니티 글 — 개발사의 공식 수정 확인까지는 이르지 못함 <sup class="citation"><a href="#ref-7">[7]</a></sup></dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
+
+<p>
+    이 중 스트리트 파이터 V 사례는 공식 패치노트로 재구성 가능한 수준의 확인된 1차 사례이며, "히트박스가 몸체보다 좁거나 전방에 치우쳐 근접 거리에서 허트박스를 벗어난다"는 원인(1절의 "판정 데드존")과 "히트박스를 안쪽으로 확장한다"는 수정 방향이 1절의 예방 원칙 1번과 구조적으로 일치합니다.
+</p>
+
+<h3>3.3 예방적 설계 원칙(일반화)</h3>
 
 <p>
     위 원인 추정에서 도출되는 예방 원칙은 다음과 같습니다 — 이는 HunterX를 고치는 방법이 아니라, 같은 버그 유형을 <b>신규 설계 단계에서 피하는 방법</b>입니다.
@@ -240,7 +312,7 @@
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261102_hunterx_combat_hitbox_analysis_raw.txt">raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</a></code>의 데이터와 교차 검증을 거쳐 작성되었습니다. 이 버그에 관한 1차 자료(개발사 공식 확인·패치노트)는 확보하지 못했으며, 원인 분석은 추정임을 재차 명시합니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261102_hunterx_combat_hitbox_analysis_raw.txt">raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</a></code>와 <code><a href="raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt">raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</a></code>(3.2절 타 게임 선례 조사)의 데이터와 교차 검증을 거쳐 작성되었습니다. HunterX 자체의 1차 자료(개발사 공식 확인·패치노트)는 확보하지 못했으며, 원인 분석은 추정임을 재차 명시합니다.
 </div>
 
 <ol class="reference-list">
@@ -248,6 +320,9 @@
     <li id="ref-2">[2] Game Developer(2022). <em>HunterX Now Live on Nintendo Switch</em>(보도자료). <a href="https://www.gamedeveloper.com/press-release/hunterx-now-live-on-nintendo-switch" target="_blank">gamedeveloper.com</a></li>
     <li id="ref-3">[3] Steam 커뮤니티 유저 리뷰 및 ConFreaks & Geeks 리뷰(검색 스니펫 기반, 원문 미대조). <a href="https://www.confreaksandgeeks.com/hunterx-review/" target="_blank">confreaksandgeeks.com/hunterx-review</a></li>
     <li id="ref-4">[4] Capsule Computers(2022). <em>HunterX Review</em>. <a href="https://www.capsulecomputers.com.au/2022/05/hunterx-review/" target="_blank">capsulecomputers.com.au</a></li>
+    <li id="ref-5">[5] EventHubs(2020). <em>What Exactly Does "Extended Hitbox Inward" Mean? — Street Fighter 5 Champion Edition's New Update</em>. <a href="https://www.eventhubs.com/news/2020/mar/25/what-exactly-does-extended-hitbox-inward-mean-street-fighter-5-champion-editions-new-update" target="_blank">eventhubs.com</a> — 3.2절 타 게임 선례(스트리트 파이터 V)의 근거.</li>
+    <li id="ref-6">[6] Ginger's Wrath 개발자(itch.io). <em>Patch Notes 0.2</em>. <a href="https://daibreaker501.itch.io/gingers-wrath/devlog/581209/patch-notes-02" target="_blank">daibreaker501.itch.io</a> — 3.2절 인디 게임 선례의 근거.</li>
+    <li id="ref-7">[7] WebSearch 종합 결과(2026). <em>melee attack fails when too close to enemy — 타 게임 선례 조사</em>. 검색 결과 요약 기반(gamedev.net 개발 블로그, Fallout 커뮤니티 devtracker 포함), 원문 직접 대조 없음. 원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code></li>
 </ol>
             </section>
         </article>

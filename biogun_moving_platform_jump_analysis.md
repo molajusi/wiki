@@ -2,7 +2,7 @@
 title: "BioGun 이동 플랫폼 점프 오작동 분석"
 subtitle: "BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis"
 created: "2026-11-02 오후 08:18:23 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:18:23 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:40:04 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["BioGun", "Dapper Dog Digital", "Metroidvania", "Twin-Stick Shooter", "Moving Platform", "Velocity Inheritance", "Collision Detection", "Game Critique"]
 html_view: "biogun_moving_platform_jump_analysis.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:18:23 (KST, UTC+9)*
+*최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:40:04 (KST, UTC+9)*
 
 <context>
 본 문서는 사이드스크롤 트윈스틱 슈터·메트로이드배니아 하이브리드 《BioGun》(Dapper Dog Digital 개발, Ravenage 퍼블리싱, 2024년 7월 31일 PC 정식 출시)에서 아저씨가 직접 플레이 중 제보한 "이동 중인 플랫폼에서 점프할 경우 경우에 따라 점프가 제대로 되지 않거나 엉뚱한 방향으로 점프되는" 버그 증상을 분석합니다. 웹 조사 결과 게임·개발사를 특정하는 데는 성공했고 플랫폼·충돌 관련 간접 불만도 여러 독립 리뷰에서 확인했으나, 이 구체적 증상을 그대로 서술한 1차 자료(공식 패치노트·개발자 확인·버그 트래커)는 확보하지 못했습니다(원문: `raw/20261102_biogun_moving_platform_jump_analysis_raw.txt`). 본 문서의 원인 분석은 2D 플랫포머의 이동 플랫폼 속도 상속(velocity inheritance) 구현에서 일반적으로 보고되는 결함 패턴에 기반한 추정이며, 그 설계 원칙은 자매 문서 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 7.1.3절에도 예방 지침으로 반영되었습니다. 같은 "분과 비평" 계열의 선행 사례인 [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)과 조사·서술 방식을 통일했습니다.
@@ -67,7 +67,19 @@ parent_hub: "metroidvania_genre_analysis.html"
 
 위 간접 근거 세 건(놓친 점프의 무작위성, 부서지는 플랫폼의 타이밍 문제, 충돌 시스템의 전반적 불안정성)은 "BioGun의 플랫폼·점프 판정이 전반적으로 불안정하다"는 방향을 시사하지만, 이동 플랫폼에서만 발생하는 방향성 오류를 특정하지는 않습니다. 또한 소프트락(의도치 않은 구역 진입) 보고 [[5]](#ref-5)는 이동 시스템 전반의 판정 경계가 엄격하지 않을 수 있음을 뒷받침하는 추가 정황입니다.
 
-### 3.2 예방적 설계 원칙(일반화)
+### 3.2 다른 게임의 확인된 선례
+
+BioGun 자체의 1차 자료는 못 찾았으나, 같은 유형(이동 플랫폼에서 점프 시 충돌·속도 상속이 오작동하는 버그)이 다른 게임에서 개발자 자신 또는 엔진 버그 트래커를 통해 확인된 사례를 추가 조사했습니다(원문: `raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt`). 이 선례들은 2장의 원인 추정이 BioGun만의 특이 현상이 아니라 이동 플랫폼 구현 전반의 반복적 함정이라는 정황을 뒷받침합니다.
+
+| 게임 | 확인 수준 | 내용 |
+| :--- | :--- | :--- |
+| **《Pouchie the Cat》(인디)** | 개발자 1차 서술(데브로그, 2024-08-03) | "원웨이 콜리전이 이동 플랫폼과 결합하면서 캐릭터가 뛰어오른 플랫폼을 가끔 뚫고 가라앉는" 버그를 확인·수정. 같은 패치에서 "이동 플랫폼 위 망치 사용 시 캐릭터가 제자리에 고정되는" 별개 버그도 수정 [[7]](#ref-7) |
+| **Construct 엔진 버그 트래커** | 포럼 리포트 | 위로 움직이는 플랫폼에 착지하면 플랫폼 옆으로 밀려나는 현상이 보고됨(재현에 여러 번 착지가 필요할 수 있음) [[7]](#ref-7) |
+| **《Diabotical》(FPS)** | 간접·중간 신뢰도(원문 재대조 실패) | 이동 오브젝트 위쪽 표면의 "미끄러운 느낌"을 수정해 점프 방향 제어와 리프트에서의 서클점프를 쉽게 했다는 서술이 검색 요약에서 확인되나, 정확한 패치 버전·날짜는 재확인하지 못함 [[7]](#ref-7) |
+
+이 중 Pouchie the Cat 사례는 개발자 본인이 원인(원웨이 콜리전과 이동 플랫폼의 결합)과 수정 방식을 직접 서술한 신뢰도 높은 1차 사례이며, 2장의 "왕복 플랫폼 반전 타이밍"·"충돌 처리 순서" 원인 추정과 같은 범주(이동 플랫폼의 충돌·물리 처리 전반의 취약성)에 속합니다.
+
+### 3.3 예방적 설계 원칙(일반화)
 
 위 원인 추정에서 도출되는 예방 원칙은 다음과 같습니다 — BioGun을 고치는 방법이 아니라, 같은 버그 유형을 **신규 설계 단계에서 피하는 방법**입니다.
 
@@ -99,7 +111,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261102_biogun_moving_platform_jump_analysis_raw.txt">raw/20261102_biogun_moving_platform_jump_analysis_raw.txt</a></code>의 데이터와 교차 검증을 거쳐 작성되었습니다. 이 버그에 관한 1차 자료(개발사 공식 확인·패치노트)는 확보하지 못했으며, 원인 분석은 추정임을 재차 명시합니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261102_biogun_moving_platform_jump_analysis_raw.txt">raw/20261102_biogun_moving_platform_jump_analysis_raw.txt</a></code>와 <code><a href="raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt">raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</a></code>(3.2절 타 게임 선례 조사)의 데이터와 교차 검증을 거쳐 작성되었습니다. BioGun 자체의 1차 자료(개발사 공식 확인·패치노트)는 확보하지 못했으며, 원인 분석은 추정임을 재차 명시합니다.
 </div>
 
 <ol class="reference-list">
@@ -109,5 +121,6 @@ parent_hub: "metroidvania_genre_analysis.html"
     <li id="ref-4">[4] Backloggd — Hexxproof. <em>BioGun 리뷰</em>. <a href="https://backloggd.com/u/Hexxproof/review/3567743" target="_blank">backloggd.com/u/Hexxproof/review/3567743</a></li>
     <li id="ref-5">[5] Medium — constantin.gcopywriting. <em>BioGun — Review. Metroidvanias meet twin-stick shooters</em>. <a href="https://medium.com/@constantin.gcopywriting/biogun-review-c07052461bf3" target="_blank">medium.com/@constantin.gcopywriting/biogun-review</a></li>
     <li id="ref-6">[6] Steam 커뮤니티. <em>The controls are terrible :: BioGun General Discussions</em>(2024-02-11, 개발자 답변 포함). <a href="https://steamcommunity.com/app/1219240/discussions/0/4208120159998420188/" target="_blank">steamcommunity.com/app/1219240/discussions</a></li>
+    <li id="ref-7">[7] WebSearch 종합 결과(2026). <em>"moving platform" jump launches player wrong direction — 타 게임 선례 조사</em>. 검색 결과 요약 기반(Pouchie the Cat 데브로그, Construct 포럼, Diabotical 패치노트 포함), 원문 직접 대조 없음(Diabotical은 재검색으로도 미확인). 원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code></li>
 </ol>
 </references>

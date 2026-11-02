@@ -2,7 +2,7 @@
 title: "HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석"
 subtitle: "HunterX: Combat Hit-Detection Architecture and the Point-Blank Attack-Miss Bug"
 created: "2026-11-02 오후 08:08:04 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:08:04 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:39:19 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["HunterX", "Orange Popcorn", "Metroidvania", "Souls-like", "Hitbox", "Collision Detection", "Combat Design", "Game Critique"]
 html_view: "hunterx_combat_hitbox_analysis.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *HunterX: Combat Hit-Detection Architecture and the Point-Blank Attack-Miss Bug*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:08:04 (KST, UTC+9)*
+*최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:39:19 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 인디 스튜디오 오렌지팝콘(Orange Popcorn)의 2D 메트로이드배니아·소울라이크 《HunterX》(2022)에서 아저씨가 직접 플레이 중 제보한 "적과 바짝 붙으면 공격이 무효화되고 서로 밀리기만 하는" 버그 증상을 분석합니다. 웹 조사 결과 이 게임·스튜디오를 특정하는 데는 성공했으나, 이 구체적 버그를 다룬 1차 자료(공식 패치노트·개발자 확인·버그 트래커)는 확보하지 못했습니다(원문: `raw/20261102_hunterx_combat_hitbox_analysis_raw.txt`). 본 문서의 원인 분석은 동일 장르(2D 액션·소울라이크)에서 일반적으로 보고되는 히트박스/콜라이더 설계 결함 패턴에 기반한 추정이며, 그 설계 원칙은 자매 문서 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 7.1.2절에도 예방 지침으로 반영되었습니다.
@@ -72,7 +72,20 @@ parent_hub: "metroidvania_genre_analysis.html"
 
 이 세 평가는 서로 다른 방향(빠름/그럭저럭/보스 판정 이슈)을 가리켜 일관된 결론을 주지 않으며, 사용자 제보 증상을 직접 뒷받침하거나 반박하지 않습니다.
 
-### 3.2 예방적 설계 원칙(일반화)
+### 3.2 다른 게임의 확인된 선례
+
+HunterX 자체의 1차 자료는 못 찾았으나, 같은 유형(근접 거리에서 공격이 빗나가는 버그)이 다른 게임에서 공식적으로 확인·수정된 사례를 추가 조사했습니다(원문: `raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt`). 이 선례들은 1절의 원인 추정이 HunterX만의 특이 현상이 아니라 장르 공통의 설계 함정이라는 정황을 뒷받침합니다.
+
+| 게임 | 확인 수준 | 내용 |
+| :--- | :--- | :--- |
+| **《스트리트 파이터 V》(캡콤)** | 공식 패치노트(2020년 3월, Champion Edition CE202003) | 상대가 너무 가까우면 여러 기술이 빗나가는(whiff) 문제를 캡콤이 공식 인정, 해당 기술들의 히트박스를 안쪽·아래쪽으로 확장해 수정 [[5]](#ref-5) |
+| **《Ginger's Wrath》(인디)** | 패치노트(버전 0.2) | "Hitbox has been fixed"(플레이어), "Increased attack hitbox for enemy AI"(적) — 히트박스 확대로 근접 판정 문제를 수정 [[6]](#ref-6) |
+| **개발 블로그 사례(ehe.gamedev.net, 2018)** | 개발자 1차 서술 | "플레이어의 근접 타격 시스템에, 적이 너무 가까워지면 맞출 수 없게 되는 버그가 있었다"고 직접 서술하며 수정 [[7]](#ref-7) |
+| **《Fallout》 커뮤니티(베데스다)** | 유저 제보 단계(devtracker) | "근접 빌드가 피해를 보는 근접 판정 버그를 인지하고 있는지" 묻는 커뮤니티 글 — 개발사의 공식 수정 확인까지는 이르지 못함 [[7]](#ref-7) |
+
+이 중 스트리트 파이터 V 사례는 공식 패치노트로 재구성 가능한 수준의 확인된 1차 사례이며, "히트박스가 몸체보다 좁거나 전방에 치우쳐 근접 거리에서 허트박스를 벗어난다"는 원인(1절의 "판정 데드존")과 "히트박스를 안쪽으로 확장한다"는 수정 방향이 1절의 예방 원칙 1번과 구조적으로 일치합니다.
+
+### 3.3 예방적 설계 원칙(일반화)
 
 위 원인 추정에서 도출되는 예방 원칙은 다음과 같습니다 — 이는 HunterX를 고치는 방법이 아니라, 같은 버그 유형을 **신규 설계 단계에서 피하는 방법**입니다.
 
@@ -105,7 +118,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261102_hunterx_combat_hitbox_analysis_raw.txt">raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</a></code>의 데이터와 교차 검증을 거쳐 작성되었습니다. 이 버그에 관한 1차 자료(개발사 공식 확인·패치노트)는 확보하지 못했으며, 원인 분석은 추정임을 재차 명시합니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261102_hunterx_combat_hitbox_analysis_raw.txt">raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</a></code>와 <code><a href="raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt">raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</a></code>(3.2절 타 게임 선례 조사)의 데이터와 교차 검증을 거쳐 작성되었습니다. HunterX 자체의 1차 자료(개발사 공식 확인·패치노트)는 확보하지 못했으며, 원인 분석은 추정임을 재차 명시합니다.
 </div>
 
 <ol class="reference-list">
@@ -113,5 +126,8 @@ parent_hub: "metroidvania_genre_analysis.html"
     <li id="ref-2">[2] Game Developer(2022). <em>HunterX Now Live on Nintendo Switch</em>(보도자료). <a href="https://www.gamedeveloper.com/press-release/hunterx-now-live-on-nintendo-switch" target="_blank">gamedeveloper.com</a></li>
     <li id="ref-3">[3] Steam 커뮤니티 유저 리뷰 및 ConFreaks & Geeks 리뷰(검색 스니펫 기반, 원문 미대조). <a href="https://www.confreaksandgeeks.com/hunterx-review/" target="_blank">confreaksandgeeks.com/hunterx-review</a></li>
     <li id="ref-4">[4] Capsule Computers(2022). <em>HunterX Review</em>. <a href="https://www.capsulecomputers.com.au/2022/05/hunterx-review/" target="_blank">capsulecomputers.com.au</a></li>
+    <li id="ref-5">[5] EventHubs(2020). <em>What Exactly Does "Extended Hitbox Inward" Mean? — Street Fighter 5 Champion Edition's New Update</em>. <a href="https://www.eventhubs.com/news/2020/mar/25/what-exactly-does-extended-hitbox-inward-mean-street-fighter-5-champion-editions-new-update" target="_blank">eventhubs.com</a> — 3.2절 타 게임 선례(스트리트 파이터 V)의 근거.</li>
+    <li id="ref-6">[6] Ginger's Wrath 개발자(itch.io). <em>Patch Notes 0.2</em>. <a href="https://daibreaker501.itch.io/gingers-wrath/devlog/581209/patch-notes-02" target="_blank">daibreaker501.itch.io</a> — 3.2절 인디 게임 선례의 근거.</li>
+    <li id="ref-7">[7] WebSearch 종합 결과(2026). <em>melee attack fails when too close to enemy — 타 게임 선례 조사</em>. 검색 결과 요약 기반(gamedev.net 개발 블로그, Fallout 커뮤니티 devtracker 포함), 원문 직접 대조 없음. 원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code></li>
 </ol>
 </references>
