@@ -1,0 +1,52 @@
+=== 메타 헤더 ===
+수집 일시(KST): 2026-11-02 오후 07:30 ~ 08:00 (초단위 미기록, 대화 로그 기준 근사)
+조사 주제: HunterX(오렌지팝콘, 한국 인디 메트로이드배니아) 전투 판정 구조 및 "적과 밀착 시 공격 무효화" 버그
+조사 방법: WebSearch 도구(표준/확장 모드), 검색 질의어 다수 투입, 1차 원문 페이지 직접 접속은 수행하지 않고 WebSearch 결과 요약·URL만 확보
+조사자: Claude(에이전트), 사용자(아저씨)의 직접 경험 제보 기반
+
+=== 검색 질의어 및 결과 ===
+
+[질의 1] "헌터X PC게임 버그 근접 공격 안먹힘" (standard)
+결과: 관련 없음. GameSpot(Dead to Rights), GOG 포럼(Legend of Grimrock), WoW 사냥꾼 직업 버그 등 전혀 다른 게임만 검색됨. "헌터X"라는 정확한 타이틀의 버그 리포트 없음.
+
+[질의 2] ""HunterX" game melee attack not registering point blank bug" (standard)
+결과: 관련 없음. Elder Scrolls Online 포럼의 근접 강공격 실패 스레드(포럼 유저명에 "hunterxmg"가 포함되어 오매칭), BetaHub 트래커의 근접 판정 버그(#1116, #1219 — 다른 게임), Fallout 개발자 노트(근접 공격 미등록 이슈) 등. HunterX라는 타이틀 자체는 발견되지 않음.
+
+[질의 3] "HunterX Nessasoft Steam melee attack bug point blank" (standard)
+결과: "Nessasoft"는 오개발사명으로 추정 — 관련 결과 없음. Dead by Daylight류 게임(Killer/Survivor 용어)의 BetaHub 버그 리포트만 다수 검색됨(#1338 Auto-Aim 근접 빗나감, #2077, #1502, #1379, #5935, #47, #1860 등). HunterX 무관.
+
+[질의 4] "HunterX 게임 스팀 근접 공격 버그 적과 붙으면" (standard)
+결과: 관련 없음. Hunt: Showdown, WoW 클래식 베타 사냥꾼 이슈, Star Wars Jedi: Survivor의 "Hunter" 캐릭터 애니메이션 버그 등 전부 무관.
+
+[질의 5] ""HunterX" steam game metroidvania" (standard) — ★ 게임 식별 성공
+결과 요약(WebSearch 도구 자체 생성 요약):
+"HunterX is a 2D Metroidvania from the South Korean studio Orange Popcorn, released on Steam on April 28, 2022. The Steam App Id is 1918450, and community users have tagged it with labels including Metroidvania, Souls-like, and Dark Fantasy. Its list price is $14.99 on digital download. Reviews are mixed. Tech-gaming praises its responsive, stylish combat and the freedom to customize the protagonist, but says the game is an amalgam of many common Metroidvania elements. Another reviewer found it a subpar Metroidvania with frustrating moments. A third review says the game is really fun despite not reinventing the genre, and that it gives you around 10 hours of satisfying gameplay. A related title, HunterX: code name T, was released on Steam on December 11, 2023. Check which one you mean, since the two share a name."
+검색된 URL 목록(일부): tech-gaming.com/hunterx/, dekudeals.com/items/hunterx-code-name-t, steambase.io/games/hunterx/info, dekudeals.com/items/hunterx-switch, nodal.gg/game/hunterx-1918450, steamspy.com/app/1918450, gamecritics.com(Jeff Ortloff, HunterX review), gamedeveloper.com(press release — HunterX Now Live on Nintendo Switch), biffbampop.com(In The Game Presents Wade's World: HunterX), premiumcdkeys.com(Steam CD Key 판매 페이지)
+
+[질의 6] "헌터엑스 게임 한국 개발사 일본어 더빙" (standard)
+결과: HunterX(오렌지팝콘)와 직접 연관된 결과 없음(한자 변환 "헌터x헌터"로 인식되어 니혼TV/Lantu Games/Eighting 등 별개의 《HUNTER×HUNTER》 애니메이션 IP 게임 자료만 검색됨). 한국 개발사 관련 정보는 이 질의에서 확인되지 않음 — 단 질의 5에서 오렌지팝콘(한국 개발사)이 이미 별도로 확인되었음.
+
+[질의 7] "HunterX Orange Popcorn attack hitbox bug close range steam discussions" (standard)
+결과: 관련 없음. Killer Klowns From Outer Space 스팀 토론(Popcorn Bazooka 밸런스 논의 — "Popcorn" 키워드로 오매칭), Dead by Daylight BetaHub 히트박스 버그 다수(#1293, #3164, #2205, #g-119581, #1270, #3289 등). "Orange Popcorn"·"HunterX" 직접 언급 없음.
+
+[질의 8] "HunterX game combat review melee hitbox problem enemy too close" (extended)
+결과 요약(WebSearch 도구 자체 생성 요약, 일부 발췌):
+"The search didn't turn up any review that specifically describes an enemy being too close for melee hits or a melee hitbox bug in HunterX. [...] One ConFreaks review calls some hitboxes are pretty funky and some balancing of some enemies is a little weird but they're minor and easy to overlook. That is the closest match to your issue, though the reviewer treats it as minor. [...] Capsule Computers says the combat is fast and the controls are perfect. A Steam reviewer calls the combat kinda generic, not that bad not that great [...] A Steam reviewer notes that bosses have a hitbox ready for you the second you activate them by walking into their room."
+검색된 URL: metacritic.com/game/hunterx/, metacritic.com/game/pc/hunterx/user-reviews, steamcommunity.com/app/2680330/reviews(code name T), confreaksandgeeks.com/hunterx-review/, steamcommunity.com/app/1918450/reviews(HunterX 본편), capsulecomputers.com.au/2022/05/hunterx-review/
+
+[질의 9] "site:steamcommunity.com HunterX 1918450 attack not hitting close" (standard)
+결과: 관련 없음. HunterX 스팀 커뮤니티 페이지 자체가 검색 결과에 등장하지 않음(site: 필터가 작동하지 않거나 색인 부족으로 추정). S.T.A.L.K.E.R. 2 토론(근접/샷건이 밀착 거리에서 판정 안 됨 — 다른 게임), Last Epoch 포럼(Sentinel Vengeance 스킬이 근접 전투에서 판정 안 됨 — 다른 게임), Empyrion Online 포럼("not hitting if you're too close"라고 개발자가 테스트 중 누락을 인정한 사례 — 다른 게임) 등.
+
+[질의 10] "HunterX 오렌지팝콘 공격 판정 버그 밀착" (standard)
+결과: 관련 없음. WoW 포럼, Pokémon Scarlet/Violet 익스플로잇 기사 등 전혀 무관.
+
+=== 확인된 사실 요약 ===
+1. 게임 식별: HunterX = 한국 스튜디오 오렌지팝콘(Orange Popcorn) 개발, 2022-04-28 스팀 출시, Steam App ID 1918450, 2D 메트로이드배니아/소울라이크/다크 판타지, $14.99, 평균 플레이타임 약 10시간, 이후 Nintendo Switch 포트 출시, 평가는 혼재(mixed).
+2. 별개 타이틀 주의: "HunterX: code name T"(2023-12-11 출시, Steam App ID 2680330)는 같은 "HunterX" 이름을 쓰는 별도 게임이며, 본 문서가 다루는 2022년작 본편과 혼동하지 않아야 함.
+3. 히트박스 관련 유일한 간접 근거: ConFreaks & Geeks 리뷰가 "일부 히트박스가 funky(기묘)하다"고 언급했으나, 사소한 문제로 취급하며 구체적인 "밀착 시 무효화" 패턴을 서술하지는 않음.
+4. 사용자가 제보한 "적과 바짝 붙으면 공격이 먹히지 않고 비비적대는" 구체적 증상에 대한 1차 자료(공식 패치노트, 개발자 인터뷰, 버그 트래커 등)는 다수 질의에도 확인되지 않음.
+
+=== 조사 방법론 및 신뢰도 메모 ===
+- 본 조사는 WebSearch 도구의 자동 요약 결과에 의존했으며, 개별 리뷰·포럼 원문 페이지를 직접 열어 전체 문맥을 대조하지는 않았다(WebSearch 도구 자체가 생성한 요약문을 그대로 인용).
+- "적과 밀착 시 공격 무효화" 증상 자체는 사용자(아저씨)의 직접 플레이 경험 제보이며, 이 위키 문서가 제시하는 원인 분석(히트박스 전방 오프셋, 바디 콜라이더 분리력 경쟁, 방향 판정 재계산)은 HunterX의 실제 소스코드나 개발사의 공식 확인에 근거한 것이 아니라, 동일 장르(2D 액션/소울라이크)에서 일반적으로 보고되는 기술적 원인 패턴을 적용한 추정이다.
+- 따라서 이 문서의 "원인 분석" 절은 confirmed fact가 아니라 informed hypothesis로 다뤄야 하며, 본문에도 이 신뢰도 수준을 명시한다.
