@@ -29,6 +29,28 @@
 2. BioGun 유형(이동 플랫폼 점프 오작동) 버그는 **Pouchie the Cat(개발자 1차 서술로 확인)**과 Construct 엔진 버그 트래커에서 확인되며, 왕복/상승 플랫폼과의 충돌·속도 상속 처리가 장르 전반에서 반복적으로 결함을 일으키는 영역임을 뒷받침한다. Diabotical 사례는 간접 근거로만 다뤄야 한다(원문 재대조 실패).
 3. 두 버그 유형 모두 "특정 게임의 특이한 결함"이 아니라, 2D/액션 게임 개발에서 반복적으로 나타나는 **장르 공통의 설계 함정**이라는 평가가 이번 조사로 더 뒷받침되었다.
 
+=== C. 2차 후속 조사(2026-11-02 오후, 아저씨의 "다른 게임에서도 비슷한 버그 있는지 더 조사해달라" 재요청) ===
+
+[질의] "Hollow Knight OR "Dead Cells" OR "Salt and Sanctuary" melee attack miss too close bug" (standard)
+결과: 세 게임 모두 직접 언급 없음. Last Epoch 포럼: "Sentinel Vengeance 스킬이 근접 전투에서 판정이 안 된다"는 유저 제보(forum.lastepoch.com) — ARPG 장르에서도 근접 거리 판정 미스 패턴이 보고됨, 개발사 공식 확인 여부는 미확인. Dead by Daylight 포럼: "킬러가 너무 가까우면 lunge(돌진 공격)가 금지되어 히트를 뺏긴다"는 별개 메커니즘(의도된 디자인 제약과 버그의 경계가 모호한 사례).
+
+[질의] ""Ori and the" OR "Celeste" OR "Hollow Knight" moving platform jump wrong direction bug" (standard)
+결과: 세 게임 모두 이 정확한 버그의 직접 리포트는 없음. 다만 Hollow Knight 관련 결과 중 "거의 9년 만에 가장 성가신 버그 중 하나를 수정했다"는 러시아어 보도(goha.ru)와 Engadget 기사("원작 Hollow Knight가 최종 보스 글리치를 고치는 업데이트를 받았다")가 확인됨 — 추가 조사(아래) 대상.
+
+[질의] "Hollow Knight update 2024 fixed annoying bug final boss glitch nine years" (standard) — Hollow Knight 패치 상세 확인
+결과: 2026년 3월 패치(버전 1.5.12620으로 추정)에서 최종 보스 라디언스(The Radiance)의 투사체(빛 구슬) 관련 버그를 수정. 구슬이 사라진 뒤에도 히트박스가 의도보다 약간 더 오래 활성 상태로 남아있어, 불필요한 피격·사망을 유발하던 문제. 수정 후 구슬이 사라지면 더 이상 피해를 주지 않음(일부 매체는 이를 밸런스 약화로도 해석). 출시 9주년(2월) 기념 무료 패치. ※ 이 버그는 "히트박스가 좁아서 못 맞히는" 유형(HunterX)이나 "속도 상속 타이밍" 유형(BioGun)과는 다른 제3의 범주("히트박스 생존 시간이 시각 효과보다 길게 남음")로, 본 조사 두 문서의 핵심 주제와 정확히 일치하지는 않음.
+
+[질의] "Maddy Thorson Celeste moving platform momentum stored jump design "Celeste & Forgiveness"" (standard) — ★ 핵심 발견
+결과: GIGAZINE(일본, 2020-03-17, "Developer of super-difficult & high-speed masterpiece 2D action game 'Celeste' explains 'points about action'")과 GameSpot("Celeste dev explains how they made their game feel")이 매디 소슨의 2020년 3월 게임 필 스레드(이 위키 7.1.1절에서 코요테 타임·입력 버퍼링 근거로 이미 인용한 ref-63과 동일 소스로 추정)를 보도. 소슨은 이 기법을 **"리프트 모멘텀 스토리지(lift momentum storage)"**라고 직접 명명하며: "빠르게 움직이는 플랫폼에서 점프하면 플랫폼의 속도가 점프 속도에 가산되고, 마들린(주인공)은 이 가산분을 '저장'해 플랫폼이 멈춘 뒤에도 몇 프레임 동안 그 보정된 점프를 그대로 유지한다"고 설명. 이로써 플레이어가 여러 이동 리프트를 연달아 옮겨 타며 점프를 연결할 수 있게 됨. 소슨은 이 기법들을 "우리가 발명한 게 아니다"라고도 언급(ref-64와 동일 취지). Game Informer 리뷰는 실제로 "여러 이동 플랫폼의 운동량을 이용해 넓은 구렁을 건너뛰는" 플레이 경험을 서술. 한 itch.io 댓글은 셀레스트풍 게임에서 이동 블록의 운동량이 "직관적이지 않다"고 느꼈다는 반응도 있어, 이 기법이 만능은 아님을 보여줌. ★ 이는 버그가 아니라 BioGun 유형 실패 모드(왕복 플랫폼 반전 타이밍)를 피하기 위해 셀레스트가 실제로 채택한 확인된 설계 해법 — 신뢰도 높음(동일 1차 소스, 복수 매체 교차 보도).
+
+[질의] "Super Meat Boy OR "Mega Man" moving platform jump bug glitch wrong direction" (standard)
+결과: 양쪽 공식 타이틀 모두 이 정확한 버그의 확인된 자료 없음. NeoGAF 포럼(비공식, 미검증): Super Meat Boy의 한 스테이지에서 이동 플랫폼이 좁은 통로에 접근할 때 간헐적으로 즉사하는 현상이 유저들 사이에서 "물리 글리치"로 불리며 보고됨 — 개발사 확인 없음, 신뢰도 낮음. 팬메이드 메가맨풍 게임(itch.io)의 이동/낙하 플랫폼 위에서 캐릭터가 작을 때 점프가 안 되는 글리치 제보도 확인되나 비공식 동인 프로젝트.
+
+=== 확인된 사실 요약(2차 후속 조사 추가) ===
+4. **셀레스트의 "리프트 모멘텀 스토리지"**는 BioGun 유형 실패 모드를 피하기 위한 확인된 1차 설계 해법이며, 이미 이 위키가 코요테 타임·입력 버퍼링의 근거로 인용한 매디 소슨의 동일 소스에서 나온 것으로 추정된다 — 7.1.1절의 "코너 보정"과 7.1.3절의 예방 원칙이 사실상 같은 설명 체계 위에 있다는 근거가 보강되었다.
+5. Hollow Knight의 2026년 3월 패치는 히트박스 관련 버그이지만 "생존 시간" 문제로, 본 조사 두 문서(HunterX·BioGun)의 핵심 원인 유형과는 범주가 다르다 — 참고용으로만 기록하고 선례 표에는 반영하지 않는다.
+6. Super Meat Boy·팬메이드 메가맨풍 게임의 보고는 모두 비공식·미검증 수준이라 선례로 채택하지 않는다.
+
 === 조사 방법론 및 신뢰도 메모 ===
 - 본 조사도 WebSearch 도구의 자동 요약 결과에 의존했으며, Street Fighter V·Pouchie the Cat을 제외한 나머지 사례는 원문 1차 대조 없이 검색 요약만으로 인용했다.
 - Street Fighter V(CE202003)와 Pouchie the Cat(Alpha 0.5)은 각각 공식 패치노트 재현·개발자 자신의 서술로 비교적 신뢰도가 높다고 판단했으나, 두 경우 모두 Capcom/개발자의 원문 페이지를 직접 열어 전문을 대조하지는 않았다(WebSearch 요약 인용).

@@ -2,7 +2,7 @@
 title: "BioGun 이동 플랫폼 점프 오작동 분석"
 subtitle: "BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis"
 created: "2026-11-02 오후 08:18:23 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:44:51 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:57:50 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["BioGun", "Dapper Dog Digital", "Metroidvania", "Twin-Stick Shooter", "Moving Platform", "Velocity Inheritance", "Collision Detection", "Game Critique"]
 html_view: "biogun_moving_platform_jump_analysis.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:44:51 (KST, UTC+9)*
+*최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:57:50 (KST, UTC+9)*
 
 <context>
 본 문서는 사이드스크롤 트윈스틱 슈터·메트로이드배니아 하이브리드 《BioGun》(Dapper Dog Digital 개발, Ravenage 퍼블리싱, 2024년 7월 31일 PC 정식 출시)에서 아저씨가 직접 플레이 중 제보한 "이동 중인 플랫폼에서 점프할 경우 경우에 따라 점프가 제대로 되지 않거나 엉뚱한 방향으로 점프되는" 버그 증상을 분석합니다. 웹 조사 결과 게임·개발사를 특정하는 데는 성공했고 플랫폼·충돌 관련 간접 불만도 여러 독립 리뷰에서 확인했으나, 이 구체적 증상을 그대로 서술한 1차 자료(공식 패치노트·개발자 확인·버그 트래커)는 확보하지 못했습니다(원문: `raw/20261102_biogun_moving_platform_jump_analysis_raw.txt`). 본 문서의 원인 분석은 2D 플랫포머의 이동 플랫폼 속도 상속(velocity inheritance) 구현에서 일반적으로 보고되는 결함 패턴에 기반한 추정이며, 그 설계 원칙은 자매 문서 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 7.1.3절에도 예방 지침으로 반영되었습니다. 같은 "분과 비평" 계열의 선행 사례인 [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)과 조사·서술 방식을 통일했습니다.
@@ -76,8 +76,9 @@ BioGun 자체의 1차 자료는 못 찾았으나, 같은 유형(이동 플랫폼
 | **《Pouchie the Cat》(인디)** | 개발자 1차 서술(데브로그, 2024-08-03) | "원웨이 콜리전이 이동 플랫폼과 결합하면서 캐릭터가 뛰어오른 플랫폼을 가끔 뚫고 가라앉는" 버그를 확인·수정. 같은 패치에서 "이동 플랫폼 위 망치 사용 시 캐릭터가 제자리에 고정되는" 별개 버그도 수정 [[7]](#ref-7) |
 | **Construct 엔진 버그 트래커** | 포럼 리포트 | 위로 움직이는 플랫폼에 착지하면 플랫폼 옆으로 밀려나는 현상이 보고됨(재현에 여러 번 착지가 필요할 수 있음) [[7]](#ref-7) |
 | **《Diabotical》(FPS)** | 간접·중간 신뢰도(원문 재대조 실패) | 이동 오브젝트 위쪽 표면의 "미끄러운 느낌"을 수정해 점프 방향 제어와 리프트에서의 서클점프를 쉽게 했다는 서술이 검색 요약에서 확인되나, 정확한 패치 버전·날짜는 재확인하지 못함 [[7]](#ref-7) |
+| **《셀레스트》(Celeste) — "리프트 모멘텀 스토리지"** | 개발자 1차 서술(매디 소슨, 2020년 게임 필 스레드, 복수 매체 교차 보도) | 버그가 아니라 **확인된 설계 해법**: 빠른 플랫폼에서 점프하면 그 속도가 가산되고, 플랫폼이 멈춘 뒤에도 몇 프레임 동안 그 가산분을 "저장"해 유지함 — 2장의 "왕복 플랫폼 반전 타이밍" 실패 모드를 피하는 실제 채택 사례 [[8]](#ref-8) |
 
-이 중 Pouchie the Cat 사례는 개발자 본인이 원인(원웨이 콜리전과 이동 플랫폼의 결합)과 수정 방식을 직접 서술한 신뢰도 높은 1차 사례이며, 2장의 "왕복 플랫폼 반전 타이밍"·"충돌 처리 순서" 원인 추정과 같은 범주(이동 플랫폼의 충돌·물리 처리 전반의 취약성)에 속합니다.
+이 중 Pouchie the Cat 사례는 개발자 본인이 원인(원웨이 콜리전과 이동 플랫폼의 결합)과 수정 방식을 직접 서술한 신뢰도 높은 1차 사례이며, 2장의 "왕복 플랫폼 반전 타이밍"·"충돌 처리 순서" 원인 추정과 같은 범주(이동 플랫폼의 충돌·물리 처리 전반의 취약성)에 속합니다. 셀레스트의 "리프트 모멘텀 스토리지"는 버그 사례가 아니라, 같은 실패 모드를 사전에 차단하는 **의도적 설계 해법**이 실제로 존재한다는 긍정적 선례입니다 — 이 위키의 자매 문서([영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 7.1.1절)가 코요테 타임·입력 버퍼링의 근거로 이미 인용한 매디 소슨의 동일 소스에서 나온 것으로 추정됩니다.
 
 ### 3.3 예방적 설계 원칙(일반화)
 
@@ -104,6 +105,7 @@ BioGun 자체의 1차 자료는 못 찾았으나, 같은 유형(이동 플랫폼
 | **부모-자식 트랜스폼 부착** | 캐릭터를 플랫폼의 자식 노드로 일시적으로 붙여, 플랫폼의 이동을 자동으로 따라가게 하는 구현 방식. 점프 시 분리(unparent) 시점이 중요함. |
 | **트윈스틱 조작계** | **Twin-Stick Control Scheme**. 왼쪽 스틱으로 이동, 오른쪽 스틱으로 조준을 독립적으로 담당하는 입력 방식. BioGun처럼 플랫포밍과 슈팅을 겸하는 게임에서 점프·조준 입력이 충돌하기 쉬움. |
 | **원웨이 콜리전** | **One-Way Collision**. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 그대로 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례). 3.2절 참조. |
+| **리프트 모멘텀 스토리지** | **Lift Momentum Storage**(매디 소슨, 《셀레스트》). 이동 플랫폼에서 점프할 때 가산된 속도를, 플랫폼이 멈추거나 반전한 뒤에도 몇 프레임 동안 그대로 유지(저장)하는 설계 기법. 왕복 플랫폼 반전 타이밍 문제를 사전에 차단하는 확인된 해법. 3.2절 참조. |
 </definitions>
 
 <references>
@@ -123,5 +125,6 @@ BioGun 자체의 1차 자료는 못 찾았으나, 같은 유형(이동 플랫폼
     <li id="ref-5">[5] Medium — constantin.gcopywriting. <em>BioGun — Review. Metroidvanias meet twin-stick shooters</em>. <a href="https://medium.com/@constantin.gcopywriting/biogun-review-c07052461bf3" target="_blank">medium.com/@constantin.gcopywriting/biogun-review</a></li>
     <li id="ref-6">[6] Steam 커뮤니티. <em>The controls are terrible :: BioGun General Discussions</em>(2024-02-11, 개발자 답변 포함). <a href="https://steamcommunity.com/app/1219240/discussions/0/4208120159998420188/" target="_blank">steamcommunity.com/app/1219240/discussions</a></li>
     <li id="ref-7">[7] WebSearch 종합 결과(2026). <em>"moving platform" jump launches player wrong direction — 타 게임 선례 조사</em>. 검색 결과 요약 기반(Pouchie the Cat 데브로그, Construct 포럼, Diabotical 패치노트 포함), 원문 직접 대조 없음(Diabotical은 재검색으로도 미확인). 원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code></li>
+    <li id="ref-8">[8] GIGAZINE(2020-03-17). <em>Developer of super-difficult & high-speed masterpiece 2D action game 'Celeste' explains 'points about action'</em>(매디 소슨의 게임 필 스레드 보도). <a href="https://gigazine.net/gsc_news/en/20200317-celeste-action-feel-things" target="_blank">gigazine.net</a> — 3.2절 "리프트 모멘텀 스토리지" 선례의 근거. GameSpot(<a href="https://www.gamespot.com/articles/celeste-dev-explains-how-they-made-their-game-feel/1100-6474775/" target="_blank">gamespot.com</a>)이 같은 내용을 교차 보도.</li>
 </ol>
 </references>

@@ -12,7 +12,7 @@
         <h1>영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획</h1>
         <div class="subtitle">Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:49:32 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:58:28 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -931,7 +931,7 @@
 </p>
 
 <div class="callout">
-<p><strong>타 게임 선례</strong>: 이 유형의 버그도 BioGun만의 특이 현상이 아닙니다. 인디 게임 《Pouchie the Cat》 개발자는 "원웨이 콜리전이 이동 플랫폼과 결합하면서 캐릭터가 뛰어오른 플랫폼을 가끔 뚫고 가라앉는" 버그를 데브로그에서 직접 서술하고 수정했습니다 <sup class="citation"><a href="#ref-70">[70]</a></sup> — 이동 플랫폼의 충돌·물리 처리가 장르 전반에서 반복적으로 취약한 영역이라는 점을 뒷받침합니다. 상세: <a href="biogun_moving_platform_jump_analysis.html">BioGun 이동 플랫폼 점프 오작동 분석</a> 3.2절.</p>
+<p><strong>타 게임 선례</strong>: 이 유형의 버그도 BioGun만의 특이 현상이 아닙니다. 인디 게임 《Pouchie the Cat》 개발자는 "원웨이 콜리전이 이동 플랫폼과 결합하면서 캐릭터가 뛰어오른 플랫폼을 가끔 뚫고 가라앉는" 버그를 데브로그에서 직접 서술하고 수정했습니다 <sup class="citation"><a href="#ref-70">[70]</a></sup> — 이동 플랫폼의 충돌·물리 처리가 장르 전반에서 반복적으로 취약한 영역이라는 점을 뒷받침합니다. 반대로 《셀레스트》는 7.1.1절에서 코요테 타임·입력 버퍼링의 근거로 이미 인용한 매디 소슨의 동일 소스에서, 이 실패 모드를 사전에 차단하는 확인된 해법을 "<b>리프트 모멘텀 스토리지(lift momentum storage)</b>"라는 이름으로 명시합니다 — 플랫폼에서 가산된 점프 속도를 플랫폼이 멈추거나 반전한 뒤에도 몇 프레임 동안 그대로 저장·유지하는 기법으로, 위 표의 "왕복 플랫폼의 방향 반전 타이밍" 예방 원칙(반전 전 속도값 유지·한 프레임 지연 허용)과 같은 발상입니다 <sup class="citation"><a href="#ref-71">[71]</a></sup>. 상세: <a href="biogun_moving_platform_jump_analysis.html">BioGun 이동 플랫폼 점프 오작동 분석</a> 3.2절.</p>
 </div>
 
 <h3>7.2 스크립트 시퀀스 모드 — 추격 시퀀스의 두 하위 유형</h3>
@@ -1545,6 +1545,7 @@
 <tr><td><b>왕복 플랫폼</b></td><td><b>Ping-Pong Platform</b>. 경로의 양 끝에서 이동 방향을 반전시키며 왕복하는 이동 플랫폼. 반전 순간의 속도 상속 처리가 "엉뚱한 방향으로 점프됨" 버그의 흔한 원천. 7.1.3절 참조.</td></tr>
 <tr><td><b>휘프</b></td><td><b>Whiff</b>. 공격이 피격 판정 없이 허공을 가르는 것을 가리키는 격투 게임 전문 용어. 스트리트 파이터 V의 근접 거리 판정 누락 선례(7.1.2절)를 서술하는 데 쓰임.</td></tr>
 <tr><td><b>원웨이 콜리전</b></td><td><b>One-Way Collision</b>. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례, 7.1.3절).</td></tr>
+<tr><td><b>리프트 모멘텀 스토리지</b></td><td><b>Lift Momentum Storage</b>(매디 소슨, 《셀레스트》). 이동 플랫폼에서 점프할 때 가산된 속도를, 플랫폼이 멈추거나 반전한 뒤에도 몇 프레임 동안 그대로 유지(저장)하는 기법. 7.1.3절 왕복 플랫폼 반전 타이밍 문제를 사전에 차단하는 확인된 해법.</td></tr>
 <tr><td><b>Godot 엔진</b></td><td>이 프로젝트의 채택 기술 스택. 텍스트 기반 씬(<code>.tscn</code>)·리소스(<code>.tres</code>) 포맷과 내장 <code>TileMap</code> 에디터가 채택 결정의 핵심 근거. 상세는 5장 참조.</td></tr>
 <tr><td><b>HD-2D</b></td><td>도트 스프라이트와 3D 환경·동적 조명·피사계심도를 결합한 렌더링 방식. 스퀘어에닉스가 옥토패스 트래블러에서 명명. 6.2절 참조.</td></tr>
 <tr><td><b>디더링</b></td><td><b>Dithering</b>. 제한된 색상 수로 그레이디언트·명암을 표현하기 위해 색상을 번갈아 찍어 중간 색조처럼 보이게 하는 기법. 하이파이 모던 도트의 의사 조명 구현에 흔히 쓰임. 6.1절 참조.</td></tr>
@@ -1673,6 +1674,10 @@
         <div class="mobile-table-card">
             <dt class="mobile-table-term"><b>원웨이 콜리전</b></dt>
             <dd class="mobile-table-desc"><b>One-Way Collision</b>. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례, 7.1.3절).</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>리프트 모멘텀 스토리지</b></dt>
+            <dd class="mobile-table-desc"><b>Lift Momentum Storage</b>(매디 소슨, 《셀레스트》). 이동 플랫폼에서 점프할 때 가산된 속도를, 플랫폼이 멈추거나 반전한 뒤에도 몇 프레임 동안 그대로 유지(저장)하는 기법. 7.1.3절 왕복 플랫폼 반전 타이밍 문제를 사전에 차단하는 확인된 해법.</dd>
         </div>
         <div class="mobile-table-card">
             <dt class="mobile-table-term"><b>Godot 엔진</b></dt>
@@ -1878,6 +1883,7 @@
     <li id="ref-68">[68] 이 위키. 〈BioGun 이동 플랫폼 점프 오작동 분석〉. <a href="biogun_moving_platform_jump_analysis.html">biogun_moving_platform_jump_analysis.html</a> — 7.1.3절 이동 플랫폼 속도 상속 원칙의 근거.</li>
     <li id="ref-69">[69] EventHubs(2020). <em>What Exactly Does "Extended Hitbox Inward" Mean? — Street Fighter 5 Champion Edition's New Update</em>. <a href="https://www.eventhubs.com/news/2020/mar/25/what-exactly-does-extended-hitbox-inward-mean-street-fighter-5-champion-editions-new-update" target="_blank">eventhubs.com</a> — 7.1.2절 타 게임 선례(스트리트 파이터 V)의 근거.</li>
     <li id="ref-70">[70] Pouchie the Cat 개발자(itch.io). <em>Alpha 0.5 Quick Fix!</em>(데브로그, 2024-08-03). <a href="https://thatelfnerd.itch.io/pouchie-the-cat-public-demo/devlog/775982/alpha-05-quick-fix" target="_blank">thatelfnerd.itch.io</a> — 7.1.3절 타 게임 선례(원웨이 콜리전)의 근거.</li>
+    <li id="ref-71">[71] GIGAZINE(2020-03-17). <em>Developer of super-difficult & high-speed masterpiece 2D action game 'Celeste' explains 'points about action'</em>(매디 소슨의 게임 필 스레드 보도). <a href="https://gigazine.net/gsc_news/en/20200317-celeste-action-feel-things" target="_blank">gigazine.net</a> — 7.1.3절 "리프트 모멘텀 스토리지" 선례의 근거.</li>
 </ol>
             </section>
         </article>

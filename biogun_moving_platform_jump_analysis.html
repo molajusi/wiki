@@ -12,7 +12,7 @@
         <h1>BioGun 이동 플랫폼 점프 오작동 분석</h1>
         <div class="subtitle">BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:44:51 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:57:50 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -170,6 +170,7 @@
 <tr><td><b>《Pouchie the Cat》(인디)</b></td><td>개발자 1차 서술(데브로그, 2024-08-03)</td><td>"원웨이 콜리전이 이동 플랫폼과 결합하면서 캐릭터가 뛰어오른 플랫폼을 가끔 뚫고 가라앉는" 버그를 확인·수정. 같은 패치에서 "이동 플랫폼 위 망치 사용 시 캐릭터가 제자리에 고정되는" 별개 버그도 수정 <sup class="citation"><a href="#ref-7">[7]</a></sup></td></tr>
 <tr><td><b>Construct 엔진 버그 트래커</b></td><td>포럼 리포트</td><td>위로 움직이는 플랫폼에 착지하면 플랫폼 옆으로 밀려나는 현상이 보고됨(재현에 여러 번 착지가 필요할 수 있음) <sup class="citation"><a href="#ref-7">[7]</a></sup></td></tr>
 <tr><td><b>《Diabotical》(FPS)</b></td><td>간접·중간 신뢰도(원문 재대조 실패)</td><td>이동 오브젝트 위쪽 표면의 "미끄러운 느낌"을 수정해 점프 방향 제어와 리프트에서의 서클점프를 쉽게 했다는 서술이 검색 요약에서 확인되나, 정확한 패치 버전·날짜는 재확인하지 못함 <sup class="citation"><a href="#ref-7">[7]</a></sup></td></tr>
+<tr><td><b>《셀레스트》(Celeste) — "리프트 모멘텀 스토리지"</b></td><td>개발자 1차 서술(매디 소슨, 2020년 게임 필 스레드, 복수 매체 교차 보도)</td><td>버그가 아니라 <b>확인된 설계 해법</b>: 빠른 플랫폼에서 점프하면 그 속도가 가산되고, 플랫폼이 멈춘 뒤에도 몇 프레임 동안 그 가산분을 "저장"해 유지함 — 2장의 "왕복 플랫폼 반전 타이밍" 실패 모드를 피하는 실제 채택 사례 <sup class="citation"><a href="#ref-8">[8]</a></sup></td></tr>
 </tbody>
 </table>
     </div>
@@ -208,12 +209,23 @@
                 <dd class="mobile-field-value">이동 오브젝트 위쪽 표면의 "미끄러운 느낌"을 수정해 점프 방향 제어와 리프트에서의 서클점프를 쉽게 했다는 서술이 검색 요약에서 확인되나, 정확한 패치 버전·날짜는 재확인하지 못함 <sup class="citation"><a href="#ref-7">[7]</a></sup></dd>
             </div>
         </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>《셀레스트》(Celeste) — "리프트 모멘텀 스토리지"</b></dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">확인 수준</dt>
+                <dd class="mobile-field-value">개발자 1차 서술(매디 소슨, 2020년 게임 필 스레드, 복수 매체 교차 보도)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">내용</dt>
+                <dd class="mobile-field-value">버그가 아니라 <b>확인된 설계 해법</b>: 빠른 플랫폼에서 점프하면 그 속도가 가산되고, 플랫폼이 멈춘 뒤에도 몇 프레임 동안 그 가산분을 "저장"해 유지함 — 2장의 "왕복 플랫폼 반전 타이밍" 실패 모드를 피하는 실제 채택 사례 <sup class="citation"><a href="#ref-8">[8]</a></sup></dd>
+            </div>
+        </div>
     </dl>
     </div>
 </div>
 
 <p>
-    이 중 Pouchie the Cat 사례는 개발자 본인이 원인(원웨이 콜리전과 이동 플랫폼의 결합)과 수정 방식을 직접 서술한 신뢰도 높은 1차 사례이며, 2장의 "왕복 플랫폼 반전 타이밍"·"충돌 처리 순서" 원인 추정과 같은 범주(이동 플랫폼의 충돌·물리 처리 전반의 취약성)에 속합니다.
+    이 중 Pouchie the Cat 사례는 개발자 본인이 원인(원웨이 콜리전과 이동 플랫폼의 결합)과 수정 방식을 직접 서술한 신뢰도 높은 1차 사례이며, 2장의 "왕복 플랫폼 반전 타이밍"·"충돌 처리 순서" 원인 추정과 같은 범주(이동 플랫폼의 충돌·물리 처리 전반의 취약성)에 속합니다. 셀레스트의 "리프트 모멘텀 스토리지"는 버그 사례가 아니라, 같은 실패 모드를 사전에 차단하는 <b>의도적 설계 해법</b>이 실제로 존재한다는 긍정적 선례입니다 — 이 위키의 자매 문서(<a href="cinematic_library_metroidvania_game_design.html">영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획</a> 7.1.1절)가 코요테 타임·입력 버퍼링의 근거로 이미 인용한 매디 소슨의 동일 소스에서 나온 것으로 추정됩니다.
 </p>
 
 <h3>3.3 예방적 설계 원칙(일반화)</h3>
@@ -252,6 +264,7 @@
 <tr><td><b>부모-자식 트랜스폼 부착</b></td><td>캐릭터를 플랫폼의 자식 노드로 일시적으로 붙여, 플랫폼의 이동을 자동으로 따라가게 하는 구현 방식. 점프 시 분리(unparent) 시점이 중요함.</td></tr>
 <tr><td><b>트윈스틱 조작계</b></td><td><b>Twin-Stick Control Scheme</b>. 왼쪽 스틱으로 이동, 오른쪽 스틱으로 조준을 독립적으로 담당하는 입력 방식. BioGun처럼 플랫포밍과 슈팅을 겸하는 게임에서 점프·조준 입력이 충돌하기 쉬움.</td></tr>
 <tr><td><b>원웨이 콜리전</b></td><td><b>One-Way Collision</b>. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 그대로 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례). 3.2절 참조.</td></tr>
+<tr><td><b>리프트 모멘텀 스토리지</b></td><td><b>Lift Momentum Storage</b>(매디 소슨, 《셀레스트》). 이동 플랫폼에서 점프할 때 가산된 속도를, 플랫폼이 멈추거나 반전한 뒤에도 몇 프레임 동안 그대로 유지(저장)하는 설계 기법. 왕복 플랫폼 반전 타이밍 문제를 사전에 차단하는 확인된 해법. 3.2절 참조.</td></tr>
 </tbody>
 </table>
     </div>
@@ -285,6 +298,10 @@
             <dt class="mobile-table-term"><b>원웨이 콜리전</b></dt>
             <dd class="mobile-table-desc"><b>One-Way Collision</b>. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 그대로 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례). 3.2절 참조.</dd>
         </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>리프트 모멘텀 스토리지</b></dt>
+            <dd class="mobile-table-desc"><b>Lift Momentum Storage</b>(매디 소슨, 《셀레스트》). 이동 플랫폼에서 점프할 때 가산된 속도를, 플랫폼이 멈추거나 반전한 뒤에도 몇 프레임 동안 그대로 유지(저장)하는 설계 기법. 왕복 플랫폼 반전 타이밍 문제를 사전에 차단하는 확인된 해법. 3.2절 참조.</dd>
+        </div>
     </dl>
     </div>
 </div>
@@ -309,6 +326,7 @@
     <li id="ref-5">[5] Medium — constantin.gcopywriting. <em>BioGun — Review. Metroidvanias meet twin-stick shooters</em>. <a href="https://medium.com/@constantin.gcopywriting/biogun-review-c07052461bf3" target="_blank">medium.com/@constantin.gcopywriting/biogun-review</a></li>
     <li id="ref-6">[6] Steam 커뮤니티. <em>The controls are terrible :: BioGun General Discussions</em>(2024-02-11, 개발자 답변 포함). <a href="https://steamcommunity.com/app/1219240/discussions/0/4208120159998420188/" target="_blank">steamcommunity.com/app/1219240/discussions</a></li>
     <li id="ref-7">[7] WebSearch 종합 결과(2026). <em>"moving platform" jump launches player wrong direction — 타 게임 선례 조사</em>. 검색 결과 요약 기반(Pouchie the Cat 데브로그, Construct 포럼, Diabotical 패치노트 포함), 원문 직접 대조 없음(Diabotical은 재검색으로도 미확인). 원문: <code>raw/20261102_similar_hitbox_platform_bugs_other_games_raw.txt</code></li>
+    <li id="ref-8">[8] GIGAZINE(2020-03-17). <em>Developer of super-difficult & high-speed masterpiece 2D action game 'Celeste' explains 'points about action'</em>(매디 소슨의 게임 필 스레드 보도). <a href="https://gigazine.net/gsc_news/en/20200317-celeste-action-feel-things" target="_blank">gigazine.net</a> — 3.2절 "리프트 모멘텀 스토리지" 선례의 근거. GameSpot(<a href="https://www.gamespot.com/articles/celeste-dev-explains-how-they-made-their-game-feel/1100-6474775/" target="_blank">gamespot.com</a>)이 같은 내용을 교차 보도.</li>
 </ol>
             </section>
         </article>
