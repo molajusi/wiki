@@ -2,9 +2,9 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:11:59 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:21:52 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
-tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox"]
+tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
 ---
 
@@ -12,13 +12,13 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:11:59 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:21:52 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
 </context>
 
-**관련 문서**: [메트로이드배니아 장르 개요 및 계보학](metroidvania_genre_analysis.html)(장르 이론·용어 근거) · [메트로이드배니아 시스템 메커니즘 및 레벨 디자인](metroidvania_mechanics_and_level_design.html)(능력 게이팅 근거) · [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)(3장에서 분리된 세계관·정치 체제 설계 문서) · [고려 중세풍 수평적 판타지 세계관과 아동 서사 모델](goryeo_horizontal_fantasy_worldbuilding.html)(설계 철학이 상반되는 자매 세계관) · [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)(7.1.2절 히트박스·콜라이더 분리 원칙의 출처)
+**관련 문서**: [메트로이드배니아 장르 개요 및 계보학](metroidvania_genre_analysis.html)(장르 이론·용어 근거) · [메트로이드배니아 시스템 메커니즘 및 레벨 디자인](metroidvania_mechanics_and_level_design.html)(능력 게이팅 근거) · [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)(3장에서 분리된 세계관·정치 체제 설계 문서) · [고려 중세풍 수평적 판타지 세계관과 아동 서사 모델](goryeo_horizontal_fantasy_worldbuilding.html)(설계 철학이 상반되는 자매 세계관) · [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)(7.1.2절 히트박스·콜라이더 분리 원칙의 출처) · [BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html)(7.1.3절 이동 플랫폼 속도 상속 원칙의 출처)
 
 <overview>
 ## 1. 개요 및 목적
@@ -292,7 +292,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 이 게임의 레벨은 성격이 다른 두 모드를 오갑니다: 플레이어가 자유롭게 되돌아다니는 **게이팅 탐험 모드**(표준 메트로이드배니아)와, 연출 라이브러리가 카메라·판정을 강제로 넘겨받는 **스크립트 시퀀스 모드**(추격전 등)입니다. 위키백과 "Scripted sequence" 항목은 이를 "플레이어의 위치나 행동에 의해 트리거되어 게임 엔진 안에서 재생되는 미리 정의된 일련의 사건"으로 정의하며, 컷신으로 끊지 않고도 새로운 위협·플롯 포인트를 매끄럽게 들여오는 데 쓰인다고 설명합니다 — 아저씨와의 논의에서 도출한 "탐험 모드 vs 시퀀스 모드" 구분이 게임 디자인 업계에서 이미 공식 용어로 존재하는 구분임을 확인한 것입니다. [[15]](#ref-15)
 
 <div class="callout">
-<p><strong>출처 신뢰도 안내</strong>: 이 절은 6장(아트스타일)과 달리 전용 웹 조사를 거쳤습니다(원문: `raw/20260930_chase_sequence_level_design_research_raw.txt`, 쿠로·슈리크 시퀀스 2~3차 조사 포함). 다만 일부 출처(위키백과 Scripted sequence 문서, gamedesignskills.com, 리틀 나이트메어 레벨 디자인 블로그, PC Gamer)는 원문 직접 접속이 404/403 오류나 회원가입 장벽으로 실패해 검색 스니펫으로만 확인했습니다 — 완전한 원문 대조는 아닙니다. 쿠로·슈리크 시퀀스(7.2.1·7.2.2절)는 1차 개발자 인터뷰는 아니지만, 위키백과의 스토리·구조 서술과 다수의 독립 공략·비평 사이트가 일관되게 교차 확인해 준 2차 자료를 근거로 삼았습니다. 쿠로는 《블라인드 포레스트》, 슈리크는 《윌 오브 더 위습스》 전용의 별개 캐릭터입니다. 7.4절의 쇼츠 연출 연계는 `raw/20260930_shorts_vertical_video_format_research_raw.txt`를, 7.5절의 롱폼 연출 연계는 `raw/20260930_longform_youtube_video_structure_research_raw.txt`를 근거로 하며, 두 출처 모두 유튜브 공식 문서가 아니라 크리에이터 가이드·트레일러 편집 전문 블로그 콘텐츠라 구체 수치(3초 훅, 20~40초 권장, 15초/65% 리텐션 등)는 업계 통념 수준으로 다뤄야 합니다. 7.1.1절의 코요테 타임·입력 버퍼링 등 조작감 보강 기법은 별도 raw 파일 없이 웹 검색으로 확인했으며, 매디 소슨(Maddy Thorson)의 1차 서술(X 스레드·Medium)이 핵심 근거이고 프레임 수치 범위는 개발 가이드·블로그 수준의 경험적 참고치입니다. 7.1.2절의 히트박스·콜라이더 분리 원칙은 《HunterX》의 실제 소스코드나 개발사 공식 확인이 아니라, 별도 분석 문서(<a href="hunterx_combat_hitbox_analysis.html">HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</a>, 원문: <code>raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</code>)에서 도출한 동일 장르 일반 원인 패턴에 대한 추정입니다.</p>
+<p><strong>출처 신뢰도 안내</strong>: 이 절은 6장(아트스타일)과 달리 전용 웹 조사를 거쳤습니다(원문: `raw/20260930_chase_sequence_level_design_research_raw.txt`, 쿠로·슈리크 시퀀스 2~3차 조사 포함). 다만 일부 출처(위키백과 Scripted sequence 문서, gamedesignskills.com, 리틀 나이트메어 레벨 디자인 블로그, PC Gamer)는 원문 직접 접속이 404/403 오류나 회원가입 장벽으로 실패해 검색 스니펫으로만 확인했습니다 — 완전한 원문 대조는 아닙니다. 쿠로·슈리크 시퀀스(7.2.1·7.2.2절)는 1차 개발자 인터뷰는 아니지만, 위키백과의 스토리·구조 서술과 다수의 독립 공략·비평 사이트가 일관되게 교차 확인해 준 2차 자료를 근거로 삼았습니다. 쿠로는 《블라인드 포레스트》, 슈리크는 《윌 오브 더 위습스》 전용의 별개 캐릭터입니다. 7.4절의 쇼츠 연출 연계는 `raw/20260930_shorts_vertical_video_format_research_raw.txt`를, 7.5절의 롱폼 연출 연계는 `raw/20260930_longform_youtube_video_structure_research_raw.txt`를 근거로 하며, 두 출처 모두 유튜브 공식 문서가 아니라 크리에이터 가이드·트레일러 편집 전문 블로그 콘텐츠라 구체 수치(3초 훅, 20~40초 권장, 15초/65% 리텐션 등)는 업계 통념 수준으로 다뤄야 합니다. 7.1.1절의 코요테 타임·입력 버퍼링 등 조작감 보강 기법은 별도 raw 파일 없이 웹 검색으로 확인했으며, 매디 소슨(Maddy Thorson)의 1차 서술(X 스레드·Medium)이 핵심 근거이고 프레임 수치 범위는 개발 가이드·블로그 수준의 경험적 참고치입니다. 7.1.2절의 히트박스·콜라이더 분리 원칙은 《HunterX》의 실제 소스코드나 개발사 공식 확인이 아니라, 별도 분석 문서(<a href="hunterx_combat_hitbox_analysis.html">HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</a>, 원문: <code>raw/20261102_hunterx_combat_hitbox_analysis_raw.txt</code>)에서 도출한 동일 장르 일반 원인 패턴에 대한 추정입니다. 7.1.3절의 이동 플랫폼 속도 상속 원칙도 같은 성격으로, 《BioGun》의 실제 소스코드가 아니라 별도 분석 문서(<a href="biogun_moving_platform_jump_analysis.html">BioGun 이동 플랫폼 점프 오작동 분석</a>, 원문: <code>raw/20261102_biogun_moving_platform_jump_analysis_raw.txt</code>)에서 도출한 추정입니다.</p>
 </div>
 
 ### 7.1 게이팅 탐험 모드 — 표준 메트로이드배니아 규칙
@@ -323,6 +323,18 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 | **방향 판정의 매 프레임 재계산** | 거리가 0에 가까우면 좌우 위치가 미세하게 뒤집히며 공격 방향이 매 프레임 반전 | 공격 방향을 매 프레임 재계산하지 않고 공격 개시 시점에 고정(방향 락) |
 
 이 세 원칙은 2장 아키텍처의 "연출 레이어/게임 레이어 분리"와 같은 사고방식입니다 — 공격 판정(게임 로직)과 몸체 충돌 처리를 서로 다른 책임을 가진 별개 시스템으로 설계해야, 같은 프레임에서 서로 경쟁하며 생기는 이런 유형의 버그를 피할 수 있습니다.
+
+#### 7.1.3 이동 플랫폼 속도 상속 설계 원칙 — 코너 보정의 실패 모드
+
+7.1.1절의 "코너 보정"은 이동 플랫폼 위에서 점프할 때 플랫폼의 운동량을 점프 속도에 가산하는 기법으로 이미 도입이 확정되어 있습니다. 같은 장르의 《BioGun》(Dapper Dog Digital, 2024)에서 "이동 플랫폼에서 점프 시 경우에 따라 실패하거나 엉뚱한 방향으로 튕겨 나간다"는 증상이 제보되어 별도로 분석했습니다(상세: [BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html) [[68]](#ref-68)). 7.1.2절과 마찬가지로 이 게임의 실제 소스코드를 확인한 것은 아니며 일반적인 원인 패턴에 근거한 추정이지만, 코너 보정을 실제로 구현할 때 같은 실패 모드를 피하기 위한 설계 지침으로 미리 반영합니다.
+
+| 실패 모드 | 메커니즘 | 예방 원칙 |
+| :--- | :--- | :--- |
+| **왕복 플랫폼의 방향 반전 타이밍** | 플랫폼이 경로 끝에서 방향을 바꾸는 바로 그 프레임에 점프하면, 반전 직후의 속도를 그대로 상속해 의도와 반대 방향으로 튕겨 나감 | 반전 전 속도값으로 그 프레임의 상속을 완료한 뒤, 다음 프레임부터 반전을 적용(한 프레임 지연 허용) |
+| **처리 순서 불일치** | 플랫폼 속도 갱신과 캐릭터 점프 속도 적용의 순서가 프레임마다 뒤섞이면 상속되는 속도가 화면상 방향과 어긋남 | 플랫폼 속도 갱신 → 캐릭터 속도 상속 → 점프 임펄스 적용의 순서를 매 프레임 고정 |
+| **부모-자식 분리(unparent) 시점 문제** | 캐릭터를 플랫폼의 자식 노드로 붙이는 구현에서, 분리 시점이 속도 상속 전/후 중 언제냐에 따라 플랫폼의 운동량이 더해지거나 빠짐 | 분리 시점을 "속도 상속 직후·점프 임펄스 적용 직전"으로 고정 |
+
+이 원칙은 7.1.2절의 히트박스·콜라이더 분리 원칙과 같은 계열의 교훈입니다 — 서로 다른 책임을 가진 두 시스템(플랫폼의 이동 로직과 캐릭터의 점프 로직)이 같은 프레임에서 처리 순서가 흔들리면, 겉보기엔 사소한 타이밍 문제가 "경우에 따라 다른" 불규칙한 버그로 나타납니다.
 
 ### 7.2 스크립트 시퀀스 모드 — 추격 시퀀스의 두 하위 유형
 
@@ -553,6 +565,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 
 - **조작감 보강 기법의 정확한 프레임 수치**: 7.1.1절에서 코요테 타임·입력 버퍼링·정점 체공·코너 보정 네 기법의 도입 방향은 확인했으나, 이 프로젝트의 캐릭터 크기·이동 속도에 맞춘 정확한 프레임 수치는 아직 결정되지 않음.
 - **게이팅 능력 목록·순서**: 7.1절에서 게이팅 탐험 모드가 표준 메트로이드배니아 규칙으로 확정되었으나, 구체적 능력 목록·게이팅 순서는 아직 없음(`metroidvania_mechanics_and_level_design.html`의 능력 게이팅·폼시프팅 이론을 참고해 다음 단계에서 설계 필요).
+- **이동 플랫폼 속도 상속의 정확한 구현 방식**: 7.1.3절에서 왕복 플랫폼 반전 타이밍·처리 순서·부모-자식 분리 시점 세 원칙을 예방 지침으로 확정했으나, 실제 Godot 구현(명시적 속도 가산 vs 부모-자식 부착 중 선택 등)은 아직 설계되지 않음.
 - **추격 시퀀스 세부 규칙**: 7.3절의 규칙 세트 A/B 데이터 스키마(플래그 조합 포함), 탐지 판정 수치, 시퀀스 배치 수·위치가 아직 미정. 다만 7.2.1절에서 도출한 "예고 없는 즉사 함정 금지"·"구간별 체크포인트" 두 원칙은 설계 지침으로 채택 확정.
 - **규칙 세트 C(패턴 암기형 전투-추격) 도입 여부**: 7.2.2절에서 발견한 슈리크 보스전 추격(공격 패턴 암기 기반)을 이 기획에 별도 규칙 세트로 도입할지, 아니면 4장의 전투 시스템(아직 미정)이 확정된 뒤 판단할지 미결정.
 - **쇼츠 연출 연계 세부 사항**: 7.4절에서 방향(세로 프레이밍 재사용, 하이라이트 트림 메타데이터, 연출 가능 순간 태깅)만 정리했으며, 트림 규칙·태깅 UI·세로 프로파일의 구체적 수치(시야콘 재배치 반경 등)는 아직 설계되지 않음.
@@ -588,6 +601,8 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 | **바디 콜라이더** | **Body Collider**. 캐릭터끼리 서로 통과하지 않도록 하는 물리 충돌체. 겹치면 매 프레임 서로를 밀어내는 분리력이 작동하며, 이 분리력이 공격 판정과 경쟁하면 캐릭터가 진동하는 버그를 일으킬 수 있음. 7.1.2절 참조. |
 | **판정 데드존** | 공격 히트박스가 전방 고정 오프셋에 생성되어, 그 오프셋보다 더 가까운 적에게는 판정이 닿지 않는 근접 사각지대. 7.1.2절 참조. |
 | **방향 락** | **Facing Lock**. 공격 방향을 매 프레임 재계산하지 않고 공격 개시 시점의 방향으로 고정하는 설계. 밀착 거리에서 공격 방향이 흔들리는 버그를 예방함. 7.1.2절 참조. |
+| **속도 상속** | **Velocity Inheritance**. 이동 중인 플랫폼 위의 캐릭터가 점프할 때 플랫폼의 현재 속도를 자신의 속도에 가산해 받는 메커니즘. 7.1.1절 "코너 보정"의 구현 기반. 7.1.3절 참조. |
+| **왕복 플랫폼** | **Ping-Pong Platform**. 경로의 양 끝에서 이동 방향을 반전시키며 왕복하는 이동 플랫폼. 반전 순간의 속도 상속 처리가 "엉뚱한 방향으로 점프됨" 버그의 흔한 원천. 7.1.3절 참조. |
 | **Godot 엔진** | 이 프로젝트의 채택 기술 스택. 텍스트 기반 씬(`.tscn`)·리소스(`.tres`) 포맷과 내장 `TileMap` 에디터가 채택 결정의 핵심 근거. 상세는 5장 참조. |
 | **HD-2D** | 도트 스프라이트와 3D 환경·동적 조명·피사계심도를 결합한 렌더링 방식. 스퀘어에닉스가 옥토패스 트래블러에서 명명. 6.2절 참조. |
 | **디더링** | **Dithering**. 제한된 색상 수로 그레이디언트·명암을 표현하기 위해 색상을 번갈아 찍어 중간 색조처럼 보이게 하는 기법. 하이파이 모던 도트의 의사 조명 구현에 흔히 쓰임. 6.1절 참조. |
@@ -688,5 +703,6 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
     <li id="ref-65">[65] Gamejuice. 〈Coyote Time, Input Buffering, and the Art of Forgiving Controls〉. <a href="https://www.gamejuice.co.uk/articles/coyote-time-input-buffering" target="_blank">Coyote Time, Input Buffering</a> — 7.1.1절 프레임 수치 범위(경험적 가이드)의 근거.</li>
     <li id="ref-66">[66] Supagames Learn. 〈Platformer Feel, Coyote Time and Jump Buffering〉. <a href="https://supagamesai.com/learn/platformer-feel-coyote-time.html" target="_blank">Platformer Feel</a> — 7.1.1절 프레임 수치 범위 교차 확인의 근거.</li>
     <li id="ref-67">[67] 이 위키. 〈HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석〉. <a href="hunterx_combat_hitbox_analysis.html">hunterx_combat_hitbox_analysis.html</a> — 7.1.2절 히트박스·콜라이더 분리 원칙의 근거.</li>
+    <li id="ref-68">[68] 이 위키. 〈BioGun 이동 플랫폼 점프 오작동 분석〉. <a href="biogun_moving_platform_jump_analysis.html">biogun_moving_platform_jump_analysis.html</a> — 7.1.3절 이동 플랫폼 속도 상속 원칙의 근거.</li>
 </ol>
 </references>

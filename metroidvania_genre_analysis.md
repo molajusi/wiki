@@ -2,7 +2,7 @@
 title: "메트로이드배니아 장르 개요 및 계보학"
 subtitle: "Metroidvania Genre: Inter-Game Lineage & Cross-Pollination, Dual Pillars, and Master Knowledge Hub"
 created: "2026-08-22 오후 03:09:20 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:10:14 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:20:34 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Game Lineage", "Mutual Influence", "Super Metroid", "Castlevania", "Hollow Knight", "20-Year Lineage Bridge", "Knowledge Cluster Hub"]
 html_view: "metroidvania_genre_analysis.html"
@@ -14,13 +14,14 @@ sub_modules:
   - "metroidvania_death_and_respawn_mechanics.html"
   - "shantae_series_analysis.html"
   - "hunterx_combat_hitbox_analysis.html"
+  - "biogun_moving_platform_jump_analysis.html"
 ---
 
 # 메트로이드배니아 장르 개요 및 계보학
 *Metroidvania Genre: Inter-Game Lineage & Cross-Pollination, Dual Pillars, and Master Knowledge Hub*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-08-22 오후 03:09:20 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:10:14 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 03:09:20 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:20:34 (KST, UTC+9)*
 
 P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*
 
@@ -45,6 +46,8 @@ P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*
   *웨이포워드의 20년 폼시프팅 댄스 vs 해적 장비 설계 패러다임 충돌과 절충, 맵 아키텍처 변천사, 2D 메트로이드배니아 암흑기 가교 역할 및 대중 친화적 레벨 디자인 비평.*
 - 🗡️ **[전문 분과 비평 4] HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석** (`hunterx_combat_hitbox_analysis.html`):  
   *한국 스튜디오 오렌지팝콘의 2D 소울라이크. 적과 밀착 시 공격이 무효화되는 버그를 계기로 히트박스·바디 콜라이더·방향 판정 3대 레이어의 상호 경쟁 원인을 분석.*
+- 🛗 **[전문 분과 비평 5] BioGun 이동 플랫폼 점프 오작동 분석** (`biogun_moving_platform_jump_analysis.html`):  
+  *Dapper Dog Digital의 트윈스틱 슈터·메트로이드배니아. 이동 플랫폼에서 점프가 실패하거나 엉뚱한 방향으로 튕기는 버그를 계기로 속도 상속·왕복 플랫폼 반전 타이밍의 원인을 분석.*
 
 <overview>
 ## 1. 개요 및 목적

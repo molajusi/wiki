@@ -2,7 +2,7 @@
 title: "지식 위키 메인 색인"
 subtitle: "Knowledge Wiki Main Index"
 created: "2026-08-22 오후 12:55:07 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:10:14 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:20:34 (KST, UTC+9)"
 category: "전체 메인 색인 및 시스템 관제"
 html_view: "index.html"
 ---
@@ -11,7 +11,7 @@ html_view: "index.html"
 *Knowledge Wiki Main Index*
 
 **카테고리**: 전체 메인 색인 및 시스템 관제  
-*최초 작성일시: 2026-08-22 오후 12:55:07 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:10:14 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 12:55:07 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:20:34 (KST, UTC+9)*
 
 이 위키는 지식 관리 및 정보 보좌 에이전트(자네)가 조사·구조화한 지식을 2계층 아키텍처(마크다운 SSOT + HTML5 뷰)로 축적하는 저장소이다. 각 주제는 `.md` 정본과 `.html` 뷰가 쌍을 이루며, 하단 두 대분류 아래 세부 카테고리로 분류된다: (1) 위키 자체의 운영·관리 규정, (2) 조사·집필된 지식 콘텐츠. 지식 콘텐츠는 다시 기술 및 학술, 한국 전근대 공간·도시·제도사, 동아시아 역사언어학 및 어원 연구, 서사학·설화·민속 심리학, 게임 디자인 및 분석 5개 카테고리로 나뉜다.
 
@@ -71,5 +71,6 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
   - [🗺️ [분과 연구] 메트로이드배니아 및 카토그래피 게임 디자인 종합 연구 아카이브](metroidvania_and_cartography_game_design.html)
   - [🚪 [분과 연구] 비디오 게임 게이팅 이론 및 설계 메커니즘](game_gating_mechanisms.html)
   - [🗡️ [분과 비평 4] HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)
+  - [🛗 [분과 비평 5] BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html)
 - [🎬 영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)
   - [🏯 [세계관 분과] 영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)

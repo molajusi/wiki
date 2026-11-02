@@ -1,0 +1,51 @@
+=== 메타 헤더 ===
+수집 일시(KST): 2026-11-02 오후 08:00 ~ 08:18 (초단위 미기록, 대화 로그 기준 근사)
+조사 주제: BioGun(Dapper Dog Digital, 사이드스크롤 트윈스틱 슈터·메트로이드배니아) 이동 플랫폼 점프 오작동(경우에 따라 점프 안 됨/엉뚱한 방향으로 점프됨) 버그
+조사 방법: WebSearch 도구(표준/확장 모드), 검색 질의어 다수 투입, 1차 원문 페이지 직접 접속은 수행하지 않고 WebSearch 결과 요약·URL만 확보
+조사자: Claude(에이전트), 사용자(아저씨)의 직접 경험 제보 기반
+
+=== 검색 질의어 및 결과 ===
+
+[질의 1] "Biogun game moving platform jump bug wrong direction" (standard)
+결과: BioGun 직접 언급 없음. itch.io 게임잼 작품들의 이동 플랫폼 점프 버그 사례(개발자가 "플랫폼이 하강을 시작할 때 점프하면 문제를 피할 수 있다"는 워크어라운드를 공유한 사례, "플레이어가 이동 플랫폼에 붙어 있어야 하는데 안 붙는 게 버그였다"고 개발자가 확인한 사례), Construct 포럼의 수직 이동 플랫폼 글리치(사인파 동작에만 국한되지 않음), Leadwerks 포럼의 캐릭터가 상승하는 플랫폼 안에 끼이는 사례, GameDev.tv 포럼의 "플랫폼 속도를 반전시킨 후 시작 위치를 갱신하면 플랫폼이 경로 끝으로 점프하듯 이동하는" 버그 설명 등 — 모두 타 게임/타 엔진 사례.
+
+[질의 2] "Biogun Mad Mimic moving platform jump issue steam discussions" (standard)
+결과: "Mad Mimic"은 오개발사명으로 추정(실제로는 다른 게임 《Greak》 개발사) — BioGun과 무관. Gaming Nexus 리뷰(gamingnexus.com/Article/14031/BioGun)에서 "놓친 플랫폼 점프가 무작위적이고 빈번하다(missed platform jumps are random and frequent)"는 서술 확인 — 셰이더(시각) 문제가 아니라 아무 때나 발생한다고 명시. 2022년 2월 Steam 토론에서 호버 능력 획득 후 LT 버튼으로 점프가 안 되는 별개의 입력 버그 보고(게임패드 전용, 이동 플랫폼과 무관).
+
+[질의 3] "BioGun Gaming Nexus review missed jumps platforming frustrating" (standard)
+결과: 검색된 Gaming Nexus 글은 프리뷰(리뷰 아님)로 재확인됨. Steam 통계: 482개 유저 리뷰 중 87% 긍정. Giant Bomb: 2024년 7월 31일 PC/Linux 출시, 개발사 Dapper Dog Digital, 액션 어드벤처·플랫포머 태그.
+
+[질의 4] "BioGun review bugs jumping platforms moving" (extended)
+결과 요약(WebSearch 도구 자체 생성 요약, 발췌):
+- Steam 리뷰어: "바닥의 작은 턱에 캐릭터가 걸리거나 점프해야만 멈춤이 풀렸다"는 지형 충돌 문제.
+- Steam 리뷰어: 이동 시스템이 아직 접근해서는 안 되는 구역으로 들어가게 해 소프트락(softlock)이 발생했다고 보고("There are a few frustrating bugs and i even had a softlock").
+- Medium 리뷰(constantin.gcopywriting): "충돌 시스템이 가끔 이상하게(off) 느껴지고 게임을 버그나게 할 수 있다 — 엘리베이터 아래, 세이브 스테이션 안에 끼이는 등". 2시간 전후로 랙·프레임 드롭 발생, 어려운 플랫포밍 구간을 재도전한 뒤 문 전환 시 게임이 멈춘(freeze) 사례도 언급.
+- Backloggd(Hexxproof) 리뷰: "방광(bladder) 구역의 부서지는 플랫폼에 심각한 문제가 있었다 — 두 번째 점프를 하기도 전에 플랫폼이 무너졌다(터보 버튼을 써도)". 핵심 조작감은 "탁월하지만(excellent) 여전히 약간 glitchy"라고 종합 평가.
+- 데모 플레이어 보고: "플랫폼의 마지막 몇 인치는 단단해야 하는데, 점프하기 직전에 계속 떨어졌다."
+- Steam 리뷰어: 게임 엔진이 주요 한계라며 성능 문제를 지적.
+
+[질의 5] "BioGun steam "moving platform" jump direction wrong" (standard)
+결과: BioGun 직접 언급 없음. 2022년 Steam 토론(호버 능력 후 LT 점프 미작동, 게임패드 입력 문제, 이동 플랫폼과 무관)만 재확인. 타 게임의 이동 플랫폼 물리 버그 사례(Godot 포럼: "현재 floor velocity가 플레이어 velocity에 가산되어, 플랫폼 반대 방향으로 이동하면 느려지는 현상") 다수.
+
+[질의 6] "BioGun "controls are terrible" steam discussion jump platform" (extended)
+결과 요약(WebSearch 도구 자체 생성 요약):
+Steam 토론 "The controls are terrible"(작성자 Dr Morningwood, 2024-02-11). 요지: 오른쪽 스틱으로 조준하는 동안 게임패드 우측이 거의 쓸 수 없게 되고, 점프 버튼 두 개(LB/기본) 모두 나쁘며 LB로 점프하는 건 비합리적, 발사 중에는 X/A 사용 불가라고 지적(《콘트라: 하드 코어》와 비교하며 불리하게 평가).
+개발자 답변(2024-02-13, "developer" 태그): 게임패드 설정의 **Manual Fire 프리셋**을 제안 — 이 프리셋에서는 새로 지정한 발사 버튼을 누르는 동안 조준이 고정되어, 조준을 유지한 채 점프가 가능해짐. 출시 시 이 프리셋이 기본 게임패드 스킴이 될 것이라고 답변. 발사 중에는 얼굴 버튼을 누를 필요가 없고, A가 점프·B가 회복(단 발사 중이 아닐 때만 작동)이라고 설명.
+다른 답글: 코요테 타임을 요청하는 글, "조작이 마음에 안 든다"는 짧은 불만. 별도의 2022년 스레드는 더블점프 업데이트 후 LT 점프가 제거된 것을 다룸(워크어라운드: 왼쪽 스틱으로 조준해 점프와 발사를 동시에 가능하게 함).
+
+[질의 7] "BioGun elevator platform bug jump launched wrong direction steam review" (standard)
+결과: BioGun 직접 언급 없음. Gaming Nexus 프리뷰(2024-06-02, Joseph Moorer 작성)는 데모의 페이싱은 괜찮다고 평가하나 엘리베이터는 언급하지 않음. 타 게임의 엘리베이터 버그(BetaHub 트래커 다수 — 플레이어가 엘리베이터보다 느리게 낙하해 공중 상태가 되며 점프가 비활성화되는 사례, 엘리베이터로 하강 중 점프하면 피격 이펙트/사운드가 발생하는 사례)가 검색되었으나 게임명이 명시되지 않음.
+
+[질의 8] "BioGun 게임 리뷰 이동 플랫폼 점프 버그" (standard, 한국어)
+결과: 게임 개요 확인(사이드스크롤 트윈스틱 슈터, 개발 Dapper Dog Digital, 퍼블리셔 Ravenage, 2024-07-31 PC 출시). Steam 482개 리뷰 87% 긍정(또는 "Very Positive", 483개 리뷰). 한 리뷰는 "조작이 때때로 매우 답답할 수 있다"면서도 "조작감 자체는 날카롭고 반응이 좋다"고 평가 — 이동 플랫폼 관련 언급인지는 불명확.
+
+=== 확인된 사실 요약 ===
+1. 게임 식별: BioGun = Dapper Dog Digital 개발, Ravenage 퍼블리싱, 2024-07-31 PC(Linux 포함) 정식 출시, Steam App ID 1219240, 사이드스크롤 트윈스틱 슈터+메트로이드배니아 하이브리드, Steam 평가 "Very Positive"(약 87% 긍정, 482~483개 리뷰).
+2. 트윈스틱 조준(오른쪽 스틱)과 점프 입력 간 조작계 충돌이 다수 보고되며, 개발자가 "Manual Fire" 프리셋을 기본값으로 채택해 대응한 선례가 확인됨.
+3. "놓친 플랫폼 점프가 무작위적이고 빈번하다"(Gaming Nexus), "부서지는 플랫폼이 두 번째 점프 전에 무너진다"(Backloggd), "플랫폼 마지막 몇 인치에서 점프 직전 떨어짐"(데모 플레이어), "충돌 시스템이 가끔 이상하다 — 엘리베이터 아래 끼임"(Medium) 등 플랫폼·충돌 관련 불만이 다수 확인되나, 사용자가 제보한 "이동 플랫폼에서 점프 시 엉뚱한 방향으로 튕겨나감"을 그대로 서술한 1차 자료는 발견하지 못함.
+4. 소프트락(의도치 않은 구역 진입) 보고가 있어, 이동 시스템 전반의 충돌·판정 안정성에 대한 우려가 여러 독립 리뷰에서 반복됨.
+
+=== 조사 방법론 및 신뢰도 메모 ===
+- 본 조사는 WebSearch 도구의 자동 요약 결과에 의존했으며, 개별 리뷰·포럼 원문 페이지를 직접 열어 전체 문맥을 대조하지는 않았다.
+- "이동 플랫폼에서 점프 시 엉뚱한 방향으로 튕겨나감" 증상 자체는 사용자(아저씨)의 직접 플레이 경험 제보이며, 이 위키 문서가 제시하는 원인 분석(왕복 플랫폼의 방향 반전 타이밍, 점프 임펄스와 플랫폼 속도 갱신의 처리 순서, 부모-자식 트랜스폼 분리 타이밍, 트윈스틱 조준-점프 입력 혼선)은 BioGun의 실제 소스코드나 개발사의 공식 확인에 근거한 것이 아니라, 2D 플랫포머에서 이동 플랫폼 속도 상속을 구현할 때 일반적으로 보고되는 기술적 원인 패턴을 적용한 추정이다.
+- 따라서 이 문서의 "원인 분석" 절은 confirmed fact가 아니라 informed hypothesis로 다뤄야 하며, 본문에도 이 신뢰도 수준을 명시한다.
