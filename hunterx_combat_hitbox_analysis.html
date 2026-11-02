@@ -12,7 +12,7 @@
         <h1>HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석</h1>
         <div class="subtitle">HunterX: Combat Hit-Detection Architecture and the Point-Blank Attack-Miss Bug</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:39:19 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:44:51 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -262,6 +262,7 @@
 <tr><td><b>분리력</b></td><td><b>Separation Force</b>. 두 바디 콜라이더가 겹칠 때 매 프레임 서로를 밀어내는 힘. 공격 판정과 경쟁하면 캐릭터가 진동하는 버그를 일으킬 수 있음.</td></tr>
 <tr><td><b>판정 데드존</b></td><td>공격 히트박스가 전방 고정 오프셋에 생성되어, 그 오프셋보다 더 가까운 적에게는 판정이 닿지 않는 근접 사각지대.</td></tr>
 <tr><td><b>방향 락</b></td><td><b>Facing Lock</b>. 공격 방향을 매 프레임 재계산하지 않고 공격 개시 시점의 방향으로 고정하는 설계.</td></tr>
+<tr><td><b>휘프</b></td><td><b>Whiff</b>. 공격이 피격 판정 없이 허공을 가르는 것을 가리키는 격투 게임 전문 용어. 스트리트 파이터 V의 근접 거리 판정 누락 사례를 서술하는 데 쓰임. 3.2절 참조.</td></tr>
 </tbody>
 </table>
     </div>
@@ -298,6 +299,10 @@
         <div class="mobile-table-card">
             <dt class="mobile-table-term"><b>방향 락</b></dt>
             <dd class="mobile-table-desc"><b>Facing Lock</b>. 공격 방향을 매 프레임 재계산하지 않고 공격 개시 시점의 방향으로 고정하는 설계.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>휘프</b></dt>
+            <dd class="mobile-table-desc"><b>Whiff</b>. 공격이 피격 판정 없이 허공을 가르는 것을 가리키는 격투 게임 전문 용어. 스트리트 파이터 V의 근접 거리 판정 누락 사례를 서술하는 데 쓰임. 3.2절 참조.</dd>
         </div>
     </dl>
     </div>

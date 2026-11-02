@@ -12,7 +12,7 @@
         <h1>BioGun 이동 플랫폼 점프 오작동 분석</h1>
         <div class="subtitle">BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:40:04 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:44:51 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -251,6 +251,7 @@
 <tr><td><b>왕복 플랫폼</b></td><td><b>Ping-Pong Platform</b>. 경로의 양 끝에서 이동 방향을 반전시키며 왕복하는 이동 플랫폼. 반전 순간의 속도 상속 처리가 버그의 흔한 원천.</td></tr>
 <tr><td><b>부모-자식 트랜스폼 부착</b></td><td>캐릭터를 플랫폼의 자식 노드로 일시적으로 붙여, 플랫폼의 이동을 자동으로 따라가게 하는 구현 방식. 점프 시 분리(unparent) 시점이 중요함.</td></tr>
 <tr><td><b>트윈스틱 조작계</b></td><td><b>Twin-Stick Control Scheme</b>. 왼쪽 스틱으로 이동, 오른쪽 스틱으로 조준을 독립적으로 담당하는 입력 방식. BioGun처럼 플랫포밍과 슈팅을 겸하는 게임에서 점프·조준 입력이 충돌하기 쉬움.</td></tr>
+<tr><td><b>원웨이 콜리전</b></td><td><b>One-Way Collision</b>. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 그대로 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례). 3.2절 참조.</td></tr>
 </tbody>
 </table>
     </div>
@@ -279,6 +280,10 @@
         <div class="mobile-table-card">
             <dt class="mobile-table-term"><b>트윈스틱 조작계</b></dt>
             <dd class="mobile-table-desc"><b>Twin-Stick Control Scheme</b>. 왼쪽 스틱으로 이동, 오른쪽 스틱으로 조준을 독립적으로 담당하는 입력 방식. BioGun처럼 플랫포밍과 슈팅을 겸하는 게임에서 점프·조준 입력이 충돌하기 쉬움.</dd>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term"><b>원웨이 콜리전</b></dt>
+            <dd class="mobile-table-desc"><b>One-Way Collision</b>. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 그대로 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례). 3.2절 참조.</dd>
         </div>
     </dl>
     </div>

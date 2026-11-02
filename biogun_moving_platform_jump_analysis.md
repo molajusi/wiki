@@ -2,7 +2,7 @@
 title: "BioGun 이동 플랫폼 점프 오작동 분석"
 subtitle: "BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis"
 created: "2026-11-02 오후 08:18:23 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:40:04 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:44:51 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["BioGun", "Dapper Dog Digital", "Metroidvania", "Twin-Stick Shooter", "Moving Platform", "Velocity Inheritance", "Collision Detection", "Game Critique"]
 html_view: "biogun_moving_platform_jump_analysis.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *BioGun: Moving-Platform Jump Misfire and Wrong-Direction Launch Analysis*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:40:04 (KST, UTC+9)*
+*최초 작성일시: 2026-11-02 오후 08:18:23 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:44:51 (KST, UTC+9)*
 
 <context>
 본 문서는 사이드스크롤 트윈스틱 슈터·메트로이드배니아 하이브리드 《BioGun》(Dapper Dog Digital 개발, Ravenage 퍼블리싱, 2024년 7월 31일 PC 정식 출시)에서 아저씨가 직접 플레이 중 제보한 "이동 중인 플랫폼에서 점프할 경우 경우에 따라 점프가 제대로 되지 않거나 엉뚱한 방향으로 점프되는" 버그 증상을 분석합니다. 웹 조사 결과 게임·개발사를 특정하는 데는 성공했고 플랫폼·충돌 관련 간접 불만도 여러 독립 리뷰에서 확인했으나, 이 구체적 증상을 그대로 서술한 1차 자료(공식 패치노트·개발자 확인·버그 트래커)는 확보하지 못했습니다(원문: `raw/20261102_biogun_moving_platform_jump_analysis_raw.txt`). 본 문서의 원인 분석은 2D 플랫포머의 이동 플랫폼 속도 상속(velocity inheritance) 구현에서 일반적으로 보고되는 결함 패턴에 기반한 추정이며, 그 설계 원칙은 자매 문서 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 7.1.3절에도 예방 지침으로 반영되었습니다. 같은 "분과 비평" 계열의 선행 사례인 [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)과 조사·서술 방식을 통일했습니다.
@@ -103,6 +103,7 @@ BioGun 자체의 1차 자료는 못 찾았으나, 같은 유형(이동 플랫폼
 | **왕복 플랫폼** | **Ping-Pong Platform**. 경로의 양 끝에서 이동 방향을 반전시키며 왕복하는 이동 플랫폼. 반전 순간의 속도 상속 처리가 버그의 흔한 원천. |
 | **부모-자식 트랜스폼 부착** | 캐릭터를 플랫폼의 자식 노드로 일시적으로 붙여, 플랫폼의 이동을 자동으로 따라가게 하는 구현 방식. 점프 시 분리(unparent) 시점이 중요함. |
 | **트윈스틱 조작계** | **Twin-Stick Control Scheme**. 왼쪽 스틱으로 이동, 오른쪽 스틱으로 조준을 독립적으로 담당하는 입력 방식. BioGun처럼 플랫포밍과 슈팅을 겸하는 게임에서 점프·조준 입력이 충돌하기 쉬움. |
+| **원웨이 콜리전** | **One-Way Collision**. 플랫폼의 한쪽 방향(보통 위쪽)에서만 충돌이 적용되어 반대쪽에서는 그대로 통과되는 콜리전 방식. 이동 플랫폼과 결합하면 캐릭터가 플랫폼을 뚫고 가라앉는 버그의 원인이 될 수 있음(Pouchie the Cat 선례). 3.2절 참조. |
 </definitions>
 
 <references>

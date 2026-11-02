@@ -2,7 +2,7 @@
 title: "HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석"
 subtitle: "HunterX: Combat Hit-Detection Architecture and the Point-Blank Attack-Miss Bug"
 created: "2026-11-02 오후 08:08:04 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:39:19 (KST, UTC+9)"
+updated: "2026-11-02 오후 08:44:51 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["HunterX", "Orange Popcorn", "Metroidvania", "Souls-like", "Hitbox", "Collision Detection", "Combat Design", "Game Critique"]
 html_view: "hunterx_combat_hitbox_analysis.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *HunterX: Combat Hit-Detection Architecture and the Point-Blank Attack-Miss Bug*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:39:19 (KST, UTC+9)*
+*최초 작성일시: 2026-11-02 오후 08:08:04 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:44:51 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 인디 스튜디오 오렌지팝콘(Orange Popcorn)의 2D 메트로이드배니아·소울라이크 《HunterX》(2022)에서 아저씨가 직접 플레이 중 제보한 "적과 바짝 붙으면 공격이 무효화되고 서로 밀리기만 하는" 버그 증상을 분석합니다. 웹 조사 결과 이 게임·스튜디오를 특정하는 데는 성공했으나, 이 구체적 버그를 다룬 1차 자료(공식 패치노트·개발자 확인·버그 트래커)는 확보하지 못했습니다(원문: `raw/20261102_hunterx_combat_hitbox_analysis_raw.txt`). 본 문서의 원인 분석은 동일 장르(2D 액션·소울라이크)에서 일반적으로 보고되는 히트박스/콜라이더 설계 결함 패턴에 기반한 추정이며, 그 설계 원칙은 자매 문서 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 7.1.2절에도 예방 지침으로 반영되었습니다.
@@ -110,6 +110,7 @@ HunterX 자체의 1차 자료는 못 찾았으나, 같은 유형(근접 거리�
 | **분리력** | **Separation Force**. 두 바디 콜라이더가 겹칠 때 매 프레임 서로를 밀어내는 힘. 공격 판정과 경쟁하면 캐릭터가 진동하는 버그를 일으킬 수 있음. |
 | **판정 데드존** | 공격 히트박스가 전방 고정 오프셋에 생성되어, 그 오프셋보다 더 가까운 적에게는 판정이 닿지 않는 근접 사각지대. |
 | **방향 락** | **Facing Lock**. 공격 방향을 매 프레임 재계산하지 않고 공격 개시 시점의 방향으로 고정하는 설계. |
+| **휘프** | **Whiff**. 공격이 피격 판정 없이 허공을 가르는 것을 가리키는 격투 게임 전문 용어. 스트리트 파이터 V의 근접 거리 판정 누락 사례를 서술하는 데 쓰임. 3.2절 참조. |
 </definitions>
 
 <references>
