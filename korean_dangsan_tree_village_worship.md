@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 03:53:19 (KST, UTC+9)"
+updated: "2026-11-03 오후 04:04:33 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:53:19 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 04:04:33 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -84,6 +84,12 @@ html_view: "korean_dangsan_tree_village_worship.html"
 - **당산나무·장승·솟대의 위계상 위치**: 검색된 지역 자료에 따르면 당산나무·장승·솟대는 주로 **하당(또는 중당)** 쪽에 배치되는 신앙 대상입니다. 디지털논산문화대전은 장승을 "상당신과 하당신 중 하당신"으로 분류합니다 [[13]](#ref-13). 앞서 조사한 남원 서천리 당산(당산나무+돌장승+솟대 복합 사례, [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html) 3.3절·[솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html) 3.3절 참조)도 이 하당형 복합 구조의 사례로 재해석할 수 있습니다.
 
 **구조의 비고정성**: 상당·중당·하당을 모두 갖춘 마을(고령 무계마을)과 상당·하당 2단계만 갖춘 마을(낙안읍성)이 공존해, 전국 공통의 고정된 구조는 아닙니다. 장승을 하당신으로 분류하는 근거도 지역 문화대전 1건에 근거하며, 전국 단위 학술적 합의로 일반화하기에는 추가 교차검증이 필요합니다(확인 불가로 명시).
+
+#### 3.7.1 추가 사례
+- **전남 영암 용흥리 용천마을**: 상당·중당·하당에서 각각 음력 1월 5일·6일·7일로 날짜를 나누어 사흘에 걸쳐 제사를 지냅니다. 하루 안에 순서대로 도는 다른 사례들과 달리 각 당을 따로 모시는 방식입니다 [[14]](#ref-14).
+- **대구 고산농악**: 당산굿을 "당산제굿"이라 부르며 〈중당산제굿〉과 〈하당산제굿〉으로 나뉩니다. 제관이 먼저 중당산에서 제물을 차려 제를 지내면 농악대가 덧배기·천왕가락·우장작꽹이 등을 연주하고, 이후 거리굿을 하며 하당산으로 이동해 같은 방식의 당산굿을 반복합니다 [[15]](#ref-15).
+- **신격 구성 요소에 따른 분류**: 국립민속박물관 자료는 한 마을에 산신당과 장승·솟대가 함께 있으면 산신은 상당, 장승·솟대는 하당이 되며, 여기에 국수당까지 더해지면 삼당(三堂) 체제가 된다고 설명합니다. 이는 상당·중당·하당 구분이 지리적 거리(산→고갯길→입구)뿐 아니라 **신격의 구성 요소**에 따라서도 나뉠 수 있음을 보여줍니다(확인 불가로 명시: 특정 영남 동해안 마을명) [[16]](#ref-16).
+- **성별 상징 — 천부지모(天父地母)**: 국립국악원 국악사전은 상당·하당이 구분된 곳에서는 천부지모 관념에 따라 상당은 남성신, 하당은 여성신이 좌정한다고 설명합니다. 당산굿은 주로 하당에서 연행됩니다 [[15]](#ref-15).
 </analysis>
 
 <analysis>
@@ -102,6 +108,16 @@ html_view: "korean_dangsan_tree_village_worship.html"
 - **반론 여지**: 수목숭배 항목은 식물을 "생명 연장의 양식이자 생존 가능성을 가늠하는 지표"로 설명해 상징적 의미 부여의 또 다른 축을 제시하나, 이 역시 "장수·강인함(생태적 특성)이 상징성의 근거"라는 점에서 생태적 선행 요인과 상충하지 않습니다 [[2]](#ref-2).
 
 **종합**: 확보된 자료 범위에서는 "그 지역에서 자생·활착이 쉽고 수명이 길어 자연히 거목으로 자란 나무가, 그 결과로서 신성한 당산목이 되었다"는 생태적 선행 → 상징적 후행 구조를 지지하는 간접 증거가 상징성 우선론보다 많습니다. 다만 수종 선정을 직접 검증한 1차 연구가 없어 확정된 정설로는 단정할 수 없습니다.
+
+### 4.3 당산나무와 당산숲 — 단일 노거수형과 숲 단위형
+당산나무가 "마을 중앙의 나무 한 그루"라는 이해와, 당산나무가 "당산숲"에 속한다는 서술은 서로 다른 두 형태를 가리키며, 전자가 반드시 후자로 환원되지는 않습니다.
+
+- **입지의 다양성**: 당산나무는 마을이 형성될 때 "마을의 위쪽, 입구, 중앙, 들"에 위치를 잡았다고 설명되며, 위치에 따라 신성성·상징성이 달랐습니다. 그중 **마을 중앙에 위치한 당산나무는 마을을 결속하는 구심점 역할**을 한다고 설명됩니다 [[17]](#ref-17). 즉 "마을 중앙의 당산나무"는 당산나무의 여러 입지 유형(위쪽·입구·중앙·들) 중 하나입니다.
+- **단일 노거수형("당산목")**: 전북 고창 수동리 팽나무(천연기념물 제494호)와 강원 김화 당느릅나무(높이 21m, 수관 지름 22m)는 모두 한 그루의 고목이 신앙 대상이 되는 사례입니다. 이 경우 "당산숲"이라는 별도의 숲 공간은 존재하지 않습니다 [[18]](#ref-18).
+- **숲 단위형("당산숲")**: 대구 용수동 당산은 큰 고목이 다섯 그루 둘러선 형태이고, 경산 자인 계정숲은 이팝나무 등 538그루가 모인 혼효림이며, 군포 덕고개 당숲은 서어나무·굴참나무 등 60여 그루(수령 100~300년)로 구성됩니다 [[19]](#ref-19). 이런 마을에서는 고목 군락 전체가 "당산숲"으로 불리고, 그 안의 특정 신체(神體) 나무가 "당산나무"로 지칭됩니다.
+- **현장 용어 사용의 혼재**: 순천 낙안읍성 연구는 같은 논문에서 동내리의 나무는 "당산숲"으로, 다른 마을의 나무 하나는 "당산목"으로 구분해 기록합니다. 실제 민속 조사에서도 단수 노거수와 숲 단위를 별개 범주로 인식하고 있음을 보여줍니다 [[20]](#ref-20).
+
+**종합**: "당산나무가 당산숲에 있다"는 서술은 고목이 여러 그루 모인 **일부 마을에서만** 성립하는 유형(숲 단위형)입니다. 수동리 팽나무·김화 당느릅나무처럼 고목이 한 그루뿐인 마을은 당산숲이라는 공간 자체가 없이 그 한 그루(당산목)가 바로 신앙 대상입니다. 따라서 "마을 중앙에 당산숲을 갖는 형태"는 전국 공통 형태가 아니라 **고목 밀도가 높은 일부 마을에서 나타나는 한 유형**이며, 다수 마을은 단일 노거수(당산나무) 형태로 존재합니다. 두 형태의 전국 분포 비율은 확인 불가로 명시합니다.
 </analysis>
 
 ## 5. 용어 정리 및 정의
@@ -120,13 +136,16 @@ html_view: "korean_dangsan_tree_village_worship.html"
 | **상당** | 마을 뒷산에 위치한 산신을 모시는 엄숙한 제의 공간. 상당·중당·하당 위계의 최상위. |
 | **중당** | 고갯길·중간 지점에 위치한 제의 공간. 상당과 하당을 잇는 경유 지점. |
 | **하당** | 마을 입구·중앙에 위치한 축제적 제의 공간. 당산나무·장승·솟대·돌탑 등이 신앙 대상이 됨. |
+| **삼당** | 상당·중당·하당 또는 산신당·장승·솟대·국수당 등 신격 구성 요소에 따라 제의 공간이 3단계로 나뉘는 체제. |
+| **천부지모** | **Cheonbu-jimo**(天父地母). 상당·하당이 구분된 곳에서 상당은 남성신, 하당은 여성신이 좌정한다고 보는 관념. |
+| **당산목** | 당산나무가 한 그루(또는 소수)뿐이어서 별도의 숲 공간 없이 그 나무 자체가 신앙 대상이 되는 단일 노거수형. |
 
 ## 6. 참고 자료 및 원천 데이터 출처
 *References & Raw Sources*
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무), <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(4.2절 수종 선택 요인 보강 근거), <code><a href="raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt">raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt</a></code>(3.6~3.7절 당산숲·비보숲 및 상당·중당·하당 구조 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF를 보조 출처로 구분해 기록합니다. 4.2절의 수종 선정 의사결정 과정, 3.6절의 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰" 원문, 3.7절의 전국 단위 상당·중당·하당 분포는 확인 불가로 명시됩니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무), <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(4.2절 수종 선택 요인 보강 근거), <code><a href="raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt">raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt</a></code>(3.6~3.7절 당산숲·비보숲 및 상당·중당·하당 구조 근거), <code><a href="raw/20261103_dangsan_sangdang_hadang_more_and_forest_form_raw.txt">raw/20261103_dangsan_sangdang_hadang_more_and_forest_form_raw.txt</a></code>(3.7.1절 추가 사례 및 4.3절 당산나무·당산숲 형태 구분 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF·지역문화대전을 보조 출처로 구분해 기록합니다. 4.2절의 수종 선정 의사결정 과정, 3.6절의 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰" 원문, 3.7절의 전국 단위 상당·중당·하당 분포, 4.3절의 단일 노거수형·숲 단위형 전국 분포 비율은 확인 불가로 명시됩니다.
 </div>
 
 <ol class="reference-list">
@@ -143,4 +162,11 @@ html_view: "korean_dangsan_tree_village_worship.html"
     <li id="ref-11">[11] 최재웅 외(2009) 외. 〈낙안읍성 당산숲·비보숲 연구 2차 인용〉, Landscape Characteristics of Sacred Dangsan Forests in the Neighborhood of Naganeupseong. <a href="https://koreascience.kr/article/JAKO201534168451827.image" target="_blank">웹링크</a></li>
     <li id="ref-12">[12] 매일신문(imaeil.com). 〈고령 무계마을 상당·중당·하당 동제〉. <a href="https://www.imaeil.com/page/view/2011022307311418170" target="_blank">웹링크</a></li>
     <li id="ref-13">[13] 디지털논산문화대전. 〈장승제〉. <a href="https://nonsan.grandculture.net/nonsan/toc/GC02000146" target="_blank">웹링크</a></li>
+    <li id="ref-14">[14] 디지털영암문화대전. 〈당제〉(용흥리 용천마을). <a href="https://yeongam.grandculture.net/yeongam/toc/GC04401575" target="_blank">웹링크</a></li>
+    <li id="ref-15">[15] 국립국악원 국악사전. 〈당산제굿〉. <a href="https://www.gugak.go.kr/ency/topic/view/1189" target="_blank">웹링크</a></li>
+    <li id="ref-16">[16] 국립민속박물관 자료(PDF). <a href="https://www.nfm.go.kr/_Upload/BALGANBOOK/803/1_6.pdf" target="_blank">웹링크</a></li>
+    <li id="ref-17">[17] KoreaScience 학술 PDF. <a href="https://koreascience.kr/article/CFKO200934939692964.pdf" target="_blank">웹링크</a></li>
+    <li id="ref-18">[18] 한국민족문화대백과사전(한국학중앙연구원). 〈고창 수동리 팽나무〉·〈김화 당느릅나무〉. <a href="https://encykorea.aks.ac.kr/Article/E0075115" target="_blank">encykorea.aks.ac.kr/Article/E0075115</a> / <a href="https://encykorea.aks.ac.kr/Article/E0011102" target="_blank">encykorea.aks.ac.kr/Article/E0011102</a></li>
+    <li id="ref-19">[19] 한국민족문화대백과사전(한국학중앙연구원). 〈용수동 당산〉·〈경산 자인의 계정숲〉; 세계일보(군포 덕고개 당숲). <a href="https://encykorea.aks.ac.kr/Article/E0039550" target="_blank">encykorea.aks.ac.kr/Article/E0039550</a> / <a href="https://encykorea.aks.ac.kr/Article/E0002500" target="_blank">encykorea.aks.ac.kr/Article/E0002500</a> / <a href="https://www.segye.com/newsView/20220925503073" target="_blank">웹링크</a></li>
+    <li id="ref-20">[20] KoreaScience 학술 PDF(낙안읍성 당산숲·당산목 구분 기록). <a href="https://koreascience.kr/article/CFKO201022358467400.pdf" target="_blank">웹링크</a></li>
 </ol>
