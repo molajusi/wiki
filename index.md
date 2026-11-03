@@ -56,6 +56,7 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
 - [📄 저주의 심리·사회·생리학적 기제와 자멸성 및 회복적 대안 모델](curse_psychological_and_sociological_mechanisms.html)
 - [📄 한국 전통 비도교 비무속 주술 및 마법 체계](korean_traditional_non_shamanic_magic.html)
 - [📄 한국 전통 가신신앙 및 가택 수호 체계](korean_traditional_household_deities.html)
+- [📄 성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)
 - [📄 한국 전통 부엌 금기담의 위생공학 및 생태학적 분석](korean_traditional_kitchen_taboos.html)
 
 ### 게임 디자인 및 분석 (Game Design & Taxonomy)

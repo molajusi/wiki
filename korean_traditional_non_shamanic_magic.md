@@ -2,7 +2,7 @@
 title: "한국 전통 비도교 비무속 주술 및 마법 체계"
 subtitle: "Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence"
 created: "2026-08-31 오후 09:16:00 (KST, UTC+9)"
-updated: "2026-09-05 오후 08:16:00 (KST, UTC+9)"
+updated: "2026-11-03 오전 10:58:24 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Folk Magic", "Anthropology", "Korean History", "Sympathetic Magic", "Geomantic Bibo", "Zhuyou", "한국역사민속학", "인류학"]
 html_view: "korean_traditional_non_shamanic_magic.html"
@@ -12,7 +12,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 *Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-09-05 오후 08:16:00 (KST, UTC+9)*
+*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 10:58:24 (KST, UTC+9)*
 
 본 문서는 한국 전통 사회에서 도교적 방술(부적, 초제, 선도술 등)과 무속/샤머니즘(무당의 강신, 굿거리, 신내림 공수, 신칼·방울 의례 등)을 제외하고, 고대 삼한부터 조선 시대에 이르기까지 실존했던 자생적 민간 자영 양법(양밥), 가신신앙 결계, 풍수 비보, 전통 의학 축유술, 유교 국가 예제 벽사, 불교·밀교 다라니 결계 및 생업·군사 주술의 74가지 실천 사례와 작동 원리를 1차 역사 사료 및 고고학 유물에 근거하여 체계화한 지식 문서입니다.
 
@@ -147,6 +147,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 ### 5.3 장승과 솟대의 경계 위협 및 방화 주술
 * **출처 및 근거**: 《조선왕조실록》 성종 1년(1470), 국립민속박물관 《한국의 장승과 솟대》(1990).
 * **상세 메커니즘**: 장승의 부리부리한 눈과 뻐드렁니로 잡귀를 시각적으로 위협하고, 솟대 끝 물새(오리) 조각으로 화재를 예방하고 풍년을 기원하였습니다.
+* **관련 문서**: 장승·돌탑과 흔히 결합하는 성황당(서낭당) 돌무더기 신앙 자체와 몽골 오보(Ovoo)와의 비교는 별도 문서 [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)에서 다룹니다.
 
 ### 5.4 한양 도성 관악산 화기 진압 비보 건축
 * **출처 및 근거**: 《태조실록》 권1 태조 1년(1392), 《신증동국여지승람》 경도 조, 국립고궁박물관 '경복궁 근정전 수(水)자 철판'.
