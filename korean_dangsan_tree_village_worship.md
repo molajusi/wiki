@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 04:04:33 (KST, UTC+9)"
+updated: "2026-11-03 오후 05:24:50 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 04:04:33 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 05:24:50 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -43,6 +43,82 @@ html_view: "korean_dangsan_tree_village_worship.html"
 
 ### 2.4 당산의 구성 요소
 고창 오거리 당산제의 경우 당산이 당산수(堂山樹, 나무)와 당산석(堂山石, 돌)으로 이루어지는 것이 전형이라고 설명됩니다 [[3]](#ref-3). 이는 앞서 조사한 [성황당(서낭당)](korean_seonghwangdang_and_northern_cairn_worship.html)의 "돌무더기+신목" 결합 구조와 구성 요소가 겹치는 지점입니다.
+
+### 2.5 공간 배치 시각화 — 당산나무·당산숲·비보숲·상당·중당·하당
+아래 다이어그램은 3.6절(당산숲과 비보숲의 구분), 3.7절(상당·중당·하당 위계 구조), 4.3절(당산나무와 당산숲의 형태 구분)에서 조사한 내용을 하나의 마을 공간 배치도로 종합한 것입니다. 상당(산)→중당(고갯길)→하당(마을 입구·중앙)의 수직적 위계, 하당 안에서 당산나무가 단일 노거수형 또는 숲 단위형(당산숲)으로 갈리는 양상, 그리고 당산숲과는 원칙상 별개 위치에 조성되는 비보숲을 함께 보여줍니다.
+
+<div class="diagram-container" style="margin: 1.5rem 0; text-align: center;">
+<h4 style="margin-bottom: 0.5rem; color: var(--heading-color);">[마을 공간 배치도: 상당·중당·하당과 당산나무·당산숲·비보숲]</h4>
+<svg viewBox="0 0 1000 700" style="width: 100%; max-width: 1000px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <defs>
+        <marker id="arrow-brown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#78350f" />
+        </marker>
+        <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+        </filter>
+    </defs>
+
+    <!-- 산(상당) -->
+    <polygon points="300,30 480,190 120,190" fill="#e7e2d3" stroke="#92826a" stroke-width="2" filter="url(#shadow2)" />
+    <text x="300" y="100" font-size="30" text-anchor="middle">⛰️</text>
+    <rect x="180" y="120" width="240" height="58" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="2" filter="url(#shadow2)" />
+    <text x="300" y="142" font-size="13" font-weight="bold" text-anchor="middle" fill="#78350f">상당(上堂)</text>
+    <text x="300" y="162" font-size="10.5" text-anchor="middle" fill="#92400e">산신 · 마을 뒷산 · 엄숙한 의례</text>
+
+    <!-- 상당 -> 중당 경로 -->
+    <path d="M 330 190 C 400 240, 480 260, 560 300" fill="none" stroke="#78350f" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrow-brown)" />
+
+    <!-- 중당 -->
+    <rect x="520" y="305" width="230" height="58" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="2" filter="url(#shadow2)" />
+    <text x="635" y="327" font-size="13" font-weight="bold" text-anchor="middle" fill="#713f12">중당(中堂)</text>
+    <text x="635" y="347" font-size="10.5" text-anchor="middle" fill="#854d0e">고갯길 · 경유 지점(일부 마을만 존재)</text>
+
+    <!-- 중당 -> 하당 경로 -->
+    <path d="M 560 363 C 480 400, 400 420, 330 445" fill="none" stroke="#78350f" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrow-brown)" />
+    <text x="470" y="410" font-size="10" fill="#78350f" text-anchor="middle">제의 이동 순서</text>
+
+    <!-- 마을(하당) 영역 -->
+    <rect x="40" y="430" width="620" height="240" rx="14" fill="#f3f4ee" stroke="#9ca3af" stroke-width="2" filter="url(#shadow2)" />
+    <text x="65" y="455" font-size="12" font-weight="bold" fill="#374151">하당(下堂) — 마을 입구·중앙, 축제적 의례</text>
+
+    <!-- A. 당산나무(단일 노거수형) -->
+    <rect x="65" y="470" width="270" height="175" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
+    <text x="200" y="495" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#065f46">A. 당산나무 — 단일 노거수형</text>
+    <text x="200" y="540" font-size="34" text-anchor="middle">🌳</text>
+    <text x="200" y="580" font-size="10.5" text-anchor="middle" fill="#047857">한 그루가 곧 신체(神體)</text>
+    <text x="200" y="597" font-size="10.5" text-anchor="middle" fill="#047857">별도의 "당산숲" 공간 없음</text>
+    <text x="200" y="620" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 고창 수동리 팽나무(1그루)</text>
+
+    <!-- B. 당산숲(숲 단위형) -->
+    <rect x="365" y="470" width="270" height="175" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
+    <text x="500" y="495" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#065f46">B. 당산숲 — 숲 단위형</text>
+    <text x="440" y="540" font-size="26" text-anchor="middle">🌳</text>
+    <text x="480" y="548" font-size="26" text-anchor="middle">🌳</text>
+    <text x="520" y="540" font-size="26" text-anchor="middle">🌳</text>
+    <text x="560" y="548" font-size="26" text-anchor="middle">🌳</text>
+    <text x="500" y="580" font-size="10.5" text-anchor="middle" fill="#047857">고목 군락 전체 = 당산숲</text>
+    <text x="500" y="597" font-size="10.5" text-anchor="middle" fill="#047857">그중 특정 나무 = 당산나무(신체)</text>
+    <text x="500" y="620" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 경산 자인 계정숲(538그루)</text>
+
+    <text x="350" y="660" font-size="10" text-anchor="middle" fill="#4b5563">※ A·B는 택일 관계 — 한 마을에 두 형태가 동시에 있지 않음</text>
+
+    <!-- 비보숲(별개 위치) -->
+    <rect x="720" y="430" width="240" height="240" rx="14" fill="#eef2f6" stroke="#64748b" stroke-width="2" filter="url(#shadow2)" />
+    <text x="840" y="455" font-size="12" font-weight="bold" fill="#334155">비보숲(裨補林) — 별개 위치</text>
+    <text x="790" y="500" font-size="24" text-anchor="middle">🌲</text>
+    <text x="840" y="510" font-size="24" text-anchor="middle">🌲</text>
+    <text x="890" y="500" font-size="24" text-anchor="middle">🌲</text>
+    <text x="840" y="545" font-size="10.5" text-anchor="middle" fill="#334155">풍수 결함(바람·수구) 보완용</text>
+    <text x="840" y="562" font-size="10.5" text-anchor="middle" fill="#334155">원칙상 당산숲과 별도 조성</text>
+    <text x="840" y="585" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 안동 하회마을 만송정 숲</text>
+    <text x="840" y="610" font-size="9" text-anchor="middle" fill="#9ca3af">(단, "당산숲+비보숲" 결합형도 존재)</text>
+
+    <!-- 당산숲 <-> 비보숲 관계선 -->
+    <path d="M 660 550 L 715 550" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="687" y="540" font-size="13" text-anchor="middle" fill="#6b7280">≠</text>
+</svg>
+</div>
 </theory>
 
 <analysis>
