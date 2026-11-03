@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 05:44:01 (KST, UTC+9)"
+updated: "2026-11-03 오후 05:58:56 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 05:44:01 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 05:58:56 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -51,9 +51,9 @@ html_view: "korean_dangsan_tree_village_worship.html"
 
 <div class="diagram-container" style="margin: 1.5rem 0; text-align: center;">
 <h4 style="margin-bottom: 0.5rem; color: var(--heading-color);">[마을 공간 배치도: 마을 범위를 기준으로 한 상당·중당·하당과 당산나무·당산숲·비보숲의 위치]</h4>
-<svg viewBox="0 0 1000 840" style="width: 100%; max-width: 1000px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg viewBox="0 0 1000 920" style="width: 100%; max-width: 1000px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
     <defs>
-        <marker id="arrow-brown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <marker id="arrow-brown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#78350f" />
         </marker>
         <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
@@ -61,75 +61,80 @@ html_view: "korean_dangsan_tree_village_worship.html"
         </filter>
     </defs>
 
+    <!-- 마을(촌락) 전체 범위 라벨: 경계 박스 바깥 상단 여백에 배치(겹침 방지) -->
+    <text x="940" y="412" font-size="13" font-weight="bold" fill="#4b5563" text-anchor="end">마을(촌락) 전체 범위 — 점선 경계</text>
+
     <!-- 산(상당) -->
     <polygon points="400,20 580,180 220,180" fill="#e7e2d3" stroke="#92826a" stroke-width="2" filter="url(#shadow2)" />
-    <text x="400" y="90" font-size="30" text-anchor="middle">⛰️</text>
-    <rect x="280" y="112" width="240" height="58" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="2" filter="url(#shadow2)" />
-    <text x="400" y="134" font-size="13" font-weight="bold" text-anchor="middle" fill="#78350f">상당(上堂)</text>
-    <text x="400" y="154" font-size="10.5" text-anchor="middle" fill="#92400e">산신 · 마을 뒷산 · 마을 범위 밖</text>
+    <text x="400" y="92" font-size="34" text-anchor="middle">⛰️</text>
+    <rect x="260" y="114" width="280" height="66" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="2" filter="url(#shadow2)" />
+    <text x="400" y="142" font-size="16" font-weight="bold" text-anchor="middle" fill="#78350f">상당(上堂)</text>
+    <text x="400" y="165" font-size="13" text-anchor="middle" fill="#92400e">산신 · 마을 뒷산 · 마을 범위 밖</text>
 
     <!-- 상당 -> 중당 경로 -->
-    <path d="M 430 180 C 480 230, 520 260, 560 290" fill="none" stroke="#78350f" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrow-brown)" />
+    <path d="M 430 180 C 480 230, 520 262, 560 298" fill="none" stroke="#78350f" stroke-width="3" stroke-dasharray="6,5" marker-end="url(#arrow-brown)" />
 
     <!-- 중당 -->
-    <rect x="520" y="295" width="230" height="58" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="2" filter="url(#shadow2)" />
-    <text x="635" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#713f12">중당(中堂)</text>
-    <text x="635" y="337" font-size="10.5" text-anchor="middle" fill="#854d0e">고갯길 · 마을 범위 밖(경유 지점)</text>
+    <rect x="505" y="303" width="260" height="66" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="2" filter="url(#shadow2)" />
+    <text x="635" y="331" font-size="16" font-weight="bold" text-anchor="middle" fill="#713f12">중당(中堂)</text>
+    <text x="635" y="354" font-size="13" text-anchor="middle" fill="#854d0e">고갯길 · 마을 범위 밖(경유 지점)</text>
 
     <!-- 중당 -> 마을 경계 진입 경로 -->
-    <path d="M 580 353 C 545 378, 520 396, 500 410" fill="none" stroke="#78350f" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrow-brown)" />
-    <text x="640" y="390" font-size="10" fill="#78350f" text-anchor="middle">제의 이동 순서</text>
+    <path d="M 580 369 C 545 394, 520 406, 500 420" fill="none" stroke="#78350f" stroke-width="3" stroke-dasharray="6,5" marker-end="url(#arrow-brown)" />
+    <text x="660" y="400" font-size="13" fill="#78350f" text-anchor="middle">제의 이동 순서</text>
 
     <!-- 마을(촌락) 전체 범위 경계 -->
-    <rect x="60" y="410" width="880" height="400" rx="16" fill="#fbfbf9" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="8,5" />
-    <text x="850" y="434" font-size="11.5" font-weight="bold" fill="#4b5563" text-anchor="end">마을(촌락) 전체 범위 — 점선 경계</text>
+    <rect x="50" y="420" width="900" height="460" rx="18" fill="#fbfbf9" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="9,6" />
 
     <!-- 하당: 마을 입구 또는 중앙 -->
-    <rect x="90" y="430" width="820" height="36" rx="6" fill="#f3f4ee" stroke="#9ca3af" stroke-width="2" />
-    <text x="500" y="453" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">하당(下堂) — 마을 "입구" 또는 "중앙"(마을마다 다름, 3.7절 표 참조)</text>
+    <rect x="80" y="440" width="840" height="48" rx="6" fill="#f3f4ee" stroke="#9ca3af" stroke-width="2" />
+    <text x="500" y="470" font-size="15" font-weight="bold" fill="#374151" text-anchor="middle">하당(下堂) — 마을 "입구" 또는 "중앙"(마을마다 다름, 3.7절 표 참조)</text>
 
     <!-- A. 당산나무(단일 노거수형) -->
-    <rect x="90" y="476" width="300" height="170" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
-    <text x="240" y="500" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#065f46">A. 당산나무 — 단일 노거수형</text>
-    <text x="240" y="543" font-size="32" text-anchor="middle">🌳</text>
-    <text x="240" y="580" font-size="10.5" text-anchor="middle" fill="#047857">한 그루가 곧 신체(神體)</text>
-    <text x="240" y="597" font-size="10.5" text-anchor="middle" fill="#047857">별도의 "당산숲" 공간 없음</text>
-    <text x="240" y="618" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 고창 수동리 팽나무(1그루)</text>
+    <rect x="80" y="500" width="320" height="190" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
+    <text x="240" y="528" font-size="15" font-weight="bold" text-anchor="middle" fill="#065f46">A. 당산나무</text>
+    <text x="240" y="549" font-size="13" text-anchor="middle" fill="#065f46">단일 노거수형</text>
+    <text x="240" y="600" font-size="40" text-anchor="middle">🌳</text>
+    <text x="240" y="632" font-size="13" text-anchor="middle" fill="#047857">한 그루가 곧 신체(神體)</text>
+    <text x="240" y="654" font-size="13" text-anchor="middle" fill="#047857">별도의 "당산숲" 공간 없음</text>
+    <text x="240" y="678" font-size="12" text-anchor="middle" fill="#6b7280">예: 고창 수동리 팽나무(1그루)</text>
 
     <!-- B. 당산숲(숲 단위형) -->
-    <rect x="400" y="476" width="300" height="170" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
-    <text x="550" y="500" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#065f46">B. 당산숲 — 숲 단위형</text>
-    <text x="495" y="543" font-size="24" text-anchor="middle">🌳</text>
-    <text x="530" y="551" font-size="24" text-anchor="middle">🌳</text>
-    <text x="565" y="543" font-size="24" text-anchor="middle">🌳</text>
-    <text x="600" y="551" font-size="24" text-anchor="middle">🌳</text>
-    <text x="550" y="580" font-size="10.5" text-anchor="middle" fill="#047857">고목 군락 전체 = 당산숲</text>
-    <text x="550" y="597" font-size="10.5" text-anchor="middle" fill="#047857">그중 특정 나무 = 당산나무(신체)</text>
-    <text x="550" y="618" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 경산 자인 계정숲(538그루)</text>
+    <rect x="420" y="500" width="320" height="190" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
+    <text x="580" y="528" font-size="15" font-weight="bold" text-anchor="middle" fill="#065f46">B. 당산숲</text>
+    <text x="580" y="549" font-size="13" text-anchor="middle" fill="#065f46">숲 단위형</text>
+    <text x="508" y="598" font-size="30" text-anchor="middle">🌳</text>
+    <text x="554" y="610" font-size="30" text-anchor="middle">🌳</text>
+    <text x="600" y="598" font-size="30" text-anchor="middle">🌳</text>
+    <text x="646" y="610" font-size="30" text-anchor="middle">🌳</text>
+    <text x="580" y="632" font-size="13" text-anchor="middle" fill="#047857">고목 군락 전체 = 당산숲</text>
+    <text x="580" y="654" font-size="13" text-anchor="middle" fill="#047857">그중 특정 나무 = 당산나무(신체)</text>
+    <text x="580" y="678" font-size="12" text-anchor="middle" fill="#6b7280">예: 경산 자인 계정숲(538그루)</text>
 
     <!-- 마을 중심부(민가) -->
-    <rect x="710" y="476" width="200" height="170" rx="8" fill="#fafaf9" stroke="#9ca3af" stroke-width="2" filter="url(#shadow2)" />
-    <text x="810" y="500" font-size="12" font-weight="bold" text-anchor="middle" fill="#374151">마을 중심부</text>
-    <text x="760" y="548" font-size="26" text-anchor="middle">🏠</text>
-    <text x="810" y="556" font-size="26" text-anchor="middle">🏠</text>
-    <text x="860" y="548" font-size="26" text-anchor="middle">🏠</text>
-    <text x="810" y="590" font-size="10" text-anchor="middle" fill="#4b5563">민가 밀집 구역</text>
-    <text x="810" y="608" font-size="9.5" text-anchor="middle" fill="#6b7280">(실제 거주 공간)</text>
+    <rect x="760" y="500" width="160" height="190" rx="8" fill="#fafaf9" stroke="#9ca3af" stroke-width="2" filter="url(#shadow2)" />
+    <text x="840" y="528" font-size="14" font-weight="bold" text-anchor="middle" fill="#374151">마을 중심부</text>
+    <text x="800" y="602" font-size="30" text-anchor="middle">🏠</text>
+    <text x="840" y="614" font-size="30" text-anchor="middle">🏠</text>
+    <text x="880" y="602" font-size="30" text-anchor="middle">🏠</text>
+    <text x="840" y="650" font-size="13" text-anchor="middle" fill="#4b5563">민가 밀집 구역</text>
+    <text x="840" y="670" font-size="12" text-anchor="middle" fill="#6b7280">(실제 거주 공간)</text>
 
-    <text x="395" y="652" font-size="10" text-anchor="middle" fill="#4b5563">※ A·B는 택일 관계 — 한 마을에 두 형태가 동시에 있지 않음</text>
+    <text x="410" y="712" font-size="12.5" text-anchor="middle" fill="#4b5563">※ A·B는 택일 관계 — 한 마을에 두 형태가 동시에 있지 않음</text>
 
     <!-- 당산나무 입지 4유형 범례 -->
-    <rect x="90" y="660" width="820" height="36" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="3,3" />
-    <text x="500" y="673" font-size="10" font-weight="bold" text-anchor="middle" fill="#4b5563">당산나무 입지 4유형(동등 수준으로 보고됨): 마을 위쪽 · 입구 · 중앙(구심점 상징) · 들</text>
-    <text x="500" y="689" font-size="9" text-anchor="middle" fill="#9ca3af">"중앙"이 최다 빈도라는 통계적 근거는 확인되지 않음 — 본 그림은 입구·중앙(하당 범위)만 표시</text>
+    <rect x="80" y="724" width="840" height="56" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="3,3" />
+    <text x="500" y="746" font-size="13" font-weight="bold" text-anchor="middle" fill="#4b5563">당산나무 입지 4유형(동등 수준으로 보고됨): 마을 위쪽 · 입구 · 중앙(구심점 상징) · 들</text>
+    <text x="500" y="767" font-size="12" text-anchor="middle" fill="#9ca3af">"중앙"이 최다 빈도라는 통계적 근거는 확인되지 않음 — 본 그림은 입구·중앙(하당 범위)만 표시</text>
 
     <!-- 비보숲: 마을 경계 중 약한 방향 -->
-    <rect x="90" y="708" width="820" height="76" rx="8" fill="#eef2f6" stroke="#64748b" stroke-width="2" filter="url(#shadow2)" />
-    <text x="500" y="729" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">비보숲(裨補林) — 마을 경계 중 약한 방향(수구·바람길) 보완, 당산숲과는 별개 위치</text>
-    <text x="300" y="757" font-size="22" text-anchor="middle">🌲</text>
-    <text x="500" y="757" font-size="22" text-anchor="middle">🌲</text>
-    <text x="700" y="757" font-size="22" text-anchor="middle">🌲</text>
-    <text x="500" y="775" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 안동 하회마을 만송정 숲 (단, "당산숲+비보숲" 결합형도 존재)</text>
+    <rect x="80" y="796" width="840" height="98" rx="8" fill="#eef2f6" stroke="#64748b" stroke-width="2" filter="url(#shadow2)" />
+    <text x="500" y="821" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle">비보숲(裨補林) — 마을 경계 중 약한 방향(수구·바람길) 보완</text>
+    <text x="500" y="842" font-size="13" fill="#334155" text-anchor="middle">당산숲과는 별개 위치</text>
+    <text x="280" y="870" font-size="26" text-anchor="middle">🌲</text>
+    <text x="500" y="870" font-size="26" text-anchor="middle">🌲</text>
+    <text x="720" y="870" font-size="26" text-anchor="middle">🌲</text>
+    <text x="500" y="886" font-size="11.5" text-anchor="middle" fill="#6b7280">예: 안동 하회마을 만송정 숲 (단, "당산숲+비보숲" 결합형도 존재)</text>
 </svg>
 </div>
 </theory>
