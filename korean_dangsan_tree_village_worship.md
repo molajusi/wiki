@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오전 11:21:47 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:43:01 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:21:47 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:43:01 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -63,6 +63,17 @@ html_view: "korean_dangsan_tree_village_worship.html"
 ### 3.5 당산목 수종 분포
 당산목으로 쓰이는 수종은 느티나무·팽나무·소나무·은행나무·이팝나무·왕버들 등이 거론되며, 느티나무가 가장 흔하고 팽나무·소나무가 그 뒤를 잇는다는 경향이 복수의 지역 연구에서 확인됩니다 [[5]](#ref-5). 다만 이는 개별 지역 사례의 집계이며, 전국 단위의 통계적 분포 조사는 이번 조사로 확인되지 않았습니다(확인 불가로 명시). 고창 수동리 팽나무는 2008년 천연기념물로 지정되었으며 수령을 약 400년으로 추정하나 그 연원은 명확하지 않습니다 [[5]](#ref-5).
 
+#### 3.5.1 수종 선택 요인 — 상징성인가, 생태적 가용성인가
+당산목 수종이 그 수목 고유의 상징적 특별함 때문에 선택되었는지, 아니면 그 지역에서 구하기 쉬운(자생·활착이 쉬운) 생태적 조건 때문인지를 조사한 결과, **수종 선정의 의사결정 과정 자체를 직접 증언하는 1차 사료나 민족지적 연구는 확인되지 않았습니다**(확인 불가로 명시). 다만 간접 근거는 생태적 선행 요인 쪽에 더 많이 모입니다.
+
+- **생태적 적합성을 명시한 학술 자료**: 전통마을숲의 GIS-DB 구축 연구는 느티나무·소나무가 많이 나타나는 이유를 "경관적으로 우수하고 수명이 길며, 환경적응력이 뛰어난 수목으로 예전부터 선호하였기 때문으로 판단된다"고 설명합니다 [[7]](#ref-7). 즉 상징성보다 경관성·수명·환경적응력을 1차 요인으로 제시합니다.
+- **지역별 분포의 생태적 함의**: 중부 이북에서는 느티나무, 영호남 남부에서는 팽나무가 당산목 역할을 많이 했다는 지역 차이가 확인됩니다. 팽나무는 바닷바람에 강해 남부 해안·포구 지역에서 선호되었고, 풍수상 약한 지점을 보강하는 비보림·방풍림 기능으로도 많이 심어졌습니다(보조 출처) [[8]](#ref-8). 이는 수종 선택이 지역 기후에 맞는 가용 수종을 따른 결과일 가능성을 시사합니다.
+- **자생·활착 용이성**: 자생(nativeness)은 "그 지역의 토지·환경 조건에 맞춰 저절로 살아가는 것"으로 정의되며, 느티나무는 자생수목 활착 실험에서 90% 이상의 활착률을 보인 수종으로 보고됩니다 [[9]](#ref-9). 신목 자체를 다룬 연구는 아니나, 느티나무가 생태적으로 그 자리에서 자라기 쉬운 수종이었음을 뒷받침합니다.
+- **"장수했기 때문에 신성해졌다"는 인과 방향**: 삼척 도계리 긴잎느티나무 등 개별 항목들은 느티나무를 장수 수종으로 설명하며, 노거수로 자란 결과로 서낭당나무·당산목의 지위를 얻는 서사 구조를 보입니다 [[6]](#ref-6). "이 수종이 원래부터 특별해서 심었다"는 선택 당시의 의도적 상징 부여를 증언하는 자료는 확인되지 않았습니다.
+- **반론 여지**: 수목숭배 항목은 식물을 "생명 연장의 양식이자 생존 가능성을 가늠하는 지표"로 설명해 상징적 의미 부여의 또 다른 축을 제시하나, 이 역시 "장수·강인함(생태적 특성)이 상징성의 근거"라는 점에서 생태적 선행 요인과 상충하지 않습니다 [[2]](#ref-2).
+
+**종합**: 확보된 자료 범위에서는 "그 지역에서 자생·활착이 쉽고 수명이 길어 자연히 거목으로 자란 나무가, 그 결과로서 신성한 당산목이 되었다"는 생태적 선행 → 상징적 후행 구조를 지지하는 간접 증거가 상징성 우선론보다 많습니다. 다만 수종 선정을 직접 검증한 1차 연구가 없어 확정된 정설로는 단정할 수 없습니다.
+
 ### 3.6 학술적 맥락
 수목숭배는 신석기 이후 농경 생활과 함께 발전했다고 보는 연구가 있습니다. 백두대간 지역의 산림제례 연구는 서낭제·당산제·별신굿·장승제·기우제를 "나무나 산을 숭배하는 제례의식"으로 함께 정리하며, 최근에는 종교 환경의 변화와 농산촌 인구 감소로 대부분 간소화되었다고 평가합니다 [[6]](#ref-6).
 </analysis>
@@ -84,7 +95,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무)의 데이터와 교차 검증을 거쳐 작성되었습니다. 이 raw 파일은 솟대·장승 조사와 함께 수집되었으며, 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF를 보조 출처로 구분해 기록합니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무)와 <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(3.5.1절 수종 선택 요인 보강 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF를 보조 출처로 구분해 기록합니다. 3.5.1절의 수종 선정 의사결정 과정 자체를 다룬 1차 연구는 확인 불가로 명시됩니다.
 </div>
 
 <ol class="reference-list">
@@ -94,4 +105,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
     <li id="ref-4">[4] 전북일보(jjan.kr) 외 지역 언론. 〈김제 동령마을·화순 쌍봉마을·창원 자여마을 당산제 사례〉. <a href="https://www.jjan.kr/articleAmp/20120126424871" target="_blank">웹링크</a></li>
     <li id="ref-5">[5] KoreaScience 학술 PDF 복수(지역 당산목 수종 조사). <a href="https://koreascience.kr/article/CFKO200934939692964.pdf" target="_blank">웹링크</a></li>
     <li id="ref-6">[6] KoreaScholar. 〈Review on the Traditional Sacrifice Cultures Related to Forests within the Baekdoo-daegans Region〉. <a href="https://db.koreascholar.com/Article/Detail/241662" target="_blank">웹링크</a></li>
+    <li id="ref-7">[7] KoreaScience 학술 PDF. 〈전통마을 숲의 GIS-DB구축 및 분포 특성 분석에 관한 연구〉. <a href="https://koreascience.kr/article/JAKO201311637857073.pdf" target="_blank">웹링크</a></li>
+    <li id="ref-8">[8] 지역 문화·생태 자료 복수(제주 성읍리 느티나무 및 팽나무 군 외). <a href="https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC_%EC%84%B1%EC%9D%8D%EB%A6%AC_%EB%8A%90%ED%8B%B0%EB%82%98%EB%AC%B4_%EB%B0%8F_%ED%8C%BD%EB%82%98%EB%AC%B4_%EA%B5%B0" target="_blank">웹링크</a></li>
+    <li id="ref-9">[9] 오구균 외. 한국환경생태학회지(자생수목 그루터기 활착 실험). <a href="https://koreascience.kr/article/CFKO201322358467576.pdf" target="_blank">웹링크</a></li>
 </ol>
