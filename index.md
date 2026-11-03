@@ -2,7 +2,7 @@
 title: "지식 위키 메인 색인"
 subtitle: "Knowledge Wiki Main Index"
 created: "2026-08-22 오후 12:55:07 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:20:34 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:29:13 (KST, UTC+9)"
 category: "전체 메인 색인 및 시스템 관제"
 html_view: "index.html"
 ---
@@ -11,7 +11,7 @@ html_view: "index.html"
 *Knowledge Wiki Main Index*
 
 **카테고리**: 전체 메인 색인 및 시스템 관제  
-*최초 작성일시: 2026-08-22 오후 12:55:07 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:20:34 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 12:55:07 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:29:13 (KST, UTC+9)*
 
 이 위키는 지식 관리 및 정보 보좌 에이전트(자네)가 조사·구조화한 지식을 2계층 아키텍처(마크다운 SSOT + HTML5 뷰)로 축적하는 저장소이다. 각 주제는 `.md` 정본과 `.html` 뷰가 쌍을 이루며, 하단 두 대분류 아래 세부 카테고리로 분류된다: (1) 위키 자체의 운영·관리 규정, (2) 조사·집필된 지식 콘텐츠. 지식 콘텐츠는 다시 기술 및 학술, 한국 전근대 공간·도시·제도사, 동아시아 역사언어학 및 어원 연구, 서사학·설화·민속 심리학, 게임 디자인 및 분석 5개 카테고리로 나뉜다.
 
@@ -63,6 +63,7 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
 - [📄 우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html)
 - [📄 선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html)
 - [📄 노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)
+- [📄 한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html)
 - [📄 한국 전통 부엌 금기담의 위생공학 및 생태학적 분석](korean_traditional_kitchen_taboos.html)
 
 ### 게임 디자인 및 분석 (Game Design & Taxonomy)

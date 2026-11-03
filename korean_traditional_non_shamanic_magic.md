@@ -2,7 +2,7 @@
 title: "한국 전통 비도교 비무속 주술 및 마법 체계"
 subtitle: "Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence"
 created: "2026-08-31 오후 09:16:00 (KST, UTC+9)"
-updated: "2026-11-03 오전 11:21:00 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:29:13 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Folk Magic", "Anthropology", "Korean History", "Sympathetic Magic", "Geomantic Bibo", "Zhuyou", "한국역사민속학", "인류학"]
 html_view: "korean_traditional_non_shamanic_magic.html"
@@ -12,9 +12,9 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 *Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:21:00 (KST, UTC+9)*
+*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:29:13 (KST, UTC+9)*
 
-본 문서는 한국 전통 사회에서 도교적 방술(부적, 초제, 선도술 등)과 무속/샤머니즘(무당의 강신, 굿거리, 신내림 공수, 신칼·방울 의례 등)을 제외하고, 고대 삼한부터 조선 시대에 이르기까지 실존했던 자생적 민간 자영 양법(양밥), 가신신앙 결계, 풍수 비보, 전통 의학 축유술, 유교 국가 예제 벽사, 불교·밀교 다라니 결계 및 생업·군사 주술의 74가지 실천 사례와 작동 원리를 1차 역사 사료 및 고고학 유물에 근거하여 체계화한 지식 문서입니다.
+본 문서는 한국 전통 사회에서 도교적 방술(부적, 초제, 선도술 등)과 무속/샤머니즘(무당의 강신, 굿거리, 신내림 공수, 신칼·방울 의례 등)을 제외하고, (도교적 방술 자체는 별도 문서 [한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html)에서 다룹니다) 고대 삼한부터 조선 시대에 이르기까지 실존했던 자생적 민간 자영 양법(양밥), 가신신앙 결계, 풍수 비보, 전통 의학 축유술, 유교 국가 예제 벽사, 불교·밀교 다라니 결계 및 생업·군사 주술의 74가지 실천 사례와 작동 원리를 1차 역사 사료 및 고고학 유물에 근거하여 체계화한 지식 문서입니다.
 
 ---
 
@@ -412,6 +412,9 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 ### 로컬 원천 데이터
 * [한국 전통 비도교·비무속 주술 및 마법 체계 종합 학술 대전 원문](file:///Z:/wiki/raw/20260831_korean_traditional_non_shamanic_magic_raw.txt) (`raw/20260831_korean_traditional_non_shamanic_magic_raw.txt`, 733줄, 67,195 바이트)
 * [마을숲 보강 조사 원문](raw/20261103_other_korean_village_shrine_objects_raw.txt) (`raw/20261103_other_korean_village_shrine_objects_raw.txt`, B절 — 5.1절 마을숲 보강의 근거)
+
+### 연계 위키 문서
+* [한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html): 본 문서가 범주적으로 제외한 도교적 방술(부적·초제·선도술)을 정면으로 다루는 보완 문서.
 
 ### 1차 역사 사료 및 관찬 문헌
 * 《삼국사기(三國史記)》 (김부식, 1145) - 신라본기, 백제본기, 열전

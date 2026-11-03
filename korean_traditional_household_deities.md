@@ -2,7 +2,7 @@
 title: "한국 전통 가신신앙 및 가택 수호 체계"
 subtitle: "Korean Traditional Household Deity Worship and Domestic Sanctuary Systems: Spatiality, Priesthood, and Ritual Artifacts"
 created: "2026-09-05 오후 08:11:09 (KST, UTC+9)"
-updated: "2026-09-07 오후 01:40:52 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:29:13 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Household Deities", "Anthropology", "Korean Folklore", "Housewife Priesthood", "Spatial Sanctuary", "Material Culture", "한국민속학", "가신신앙", "가정신앙"]
 html_view: "korean_traditional_household_deities.html"
@@ -12,7 +12,7 @@ html_view: "korean_traditional_household_deities.html"
 *Korean Traditional Household Deity Worship and Domestic Sanctuary Systems: Spatiality, Priesthood, and Ritual Artifacts*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-09-05 오후 08:11:09 (KST, UTC+9) | 최종 수정일시: 2026-09-07 오후 01:40:52 (KST, UTC+9)*
+*최초 작성일시: 2026-09-05 오후 08:11:09 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:29:13 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 전통 사회에서 가옥(家屋)이라는 사적 생활 공간을 무대로 하여, 주부(안주인) 중심의 자영적(自營的) 사제권, 가택 처소별 신격 좌정 질서, 곡령(穀靈) 숭배의 물질 조형학, 세시 안택고사 및 서사무가(성주풀이·문전본풀이)를 포괄하는 가신신앙(가정신앙)의 총체적 구조와 원천 사료를 체계화한 지식 문서입니다.
@@ -246,7 +246,7 @@ html_view: "korean_traditional_household_deities.html"
 고대 농경 사회에서 우물은 지하의 지모신(地母神)과 천상의 천신(天神)이 감응하는 신성한 자궁(Womb)으로 인식되었습니다. 《삼국유사》 기이편에 기록된 신라 시조 혁거세왕의 **'나정(蘿井)'** 알 탄생 설화와 시조비 알영부인의 **'알영정(閼英井)'** 용 옆구리 탄생 설화는, 우물이 국가 시조를 배출하는 우주적 통로이자 생명의 근원처였음을 실증합니다. 우물물은 천지 음양이 교합하여 솟아난 가장 신성한 생명수로 숭배되었습니다.
 
 #### 2) 고려시대: 불교·도교 결합 및 공동체 수신(水神)·용왕제
-고려시대에는 불교의 '청정수(감로수)' 공양 및 관정의식(灌頂儀式), 도교의 '천일진정(天一眞精)' 사상이 토착 물 신앙과 융합되었습니다. 마을 공동 우물에 금줄을 치고 용왕(龍王)과 수신에게 제사를 올리는 우물고사(정제, 井祭)가 정착되었으며, 정화수는 물질적 오염뿐만 아니라 영혼의 업장(業障)을 씻어내고 수명을 연장하는 소죄(消罪)와 장수의 성수로 관념화되었습니다.
+고려시대에는 불교의 '청정수(감로수)' 공양 및 관정의식(灌頂儀式), 도교의 '천일진정(天一眞精)' 사상이 토착 물 신앙과 융합되었습니다. 이 도교적 '천일진정' 사상은 [한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html) 3.1절에서 소격서·칠성신앙·신선사상 등 다른 도교 요소와 함께 교차 분석합니다. 마을 공동 우물에 금줄을 치고 용왕(龍王)과 수신에게 제사를 올리는 우물고사(정제, 井祭)가 정착되었으며, 정화수는 물질적 오염뿐만 아니라 영혼의 업장(業障)을 씻어내고 수명을 연장하는 소죄(消罪)와 장수의 성수로 관념화되었습니다.
 
 #### 3) 조선시대: 가신 비손의 핵심 성물화 및 국가 전례·의학적 공인
 유교적 종법 질서가 확립되면서 사대부 남성의 사당 제례에서 배제된 여성(주부)들은 가택 내 안방·부엌·장독대에 정화수를 올리며 자영적 사제권을 확립했습니다.
@@ -408,4 +408,5 @@ html_view: "korean_traditional_household_deities.html"
 
 ### 연계 위키 문서
 * [한국 전통 비도교 비무속 주술 및 마법 체계](korean_traditional_non_shamanic_magic.html): 민간 자영 양법, 결계, 풍수 비보, 전통의학 축유술 등 비무속 생활주술 총람.
+* [한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html): 정화수의 '천일진정' 사상을 포함한 소격서·칠성신앙·부적·십장생 등 도교적 요소 총람.
 * [메인 색인 페이지](index.html): 위키 전체 지식 인덱스.

@@ -2,7 +2,7 @@
 title: "메트로이드배니아 및 카토그래피 게임 디자인 종합 연구 아카이브"
 subtitle: "Metroidvania & Cartography Game Design Comprehensive Research Archive"
 created: "2026-08-24 오후 12:26:56 (KST, UTC+9)"
-updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:29:13 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cartography", "Level Design", "Metroidbrainia", "Game Taxonomy", "Academic Research"]
 html_view: "metroidvania_and_cartography_game_design.html"
@@ -12,9 +12,7 @@ html_view: "metroidvania_and_cartography_game_design.html"
 *Metroidvania & Cartography Game Design Comprehensive Research Archive*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-08-24 오후 12:26:56 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
-
-P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*
+*최초 작성일시: 2026-08-24 오후 12:26:56 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:29:13 (KST, UTC+9)*
 
 <context>
 본 문서는 메트로이드배니아 장르와 비디오 게임 내 지도 제작학(Cartography), 공간 인지 및 레벨 디자인 구조, 2차원 사이드뷰와 축척 지도의 위상 불일치 해결 기제, 비(非)중세 판타지 배경의 던전 대체 설계 및 지식 기반 탐험(Metroidbrainia)에 관한 학술 문헌과 개발 사례를 체계적으로 집대성한 지식 아카이브입니다.
@@ -198,7 +196,7 @@ Kyzrati(《Cogmind》 개발자, 2021)는 'Map Comments and Log Notes' 연구를
 | :--- | :--- | :--- | :--- |
 | **자연 생태계 및 외계 환경** | 가혹한 기후, 독성 식생, 심해, 용암 지대 등 자연물로 구성된 유기적 지형 | **환경 저항력 및 생존 장비:**<br>- 고온 구역 → 방열복(Varia Suit)<br>- 심해 수압/저항 → 중력복(Gravity Suit)<br>- 유독성 늪지 → 수질 정화 기믹 또는 공중 활강 스킬 | 《메트로이드 시리즈(Metroid Series)》(1986~), 《오리 시리즈(Ori Series)》(2015/2020) |
 | **기능성 인공 구조물** | 본래 실용적 목적(연구, 군사, 생산)이 있었으나 사고로 봉쇄된 시설 | **보안 및 산업 인프라 제어:**<br>- 잠긴 방화벽 → 보안 인가 카드(Keycard)<br>- 작동 중단 구역 → 발전기 재가동 및 전력망 복구<br>- 붕괴된 통로 → 산업용 폭약(C4), 배관 덕트 해킹 | 《섀도우 컴플렉스(Shadow Complex)》(2009), 《더 미이라 디마스터드(The Mummy Demastered)》(2017), 《고스트 송(Ghost Song)》(2022), 《하이쿠 더 로봇(Haiku, the Robot)》(2022) |
-| **문화적·신화적 공간** | 서구 판타지를 탈피한 비서구권 토착 신화 및 종교관 기반 공간 | **영적 상태 전환 및 전통 무예:**<br>- 도교 사당/연금술 시설 → 부적(Talisman), 기(Chi) 조작<br>- 저승/이승 차원 분리 → 차원 전환 기믹, 루차 리브레 기술 | 《나인 솔즈(Nine Sols)》(2024), 《과카밀레!(Guacamelee!)》(2013) |
+| **문화적·신화적 공간** | 서구 판타지를 탈피한 비서구권 토착 신화 및 종교관 기반 공간 | **영적 상태 전환 및 전통 무예:**<br>- 도교 사당/연금술 시설 → 부적(Talisman), 기(Chi) 조작<br>- 저승/이승 차원 분리 → 차원 전환 기믹, 루차 리브레 기술 | 《나인 솔즈(Nine Sols)》(2024, 도교 모티프의 역사적 배경은 [한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html) 3.4절 참조), 《과카밀레!(Guacamelee!)》(2013) |
 | **개념적·인지적 도메인** | 물리적 건축물이 아닌 텍스트, 규칙, 생체 네트워크 자체를 탐색 공간화 | **플레이어의 지식 축적 및 정보 해독:**<br>- 숨겨진 커맨드 발견 → 미지의 조작법 입력<br>- 암호 체계 해독 → 환경 내 상호작용 규칙 갱신 | 《튜닉(Tunic)》(2022), 《애니멀 웰(Animal Well)》(2024), 《액시엄 버지 2(Axiom Verge 2)》(2021) |
 
 ## 6. 용어 정리 및 정의
