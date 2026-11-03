@@ -2,7 +2,7 @@
 title: "솟대 신앙과 형태학"
 subtitle: "Sotdae: The Korean Village Totem Pole and Its Origins"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 03:51:33 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:53:19 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Sotdae", "Totem Pole", "Sodo", "Korean Folk Religion", "Village Guardian"]
 html_view: "korean_sotdae_village_totem_pole.html"
@@ -12,7 +12,7 @@ html_view: "korean_sotdae_village_totem_pole.html"
 *Sotdae: The Korean Village Totem Pole and Its Origins*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:51:33 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:53:19 (KST, UTC+9)*
 
 <context>
 본 문서는 마을 입구에 세워 새를 얹은 장대형 신앙물인 솟대를 한국민족문화대백과사전(encykorea.aks.ac.kr)의 "솟대" 항목을 1차 신뢰 출처로 다룹니다. 통설(소도 기원설)뿐 아니라 이를 반박하는 학계 소수 견해(송화섭 교수의 "한국에는 솟대가 없다")도 함께 병기해 단일 견해로 단정하지 않습니다. 같은 마을 공간에 공존하는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -70,7 +70,7 @@ html_view: "korean_sotdae_village_totem_pole.html"
 솟대쟁이패는 솟대를 세운 놀이판에서 곡예를 펼치던 유랑 예인집단으로, 솟대가 신앙물을 넘어 공연 문화의 무대 장치로도 쓰였음을 보여줍니다 [[2]](#ref-2).
 
 ### 3.5 상당·중당·하당 위계에서의 위치
-일부 지역 자료는 마을 제의 공간을 상당(산신, 마을 뒷산)·중당·하당(마을 입구, 축제적 의례)으로 나누며, 솟대는 당산나무·장승·돌탑과 함께 주로 **하당** 쪽에 배치되는 신앙 대상으로 분류됩니다. 상세한 위계 구조와 사례(고령 무계마을, 순천 낙안읍성)는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html) 3.8절에서 다룹니다.
+일부 지역 자료는 마을 제의 공간을 상당(산신, 마을 뒷산)·중당·하당(마을 입구, 축제적 의례)으로 나누며, 솟대는 당산나무·장승·돌탑과 함께 주로 **하당** 쪽에 배치되는 신앙 대상으로 분류됩니다. 상세한 위계 구조와 사례(고령 무계마을, 순천 낙안읍성)는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html) 3.7절에서 다룹니다.
 </analysis>
 
 ## 4. 용어 정리 및 정의

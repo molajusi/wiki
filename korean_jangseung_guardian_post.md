@@ -2,7 +2,7 @@
 title: "장승 신앙과 경계 수호 체계"
 subtitle: "Jangseung: Korean Village and Temple Guardian Posts"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 03:51:33 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:53:19 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Jangseung", "Guardian Post", "Beoksu", "Korean Folk Religion", "Boundary Marker"]
 html_view: "korean_jangseung_guardian_post.html"
@@ -12,7 +12,7 @@ html_view: "korean_jangseung_guardian_post.html"
 *Jangseung: Korean Village and Temple Guardian Posts*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:51:33 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:53:19 (KST, UTC+9)*
 
 <context>
 본 문서는 마을·사찰 입구에 세운 목상·석상인 장승을 한국민족문화대백과사전(encykorea.aks.ac.kr)의 "장승" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에 공존하는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html), [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 한국 마을 경계·수호 신앙 4부작을 이룹니다. 재질(석상)은 유사하나 불교 도상이 결합된 [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html), 그리고 매체가 다른 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html)도 함께 참조할 수 있습니다.
@@ -65,7 +65,7 @@ html_view: "korean_jangseung_guardian_post.html"
 - **영암 메밀방죽 옆 장승**: 1986년 전라남도 민속자료로 지정된 석장생으로, 사찰 경역을 표시하던 장승으로 추정됩니다 [[9]](#ref-9).
 
 ### 3.4 상당·중당·하당 위계에서의 위치
-디지털논산문화대전은 장승을 상당신과 하당신 중 **하당신**에 해당하는 것으로 분류합니다. 상당(산신, 마을 뒷산)·중당·하당(마을 입구, 축제적 의례)의 위계 구조와 고령 무계마을·순천 낙안읍성의 구체적 사례는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html) 3.8절에서 다룹니다.
+디지털논산문화대전은 장승을 상당신과 하당신 중 **하당신**에 해당하는 것으로 분류합니다. 상당(산신, 마을 뒷산)·중당·하당(마을 입구, 축제적 의례)의 위계 구조와 고령 무계마을·순천 낙안읍성의 구체적 사례는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html) 3.7절에서 다룹니다.
 </analysis>
 
 ## 4. 용어 정리 및 정의
