@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 03:43:01 (KST, UTC+9)"
+updated: "2026-11-03 오후 03:49:23 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:43:01 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 03:49:23 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -76,6 +76,28 @@ html_view: "korean_dangsan_tree_village_worship.html"
 
 ### 3.6 학술적 맥락
 수목숭배는 신석기 이후 농경 생활과 함께 발전했다고 보는 연구가 있습니다. 백두대간 지역의 산림제례 연구는 서낭제·당산제·별신굿·장승제·기우제를 "나무나 산을 숭배하는 제례의식"으로 함께 정리하며, 최근에는 종교 환경의 변화와 농산촌 인구 감소로 대부분 간소화되었다고 평가합니다 [[6]](#ref-6).
+
+### 3.7 당산숲과 비보숲의 구분
+당산숲과 비보숲은 기능이 다른 별개의 범주로 설명됩니다. **당산숲**은 당산나무와 당집(堂)이 있는 숲 자체로, 신앙 대상이자 매년 당산제를 지내는 제의 공간입니다. **비보숲**은 풍수지리상 지형의 결함(바람이 드나드는 허(虛)한 방향, 수구水口의 허술함 등)을 인위적으로 보완하기 위해 별도로 조성한 숲입니다. 안동 하회마을의 만송정 숲이 대표 사례로, 풍수상 길지이지만 서쪽·북쪽 사이가 낮아 겨울철 북서풍 피해를 받던 지점에 소나무 숲을 조성해 보완했습니다 [[10]](#ref-10).
+
+최재웅 외(2009, 낙안읍성 당산숲 연구)에 따르면 "전통 원리상 당산숲 이외에 비보 기능이 필요할 때에는 별도로 장소를 달리하여 비보숲을 조성하는 것이 원칙"입니다 [[11]](#ref-11) — 즉 원칙적으로는 서로 다른 기능의 별개 숲입니다. 다만 실제로는 두 기능이 한 숲에 겸해지는 **"당산숲+비보숲" 결합형**도 확인됩니다(고흥 신금마을 사례, 사천시 해안마을 연구) [[11]](#ref-11). 이는 기존 위키의 [한국 전통 비도교 비무속 주술 및 마법 체계](korean_traditional_non_shamanic_magic.html) 5.1절("수구 차단 비보 숲")이 다루는 비보숲 개념과 직접 연결되는 지점입니다.
+
+사용자가 지목한 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰"(2009년 한국조경학회 추계학술대회 발표자료집, 90~93쪽) 원문은 이번 조사로 확보하지 못했으며, 서지 정보와 2차 인용만 확인되었습니다(확인 불가로 명시) [[11]](#ref-11).
+
+### 3.8 상당·중당·하당 위계 구조
+당산이라는 명칭은 좁게는 신체(神體)가 나무인 특정 제의 지점만을, 넓게는 한 마을의 제의 체계 전체를 가리키는 중의적 용어입니다. 다수의 마을은 제의 공간을 **상당(上堂)·중당(中堂)·하당(下堂)**이라는 수직적 위계로 나눕니다.
+
+| 구분 | 위치 | 신체·신앙 대상 | 성격 |
+| :--- | :--- | :--- | :--- |
+| 상당 | 마을 뒷산 | 산신(山神) | 엄숙하고 정숙한 의례 |
+| 중당 | 고갯길·중간 지점 | 지역별로 다름(예: 소나무) | 상당과 하당을 잇는 경유 지점 |
+| 하당 | 마을 입구·중앙 | 당산나무·장승·솟대(짐대)·돌탑·수구맥이 등 | 떠들썩한 축제적 의례 |
+
+- **고령 무계마을**: 오래된 소나무가 있는 상당, 고갯길 언저리의 중당, 마을 정자가 있는 하당 순서로 제사를 지내며, 동제는 새벽 1시 30분경 상당에서 시작해 중당·하당 순으로 이어집니다 [[12]](#ref-12).
+- **순천 낙안읍성**: 읍성 안 동내리·서내리·남내리 3개 마을이 각각 상당을 보유하고, 하당은 장터의 은행나무가 공동으로 맡는 구조입니다(이 사례에서는 중당이 별도로 확인되지 않음) [[12]](#ref-12).
+- **당산나무·장승·솟대의 위계상 위치**: 검색된 지역 자료에 따르면 당산나무·장승·솟대는 주로 **하당(또는 중당)** 쪽에 배치되는 신앙 대상입니다. 디지털논산문화대전은 장승을 "상당신과 하당신 중 하당신"으로 분류합니다 [[13]](#ref-13). 앞서 조사한 남원 서천리 당산(당산나무+돌장승+솟대 복합 사례, [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html) 3.3절·[솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html) 3.3절 참조)도 이 하당형 복합 구조의 사례로 재해석할 수 있습니다.
+
+**구조의 비고정성**: 상당·중당·하당을 모두 갖춘 마을(고령 무계마을)과 상당·하당 2단계만 갖춘 마을(낙안읍성)이 공존해, 전국 공통의 고정된 구조는 아닙니다. 장승을 하당신으로 분류하는 근거도 지역 문화대전 1건에 근거하며, 전국 단위 학술적 합의로 일반화하기에는 추가 교차검증이 필요합니다(확인 불가로 명시).
 </analysis>
 
 ## 4. 용어 정리 및 정의
@@ -89,13 +111,18 @@ html_view: "korean_dangsan_tree_village_worship.html"
 | **당산석** | 당산나무와 함께 당산을 구성하는 돌. 당산수(나무)와 당산석(돌)의 결합이 전형적 구성. |
 | **매굿** | 당산제 의례 중 풍물을 치며 진행하는 절차. |
 | **동제** | **Dongje**. 마을 단위로 지내는 제사의 통칭. 당산제·서낭제 등을 포괄하는 상위 개념으로 쓰임. |
+| **당산숲** | 당산나무와 당집이 있는 신앙 중심의 숲. 매년 당산제를 지내는 제의 공간. |
+| **비보숲** | **Biboforest**(裨補林). 풍수지리상 지형의 결함(바람·수구의 허술함)을 인위적으로 보완하기 위해 조성한 숲. 원칙상 당산숲과 별개이나 결합형도 존재. |
+| **상당** | 마을 뒷산에 위치한 산신을 모시는 엄숙한 제의 공간. 상당·중당·하당 위계의 최상위. |
+| **중당** | 고갯길·중간 지점에 위치한 제의 공간. 상당과 하당을 잇는 경유 지점. |
+| **하당** | 마을 입구·중앙에 위치한 축제적 제의 공간. 당산나무·장승·솟대·돌탑 등이 신앙 대상이 됨. |
 
 ## 5. 참고 자료 및 원천 데이터 출처
 *References & Raw Sources*
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무)와 <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(3.5.1절 수종 선택 요인 보강 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF를 보조 출처로 구분해 기록합니다. 3.5.1절의 수종 선정 의사결정 과정 자체를 다룬 1차 연구는 확인 불가로 명시됩니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무), <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(3.5.1절 수종 선택 요인 보강 근거), <code><a href="raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt">raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt</a></code>(3.7~3.8절 당산숲·비보숲 및 상당·중당·하당 구조 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF를 보조 출처로 구분해 기록합니다. 3.5.1절의 수종 선정 의사결정 과정, 3.7절의 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰" 원문, 3.8절의 전국 단위 상당·중당·하당 분포는 확인 불가로 명시됩니다.
 </div>
 
 <ol class="reference-list">
@@ -108,4 +135,8 @@ html_view: "korean_dangsan_tree_village_worship.html"
     <li id="ref-7">[7] KoreaScience 학술 PDF. 〈전통마을 숲의 GIS-DB구축 및 분포 특성 분석에 관한 연구〉. <a href="https://koreascience.kr/article/JAKO201311637857073.pdf" target="_blank">웹링크</a></li>
     <li id="ref-8">[8] 지역 문화·생태 자료 복수(제주 성읍리 느티나무 및 팽나무 군 외). <a href="https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC_%EC%84%B1%EC%9D%8D%EB%A6%AC_%EB%8A%90%ED%8B%B0%EB%82%98%EB%AC%B4_%EB%B0%8F_%ED%8C%BD%EB%82%98%EB%AC%B4_%EA%B5%B0" target="_blank">웹링크</a></li>
     <li id="ref-9">[9] 오구균 외. 한국환경생태학회지(자생수목 그루터기 활착 실험). <a href="https://koreascience.kr/article/CFKO201322358467576.pdf" target="_blank">웹링크</a></li>
+    <li id="ref-10">[10] 한국민족문화대백과사전(한국학중앙연구원). 〈안동 하회마을 만송정 숲〉·〈풍수〉. <a href="https://encykorea.aks.ac.kr/Article/E0075108" target="_blank">encykorea.aks.ac.kr/Article/E0075108</a> / <a href="https://encykorea.aks.ac.kr/Article/E0060401" target="_blank">encykorea.aks.ac.kr/Article/E0060401</a></li>
+    <li id="ref-11">[11] 최재웅 외(2009) 외. 〈낙안읍성 당산숲·비보숲 연구 2차 인용〉, Landscape Characteristics of Sacred Dangsan Forests in the Neighborhood of Naganeupseong. <a href="https://koreascience.kr/article/JAKO201534168451827.image" target="_blank">웹링크</a></li>
+    <li id="ref-12">[12] 매일신문(imaeil.com). 〈고령 무계마을 상당·중당·하당 동제〉. <a href="https://www.imaeil.com/page/view/2011022307311418170" target="_blank">웹링크</a></li>
+    <li id="ref-13">[13] 디지털논산문화대전. 〈장승제〉. <a href="https://nonsan.grandculture.net/nonsan/toc/GC02000146" target="_blank">웹링크</a></li>
 </ol>
