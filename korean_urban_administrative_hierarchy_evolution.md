@@ -2,7 +2,7 @@
 title: "한국 도시 행정단위의 역사적 계보와 계층 체계"
 subtitle: "Historical Genealogy and Hierarchical Evolution of Korean Urban Units"
 created: "2026-09-08 오후 02:46:22 (KST, UTC+9)"
-updated: "2026-09-23 오전 07:13:10 (KST, UTC+9)"
+updated: "2026-11-03 오후 04:17:52 (KST, UTC+9)"
 category: "한국 제도사 및 도시사 (Institutional History & Urban Evolution)"
 tags: ["Urban Hierarchy", "Walled-town State", "Myeon-ri System", "Administrative Unit", "Historical Evolution"]
 html_view: "korean_urban_administrative_hierarchy_evolution.html"
@@ -12,7 +12,7 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 *Historical Genealogy and Hierarchical Evolution of Korean Urban Units*
 
 **카테고리**: 한국 제도사 및 도시사 (Institutional History & Urban Evolution)  
-*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-09-23 오전 07:13:10 (KST, UTC+9)*
+*최초 작성일시: 2026-09-08 오후 02:46:22 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 04:17:52 (KST, UTC+9)*
 
 <context>
 본 문서는 한반도 역사상 도시와 마을을 규정했던 행정단위의 명칭, 위계, 그리고 변천 궤적을 고찰한 제도사·도시사 단일 진실 공급원(SSOT) 문서입니다. 청동기~초기 철기시대의 독립된 도시국가였던 '성읍(城邑)'이 고대 왕국에 복속되어 군현 거점으로 재편된 과정, 고려시대의 주현·속현 및 향·소·부곡 체계, 조선시대의 전 군현 주현화와 읍치-면리제(面里制) 및 수도 한성부의 부방제도(部坊制度), 그리고 전통시대 시장(Marketplace)을 뜻하던 '시(市)'라는 어휘가 일제강점기 부(府)·읍(邑) 제도를 거쳐 1949년 대한민국 지방자치법을 통해 최상위 도시 행정단위로 정착된 전 과정을 상세하고 풍부한 문장으로 집대성합니다.
@@ -149,7 +149,10 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 *The Master-Subordinate County System and Special Enclaves*
 
 * **속현의 실태**: 고려 전기에는 외관이 파견된 주현(약 130개)보다 외관이 없는 속현(약 330개)이 훨씬 많았습니다. 속현은 인근 주현에 예속되어 조세를 바쳤으며, 고을의 실질적인 행정은 토착 세력인 **향리(호장, 부호장)**가 이끄는 **읍사(邑司)**에서 자율적으로 처리했습니다.
-* **향·소·부곡**: 일반 군현보다 더 무거운 신분적·재정적 차별을 받던 특수 거점이었습니다. 향과 부곡은 주로 농경에 종사하며 과중한 공납을 바쳤고, 소(所)는 금, 은, 철, 자기, 종이 등 왕실과 국가가 필요한 물품을 생산해 바치는 수공업 전담 취락이었습니다.
+* **향·소·부곡**: 일반 군현보다 더 무거운 신분적·재정적 차별을 받던 특수 거점이었습니다. 향과 부곡은 주로 농경에 종사하며 과중한 공납을 바쳤고, 소(所)는 금, 은, 철, 자기, 종이 등 왕실과 국가가 필요한 물품을 생산해 바치는 수공업 전담 취락이었습니다. 금소·은소·철소·염소 등으로 세분되었고, 구성원은 장인과 생산을 돕는 각종 역을 부담하는 금호·은호·철호·염호 등으로 구성되었습니다(보강).
+* **소·부곡 주민의 신분 — 학설 대립(보강)**: 소·부곡 주민의 신분을 둘러싸고 천민설과 양인설이 대립합니다. 종래 통설인 천민설은 소 주민을 전문 물품생산에 종사하는 공장(工匠)으로서 양민 군현민과 구별되는 천민 집단거주지로 보았습니다. 반면 최근 통설은 소·부곡 주민을 일반 촌락민과 같은 신분상 양인으로 이해하며, 차별은 신분이 아니라 거주지(출신 지역)에 따른 것으로 해석합니다. 두 학설 모두 소·부곡 주민이 일반 군현민보다 더 무거운 공납·역을 부담하며 혼인을 통한 신분 상승도 금지되는 등 제도적으로 차별받았다는 점은 공통적으로 인정합니다.
+* **차별의 실증 — 명학소의 난(보강)**: 공주 명학소의 망이·망소이 봉기(1176)는 이 차별 구조에 저항한 대표적 사례로 꼽힙니다. 이런 차별은 소수 특례가 아니라 백정(농민) 신분 내부의 광범위한 차별로 평가되며, 전국 900여 개에 이르는 향·소·부곡에서 200년 넘게 지속되었습니다. 고려 말까지도 완전히 소멸하지 않아, 1375년 정도전이 유배된 곳도 나주에 속한 거평부곡이었습니다.
+* **일반 촌락 자체의 생산 인력 — 확인 불가(보강)**: 대장장이·광부 등 전문 생산 인력은 일반 농업 촌락에 자유롭게 혼재하지 않고, 소(所)라는 별도 행정구역에 집단 거주하며 국가에 직접 공납했습니다. 다만 일반 촌락 자체에 농기구 수리용 소규모 대장장이가 별도로 상주했는지는 고려시대로 특정한 1차 사료가 확인되지 않아 확인 불가로 명시합니다.
 * **면리제의 부재**: **고려시대에는 행정단위로서의 '면(面)'이나 '리(里)'가 존재하지 않았습니다.** 말단 촌락 단위는 자연촌락인 **'촌(村)'**이었으며, 신라계 촌주(村主) 또는 초기 형태의 이정(里正)이 향리의 지휘 아래 정호(직역 부담 계층)와 백정(일반 농민)을 관장했습니다.
 
 ## 5. 조선시대 군현 일원화와 읍치-면리제
@@ -286,12 +289,19 @@ html_view: "korean_urban_administrative_hierarchy_evolution.html"
 - [`raw/korean_administrative_hierarchy/09_evolution_of_city_nomenclature_raw.txt`](raw/korean_administrative_hierarchy/09_evolution_of_city_nomenclature_raw.txt) — 한국사 최고 도시 지칭 어휘 변천(경·목·주·부 ➔ 읍 ➔ 시) 사료
 - [`raw/korean_administrative_hierarchy/10_walled_town_state_and_urban_elevation_raw.txt`](raw/korean_administrative_hierarchy/10_walled_town_state_and_urban_elevation_raw.txt) — 고대 성읍국가(도시국가) 기원 및 읍격 승강제 사료
 - [`raw/korean_administrative_hierarchy/11_gun_hyeon_urban_character_raw.txt`](raw/korean_administrative_hierarchy/11_gun_hyeon_urban_character_raw.txt) — 군·현 읍치의 소도시성과 도농복합체 구조 사료
+- [`raw/20261103_goryeo_sobugok_artisan_residency_raw.txt`](raw/20261103_goryeo_sobugok_artisan_residency_raw.txt) — 4.2절 소·부곡 주민 신분 학설 대립 및 명학소의 난 보강 근거
 
 ### 1차 역사 사료 및 법령
 - 국사편찬위원회 한국사데이터베이스: 『경국대전』 이전(외관직), 호전(호적)
 - 국사편찬위원회 한국사데이터베이스: 『고려사』 권76~77 백관지 외관조
 - 조선총독부 관보 제423호 (1913. 12. 29.): 「조선총독부령 제111호」
 - 대한민국 법률 제32호 (1949. 7. 4. 공포, 8. 15. 시행): 「지방자치법」 제3조 및 부칙
+
+### 보조 출처 — 소·부곡 신분 및 차별 사례 (2026-11-03 보강)
+- 한국민족문화대백과사전(한국학중앙연구원). 〈소(所)〉. <a href="https://encykorea.aks.ac.kr/Article/E0029904" target="_blank">encykorea.aks.ac.kr/Article/E0029904</a>
+- 한국민족문화대백과사전(한국학중앙연구원). 〈부곡〉. <a href="https://encykorea.aks.ac.kr/Article/E0024097" target="_blank">encykorea.aks.ac.kr/Article/E0024097</a>
+- 한국민족문화대백과사전(한국학중앙연구원). 〈백정(白丁)〉. <a href="https://encykorea.aks.ac.kr/Article/E0022351" target="_blank">encykorea.aks.ac.kr/Article/E0022351</a>
+- 이익주. 〈고려, 또 다른 500년 — 900개 부곡 등에 200년 넘는 차별, 민중 봉기로 분출〉. <a href="https://v.daum.net/v/20250328002635198" target="_blank">웹링크</a> (명학소의 난 세부 경과는 칼럼 요약 수준으로만 확인됨, 확인 불가로 명시)
 
 ### 전문 학술 연구 문헌
 - 천관우 (1976). 『한국 고대사 연구』, 일조각 — 성읍국가 개념의 이론적 정립.
