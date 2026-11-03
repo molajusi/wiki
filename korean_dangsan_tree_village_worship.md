@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 05:33:47 (KST, UTC+9)"
+updated: "2026-11-03 오후 05:44:01 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 05:33:47 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 05:44:01 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -45,11 +45,13 @@ html_view: "korean_dangsan_tree_village_worship.html"
 고창 오거리 당산제의 경우 당산이 당산수(堂山樹, 나무)와 당산석(堂山石, 돌)으로 이루어지는 것이 전형이라고 설명됩니다 [[3]](#ref-3). 이는 앞서 조사한 [성황당(서낭당)](korean_seonghwangdang_and_northern_cairn_worship.html)의 "돌무더기+신목" 결합 구조와 구성 요소가 겹치는 지점입니다.
 
 ### 2.5 공간 배치 시각화 — 당산나무·당산숲·비보숲·상당·중당·하당
-아래 다이어그램은 3.6절(당산숲과 비보숲의 구분), 3.7절(상당·중당·하당 위계 구조), 4.3절(당산나무와 당산숲의 형태 구분)에서 조사한 내용을 하나의 마을 공간 배치도로 종합한 것입니다. 점선으로 **마을(촌락) 전체 범위의 경계**를 명시하고, 그 경계를 기준으로 상당(산)→중당(고갯길)→**하당(마을 경계·입구)**의 수직적 위계가 어디서 끝나는지, 당산나무·당산숲이 경계 안 어느 지점에 위치하는지, 그리고 비보숲이 마을 경계 중 어느 방향(약한 지세)에 자리하는지를 함께 보여줍니다.
+아래 다이어그램은 3.6절(당산숲과 비보숲의 구분), 3.7절(상당·중당·하당 위계 구조), 4.3절(당산나무와 당산숲의 형태 구분)에서 조사한 내용을 하나의 마을 공간 배치도로 종합한 것입니다. 점선으로 **마을(촌락) 전체 범위의 경계**를 명시하고, 그 경계를 기준으로 상당(산)→중당(고갯길)→하당(**마을 입구 또는 중앙** — 3.7절 표에 명시된 두 위치)의 수직적 위계가 어디서 끝나는지, 당산나무·당산숲이 경계 안 어느 지점에 위치하는지, 그리고 비보숲이 마을 경계 중 어느 방향(약한 지세)에 자리하는지를 함께 보여줍니다.
+
+**단일 노거수형 당산나무가 "대체로 마을 중앙"인지에 대해**: 4.3절의 조사에 따르면 당산나무는 **마을 위쪽·입구·중앙·들 네 유형**의 입지가 동등한 수준으로 보고되며, 그중 "중앙"은 마을의 구심점 역할이라는 상징적 의미가 강조될 뿐 **빈도상 가장 흔한 입지라는 근거는 확인되지 않았습니다**(확인 불가로 명시). 아래 다이어그램은 이 점을 반영해 당산나무·당산숲의 위치를 "중앙"으로 단정하지 않고, 상당·중당·하당 위계상의 상대적 위치(마을 입구·중앙 구역)로만 표시합니다.
 
 <div class="diagram-container" style="margin: 1.5rem 0; text-align: center;">
 <h4 style="margin-bottom: 0.5rem; color: var(--heading-color);">[마을 공간 배치도: 마을 범위를 기준으로 한 상당·중당·하당과 당산나무·당산숲·비보숲의 위치]</h4>
-<svg viewBox="0 0 1000 820" style="width: 100%; max-width: 1000px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg viewBox="0 0 1000 840" style="width: 100%; max-width: 1000px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
     <defs>
         <marker id="arrow-brown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#78350f" />
@@ -79,12 +81,12 @@ html_view: "korean_dangsan_tree_village_worship.html"
     <text x="640" y="390" font-size="10" fill="#78350f" text-anchor="middle">제의 이동 순서</text>
 
     <!-- 마을(촌락) 전체 범위 경계 -->
-    <rect x="60" y="410" width="880" height="370" rx="16" fill="#fbfbf9" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="8,5" />
+    <rect x="60" y="410" width="880" height="400" rx="16" fill="#fbfbf9" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="8,5" />
     <text x="850" y="434" font-size="11.5" font-weight="bold" fill="#4b5563" text-anchor="end">마을(촌락) 전체 범위 — 점선 경계</text>
 
-    <!-- 하당: 마을 경계 입구 -->
+    <!-- 하당: 마을 입구 또는 중앙 -->
     <rect x="90" y="430" width="820" height="36" rx="6" fill="#f3f4ee" stroke="#9ca3af" stroke-width="2" />
-    <text x="500" y="453" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">하당(下堂) — 마을 경계·입구 (당산나무/당산숲이 위치하는 지점)</text>
+    <text x="500" y="453" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">하당(下堂) — 마을 "입구" 또는 "중앙"(마을마다 다름, 3.7절 표 참조)</text>
 
     <!-- A. 당산나무(단일 노거수형) -->
     <rect x="90" y="476" width="300" height="170" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2" filter="url(#shadow2)" />
@@ -114,15 +116,20 @@ html_view: "korean_dangsan_tree_village_worship.html"
     <text x="810" y="590" font-size="10" text-anchor="middle" fill="#4b5563">민가 밀집 구역</text>
     <text x="810" y="608" font-size="9.5" text-anchor="middle" fill="#6b7280">(실제 거주 공간)</text>
 
-    <text x="395" y="664" font-size="10" text-anchor="middle" fill="#4b5563">※ A·B는 택일 관계 — 한 마을에 두 형태가 동시에 있지 않음</text>
+    <text x="395" y="652" font-size="10" text-anchor="middle" fill="#4b5563">※ A·B는 택일 관계 — 한 마을에 두 형태가 동시에 있지 않음</text>
+
+    <!-- 당산나무 입지 4유형 범례 -->
+    <rect x="90" y="660" width="820" height="36" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="3,3" />
+    <text x="500" y="673" font-size="10" font-weight="bold" text-anchor="middle" fill="#4b5563">당산나무 입지 4유형(동등 수준으로 보고됨): 마을 위쪽 · 입구 · 중앙(구심점 상징) · 들</text>
+    <text x="500" y="689" font-size="9" text-anchor="middle" fill="#9ca3af">"중앙"이 최다 빈도라는 통계적 근거는 확인되지 않음 — 본 그림은 입구·중앙(하당 범위)만 표시</text>
 
     <!-- 비보숲: 마을 경계 중 약한 방향 -->
-    <rect x="90" y="682" width="820" height="78" rx="8" fill="#eef2f6" stroke="#64748b" stroke-width="2" filter="url(#shadow2)" />
-    <text x="500" y="705" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">비보숲(裨補林) — 마을 경계 중 약한 방향(수구·바람길) 보완, 당산숲과는 별개 위치</text>
-    <text x="300" y="733" font-size="22" text-anchor="middle">🌲</text>
-    <text x="500" y="733" font-size="22" text-anchor="middle">🌲</text>
-    <text x="700" y="733" font-size="22" text-anchor="middle">🌲</text>
-    <text x="500" y="750" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 안동 하회마을 만송정 숲 (단, "당산숲+비보숲" 결합형도 존재)</text>
+    <rect x="90" y="708" width="820" height="76" rx="8" fill="#eef2f6" stroke="#64748b" stroke-width="2" filter="url(#shadow2)" />
+    <text x="500" y="729" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">비보숲(裨補林) — 마을 경계 중 약한 방향(수구·바람길) 보완, 당산숲과는 별개 위치</text>
+    <text x="300" y="757" font-size="22" text-anchor="middle">🌲</text>
+    <text x="500" y="757" font-size="22" text-anchor="middle">🌲</text>
+    <text x="700" y="757" font-size="22" text-anchor="middle">🌲</text>
+    <text x="500" y="775" font-size="9.5" text-anchor="middle" fill="#6b7280">예: 안동 하회마을 만송정 숲 (단, "당산숲+비보숲" 결합형도 존재)</text>
 </svg>
 </div>
 </theory>
