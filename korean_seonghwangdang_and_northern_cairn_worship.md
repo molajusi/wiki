@@ -2,7 +2,7 @@
 title: "성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구"
 subtitle: "Korean Seonghwangdang Stone-Cairn Worship in Comparison with Northern Asian Ovoo Traditions"
 created: "2026-11-03 오전 10:56:23 (KST, UTC+9)"
-updated: "2026-11-03 오전 11:10:43 (KST, UTC+9)"
+updated: "2026-11-03 오전 11:21:19 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Seonghwangdang", "Seonangdang", "Ovoo", "Cairn Worship", "Korean Folk Religion", "Goryeo", "Shamanism", "Boundary Marker"]
 html_view: "korean_seonghwangdang_and_northern_cairn_worship.html"
@@ -12,10 +12,10 @@ html_view: "korean_seonghwangdang_and_northern_cairn_worship.html"
 *Korean Seonghwangdang Stone-Cairn Worship in Comparison with Northern Asian Ovoo Traditions*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 10:56:23 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:10:43 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 10:56:23 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:21:19 (KST, UTC+9)*
 
 <context>
-본 문서는 한국 성황당(서낭당) 돌무더기 신앙의 구조·기원·고려시대 접점을 몽골 등 북방 샤머니즘의 오보(Ovoo/Oboo) 돌무더기 신앙과 비교 분석한 전문 문서입니다. 이 위키의 돌탑·장승·솟대 비보 주술을 다룬 [한국 전통 비도교 비무속 주술 및 마법 체계](korean_traditional_non_shamanic_magic.html) 5.2~5.3절과 인접하되, 성황당·서낭당 자체 및 오보와의 비교는 별도 신규 주제로 다룹니다. 게임 디자인 응용(세이브 포인트 상징) 검토는 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html) 및 [메트로이드배니아 사망 및 부활 메커니즘 분석](metroidvania_death_and_respawn_mechanics.html) 5절에서 별도로 다뤄질 수 있습니다. 2절의 신목·장승 결합 서술은 별도 독립 문서 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html), [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html)로 심화 분리되어 한국 마을 경계·수호 신앙 4부작을 이룹니다.
+본 문서는 한국 성황당(서낭당) 돌무더기 신앙의 구조·기원·고려시대 접점을 몽골 등 북방 샤머니즘의 오보(Ovoo/Oboo) 돌무더기 신앙과 비교 분석한 전문 문서입니다. 이 위키의 돌탑·장승·솟대 비보 주술을 다룬 [한국 전통 비도교 비무속 주술 및 마법 체계](korean_traditional_non_shamanic_magic.html) 5.2~5.3절과 인접하되, 성황당·서낭당 자체 및 오보와의 비교는 별도 신규 주제로 다룹니다. 게임 디자인 응용(세이브 포인트 상징) 검토는 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html) 및 [메트로이드배니아 사망 및 부활 메커니즘 분석](metroidvania_death_and_respawn_mechanics.html) 5절에서 별도로 다뤄질 수 있습니다. 2절의 신목·장승 결합 서술은 별도 독립 문서 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html), [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html)로 심화 분리되어 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙(물·단일거석·불교도상)은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
 </context>
 
 <overview>

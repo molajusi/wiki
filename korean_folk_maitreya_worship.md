@@ -1,0 +1,83 @@
+---
+title: "노상미륵 신앙과 민불 전통"
+subtitle: "Roadside Maitreya Worship: Folk Buddhism and the Village Guardian Statue"
+created: "2026-11-03 오전 11:17:29 (KST, UTC+9)"
+updated: "2026-11-03 오전 11:17:29 (KST, UTC+9)"
+category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
+tags: ["Maitreya", "Mireuk", "Folk Buddhism", "Village Guardian", "Korean Folk Religion"]
+html_view: "korean_folk_maitreya_worship.html"
+---
+
+# 노상미륵 신앙과 민불 전통
+*Roadside Maitreya Worship: Folk Buddhism and the Village Guardian Statue*
+
+**카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
+*최초 작성일시: 2026-11-03 오전 11:17:29 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:17:29 (KST, UTC+9)*
+
+<context>
+본 문서는 한국민족문화대백과사전(encykorea.aks.ac.kr)의 "미륵신앙"·"미륵불"·"기자신앙"·"성기숭배" 항목을 1차 신뢰 출처로 삼아, 마을 입구나 산 중턱에 세운 미륵불 입상이 마을 수호신으로 기능하는 민불(民佛) 전통을 다룹니다. [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html)와 재질(석상)은 유사하나, 불교 도상(미륵)이 결합된 점에서 순수 민속신앙형 장승과 구분되는 독립 범주입니다. [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html)에서 다룬 "입석→미륵 전환" 사례와도 직접 연결됩니다.
+</context>
+
+<overview>
+## 1. 개요 및 목적
+*Overview & Purpose*
+
+미륵신앙은 미륵불·미륵보살을 대상으로 한 불교신앙입니다 [[1]](#ref-1). 그러나 마을 입구나 산 중턱에 세워진 미륵당·미륵불 입상은 교리적 불교신앙을 넘어 평안과 풍요를 기원하는 대상이자 마을을 지키는 신령으로 민간에 받아들여졌습니다. 본 문서는 이 민속화된 미륵 신앙(민불 전통)의 형성 과정과 지역 사례를 조사합니다.
+</overview>
+
+<theory>
+## 2. 미륵신앙의 정의와 민속화
+
+### 2.1 불교 교리상의 미륵신앙
+한국민족문화대백과사전은 미륵신앙을 미륵불·미륵보살을 대상으로 한 불교신앙으로 정의하며, 조선시대에는 미륵신앙과 용신앙이 결합된 민중운동 사례(여환 사건 등)도 나타났다고 기록합니다 [[1]](#ref-1). 미륵불(彌勒佛) 항목과 미륵상생경(彌勒上生經) 항목은 이 신앙의 불교 경전적 배경을 다룹니다 [[2]](#ref-2).
+
+### 2.2 민간 차원의 전환 — 마을 수호신으로서의 미륵
+마을 입구나 산 중턱의 미륵당이나 미륵불 입상은 평안과 풍요를 기원하는 대상이 되었으며, 미륵은 마을을 지키는 신령으로 여겨졌습니다. 이는 교리적 신앙이 민간신앙의 수호신 체계로 흡수된 사례입니다.
+</theory>
+
+<analysis>
+## 3. 전환 경로와 지역 사례
+
+### 3.1 입석에서 미륵으로 — 무안 발산마을
+무안 발산마을에서는 미륵할매가 초기의 입석 형태를 띠고, 미륵할아버지는 조각된 형태입니다. 이는 자연 입석 신앙이 성기 모양의 입석으로, 다시 조각된 미륵으로 바뀌는 과정을 보여줍니다(별도 문서 [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html) 3.3절과 동일 사례) [[3]](#ref-3).
+
+### 3.2 암수바위에서 미륵으로 — 남해 가천마을
+남해 가천마을의 암수바위는 원래 자식과 농사의 풍요를 빌던 대상이었다가, 마을 전체의 수호신으로 바뀌고, 다시 불교의 미륵불로 이어진 민간신앙의 전형적 사례로 소개됩니다. 이는 성기숭배(性器崇拜)에서 마을 수호신, 다시 불교 도상으로 이어지는 3단계 전환을 보여줍니다 [[4]](#ref-4), [[5]](#ref-5).
+
+### 3.3 제주 복신미륵
+제주 복신미륵은 고을을 수호하고 아들 낳기를 바라는 민간신앙과 불교의 결합을 보여주는 사례입니다 [[4]](#ref-4). 기자신앙(祈子信仰)이 미륵 신앙에 흡수된 전형적 형태입니다.
+
+### 3.4 기자신앙과의 교차
+한국민족문화대백과사전의 "기자신앙" 항목은 샘이나 큰 나무에 빌거나 미륵보살에게 기도하는 등 여러 대상물에 걸쳐 나타나는 자식 기원 신앙을 정리하며, 미륵은 그 대상 중 하나로 다뤄집니다 [[6]](#ref-6). 이는 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html)에서도 공통적으로 확인되는 교차 주제입니다.
+
+### 3.5 장승과의 비교
+나주 불회사 석장승처럼 사찰 입구의 장승이 "사찰 경내의 부정을 막는 수문신상"으로 기능하는 경우(별도 문서 [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html) 3.2절)와, 본 문서가 다루는 미륵불 입상은 모두 사찰·마을 입구에 서는 석상이라는 공통점이 있습니다. 다만 장승은 도교·무속적 명문(천하대장군 등)을 새기는 반면, 미륵은 불교 도상 자체가 신체(神體)라는 점에서 계통이 구분됩니다.
+</analysis>
+
+## 4. 용어 정리 및 정의
+*Glossary & Definitions*
+
+| 용어 | 정의 |
+| :--- | :--- |
+| **미륵신앙** | **Maitreya Faith**. 미륵불·미륵보살을 대상으로 한 불교신앙. 조선시대에는 용신앙과 결합한 민중운동 사례도 나타남. |
+| **민불** | 교리적 불교 조상(彫像)이 아니라 민간신앙의 마을 수호신으로 받아들여진 미륵불·석불을 가리키는 통칭. |
+| **노상미륵** | 마을 입구나 길가, 산 중턱에 세워진 미륵불 입상. 평안·풍요를 기원하는 대상이자 마을 수호신. |
+| **성기숭배** | **Phallic Worship**(性器崇拜). 남근·여근 형상의 자연물·조각물을 숭배하는 신앙. 암수바위처럼 미륵으로 전환되는 전 단계로 나타남. |
+| **기자신앙** | **Gija Faith**(祈子信仰). 자식을 바라는 민간 기원. 제주 복신미륵처럼 미륵 신앙에 흡수되는 경우가 있음. |
+
+## 5. 참고 자료 및 원천 데이터 출처
+*References & Raw Sources*
+
+<div class="callout">
+    <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_other_korean_village_shrine_objects_raw.txt">raw/20261103_other_korean_village_shrine_objects_raw.txt</a></code>(C절: 미륵신앙)의 데이터와 교차 검증을 거쳐 작성되었습니다.
+</div>
+
+<ol class="reference-list">
+    <li id="ref-1">[1] 한국민족문화대백과사전(한국학중앙연구원). 〈미륵신앙〉. <a href="https://encykorea.aks.ac.kr/Article/E0019927" target="_blank">encykorea.aks.ac.kr/Article/E0019927</a></li>
+    <li id="ref-2">[2] 한국민족문화대백과사전(한국학중앙연구원). 〈미륵불〉. <a href="https://encykorea.aks.ac.kr/Article/E0019911" target="_blank">encykorea.aks.ac.kr/Article/E0019911</a></li>
+    <li id="ref-3">[3] 문화유산 지역 자료. 〈무안 발산마을 입석-미륵 전환 사례〉. <a href="https://pdf.jnilbo.com/pdf/202303/2023031001-01010901.pdf" target="_blank">웹링크</a></li>
+    <li id="ref-4">[4] 지역 문화유산 자료. 〈남해 가천 해변과 암수바위〉. <a href="https://www.ktriptips.com/kor/tourspot/127456" target="_blank">웹링크</a></li>
+    <li id="ref-5">[5] 한국민족문화대백과사전(한국학중앙연구원). 〈성기숭배〉. <a href="http://encykorea.aks.ac.kr/Contents/Index?contents_id=E0029220" target="_blank">encykorea.aks.ac.kr/Contents/Index?contents_id=E0029220</a></li>
+    <li id="ref-6">[6] 한국민족문화대백과사전(한국학중앙연구원). 〈기자신앙〉. <a href="http://encykorea.aks.ac.kr/Contents/Item/E0008391" target="_blank">encykorea.aks.ac.kr/Contents/Item/E0008391</a></li>
+</ol>

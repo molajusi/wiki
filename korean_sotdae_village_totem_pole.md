@@ -2,7 +2,7 @@
 title: "솟대 신앙과 형태학"
 subtitle: "Sotdae: The Korean Village Totem Pole and Its Origins"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
+updated: "2026-11-03 오전 11:21:47 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Sotdae", "Totem Pole", "Sodo", "Korean Folk Religion", "Village Guardian"]
 html_view: "korean_sotdae_village_totem_pole.html"
@@ -12,10 +12,10 @@ html_view: "korean_sotdae_village_totem_pole.html"
 *Sotdae: The Korean Village Totem Pole and Its Origins*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:06:14 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:21:47 (KST, UTC+9)*
 
 <context>
-본 문서는 마을 입구에 세워 새를 얹은 장대형 신앙물인 솟대를 한국민족문화대백과사전(encykorea.aks.ac.kr)의 "솟대" 항목을 1차 신뢰 출처로 다룹니다. 통설(소도 기원설)뿐 아니라 이를 반박하는 학계 소수 견해(송화섭 교수의 "한국에는 솟대가 없다")도 함께 병기해 단일 견해로 단정하지 않습니다. 같은 마을 공간에 공존하는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 한국 마을 경계·수호 신앙 4부작을 이룹니다.
+본 문서는 마을 입구에 세워 새를 얹은 장대형 신앙물인 솟대를 한국민족문화대백과사전(encykorea.aks.ac.kr)의 "솟대" 항목을 1차 신뢰 출처로 다룹니다. 통설(소도 기원설)뿐 아니라 이를 반박하는 학계 소수 견해(송화섭 교수의 "한국에는 솟대가 없다")도 함께 병기해 단일 견해로 단정하지 않습니다. 같은 마을 공간에 공존하는 [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
 </context>
 
 <overview>

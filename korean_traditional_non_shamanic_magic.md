@@ -2,7 +2,7 @@
 title: "한국 전통 비도교 비무속 주술 및 마법 체계"
 subtitle: "Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence"
 created: "2026-08-31 오후 09:16:00 (KST, UTC+9)"
-updated: "2026-11-03 오전 11:11:02 (KST, UTC+9)"
+updated: "2026-11-03 오전 11:21:00 (KST, UTC+9)"
 category: "인문 및 서사학 (Humanities & Narratology)"
 tags: ["Folk Magic", "Anthropology", "Korean History", "Sympathetic Magic", "Geomantic Bibo", "Zhuyou", "한국역사민속학", "인류학"]
 html_view: "korean_traditional_non_shamanic_magic.html"
@@ -12,7 +12,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 *Korean Traditional Non-Taoist and Non-Shamanic Magic Systems: Philosophy, Rituals, and Evidence*
 
 **카테고리**: 인문 및 서사학 (Humanities & Narratology)  
-*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:11:02 (KST, UTC+9)*
+*최초 작성일시: 2026-08-31 오후 09:16:00 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:21:00 (KST, UTC+9)*
 
 본 문서는 한국 전통 사회에서 도교적 방술(부적, 초제, 선도술 등)과 무속/샤머니즘(무당의 강신, 굿거리, 신내림 공수, 신칼·방울 의례 등)을 제외하고, 고대 삼한부터 조선 시대에 이르기까지 실존했던 자생적 민간 자영 양법(양밥), 가신신앙 결계, 풍수 비보, 전통 의학 축유술, 유교 국가 예제 벽사, 불교·밀교 다라니 결계 및 생업·군사 주술의 74가지 실천 사례와 작동 원리를 1차 역사 사료 및 고고학 유물에 근거하여 체계화한 지식 문서입니다.
 
@@ -139,6 +139,8 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 ### 5.1 수구 차단 비보 숲
 * **출처 및 근거**: 《신증동국여지승람》 함양군 조, 《삼국사기》 열전 최치원 조.
 * **상세 메커니즘**: 신라 말 최치원이 함양 태수로 부임하여 수구(水口)가 트여 지기가 빠져나가는 결함을 막기 위해 조성한 인공 숲(함양 상림, 천연기념물 제154호) 및 담양 관방제림입니다. 물길을 가리고 바람을 갈무리(장풍득수 藏風得水)하여 마을의 재물과 생기 유출을 물리적으로 차단하였습니다.
+* **명칭과 분류(보강)**: 이런 숲은 고기록에 임수(林藪)·동수(洞藪)·읍수(邑藪) 등으로 기록되었고, 현지에서는 숲·수구막이·숲쟁이 등으로도 불립니다. "마을숲"이라는 통괄 용어는 1990년대에 학계에서 제안되었습니다. 비보숲의 기능은 장풍보허(바람을 가두고 허한 지세를 보완)·수해방지·조산(造山, 인공 산 역할)·수구막이로 세분됩니다(한국민족문화대백과사전 "하회마을 만송정 숲" 항목 및 마을숲 관련 학술 PDF, `raw/20261103_other_korean_village_shrine_objects_raw.txt` B절 교차 검증).
+* **추가 사례(보강)**: 안동 하회마을 만송정 숲은 조선 선조 때 문경공 류운용이 마을 맞은편 부용대의 기를 완화하기 위해 소나무 1만 그루를 심어 조성했으며 천연기념물 제473호입니다. 성주 성밖숲은 마을의 허한 기운을 보완하고 재액을 막기 위해 조성되었습니다. 강진 달마지마을은 마을 앞이 비어 기가 빠져나가는 것을 막으려고 명당수가 모이는 수구에 비보숲을 조성했습니다. 한국에 약 500여 곳의 마을숲이 존재한다고 알려져 있으나, 이 전국 집계의 1차 통계 출처는 확인하지 못했습니다(확인 불가로 명시).
 
 ### 5.2 제주 방사탑과 조탑 살기 굴절술
 * **출처 및 근거**: 국가유산청 국가민속문화유산 《제주 방사탑 학술조사보고서》(제주도 민속문화유산 제8호).
@@ -147,7 +149,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 ### 5.3 장승과 솟대의 경계 위협 및 방화 주술
 * **출처 및 근거**: 《조선왕조실록》 성종 1년(1470), 국립민속박물관 《한국의 장승과 솟대》(1990).
 * **상세 메커니즘**: 장승의 부리부리한 눈과 뻐드렁니로 잡귀를 시각적으로 위협하고, 솟대 끝 물새(오리) 조각으로 화재를 예방하고 풍년을 기원하였습니다.
-* **관련 문서**: 장승·돌탑과 흔히 결합하는 성황당(서낭당) 돌무더기 신앙 자체와 몽골 오보(Ovoo)와의 비교는 별도 문서 [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)에서 다룹니다. 장승·솟대·당산나무 각각의 심층 조사는 [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html)으로 독립 분리되어 있습니다.
+* **관련 문서**: 장승·돌탑과 흔히 결합하는 성황당(서낭당) 돌무더기 신앙 자체와 몽골 오보(Ovoo)와의 비교는 별도 문서 [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)에서 다룹니다. 장승·솟대·당산나무 각각의 심층 조사는 [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html)으로 독립 분리되어 있습니다. 이들과 구분되는 매체(물·단일거석·불교도상)의 마을 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
 
 ### 5.4 한양 도성 관악산 화기 진압 비보 건축
 * **출처 및 근거**: 《태조실록》 권1 태조 1년(1392), 《신증동국여지승람》 경도 조, 국립고궁박물관 '경복궁 근정전 수(水)자 철판'.
@@ -409,6 +411,7 @@ html_view: "korean_traditional_non_shamanic_magic.html"
 
 ### 로컬 원천 데이터
 * [한국 전통 비도교·비무속 주술 및 마법 체계 종합 학술 대전 원문](file:///Z:/wiki/raw/20260831_korean_traditional_non_shamanic_magic_raw.txt) (`raw/20260831_korean_traditional_non_shamanic_magic_raw.txt`, 733줄, 67,195 바이트)
+* [마을숲 보강 조사 원문](raw/20261103_other_korean_village_shrine_objects_raw.txt) (`raw/20261103_other_korean_village_shrine_objects_raw.txt`, B절 — 5.1절 마을숲 보강의 근거)
 
 ### 1차 역사 사료 및 관찬 문헌
 * 《삼국사기(三國史記)》 (김부식, 1145) - 신라본기, 백제본기, 열전

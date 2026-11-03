@@ -60,6 +60,9 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
 - [📄 당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html)
 - [📄 솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html)
 - [📄 장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html)
+- [📄 우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html)
+- [📄 선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html)
+- [📄 노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)
 - [📄 한국 전통 부엌 금기담의 위생공학 및 생태학적 분석](korean_traditional_kitchen_taboos.html)
 
 ### 게임 디자인 및 분석 (Game Design & Taxonomy)

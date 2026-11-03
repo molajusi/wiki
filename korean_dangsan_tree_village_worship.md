@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
+updated: "2026-11-03 오전 11:21:47 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,10 +12,10 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:06:14 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 11:21:47 (KST, UTC+9)*
 
 <context>
-본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다.
+본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
 </context>
 
 <overview>
