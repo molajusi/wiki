@@ -57,6 +57,9 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
 - [📄 한국 전통 비도교 비무속 주술 및 마법 체계](korean_traditional_non_shamanic_magic.html)
 - [📄 한국 전통 가신신앙 및 가택 수호 체계](korean_traditional_household_deities.html)
 - [📄 성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)
+- [📄 당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html)
+- [📄 솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html)
+- [📄 장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html)
 - [📄 한국 전통 부엌 금기담의 위생공학 및 생태학적 분석](korean_traditional_kitchen_taboos.html)
 
 ### 게임 디자인 및 분석 (Game Design & Taxonomy)
