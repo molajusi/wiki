@@ -2,7 +2,7 @@
 title: "메트로이드배니아 사망 및 부활 메커니즘 분석"
 subtitle: "Metroidvania Death and Respawn Mechanics: Design Paradigms, Inter-Game Influence, and Critical Debates"
 created: "2026-08-22 오후 10:12:00 (KST, UTC+9)"
-updated: "2026-11-03 오전 10:34:10 (KST, UTC+9)"
+updated: "2026-11-05 오후 05:34:18 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Death Mechanics", "Respawn System", "Corpse Run", "Hollow Knight", "Ori", "Ender Lilies", "Game Design Critique", "Save Point Symbolism", "Diegetic Design"]
 html_view: "metroidvania_death_and_respawn_mechanics.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *Metroidvania Death and Respawn Mechanics: Design Paradigms, Inter-Game Influence, and Critical Debates*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-08-22 오후 10:12:00 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오전 10:34:10 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 10:12:00 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 05:34:18 (KST, UTC+9)*
 
 <context>
 본 문서는 메트로이드배니아 장르에서 플레이어의 사망 시 발생하는 **실패 상태 처리 및 부활(Death & Respawn) 메커니즘**의 4대 설계 패러다임, 《할로우 나이트》, 《오리》, 《슈퍼 메트로이드》, 《엔더 릴리즈》 등 주요 대표작 간의 상호 영향 관계, 그리고 '소울라이크식 시체 회수(Corpse Run)'와 '무손실 탐험 보존'을 둘러싼 게임 디자인 비평계의 핵심 논쟁을 종합 분석하는 **전문 분과 비평 문서**입니다.
@@ -182,6 +182,21 @@ parent_hub: "metroidvania_genre_analysis.html"
 - **배신/가짜형**: 《크로노 트리거》의 가짜 세이브 포인트는 상징이 아니라 플레이어의 세이브 신뢰를 역이용하는 서사적 반전 장치로 작동함.
 
 위 4개 사례의 출처는 [[19]](#ref-19)이며, 상세 검증 메모는 `raw/20261103_save_point_symbolism_raw.txt`에 기록되어 있습니다.
+
+### 5.3 한국 전통 민속 상징물의 포탈·세이브 기능 분화 제안
+
+이 절은 외부 출처 조사가 아니라, 본 위키의 한국 민속 신앙 문서 4종(서낭당·돌무더기, 솟대, 당산나무, 성황당)에 이미 기록된 원형 기능을 근거로 메트로이드배니아형 게임의 포탈·세이브 상징물을 설계하는 **창작 제안**입니다. 실제 민속 신앙의 사실 서술이 아니라, 그 서술에 기반한 게임 디자인 매핑임을 명시합니다.
+
+네 상징물을 포탈/세이브 두 기능에 그대로 중복 배정하면 플레이어가 "이 건축물이 지금 포탈인지 세이브인지" 혼선을 겪을 수 있습니다. 조사된 각 상징물의 원형 기능(경계 통과형 vs 구심점형 vs 누적 행위형 vs 방향 표지형)을 기준으로 역할을 분리하면 다음과 같습니다.
+
+| 상징물 | 제안 기능 | 원형 근거 |
+| :--- | :--- | :--- |
+| **서낭당(성황당)** | 포탈(구역 간 이동) | 고갯길·경계의 통과 지점이라는 원 기능. [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html) 2.1~2.2절 |
+| **당산나무/당산숲** | 세이브 — 거점형(마을당 1곳, 고정 홈베이스) | 마을 전체의 구심점·장기 보호 대상으로, 다수 산재가 아닌 단일 중심 거점. [당산나무와 수목숭배 신앙](korean_dangsan_tree_village_worship.html) 2절, 4.3절 |
+| **돌무더기탑(누석단)** | 세이브 — 경로형(여정 중 반복 배치, 통행자가 돌을 얹는 행위로 갱신) | 여행자가 지나갈 때마다 돌을 얹어 구조물을 누적·갱신하는 행위 자체가 "상태 보존"과 대응. [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html) 2.3절("누적적 형성 — 여행자가 쌓아가는 구조물") |
+| **솟대** | 비기능 방향 표지(미니맵 랜드마크) | 마을 입구의 방향 표지·경계 표시라는 원 기능. 포탈·세이브 기능을 부여하면 오히려 원형을 왜곡. [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html) 참조 |
+
+이렇게 분리하면 당산나무(거점형)와 돌무더기탑(경로형)이 모두 "세이브"라는 상위 기능을 공유하면서도, 위치 밀도(마을당 1곳 vs 경로상 다수)와 갱신 방식(고정형 vs 플레이어 행위로 매번 갱신)이 다른 두 하위유형으로 분화되어 중복 배정이 아니게 됩니다.
 </iconography>
 
 ## 6. 용어 정리 및 정의
