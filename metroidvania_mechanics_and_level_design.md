@@ -2,7 +2,7 @@
 title: "메트로이드배니아 시스템 메커니즘 및 레벨 디자인"
 subtitle: "Metroidvania Mechanics & Level Design: Ability-Gating, Rewarding Backtracking, 5 Minor Reward Philosophies, Chases & Power Dynamics"
 created: "2026-08-22 오후 07:08:00 (KST, UTC+9)"
-updated: "2026-09-04 오후 02:54:30 (KST, UTC+9)"
+updated: "2026-11-05 오후 07:24:42 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Level Design", "Ability-Gating", "Form-Shifting", "Backtracking", "Shortcuts", "5 Minor Reward Philosophies", "Stalker AI", "Chase Sequences", "Power Dynamic Reversal", "Pacing Breaker", "Hollow Knight", "Super Metroid", "Shantae", "Metroid Dread", "Sequence Breaking", "Pogo Jump", "SA-X", "EMMI", "Zelda vs Metroidvania"]
 html_view: "metroidvania_mechanics_and_level_design.html"
@@ -13,7 +13,7 @@ parent_hub: "metroidvania_genre_analysis.html"
 *Metroidvania Mechanics & Level Design: Ability-Gating, Rewarding Backtracking, 5 Minor Reward Philosophies, Chases & Power Dynamics*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-09-04 오후 02:54:30 (KST, UTC+9)*
+*최초 작성일시: 2026-08-22 오후 07:08:00 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 07:24:42 (KST, UTC+9)*
 
 P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*  
 **상위 메인 허브**: [메트로이드배니아 장르 개요 및 계보학](metroidvania_genre_analysis.html)
@@ -323,8 +323,42 @@ P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*
 | **《오리 앤 더 블라인드 포레스트》**<br>(2015, PC/XONE) | 긴소 나무의 홍수<br>*(수직 환경 탈출)* | 수직 상승하는 물을 피해 바쉬(Bash) 반동 연계 도주. | 생명의 나무 정화 성공 ➔ 즉사 암기 피로 속에서도 음악과 플랫포밍 반응의 완벽한 융합[[16]](#ref-16). |
 | **《메트로이드 드레드》**<br>(2021, Switch) | E.M.M.I. 7개체<br>*(DNA 추출 연구 로봇)* | 시각/청각 2단계 독립 감지 동적 AI + 팬텀 클록 은신. | 센트럴 유닛 파괴 ➔ 오메가 스트림 아머 과열 ➔ 오메가 블래스터 저격 처형 ➔ **구역화 & 권력 역전의 완성**[[20]](#ref-20). |
 
+## 10. 비인간 적 처치 보상의 디제틱 정당화와 존재 유형별 범주
+*Diegetic Justification of Non-Human Enemy Drops, by Creature Category*
+
+동물·요괴·귀신·괴물·요정 같은 비인간 적이 화폐·귀금속을 드롭하는 것은 "왜 이 존재가 돈을 지니고 있는가"라는 서사적 어색함을 유발합니다. 사람형 적에게는 이 어색함이 발생하지 않으므로, 이는 비인간 적 전반에 걸친 설계 과제입니다.
+
+### 10.1 비인간 적 루트의 어색함에 대한 게임 디자인 비평
+
+게임 디자인 블로그 stuffwithstuff.com의 "Dropping Loot" 글(해커뉴스 경유 인용)은 루트가 몬스터 자신의 설계에서 자연스럽게 나와야 하며, 몬스터가 "안 맞는" 아이템을 드롭하지 않아야 한다고 지적합니다. 한 커뮤니티 코멘트는 "동물이 무기나 보석을 드롭하는 것은 세계의 내적 논리를 깨는 설계상 약점"이라고 직접 비판합니다 [[24]](#ref-24). TV 트로프스는 이 현상 자체를 "머니 스파이더(Money Spider)"로 분류합니다 — 생물이 화폐를 들고 다닐 능력·관심·지능이 있는지와 무관하게 드롭되는 관습을 가리키는 명칭입니다 [[25]](#ref-25).
+
+### 10.2 다섯 가지 해소 유형
+
+| 해소 유형 | 작동 방식 | 대표 사례 |
+| :--- | :--- | :--- |
+| **화폐의 비물질 자원화** | 화폐를 금전이 아니라 존재가 지닌 "영혼의 조각"·에센스로 재정의 | 《다크 소울》 혼(Souls), 《데스 도어》 혼, 《할로우 나이트》 지오(Geo) |
+| **소재로의 전환** | 화폐를 포기하고 몬스터별 특정 부위(가죽·뼈)를 드롭, 제작에만 사용 | 《몬스터 헌터》 시리즈 |
+| **괴물의 지성화** | 괴물에게 지성·사회를 부여해 화폐 소지를 역으로 정당화 | 《언더테일》(몬스터가 지하 사회를 이루고 인간과 교류) |
+| **야생 동물 무보상** | 애초에 화폐 보상 자체를 주지 않음(상금은 "소유자가 있는 사람"과의 전투에만 적용) | 《포켓몬스터》(야생 전투는 상금 미지급, 트레이너 전투만 지급) |
+| **관습적 수용** | 정당화를 포기하고 추상적 보상으로 수용 | 전통 RPG 다수(파이널 판타지류 등) |
+
+RPG Maker 커뮤니티의 공통 관행은 종족 기반 드롭 테이블을 써서 화폐는 인간형(휴머노이드)에만 묶고, 동물·괴물에는 소재나 전용 자원을 배정하는 것입니다 [[26]](#ref-26).
+
+### 10.3 요괴·귀신류에 특화된 보상 설계
+
+요괴·귀신은 "영적 실체"라는 설정을 이미 깔고 있어, 화폐 대신 그 실체에 맞는 전용 자원·도구·협상 대상으로 보상을 전환하는 사례가 두드러집니다.
+
+- **영력/영혼 자원화**: 《니오 2》는 요괴를 처치하면 암리타(Amrita)를 얻으며, 요괴전 전용 획득량 증가 효과가 별도로 존재합니다. 《니오 3》는 강적·특수 임무 전용 화폐 "요괴 눈물(Yokai Teardrops)"을 추가로 둡니다 [[27]](#ref-27).
+- **신체에서 강제로 뽑아내는 전용 아이템**: 《오카미》는 일반 적 처치로 엔(yen, 화폐)을 얻지만, 특정 악마는 전용 타격(Floral Finisher)으로만 "악마의 송곳니(Demon Fang)"라는 엔과 별개인 자원을 뽑아낼 수 있습니다 [[28]](#ref-28).
+- **교섭을 통한 존재 자체의 획득**: 《페르소나 5》·《메가미 텐세이》 시리즈는 섀도우·악마를 처치하는 대신 교섭(negotiation)하면 돈·아이템 또는 그 존재 자체를 페르소나/악마로 영입할 수 있습니다. 교섭에 실패하면 돈·아이템 없이 전투가 재개되어, 보상이 "협상 성공이라는 사건"에 종속됩니다 [[29]](#ref-29).
+- **영적 에너지를 도구의 동력원으로**: 《페이탈 프레임》은 유령을 카메라로 촬영해 "포착된 영적 에너지"를 포인트로 환산하고, "영혼석(Spirit Stone)"을 얻어 카메라의 특수 기능 가동에 씁니다 — 돈이 아니라 영적 도구의 동력원으로 보상을 재정의합니다 [[30]](#ref-30).
+
+### 10.4 한국 설화와의 비교
+
+[한국 설화 속 귀신·요괴·괴물의 보상 체계](korean_folklore_creature_rewards.html)는 같은 문제를 한국 전통 민담 쪽에서 다룹니다. 한국 설화는 재물형뿐 아니라 터(명당)형(호랑이 보은담), 정보형(삼두구미의 약점 정보), 도덕시험형(도깨비방망이·감투)이라는 독자적 범주를 보여주며, 손말명·야광귀처럼 보상 모티프 자체가 없는 순수 위협형 귀신도 상당수 확인됩니다. 이는 "모든 비인간 적에게 보상 정당화가 필요하다"는 전제 자체가 문화권에 따라 다르게 적용될 수 있음을 시사합니다.
+
 <definitions>
-## 10. 용어 정리 및 정의
+## 11. 용어 정리 및 정의
 *Glossary & Definitions*
 
 | 용어 | 정의 및 설명 |
@@ -343,10 +377,10 @@ P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*
 </definitions>
 
 <references>
-## 11. 참고 자료 및 원천 데이터 출처
+## 12. 참고 자료 및 원천 데이터 출처
 *References & Raw Sources*
 
-- **로컬 원천 데이터**: [`raw/20260822_metroidvania_genre_analysis_raw.txt`](file:///home/molajusi/home-nas/wiki/raw/20260822_metroidvania_genre_analysis_raw.txt)
+- **로컬 원천 데이터**: [`raw/20260822_metroidvania_genre_analysis_raw.txt`](file:///home/molajusi/home-nas/wiki/raw/20260822_metroidvania_genre_analysis_raw.txt), [`raw/20261105_nonhuman_enemy_loot_design_raw.txt`](raw/20261105_nonhuman_enemy_loot_design_raw.txt)(10절 비인간 적 보상 설계 근거)
 - **본문 인용 및 출처 각주 목록 (Numbered References)**:
   1. [3] **Shigeru Miyamoto & Eiji Aonuma (2011)**. *Iwata Asks: The Legend of Zelda Series & Philosophy*. Nintendo. [웹링크](https://iwataasks.nintendo.com/)
   2. [4] **Yoshio Sakamoto & Nintendo Metroid Team (2004)**. *Nintendo Online Magazine (No. 71) - Metroid Zero Mission Development Interview*. Nintendo. [웹링크](https://www.nintendo.co.jp/nom/0406/int/)
@@ -358,4 +392,11 @@ P26-09-04 오후 02:35:45 (KST, UTC+9) — 카테고리 체계 표준화 반영*
   8. [19] **Matt Bozon (2014~2020)**. *Shantae Series Development Retrospectives & Hybrid Design Philosophy*. WayForward / Nintendo World Report. [웹링크](http://www.nintendoworldreport.com/)
   9. [20] **Yoshio Sakamoto & MercurySteam (2021)**. *Metroid Dread Development History & E.M.M.I. Stalker AI Design*. Nintendo / IGN / Gamasutra. [웹링크](https://www.nintendo.com/whatsnew/metroid-dread-development-history/)
   10. [23] **Eiji Aonuma & Hiromasa Shikata (2013)**. *Iwata Asks: The Legend of Zelda: A Link Between Worlds*. Nintendo. [웹링크](https://iwataasks.nintendo.com/interview.html#/3ds/zelda-a-link-between-worlds/0/0)
+  11. [24] **Hacker News / stuffwithstuff.com (연도 미확인)**. *Dropping Loot*(2차 인용). [웹링크](https://news.ycombinator.com/item?id=7994095)
+  12. [25] **TV Tropes (연도 미확인)**. *Money Spider*. [웹링크](https://tvtropes.org/pmwiki/pmwiki.php/Main/MoneySpider)
+  13. [26] **RPG Maker Web Forums (연도 미확인)**. *Poll: Determining what gold/treasure an enemy drops*. [웹링크](https://forums.rpgmakerweb.com/threads/poll-determining-what-gold-treasure-an-enemy-drops.145696/)
+  14. [27] **Nioh 2 Wiki — Fextralife (연도 미확인)**. *Blood of the Yokai* / *Amrita Earned (Yokai Shift)*. [웹링크](https://nioh2.wiki.fextralife.com/Amrita+Ernd+Vs+Yokai)
+  15. [28] **Ōkami Wiki (연도 미확인)**. *Yen*(악마의 송곳니 Demon Fang 항목 포함). [웹링크](https://okami.fandom.com/wiki/Yen)
+  16. [29] **Twinfinite / Samurai Gamers (연도 미확인)**. *Negotiating With Shadows in Persona 5* / *Negotiation Overview and Guide in Persona 5 Royal*. [웹링크](https://twinfinite.net/guides/persona-5-how-negotiate-shadows/)
+  17. [30] **Fatal Frame Wiki (연도 미확인)**. *Spirit Stone (FF)*. [웹링크](https://fatalframe.fandom.com/wiki/Spirit_Stone_(FF))
 </references>
