@@ -65,6 +65,7 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
 - [📄 노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)
 - [📄 한국 전통 속 도교적 상징과 도구](korean_taoist_symbols_and_tools.html)
 - [📄 한국 전통 부엌 금기담의 위생공학 및 생태학적 분석](korean_traditional_kitchen_taboos.html)
+- [📄 한국 설화 속 귀신·요괴·괴물의 보상 체계](korean_folklore_creature_rewards.html)
 
 ### 게임 디자인 및 분석 (Game Design & Taxonomy)
 로그라이크·메트로이드배니아 등 장르 메커니즘 이론과 개별 게임 비평을 다룬다.
