@@ -2,7 +2,7 @@
 title: "한국 설화 속 귀신·요괴·괴물의 보상 체계"
 subtitle: "Rewards from Ghosts, Yokai, and Monsters in Korean Folk Narrative"
 created: "2026-11-05 오후 07:21:02 (KST, UTC+9)"
-updated: "2026-11-05 오후 07:21:02 (KST, UTC+9)"
+updated: "2026-11-05 오후 08:02:36 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Korean Folklore", "Dokkaebi", "Gumiho", "Ghost Stories", "Reward Narrative", "Game Design"]
 html_view: "korean_folklore_creature_rewards.html"
@@ -12,10 +12,10 @@ html_view: "korean_folklore_creature_rewards.html"
 *Rewards from Ghosts, Yokai, and Monsters in Korean Folk Narrative*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-05 오후 07:21:02 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 07:21:02 (KST, UTC+9)*
+*최초 작성일시: 2026-11-05 오후 07:21:02 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 08:02:36 (KST, UTC+9)*
 
 <context>
-본 문서는 한국 전통 설화·민담에서 귀신·요괴·요물·괴물을 처치하거나 교섭했을 때 인간이 얻는 보상의 유형을 한국민족문화대백과사전(encykorea.aks.ac.kr)을 1차 신뢰 출처로 조사·분류합니다. 동물·인간형이 아닌 적을 처치했을 때 화폐·귀금속을 보상으로 주는 것이 서사적으로 어색하다는 게임 디자인 논의([메트로이드배니아 시스템 메커니즘 및 레벨 디자인](metroidvania_mechanics_and_level_design.html) 12절)에서 출발해, 한국 설화가 실제로 어떤 보상 범주를 쓰는지 비교 자료로 정리합니다. 당산나무·성황당 등 마을 수호신앙 4부작과는 별개로, 신앙 대상이 아닌 "퇴치·교섭 서사 속 괴물·귀신"을 다룬다는 점에서 구분됩니다.
+본 문서는 한국 전통 설화·민담에서 귀신·요괴·요물·괴물을 처치하거나 교섭했을 때 인간이 얻는 보상의 유형을 한국민족문화대백과사전(encykorea.aks.ac.kr)을 1차 신뢰 출처로 조사·분류합니다. 동물·인간형이 아닌 적을 처치했을 때 화폐·귀금속을 보상으로 주는 것이 서사적으로 어색하다는 게임 디자인 논의([메트로이드배니아 시스템 메커니즘 및 레벨 디자인](metroidvania_mechanics_and_level_design.html) 12절)에서 출발해, 한국 설화가 실제로 어떤 보상 범주를 쓰는지 비교 자료로 정리합니다. 당산나무·성황당 등 마을 수호신앙 4부작과는 별개로, 신앙 대상이 아닌 "퇴치·교섭 서사 속 괴물·귀신"을 다룬다는 점에서 구분됩니다. 등장 존재의 시대 배경(특히 고려시대)과 출처 신뢰도 자체를 역추적한 분석은 [고려시대 배경 설화 속 기이한 존재와 출처 신뢰도](korean_goryeo_era_strange_beings.html)에서 별도로 다룹니다.
 </context>
 
 <overview>
