@@ -1,0 +1,31 @@
+================================================================================
+원천 데이터: 돌무더기탑(누석단) 신설 위치의 시각적 힌트 — 게임 선례 및 풍수 혈(穴) 개념의 지하 치환
+수집 일시: 2026-11-05 오후 05:34:18 (KST, UTC+9) ~ 오후 05:58:39 (KST, UTC+9)
+조사 주제: (1) 많은 게임에서 "여기에 세이브/체크포인트를 신설할 수 있다"를 암시하는 시각적·서사적 명분 사례, (2) 풍수의 혈(穴)·지맥(地脈) 개념을 지하 구간(채광 불가 지역)에 치환하는 방법
+검색 질의어: "game design visual cues where player can create new checkpoint save point" / "feng shui good energy spot game mechanic" / "ley line convergence point game mechanic altar rest point" / "Elden Ring Site of Grace golden light visual cue" / "Minecraft respawn anchor glowstone lore" / "Valheim campfire portal safe ground" / "Death Stranding chiral network node location" / "Zelda shrine light pillar" / "Okami guardian sapling" / "Genshin Statue of the Seven ley line" / "Dragon's Dogma 2 riftstone" / "풍수 혈 지맥 동굴 지하 기운 응집 수맥" / "game underground bioluminescent fungus crystal glow rest point" / "geothermal vent hot spring sacred spot game lore"
+대상 URL: eldenring.wiki.gg, breezewiki.discard.no(Minecraft Wiki 미러), zeldawiki.wiki, okami.fandom.com, gosunoob.com, warcraft.wiki.gg, zeldadungeon.net, jnuri.net 등
+================================================================================
+
+[질의군 1] 세이브/체크포인트 신설 위치의 시각적 힌트 — 게임 선례
+
+- 빛/방향 지표형: 《엘든 링》 은총의 자리(Site of Grace) — 비활성 상태에서는 금빛 오라를 뿜고, "은총의 인도(Guidance of Grace)"라는 금색 띠가 하늘에 뻗어 다음 목적지 방향을 가리킴. 반다이남코 공식 소개는 이를 "타른된 자를 올바른 길로 이끄는 장치"로 설명. 출처: https://eldenring.wiki.gg/wiki/Grace , https://eldenring.wiki.gg/wiki/Guidance_of_grace , https://www.bandainamcoent.com/news/elden-ring-introduction-part-3-gameplay-overview
+- 빛 기둥형: 《젤다의 전설: 티어스 오브 더 킹덤》 하늘 신전 — 빛의 기둥(Pillar of Light)이 특정 퀘스트 완료 후 하늘로 솟아올라 위치를 알리고, 빛의 나선(빛줄기)을 따라가면 신전 입구에 도달. 출처: https://zeldawiki.wiki/wiki/Pillar_of_Light , https://zeldawiki.wiki/wiki/The_Tabantha_Sky_Crystal
+- 저주/황폐 대 축복/비옥 대비형: 《오카미》 수호나무(Guardian Sapling) — 저주로 황폐해진 구역은 색이 빠지고 식물이 죽어 있으며, 그 중심의 수호나무를 되살리면 주변이 원색으로 복원됨. 신단수(코노하나)의 신성한 가지가 니폰 전역에 미리 심겨 있었다는 설정(팬 위키 수준, 공식 설정 문서 대조 못 함). 출처: https://okami.fandom.com/wiki/Hana_Valley , https://okami.fandom.com/wiki/Taka_Pass
+- 돌무더기 형태 선례: 《드래곤즈 도그마 2》 리프트스톤(Riftstone) — "검은 돌들이 원형 받침 위에 쌓인 무더기"로 묘사되며 고레벨 동료를 1회 소환할 수 있음. 왜 그 위치에 있는지에 대한 설정 설명은 확인되지 않음(확인 불가로 명시). 출처: https://www.gosunoob.com/?p=289884
+- 세계관 정당화형: 《마인크래프트》 리스폰 앵커 — 네더 차원에서는 침대가 작동하지 않아 개발진이 "침대를 네더에서도 쓰게 하면 싸지만 설정이 깨진다"는 이유로 별도 블록(글로우스톤+크라잉 옵시디언)을 새로 만들었다는 공식 설계 근거가 확인됨. 출처: https://breezewiki.discard.no/minecraft/wiki/Respawn_Anchor
+- 미확인/약한 근거: 포럼 글에서 《Emperor: Rise of the Middle Kingdom》이 건물 배치 시 풍수 적합도를 초록/노랑/빨강 오버레이로 보여준다는 언급이 있었으나 비공식 커뮤니티 출처뿐(확인 불가로 명시).
+
+[질의군 2] 풍수 혈(穴)·지맥(地脈) 개념 — 지하/채광 불가 구간으로의 치환
+
+- 풍수 용맥·혈 개념(지하 통로 구조): 지맥(地脈)은 땅속에서 산천의 정기가 도는 흐름(인체의 기혈에 비유), 용맥은 주산줄기를 따라 흐르는 기의 지하 통로. 혈(穴)은 용맥을 타고 온 기운이 최종적으로 뭉치는 자리로, 명당의 핵심. 수맥(지하수 흐름)과는 별개 개념으로 구분됨. 출처: https://www.jnuri.net/mobile/article.html?no=66550 , https://www.jnuri.net/mobile/article.html?no=65612
+- 온천/지열형 치환 선례: 《월드 오브 워크래프트》 멀고어 온천 — "지맥(ley line) 패턴이 모인 자리"라는 설정으로 그 자리에서 휴식하면 회복 속도가 2배(위키 자체가 이 부분을 추측성으로 표시, 공식 설정 아님을 명시). 출처: https://warcraft.wiki.gg/wiki/Mulgore_Hot_Springs
+- 《젤다의 전설》 시리즈 온천 — 실제 지열 화산 활동과 연관되어 화산(데스마운틴) 인근에 배치됨. 《야생의 숨결》에서는 온천에 몸을 담그면 체력이 회복됨. 출처: https://www.zeldadungeon.net/wiki/Hot_spring
+- 생물발광형: 특정 게임명을 특정하지 못한 일반론 수준의 자료만 확인(발광 균류가 특정 지점에서만 자라거나 더 밝게 빛난다는 설정 아이디어는 조사자 자신의 종합 제안이며 직접적 게임 사례 근거는 약함, 확인 불가로 명시).
+
+================================================================================
+조사 방법론 및 신뢰도 메모
+================================================================================
+- 빛/방향 지표형(엘든 링, 젤다)과 저주-축복 대비형(오카미)은 공식 또는 준공식 자료로 확인됨. 돌무더기 형태 선례(드래곤즈 도그마 2)는 형태만 확인되고 배치 명분(왜 그 자리인가)은 확인되지 않음.
+- 멀고어 온천의 "지맥 패턴" 서술은 워크래프트 위키 자체가 추측성("speculative")으로 표시한 부분이라 공식 설정으로 단정하지 않음.
+- 풍수의 혈·지맥 개념 자체는 한국 전통 풍수 이론의 정식 용어로, 실제 지하수(수맥)와는 명확히 구분됨. 이 구분을 혼동하지 않도록 주의함.
+- "지하에서는 볕 대신 지열/생물발광으로 치환한다"는 결론은 조사자가 선례들의 공통 구조(빛이라는 결과는 유지하되 원인을 하늘의 해에서 땅속 지열/지맥으로 바꿈)에서 귀납한 디자인 제안이며, 특정 게임이 이 논리를 명시적으로 채택했다는 직접 근거는 아님(확인 불가로 명시).

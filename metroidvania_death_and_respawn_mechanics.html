@@ -12,7 +12,7 @@
         <h1>메트로이드배니아 사망 및 부활 메커니즘 분석</h1>
         <div class="subtitle">Metroidvania Death and Respawn Mechanics: Design Paradigms, Inter-Game Influence, and Critical Debates</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-08-22 오후 10:12:00 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 05:34:18 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-08-22 오후 10:12:00 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 06:02:31 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -507,6 +507,26 @@
 <p>
     이렇게 분리하면 당산나무(거점형)와 돌무더기탑(경로형)이 모두 "세이브"라는 상위 기능을 공유하면서도, 위치 밀도(마을당 1곳 vs 경로상 다수)와 갱신 방식(고정형 vs 플레이어 행위로 매번 갱신)이 다른 두 하위유형으로 분화되어 중복 배정이 아니게 됩니다.
 </p>
+
+<h3>5.4 돌무더기탑 신설 위치의 시각적·서사적 명분 — 풍수 혈(穴) 개념의 지상·지하 통합 적용</h3>
+
+<p>
+    5.3절의 돌무더기탑(경로형 세이브)을 "아무 데서나" 신설 가능하게 하면 플레이어가 미답지에 이미 완성된 건축물이 놓여 있는 어색함(5절 서두의 디제틱 세이브 논의와 동일한 문제)이 재발합니다. 이를 피하려면 "이 자리는 신설이 가능한 특별한 땅"이라는 시각적 힌트가 필요하며, 여러 게임의 선례가 그 명분을 두 갈래로 제공합니다.
+</p>
+
+<ul>
+<li><b>빛/방향 지표형</b>: 《엘든 링》의 은총의 자리(Site of Grace)는 비활성 상태에서 금빛 오라를 뿜고, "은총의 인도"라는 금색 띠가 하늘에 뻗어 방향을 가리킵니다. 《젤다의 전설: 티어스 오브 더 킹덤》의 빛의 기둥(Pillar of Light)도 신전 위치를 하늘로 쏘아 알립니다. 두 사례는 "낮/밤·실내/실외와 무관하게 작동하는, 장소에 덧붙은 별도 신호"라는 공통점을 가집니다 <sup class="citation"><a href="#ref-20">[20]</a></sup>, <sup class="citation"><a href="#ref-21">[21]</a></sup>.</li>
+<li><b>저주-축복 대비형</b>: 《오카미》의 수호나무(Guardian Sapling)는 저주로 황폐해진 구역의 색과 식생을 변화시켜, 그 중심에 신설(복원) 가능한 지점을 시각적으로 구분합니다 <sup class="citation"><a href="#ref-22">[22]</a></sup>.</li>
+<li><b>세계관 정당화형</b>: 《마인크래프트》의 리스폰 앵커는 "네더 차원에서는 침대가 작동하지 않는다"는 설정 때문에 별도 블록이 필요하다는 공식 설계 근거를 갖습니다 — 장소(차원)의 성질이 기존 장치를 무효화하고 새 장치를 요구하는 구조입니다 <sup class="citation"><a href="#ref-23">[23]</a></sup>.</li>
+</ul>
+
+<p>
+    이 선례들의 공통 구조는 "자연광(볕)" 자체가 아니라 "그 자리에 내재한 별도 속성과, 그 속성을 드러내는 전용 신호(빛·색채·세계관 규칙)"입니다. 이는 전통 풍수의 <b>용맥(龍脈)→혈(穴)</b> 구조와 대응됩니다 — 지맥(地脈)은 땅속에서 산천의 기운이 흐르는 통로이고, 혈은 그 기운이 뭉친 지점으로, 지표의 채광과는 원래부터 무관한 개념입니다 <sup class="citation"><a href="#ref-24">[24]</a></sup>.
+</p>
+
+<p>
+    <b>지상·지하 통합 설계</b>: "혈" 하나의 원리로 지상과 지하의 명분을 통합하면, 지상에서는 혈의 신호가 채광(명당)으로 나타나고, 지하에서는 같은 혈의 신호가 지열·생물발광으로 나타난다고 설정할 수 있습니다. 《월드 오브 워크래프트》의 멀고어 온천은 "지맥 패턴이 모인 자리"라는 설정으로 2배 회복 효과를 주고, 《젤다의 전설》 시리즈의 온천도 화산 지열대 근처에 배치되어 체력을 회복시킵니다(다만 멀고어 온천의 "지맥" 서술은 게임 위키 자체가 추측성으로 표시한 부분입니다) <sup class="citation"><a href="#ref-25">[25]</a></sup>, <sup class="citation"><a href="#ref-26">[26]</a></sup>. 즉 지하 구간에서는 "볕이 잘 든다"를 "지맥이 뭉쳐 땅 스스로 빛이나 열을 낸다"로 치환하면, 지상 규칙(혈=기운 응집+가시적 신호)의 틀을 유지하면서 채광 의존성을 없앨 수 있습니다. 이렇게 하면 서로 다른 두 규칙이 아니라 하나의 풍수 원리(혈)가 환경에 따라 다른 현상(채광 vs 지열·생물발광)으로 드러나는 구조가 되어, 돌무더기탑이 신설되는 모든 구간에서 일관된 서사적 명분을 유지할 수 있습니다.
+</p>
             </section>
             <section>
                 <h2>6. 용어 정리 및 정의</h2>
@@ -584,7 +604,7 @@
 </p>
                 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20260822_metroidvania_death_and_respawn_mechanics_raw.txt">raw/20260822_metroidvania_death_and_respawn_mechanics_raw.txt</a></code>와 <code><a href="raw/20261103_save_point_symbolism_raw.txt">raw/20261103_save_point_symbolism_raw.txt</a></code>(5절 세이브 포인트 상징 체계 조사)의 데이터와 교차 검증을 거쳐 작성되었습니다. 5.2절의 사례는 검색 엔진 합성 요약에 의존해 "간접 정황"으로 분류되었으며, 1차 출처 재대조가 미완인 상태입니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20260822_metroidvania_death_and_respawn_mechanics_raw.txt">raw/20260822_metroidvania_death_and_respawn_mechanics_raw.txt</a></code>와 <code><a href="raw/20261103_save_point_symbolism_raw.txt">raw/20261103_save_point_symbolism_raw.txt</a></code>(5절 세이브 포인트 상징 체계 조사), <code><a href="raw/20261105_save_point_sitecue_and_pungsu_precedent_raw.txt">raw/20261105_save_point_sitecue_and_pungsu_precedent_raw.txt</a></code>(5.4절 돌무더기탑 신설 위치 명분 및 풍수 혈 개념의 지상·지하 통합 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 5.2절의 사례는 검색 엔진 합성 요약에 의존해 "간접 정황"으로 분류되었으며, 1차 출처 재대조가 미완인 상태입니다. 5.4절 멀고어 온천의 "지맥" 서술은 게임 위키 자체가 추측성으로 표시한 부분이며, 지상·지하 통합 설계안 자체는 조사자의 종합 제안으로 특정 게임의 명시적 채택 사례가 아닙니다.
 </div>
                 <ol class="reference-list">
     <li id="ref-1">[1] Josh Bycer (2019). <em>The Problem with Corpse Runs in Metroidvanias</em>. Game-Wisdom. <a href="https://game-wisdom.com/critical/corpse-runs-metroidvania" target="_blank">웹링크</a></li>
@@ -606,6 +626,13 @@
     <li id="ref-17">[17] Wikipedia (연도 미확인). <em>Bonfire (Dark Souls)</em>. <a href="https://en.wikipedia.org/wiki/Bonfire_(Dark_Souls)" target="_blank">웹링크</a></li>
     <li id="ref-18">[18] Vice — develop.vice.com (연도 미확인). <em>An Ode to the Dark Souls Bonfire</em>. <a href="https://develop.vice.com/en/article/an-ode-to-the-dark-souls-bonfire/" target="_blank">웹링크</a></li>
     <li id="ref-19">[19] Gfinity Esports (연도 미확인). <em>Why Save Points Remain a Vital Part of Modern Video Game Design</em>(메가맨 레전즈·더 미이라: 디매스터드·브라마 포스·GTA 바이스 시티 사례 — 검색 엔진 합성 요약 경유, 1차 원문 문장 대조 미완). <a href="https://www.gfinityesports.com/article/why-save-points-remain-a-vital-part-of-modern-video-game-design" target="_blank">웹링크</a></li>
+    <li id="ref-20">[20] Elden Ring Wiki.gg (연도 미확인). <em>Grace</em> / <em>Guidance of Grace</em>. <a href="https://eldenring.wiki.gg/wiki/Grace" target="_blank">웹링크</a></li>
+    <li id="ref-21">[21] Zelda Wiki (연도 미확인). <em>Pillar of Light</em> / <em>The Tabantha Sky Crystal</em>(《티어스 오브 더 킹덤》). <a href="https://zeldawiki.wiki/wiki/Pillar_of_Light" target="_blank">웹링크</a></li>
+    <li id="ref-22">[22] Ōkami Wiki (연도 미확인). <em>Hana Valley</em> / <em>Taka Pass</em>(수호나무 Guardian Sapling). <a href="https://okami.fandom.com/wiki/Hana_Valley" target="_blank">웹링크</a></li>
+    <li id="ref-23">[23] BreezeWiki(Minecraft Wiki 미러) (연도 미확인). <em>Respawn Anchor</em>. <a href="https://breezewiki.discard.no/minecraft/wiki/Respawn_Anchor" target="_blank">웹링크</a></li>
+    <li id="ref-24">[24] 제주뉴스(jnuri.net) (연도 미확인). 〈명당은 산천의 기운이 조화롭게 응집된 곳이다〉 / 〈"인체에 기맥(氣脈)이 있듯 땅에도 지맥(地脈)이 있다"〉. <a href="https://www.jnuri.net/mobile/article.html?no=65612" target="_blank">웹링크</a></li>
+    <li id="ref-25">[25] Warcraft Wiki (연도 미확인). <em>Mulgore Hot Springs</em>(지맥 패턴 서술은 위키 자체가 추측성으로 표시). <a href="https://warcraft.wiki.gg/wiki/Mulgore_Hot_Springs" target="_blank">웹링크</a></li>
+    <li id="ref-26">[26] Zelda Dungeon Wiki (연도 미확인). <em>Hot spring</em>. <a href="https://www.zeldadungeon.net/wiki/Hot_spring" target="_blank">웹링크</a></li>
 </ol>
             </section>
         </article>

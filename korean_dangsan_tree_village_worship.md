@@ -2,7 +2,7 @@
 title: "당산나무와 수목숭배 신앙"
 subtitle: "Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion"
 created: "2026-11-03 오전 11:06:14 (KST, UTC+9)"
-updated: "2026-11-03 오후 06:01:41 (KST, UTC+9)"
+updated: "2026-11-05 오후 05:58:39 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Dangsan Tree", "Tree Worship", "Village Deity", "Korean Folk Religion", "Dangsanje"]
 html_view: "korean_dangsan_tree_village_worship.html"
@@ -12,7 +12,7 @@ html_view: "korean_dangsan_tree_village_worship.html"
 *Dangsan Tree Worship: The Village Guardian Tree in Korean Folk Religion*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-03 오후 06:01:41 (KST, UTC+9)*
+*최초 작성일시: 2026-11-03 오전 11:06:14 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 05:58:39 (KST, UTC+9)*
 
 <context>
 본 문서는 한국 마을 중앙·입구에 서 있는 신성한 노거수(老巨樹)인 당산나무 신앙을 한국민족문화대백과사전(encykorea.aks.ac.kr, 한국학중앙연구원 편찬)의 "당산제"·"수목숭배" 항목을 1차 신뢰 출처로 다룹니다. 같은 마을 공간에서 흔히 함께 등장하는 [솟대 신앙과 형태학](korean_sotdae_village_totem_pole.html), [장승 신앙과 경계 수호 체계](korean_jangseung_guardian_post.html), [성황당(서낭당) 신앙과 북방 샤머니즘 돌무더기 비교 연구](korean_seonghwangdang_and_northern_cairn_worship.html)와 함께 한국 마을 경계·수호 신앙 4부작을 이룹니다. 매체가 다른 인접 신앙은 [우물·샘 신앙과 용신·정천 체계](korean_well_spring_worship.html), [선돌(입석) 신앙과 기자 상징](korean_standing_stone_seondol.html), [노상미륵 신앙과 민불 전통](korean_folk_maitreya_worship.html)에서 다룹니다.
@@ -162,6 +162,16 @@ html_view: "korean_dangsan_tree_village_worship.html"
 
 사용자가 지목한 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰"(2009년 한국조경학회 추계학술대회 발표자료집, 90~93쪽) 원문은 이번 조사로 확보하지 못했으며, 서지 정보와 2차 인용만 확인되었습니다(확인 불가로 명시) [[11]](#ref-11).
 
+### 3.6.1 풍수 전래 이전의 한국 고유 터·산신앙
+
+3.6절의 비보숲은 풍수지리상 지형 결함을 보완하는 장치입니다. 그런데 "풍수" 자체가 한국 고유 사상인지, 중국에서 전래된 것인지는 별도로 짚어볼 문제입니다. 한국민족문화대백과사전 〈풍수〉항목은 이 둘을 구분해 서술합니다 — "우리 고유의 풍수사상이 있었으나 중국에서 도입되어 신라말 도선(道詵)과 그 제자들에 의해 널리 보급되고 뿌리를 내렸다." 신라 원성왕 때 당의 『청오경』이 수입된 기록이 있어, 도선(신라 말) 이전에도 외래 풍수의 전래가 있었다는 것도 함께 확인됩니다 [[21]](#ref-21).
+
+다만 "고유의 풍수사상"이라는 서술이 가리키는 실체는, 지형을 분석해 좋은 터를 판별하는 방법론이 아니라 **특정 산·대지에 신격을 부여하는 신앙**입니다. 지역의 큰 산을 수호신으로 섬기는 진산(鎭山) 숭배, 대지를 어머니로 보는 지모신앙이 산신 신앙으로 확대되어 산신 신화를 낳았다는 설명(신라 선도산 성모 신화가 대표 사례)이 그 내용입니다. 백제·신라에서는 삼국시대부터 삼산(三山) 신앙과 제의가 있었다는 서술도 확인됩니다 [[22]](#ref-22). 즉 풍수 전래 이전부터 "이 산·이 터에는 신이 있다"는 신앙은 있었으나, "이런 지형 조건이 좋은 터다"라는 분석적 명당 판별 기준이 별도로 있었는지는 이번 조사로 확인되지 않습니다(확인 불가로 명시).
+
+최창조는 한국식 풍수를 "자생풍수(自生風水)"로 명명하고, 산악숭배·지모 관념·영혼불멸 사상에서 "자생"했다고 주장합니다. 다만 같은 계열 자료에서도 "삼국시대에는 풍수 술법을 받아들인 흔적이 없고 통일신라 이후 전래되었다"는 중국 유입설이 함께 소개되어, 기원 시기 자체가 학설 대립 상태입니다. 자생풍수론은 학계 전체 합의가 아니라 최창조 개인의 학설로 분류됩니다 [[23]](#ref-23).
+
+도선이 체계화한 비보사탑설(땅의 기운이 약한 곳에 사찰·탑을 세워 보완)은 밀교사상과 도참사상이 결합되어 형성된 것으로, 3.6절의 비보숲과 같은 계열의 "보완" 사상입니다. 다만 비보사탑설 자체는 풍수 도입 이후(나말여초)의 산물이라, "풍수 도입 이전 고유 사상"과는 시기상 별개입니다 [[24]](#ref-24).
+
 ### 3.7 상당·중당·하당 위계 구조
 당산이라는 명칭은 좁게는 신체(神體)가 나무인 특정 제의 지점만을, 넓게는 한 마을의 제의 체계 전체를 가리키는 중의적 용어입니다. 다수의 마을은 제의 공간을 **상당(上堂)·중당(中堂)·하당(下堂)**이라는 수직적 위계로 나눕니다.
 
@@ -231,13 +241,16 @@ html_view: "korean_dangsan_tree_village_worship.html"
 | **삼당** | 상당·중당·하당 또는 산신당·장승·솟대·국수당 등 신격 구성 요소에 따라 제의 공간이 3단계로 나뉘는 체제. |
 | **천부지모** | **Cheonbu-jimo**(天父地母). 상당·하당이 구분된 곳에서 상당은 남성신, 하당은 여성신이 좌정한다고 보는 관념. |
 | **당산목** | 당산나무가 한 그루(또는 소수)뿐이어서 별도의 숲 공간 없이 그 나무 자체가 신앙 대상이 되는 단일 노거수형. |
+| **자생풍수** | **Native Pungsu**. 최창조가 정의한 한국식 풍수 개념. 산악숭배·지모 관념·영혼불멸 사상에서 자생했다고 주장하며, 중국 전래설과 병존하는 학설(개인 학설, 학계 전체 합의 아님). |
+| **비보사탑설** | 도선이 체계화한 사상. 땅의 기운이 약한 곳에 사찰·탑을 세워 지덕(地德)을 보완한다는 원리로, 불교 밀교사상과 도참사상이 결합되어 형성됨. |
+| **진산** | **Jinsan**(鎭山). 한 지역의 큰 산을 수호신으로 숭배하는 대상. 산신앙의 전통적 형태. |
 
 ## 6. 참고 자료 및 원천 데이터 출처
 *References & Raw Sources*
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무), <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(4.2절 수종 선택 요인 보강 근거), <code><a href="raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt">raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt</a></code>(3.6~3.7절 당산숲·비보숲 및 상당·중당·하당 구조 근거), <code><a href="raw/20261103_dangsan_sangdang_hadang_more_and_forest_form_raw.txt">raw/20261103_dangsan_sangdang_hadang_more_and_forest_form_raw.txt</a></code>(3.7.1절 추가 사례 및 4.3절 당산나무·당산숲 형태 구분 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF·지역문화대전을 보조 출처로 구분해 기록합니다. 4.2절의 수종 선정 의사결정 과정, 3.6절의 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰" 원문, 3.7절의 전국 단위 상당·중당·하당 분포, 4.3절의 단일 노거수형·숲 단위형 전국 분포 비율은 확인 불가로 명시됩니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261103_dangsan_sotdae_jangseung_raw.txt">raw/20261103_dangsan_sotdae_jangseung_raw.txt</a></code>(A절: 당산나무), <code><a href="raw/20261103_dangsan_species_selection_raw.txt">raw/20261103_dangsan_species_selection_raw.txt</a></code>(4.2절 수종 선택 요인 보강 근거), <code><a href="raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt">raw/20261103_dangsan_biboforest_sangdang_hadang_raw.txt</a></code>(3.6~3.7절 당산숲·비보숲 및 상당·중당·하당 구조 근거), <code><a href="raw/20261103_dangsan_sangdang_hadang_more_and_forest_form_raw.txt">raw/20261103_dangsan_sangdang_hadang_more_and_forest_form_raw.txt</a></code>(3.7.1절 추가 사례 및 4.3절 당산나무·당산숲 형태 구분 근거), <code><a href="raw/20261105_korean_native_pungsu_mountain_worship_raw.txt">raw/20261105_korean_native_pungsu_mountain_worship_raw.txt</a></code>(3.6.1절 풍수 전래 이전 고유 터·산신앙 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr) 항목을 1차 신뢰 출처로, 지역 언론·학술 PDF·지역문화대전·블로그 2차 인용을 보조 출처로 구분해 기록합니다. 4.2절의 수종 선정 의사결정 과정, 3.6절의 "순천시 낙안읍성 마을당산의 형태 및 기능에 관한 고찰" 원문, 3.6.1절의 중국 풍수 유입 이전 독자적 명당 판별 기준 존재 여부, 3.7절의 전국 단위 상당·중당·하당 분포, 4.3절의 단일 노거수형·숲 단위형 전국 분포 비율은 확인 불가로 명시됩니다.
 </div>
 
 <ol class="reference-list">
@@ -261,4 +274,8 @@ html_view: "korean_dangsan_tree_village_worship.html"
     <li id="ref-18">[18] 한국민족문화대백과사전(한국학중앙연구원). 〈고창 수동리 팽나무〉·〈김화 당느릅나무〉. <a href="https://encykorea.aks.ac.kr/Article/E0075115" target="_blank">encykorea.aks.ac.kr/Article/E0075115</a> / <a href="https://encykorea.aks.ac.kr/Article/E0011102" target="_blank">encykorea.aks.ac.kr/Article/E0011102</a></li>
     <li id="ref-19">[19] 한국민족문화대백과사전(한국학중앙연구원). 〈용수동 당산〉·〈경산 자인의 계정숲〉; 세계일보(군포 덕고개 당숲). <a href="https://encykorea.aks.ac.kr/Article/E0039550" target="_blank">encykorea.aks.ac.kr/Article/E0039550</a> / <a href="https://encykorea.aks.ac.kr/Article/E0002500" target="_blank">encykorea.aks.ac.kr/Article/E0002500</a> / <a href="https://www.segye.com/newsView/20220925503073" target="_blank">웹링크</a></li>
     <li id="ref-20">[20] KoreaScience 학술 PDF(낙안읍성 당산숲·당산목 구분 기록). <a href="https://koreascience.kr/article/CFKO201022358467400.pdf" target="_blank">웹링크</a></li>
+    <li id="ref-21">[21] 한국민족문화대백과사전(한국학중앙연구원). 〈풍수〉·〈도선〉. <a href="https://encykorea.aks.ac.kr/Article/E0060401" target="_blank">encykorea.aks.ac.kr/Article/E0060401</a> / <a href="https://encykorea.aks.ac.kr/Article/E0015705" target="_blank">encykorea.aks.ac.kr/Article/E0015705</a></li>
+    <li id="ref-22">[22] 불광미디어. 〈[산신] 한국 고대 산신신앙〉; 우리역사넷. 〈대지의 어머니〉. <a href="https://www.bulkwang.co.kr/news/articleView.html?idxno=37012" target="_blank">웹링크</a> / <a href="http://contents.history.go.kr/front/km/print.do?levelId=km_035_0030_0020_0010" target="_blank">웹링크</a></li>
+    <li id="ref-23">[23] 최창조. 블로그 경유 2차 인용(원문 「한국 풍수 인물사」). <a href="https://blog.daum.net/kcs1025/484" target="_blank">웹링크</a></li>
+    <li id="ref-24">[24] 한국민족문화대백과사전(한국학중앙연구원). 〈비보사찰〉. <a href="https://encykorea.aks.ac.kr/Article/E0025152" target="_blank">encykorea.aks.ac.kr/Article/E0025152</a></li>
 </ol>
