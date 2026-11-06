@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
+updated: "2026-11-06 오후 04:41:20 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 02:57:19 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 04:41:20 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
@@ -185,6 +185,18 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 
 <div class="callout">
 <strong>최종 결정</strong>: <b>Godot 엔진</b>을 이 프로젝트의 기술 스택으로 채택합니다. 결정 근거는 커뮤니티 규모가 아니라(그건 Defold 제외 사유였을 뿐), <b>룸디자인 도구의 엔진 내장 여부</b>가 최종 결정 요인이었습니다. 다만 Tiled는 Godot에서도 임포터 플러그인으로 쓸 수 있으므로, 내장 TileMap 에디터가 부족하다고 느껴지면 언제든 전환 가능한 대안으로 남겨둡니다.
+</div>
+
+### 5.3 설치 확인 — 실제 설치된 버전과 환경
+
+아저씨가 로컬 환경에 Godot을 실제로 설치했습니다. `winget install --id GodotEngine.GodotEngine -e` 명령으로 공식 GitHub Releases 배포본을 받아 설치했고, 그 과정에서 다음이 확인됩니다.
+
+- **설치된 버전**: **Godot 4.7.2 (stable)**. `../ajusine.game1/project.godot`가 현재 `config/features=PackedStringArray("4.3")`로 선언되어 있어, 구현 저장소 쪽에서 실제 설치 버전(4.7.2)과의 정합성을 점검·갱신할 필요가 있습니다(위키 세션의 역할 범위 밖이므로 여기서는 반영하지 않고 기록만 남깁니다).
+- **CLI 헤드리스 요건 충족 확인**: 설치 로그에 "명령줄 별칭이 추가되었습니다 'godot'", "'godot_console'"이 출력되어, 5.1절에서 Godot 채택의 판단 기준 ②로 삼았던 "CLI/헤드리스 실행으로 자동화가 가능한가"가 이 로컬 환경에서 실제로 충족됨이 확인됩니다.
+- **관리자 권한 관련 유의사항**: 설치 로그는 "관리자 권한 없이 설치할 경우 WinGet이 명령줄 별칭의 심볼릭 링크를 만들 수 없다"는 일반 안내문도 함께 출력했습니다. 이번 설치에서는 별칭이 실제로 생성되었으므로 관리자 권한이 있는 상태로 수행된 것으로 보이나, 향후 다른 환경에서 재설치할 경우 이 조건을 다시 확인해야 합니다.
+
+<div class="callout">
+<p><strong>출처 성격 안내</strong>: 이 절은 전용 웹 조사가 아니라, 아저씨가 로컬 셸에서 직접 실행한 설치 명령의 실제 출력 전문(원문: <code><a href="raw/20261106_godot_engine_install_log_raw.txt">raw/20261106_godot_engine_install_log_raw.txt</a></code>)을 그대로 기록한 것입니다.</p>
 </div>
 </engine>
 
