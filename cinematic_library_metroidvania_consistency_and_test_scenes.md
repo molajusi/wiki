@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-06 오후 03:02:57 (KST, UTC+9)"
+updated: "2026-11-06 오후 05:20:08 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 03:02:57 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 05:20:08 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -112,13 +112,28 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 
 3씬을 구현한 뒤 아래를 통과하면 2.1·2.2절의 일관성이 유지됐다고 판단할 수 있습니다(2.3절은 3.4절에 따라 검증 대상에서 제외).
 
-- [ ] 마을A의 `CinematicSequence`(스크립트 경로)와 필드의 `CinematicSequence`(레코더 경로)가 같은 `CinematicPlayer` 노드로 재생되는가
-- [ ] 필드에서 얻은 능력 플래그가 마을B 씬 로드 시 중복 저장 없이 하나의 소스(오토로드 또는 Resource)에서 읽히는가
-- [ ] `SequenceModeConfig`만 수정했을 때 `CinematicSequence`가 영향받지 않는가(원 기획서 2.4.1절 리소스 이원화 원칙의 실제 검증)
+- [x] 마을A의 `CinematicSequence`(스크립트 경로)와 필드의 `CinematicSequence`(레코더 경로)가 같은 `CinematicPlayer` 노드로 재생되는가 — **확인됨**(3.6절)
+- [ ] 필드에서 얻은 능력 플래그가 마을B 씬 로드 시 중복 저장 없이 하나의 소스(오토로드 또는 Resource)에서 읽히는가 — **부분 확인**(필드 내부는 확인, 마을B 미구현으로 씬 경계 전체 검증은 보류, 3.6절)
+- [x] `SequenceModeConfig`만 수정했을 때 `CinematicSequence`가 영향받지 않는가(원 기획서 2.4.1절 리소스 이원화 원칙의 실제 검증) — **확인됨**(3.6절)
 
 <div class="callout">
 <p><strong>범위 표시</strong>: 이 설계는 플레이 가능성과 연출 API 가능성만 검증하는 최소 테스트이며, 전투·세계관·다국어·추격 시퀀스 등 <a href="cinematic_library_metroidvania_game_design.html">원 기획 문서</a> 9장의 나머지 오픈 이슈는 이 테스트 범위에 포함되지 않습니다.</p>
 </div>
+
+### 3.6 구현 경과 — 마을 A·필드 완료(ajusine.game1)
+
+구현 저장소(`ajusine.game1`, Godot 4.7.2)에서 마을A·필드 두 씬이 완료되었습니다. 상세 수치·테스트 로그는 구현 저장소의 보고서 [[10]](#ref-10)에 있으며, 본 절은 설계 차원에서 의미가 있는 결론만 요약합니다(AGENTS.md 3.15절 — 작업 로그는 위키 정본에 수록하지 않음).
+
+- **체크리스트 1번(스키마 일관성) 확인됨**: 마을A는 `CinematicPlayer.play_scripted()`(스크립트 경로), 필드는 `CinematicPlayer.play_sequence()`(레코더 경로)로 각각 재생되며, 둘 다 같은 `CinematicPlayer` 클래스가 처리합니다.
+- **체크리스트 3번(리소스 이원화) 확인됨**: `SequenceModeConfig`(`field_gate_config.tres`) 값을 바꿔도 `CinematicSequence`(레코더가 채집한 타임라인)에는 영향이 없음이 테스트로 확인되었습니다.
+- **체크리스트 2번(상태 일관성)은 부분 확인**: 필드 내부(게이트·픽업)는 `PlayerState` 오토로드 하나만 참조함이 확인되었으나, 마을B가 아직 없어 **씬 경계를 넘는 전체 검증은 보류**됩니다.
+- **9장 오픈 이슈 중 일부가 임시로 메워짐**(최종 확정 아님, 구현 저장소 수준의 임시 결정):
+  - `CinematicPlayer`의 추상화 인터페이스 — `register_actor(character_id, node)`로 재생 대상을 등록하고, 레코더 경로 재생 시 `position`은 이전 항목까지 선형 보간하는 방식으로 구현됨.
+  - 레코더 경로의 샘플링 간격 — 0.1초, 상태 변화 시에만 기록(델타 인코딩). 이번 테스트는 `position`만 채집하며 감정·대사·카메라는 채집 대상이 없습니다.
+  - 필드 게이트의 능력 ID — `double_jump`(플래그 검사만, 이중 점프 물리 자체는 미구현).
+- **범위 준수 확인**: 게이트는 3.4절 배제 원칙대로 "단색 블록, 시각적 신호 없음"으로 구현되어, 2.3절(게이팅 설계 일관성)에 손대지 않았다는 설계 의도가 그대로 지켜졌습니다.
+- **5.3절 관련 후속 조치 완료**: `ajusine.game1`의 `project.godot`가 설치된 Godot 버전(4.7.2)에 맞춰 `config/features`를 `"4.7"`로 갱신했습니다 — [원 기획 문서](cinematic_library_metroidvania_game_design.html) 5.3절에서 남겨 둔 버전 정합성 점검 과제가 해소되었습니다.
+- **남은 작업**: 마을B 씬 미구현(체크리스트 2번 전체 검증의 전제조건), 레코더의 감정·대사·카메라 채집 미구현.
 </analysis>
 
 ## 4. 용어 정리 및 정의
@@ -153,4 +168,5 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-7">[7] Chalmers University of Technology. 〈Designing Multi-Mode Player Abilities to Enhance Backtracking in Metroidvania Levels〉(석사논문). <a href="https://odr.chalmers.se/items/d79d64a8-8f42-4b85-a4f8-5b1b259962b0" target="_blank">odr.chalmers.se</a> — 2.3절 환경 신호 일관성과 백트래킹 성립 조건의 학술 근거.</li>
     <li id="ref-8">[8] Dragonfly DB FAQ. 〈What is a vertical slice in game development〉. <a href="https://www.dragonflydb.io/faq/what-is-vertical-slice-in-game-development" target="_blank">dragonflydb.io</a> / Juego Studio. 〈Vertical Slice vs Prototype vs MVP〉. <a href="https://www.juegostudio.com/blog/vertical-slice-vs-prototype-vs-mvp" target="_blank">juegostudio.com</a> — 3.1절 버티컬 슬라이스/프로토타입/MVP 구분의 근거.</li>
     <li id="ref-9">[9] 이 위키. 〈영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획〉. <a href="cinematic_library_metroidvania_game_design.html">cinematic_library_metroidvania_game_design.html</a> — 3.4절 프리뷰 기법 등 원 기획서 7.2.2절 참조.</li>
+    <li id="ref-10">[10] 구현 저장소 <code>ajusine.game1</code>(별도 git 저장소, 이 위키 바깥). <code>reports/20261106_field_scene_report.md</code> — 3.6절 마을A·필드 구현 및 체크리스트 검증 결과의 상세 로그. 본 위키는 원문을 그대로 가져오지 않고 설계적으로 의미 있는 결론만 요약함(AGENTS.md 3.15절).</li>
 </ol>
