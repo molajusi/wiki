@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-06 오후 06:29:49 (KST, UTC+9)"
+updated: "2026-11-06 오후 07:07:46 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 06:29:49 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 07:07:46 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -79,7 +79,7 @@ MonoGame 커뮤니티의 지침은 "컷신 코드를 쓰기 전에 컷신 스펙
 | :--- | :--- | :--- | :--- |
 | **마을 A** (출발) | 연출 스크립트 경로 검증 | 2.1절(스키마, 스크립트 경로 쪽) | NPC 1명과의 짧은 대화 — `AnimationPlayer`에 감정 태그·대사풍선 메서드 트랙을 심어 미리 저작. `CinematicSequence` 최소 스키마(3.3절)로 기술됨을 확인하는 최초 사례. |
 | **필드** (경유) | 레코더 경로 검증 + 상태 플래그 기능 검증 | 2.1절(스키마, 레코더 경로 쪽), 2.2절(상태) | `required_ability` 플래그 체크만으로 열리고 닫히는 **기능 검증용 게이트** 1개(3.4절 참조). 통과 과정 전체를 레코더 경로로 채집해, 마을A와 같은 `CinematicPlayer`가 재생할 수 있는지 확인. |
-| **마을 B** (도착) | 상태 일관성 검증 | 2.2절(상태) | 도착 시 짧은 연출 1개. NPC가 능력 획득 플래그를 참조하는 대사 분기를 둬서, 오토로드/Resource에 저장된 상태가 씬 경계를 넘어 올바르게 읽히는지 확인. |
+| **마을 B** (도착) | 상태 일관성 검증 | 2.2절(상태) | 도착 시 짧은 연출 1개(구현됨). NPC가 능력 획득 플래그를 참조하는 대사 분기를 둬서, 오토로드/Resource에 저장된 상태가 씬 경계를 넘어 올바르게 읽히는지 확인(3.6절, 확인됨). |
 
 ### 3.3 최소 데이터 스키마 초안 (미확정, 이번 테스트 전용)
 
@@ -113,29 +113,31 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 3씬을 구현한 뒤 아래를 통과하면 2.1·2.2절의 일관성이 유지됐다고 판단할 수 있습니다(2.3절은 3.4절에 따라 검증 대상에서 제외).
 
 - [x] 마을A의 `CinematicSequence`(스크립트 경로)와 필드의 `CinematicSequence`(레코더 경로)가 같은 `CinematicPlayer` 노드로 재생되는가 — **확인됨**(3.6절)
-- [ ] 필드에서 얻은 능력 플래그가 마을B 씬 로드 시 중복 저장 없이 하나의 소스(오토로드 또는 Resource)에서 읽히는가 — **부분 확인**(필드 내부는 확인, 마을B 미구현으로 씬 경계 전체 검증은 보류, 3.6절)
+- [x] 필드에서 얻은 능력 플래그가 마을B 씬 로드 시 중복 저장 없이 하나의 소스(오토로드 또는 Resource)에서 읽히는가 — **확인됨**(3.6절)
 - [x] `SequenceModeConfig`만 수정했을 때 `CinematicSequence`가 영향받지 않는가(원 기획서 2.4.1절 리소스 이원화 원칙의 실제 검증) — **확인됨**(3.6절)
 
 <div class="callout">
 <p><strong>범위 표시</strong>: 이 설계는 플레이 가능성과 연출 API 가능성만 검증하는 최소 테스트이며, 전투·세계관·다국어·추격 시퀀스 등 <a href="cinematic_library_metroidvania_game_design.html">원 기획 문서</a> 9장의 나머지 오픈 이슈는 이 테스트 범위에 포함되지 않습니다.</p>
 </div>
 
-### 3.6 구현 경과 — 마을 A·필드 완료(ajusine.game1)
+### 3.6 구현 경과 — 3씬 전체 완료(ajusine.game1)
 
-구현 저장소(`ajusine.game1`, Godot 4.7.2)에서 마을A·필드 두 씬이 완료되었습니다. 상세 수치·테스트 로그는 구현 저장소의 보고서 [[10]](#ref-10)에 있으며, 본 절은 설계 차원에서 의미가 있는 결론만 요약합니다(AGENTS.md 3.15절 — 작업 로그는 위키 정본에 수록하지 않음).
+구현 저장소(`ajusine.game1`, Godot 4.7.2)에서 마을A·필드·마을B 세 씬이 모두 완료되어, **이 문서가 설계한 최소 테스트의 원래 목표(플레이 가능성 + 연출 API 가능성 검증)가 달성되었습니다.** 상세 수치·테스트 로그는 구현 저장소의 보고서 [[10]](#ref-10)에 있으며, 본 절은 설계 차원에서 의미가 있는 결론만 요약합니다(AGENTS.md 3.15절 — 작업 로그는 위키 정본에 수록하지 않음).
 
-- **체크리스트 1번(스키마 일관성) 확인됨**: 마을A는 `CinematicPlayer.play_scripted()`(스크립트 경로), 필드는 `CinematicPlayer.play_sequence()`(레코더 경로)로 각각 재생되며, 둘 다 같은 `CinematicPlayer` 클래스가 처리합니다.
+- **체크리스트 1번(스키마 일관성) 확인됨**: 마을A·마을B는 `CinematicPlayer.play_scripted()`(스크립트 경로), 필드는 `CinematicPlayer.play_sequence()`(레코더 경로)로 각각 재생되며, 셋 다 같은 `CinematicPlayer` 클래스가 처리합니다.
 - **체크리스트 3번(리소스 이원화) 확인됨**: `SequenceModeConfig`(`field_gate_config.tres`) 값을 바꿔도 `CinematicSequence`(레코더가 채집한 타임라인)에는 영향이 없음이 테스트로 확인되었습니다.
-- **체크리스트 2번(상태 일관성)은 부분 확인**: 필드 내부(게이트·픽업)는 `PlayerState` 오토로드 하나만 참조함이 확인되었으나, 마을B가 아직 없어 **씬 경계를 넘는 전체 검증은 보류**됩니다.
+- **체크리스트 2번(상태 일관성) 확인됨**: 필드에서 능력을 획득한 뒤 씬을 전환해 마을B에 진입해도 `PlayerState` 오토로드 하나만 참조해 대사 분기가 결정됨을 확인했습니다 — 마을B 쪽 소스에 능력 상태의 사본 변수가 없다는 점까지 직접 검사했습니다.
 - **9장 오픈 이슈 중 일부가 임시로 메워짐**(최종 확정 아님, 구현 저장소 수준의 임시 결정):
   - `CinematicPlayer`의 추상화 인터페이스 — `register_actor(character_id, node)`로 재생 대상을 등록하고, 레코더 경로 재생 시 `position`은 이전 항목까지 선형 보간하는 방식으로 구현됨.
   - 레코더 경로의 샘플링 간격 — 0.1초, 상태 변화 시에만 기록(델타 인코딩). 이번 테스트는 `position`만 채집하며 감정·대사·카메라는 채집 대상이 없습니다.
   - 필드 게이트의 능력 ID — `double_jump`(플래그 검사만, 이중 점프 물리 자체는 미구현).
 - **범위 준수 확인**: 게이트는 3.4절 배제 원칙대로 "단색 블록, 시각적 신호 없음"으로 구현되어, 2.3절(게이팅 설계 일관성)에 손대지 않았다는 설계 의도가 그대로 지켜졌습니다.
 - **5.3절 관련 후속 조치 완료**: `ajusine.game1`의 `project.godot`가 설치된 Godot 버전(4.7.2)에 맞춰 `config/features`를 `"4.7"`로 갱신했습니다 — [원 기획 문서](cinematic_library_metroidvania_game_design.html) 5.3절에서 남겨 둔 버전 정합성 점검 과제가 해소되었습니다.
-- **남은 작업**: 마을B 씬 미구현(체크리스트 2번 전체 검증의 전제조건), 레코더의 감정·대사·카메라 채집 미구현.
-- **해상도 파이프라인 적용 및 설계 문서 오류 수정 유발**: 구현 세션이 [원 기획 문서](cinematic_library_metroidvania_game_design.html) 6.1·6.6.1절의 내부 렌더 해상도(320×224)를 실제로 적용하는 과정에서, 그 수치가 16:9(1920×1080)와 산술적으로 맞지 않는다는 원 문서 자체의 오류를 발견·보고했습니다 [[12]](#ref-12). 이에 따라 원 문서 6.6.1절의 내부 렌더 해상도를 **480×270**(16:9 네이티브, 1080p에서 정수 4배)으로 교정했습니다 — 상세 경위는 원 문서 6.6.1절의 수정 경위 콜아웃을 참조하십시오. 세 씬의 월드 좌표(지면 높이·충돌 영역·이동/점프/중력·게이트 크기 등)도 이 해상도 기준으로 재환산되었습니다.
-- **캐릭터 화면 비율 교차검증**: 캐릭터 스프라이트 실루엣(25px)이 내부 해상도 기준 화면 높이의 약 11.2%를 차지하도록 조정되었으며, 《할로우 나이트》의 공개된 히트박스 데이터·스토어 스크린샷 조사 결과(화면 높이의 약 11~12%) [[13]](#ref-13)와 같은 범위임이 확인되었습니다. 다만 측정 조건(자세·출처 신뢰도)이 완전히 동일하지 않다는 한계가 함께 보고되었습니다.
+- **남은 작업**: 레코더의 감정·대사·카메라 채집 미구현, 능력 상태의 세이브·로드(영속화) 미구현(세션 메모리 범위로만 검증).
+- **해상도 파이프라인 적용 및 설계 문서 오류 수정 유발**: 구현 세션이 [원 기획 문서](cinematic_library_metroidvania_game_design.html) 6.1·6.6.1절의 내부 렌더 해상도(320×224)를 실제로 적용하는 과정에서, 그 수치가 16:9(1920×1080)와 산술적으로 맞지 않는다는 원 문서 자체의 오류를 발견·보고했습니다 [[12]](#ref-12). 이에 따라 원 문서 6.6.1절의 내부 렌더 해상도를 **480×270**(16:9 네이티브, 1080p에서 정수 4배)으로 교정했습니다.
+- **축별 환산 규칙(설계적 결정, 구현 세션이 교차 기록 요청)**: 320×224→480×270은 가로 ×1.5, 세로 ×1.2054로 두 축의 배율이 다릅니다(10:7→16:9로 비율 자체가 바뀌기 때문). 구현 세션은 월드 요소를 세 범주로 나눠 각기 다른 기준을 적용했습니다 — ① 세로 화면 비율 요소(지면 높이·카메라 하한·배경 산)는 **화면 높이 비율 유지** 기준, ② 가로 화면 비율 요소(월드 폭·랜드마크 좌표·카메라 가로 한계)는 **화면 폭 대비 레벨 길이 유지**(×1.5) 기준, ③ 캐릭터 크기 의존 요소(충돌 영역·이동/점프/중력 수치·게이트 크기)는 **캐릭터 픽셀 크기가 안 변하므로 불변** 기준. 이 구분은 이후 해상도가 또 바뀔 때도 적용할 수 있는 일반 원칙입니다.
+- **이동 속도 트레이드오프(미해결, 9장 오픈 이슈와 연결)**: 월드 폭을 ×1.5로 넓히면서 이동 속도는 유지해, 화면 한 폭을 횡단하는 시간이 3.2초→4.8초로 늘었습니다. 조작감 수치(7.1.1절)가 설계 문서에 아직 명세되지 않아 구현 세션이 임의로 속도를 올리지 않고 그대로 보류했습니다.
+- **캐릭터 화면 비율 — 정수 배율 원칙과의 충돌, 재조정 결정**: 할로우 나이트 교차검증(11~12%)에 맞춰 11.2% 비율을 유지하려면 스프라이트에 비정수 배율(약 1.2054배)을 걸어야 했으나, 이는 6.6.1절의 정수 배율 원칙과 충돌합니다. 구현 세션은 정수 배율 원칙을 우선해 스프라이트를 1배로 유지했고, 그 결과 캐릭터 화면 비율이 **9.26%**로 낮아져 할로우 나이트 범위보다 2~3%p 낮은 상태가 되었습니다 [[13]](#ref-13). 이 간극을 아저씨가 검토한 결과, **실루엣 약 30px(프레임 약 38px)의 새 스프라이트로 교체해 11~12% 목표를 다시 맞추는 쪽으로 결정**했습니다 — 반영은 구현 저장소에서 진행됩니다.
 
 <div class="callout">
 <p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
@@ -174,8 +176,8 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-7">[7] Chalmers University of Technology. 〈Designing Multi-Mode Player Abilities to Enhance Backtracking in Metroidvania Levels〉(석사논문). <a href="https://odr.chalmers.se/items/d79d64a8-8f42-4b85-a4f8-5b1b259962b0" target="_blank">odr.chalmers.se</a> — 2.3절 환경 신호 일관성과 백트래킹 성립 조건의 학술 근거.</li>
     <li id="ref-8">[8] Dragonfly DB FAQ. 〈What is a vertical slice in game development〉. <a href="https://www.dragonflydb.io/faq/what-is-vertical-slice-in-game-development" target="_blank">dragonflydb.io</a> / Juego Studio. 〈Vertical Slice vs Prototype vs MVP〉. <a href="https://www.juegostudio.com/blog/vertical-slice-vs-prototype-vs-mvp" target="_blank">juegostudio.com</a> — 3.1절 버티컬 슬라이스/프로토타입/MVP 구분의 근거.</li>
     <li id="ref-9">[9] 이 위키. 〈영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획〉. <a href="cinematic_library_metroidvania_game_design.html">cinematic_library_metroidvania_game_design.html</a> — 3.4절 프리뷰 기법 등 원 기획서 7.2.2절 참조.</li>
-    <li id="ref-10">[10] 구현 저장소 <code>ajusine.game1</code>(별도 git 저장소, 이 위키 바깥). <code>reports/20261106_field_scene_report.md</code> — 3.6절 마을A·필드 구현 및 체크리스트 검증 결과의 상세 로그. 본 위키는 원문을 그대로 가져오지 않고 설계적으로 의미 있는 결론만 요약함(AGENTS.md 3.15절).</li>
+    <li id="ref-10">[10] 구현 저장소 <code>ajusine.game1</code>(별도 git 저장소, 이 위키 바깥). <code>reports/20261106_field_scene_report.md</code>, <code>reports/20261106_village_b_report.md</code> — 3.6절 마을A·필드·마을B 구현 및 체크리스트 검증 결과의 상세 로그. 본 위키는 원문을 그대로 가져오지 않고 설계적으로 의미 있는 결론만 요약함(AGENTS.md 3.15절).</li>
     <li id="ref-11">[11] 구현 저장소 <code>ajusine.game1</code>. <code>assets/characters/runner/SOURCE.txt</code> — 3.6절 CC0 러너 스프라이트의 출처·라이선스·체크섬 기록(OpenGameArt, 작가 David Harrington, 2026-11-06 확인).</li>
-    <li id="ref-12">[12] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_resolution_pipeline_report.md</code> — 3.6절 해상도 파이프라인 적용 및 원 기획 문서 6.6.1절 오류 발견의 근거.</li>
+    <li id="ref-12">[12] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_resolution_pipeline_report.md</code>, <code>reports/20261106_resolution_480x270_report.md</code> — 3.6절 해상도 파이프라인 적용, 원 기획 문서 6.6.1절 오류 발견, 480×270 축별 환산 규칙의 근거.</li>
     <li id="ref-13">[13] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_hollow_knight_scale_research.md</code> — 3.6절 캐릭터 화면 비율 교차검증의 근거. AtomechLLC/game-animation-library PR #40(히트박스 데이터, 신뢰도 비교적 높음) 및 Steam 공식 스크린샷 측정(신뢰도 중간) 기반.</li>
 </ol>
