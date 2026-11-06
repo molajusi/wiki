@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-02 오후 08:58:28 (KST, UTC+9)"
+updated: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,13 +12,13 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-02 오후 08:58:28 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 02:57:19 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
 </context>
 
-**관련 문서**: [메트로이드배니아 장르 개요 및 계보학](metroidvania_genre_analysis.html)(장르 이론·용어 근거) · [메트로이드배니아 시스템 메커니즘 및 레벨 디자인](metroidvania_mechanics_and_level_design.html)(능력 게이팅 근거) · [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)(3장에서 분리된 세계관·정치 체제 설계 문서) · [고려 중세풍 수평적 판타지 세계관과 아동 서사 모델](goryeo_horizontal_fantasy_worldbuilding.html)(설계 철학이 상반되는 자매 세계관) · [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)(7.1.2절 히트박스·콜라이더 분리 원칙의 출처) · [BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html)(7.1.3절 이동 플랫폼 속도 상속 원칙의 출처)
+**관련 문서**: [메트로이드배니아 장르 개요 및 계보학](metroidvania_genre_analysis.html)(장르 이론·용어 근거) · [메트로이드배니아 시스템 메커니즘 및 레벨 디자인](metroidvania_mechanics_and_level_design.html)(능력 게이팅 근거) · [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)(3장에서 분리된 세계관·정치 체제 설계 문서) · [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html)(9장 오픈 이슈 중 데이터 스키마·게이팅 선행 검증용 최소 3씬 테스트 설계 문서) · [고려 중세풍 수평적 판타지 세계관과 아동 서사 모델](goryeo_horizontal_fantasy_worldbuilding.html)(설계 철학이 상반되는 자매 세계관) · [HunterX 전투 판정 구조와 밀착 공격 무효화 버그 분석](hunterx_combat_hitbox_analysis.html)(7.1.2절 히트박스·콜라이더 분리 원칙의 출처) · [BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html)(7.1.3절 이동 플랫폼 속도 상속 원칙의 출처)
 
 <overview>
 ## 1. 개요 및 목적

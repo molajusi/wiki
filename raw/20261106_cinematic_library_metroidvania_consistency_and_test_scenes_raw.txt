@@ -1,0 +1,82 @@
+================================================================================
+원천 데이터: 영상 연출 라이브러리 메트로이드배니아의 "일관성" 개념 및 최소 테스트 씬 설계
+수집 일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) 경
+조사 주제: 연출 API(레코더 경로/연출 스크립트 경로)와 플레이 상태, 게이팅 설계 각각에서 "일관성"이 업계에서 구체적으로 무엇을 의미하는지, 최소 3씬(마을-필드-마을) 테스트를 어떻게 설계해야 하는지
+검색 질의어: "Godot autoload singleton persistent player state across scenes best practice" / "data-driven cutscene system schema consistency game architecture recorded vs scripted" / "vertical slice game development definition minimal playable test scene" / "Godot Resource based save system single source of truth game state .tres" / "metroidvania minimal test level single ability gate two rooms prototype design" / ""single source of truth" game state architecture industry best practice game dev" / "Unreal Engine Unity ScriptableObject data asset single source of truth game state pattern"
+대상 URL: docs.godotengine.org, uhiyama-lab.com, gdquest.com, community.monogame.net, dragonflydb.io, juegostudio.com, sorceress.games, summerengine.com, odr.chalmers.se, aframe.io, docs.unity.com
+================================================================================
+
+[질의 1] Godot 씬 간 상태 보존 — 오토로드 싱글톤 모범 사례
+
+- 오토로드는 씬 전환에도 살아남아야 하는 전역 데이터(플레이어 능력·스탯)를 담는 Godot 표준 방식.
+- 전역 상태는 최소한으로 유지하고, 특정 씬/기능에 한정된 데이터는 그 씬 안에서 관리할 것을 권장(uhiyama-lab.com).
+- 값 변경은 setter/getter를 거치게 해 디버깅을 쉽게 할 것을 권장.
+- UI 갱신은 시그널로 전파해 리스너와 디커플링할 것을 권장.
+- 오토로드는 적의 수·UI 상태 같은 "씬 한정 임시 상태"를 담기엔 부적합 — _ready()에서 리셋해야 함.
+- 트레이드오프: 오토로드는 의존성을 강하게 결합시키고 전역 네임스페이스를 오염시키며 단위 테스트를 어렵게 함. 지속할 필요 없는 정보는 씬 전환 시 파라미터로 전달하는 것이 더 단순하다는 의견도 존재.
+- Godot 공식 문서: 오토로드는 루트 뷰포트에 다른 씬보다 먼저 로드되며 Project Settings > AutoLoad에서 등록. Godot 씬 시스템 자체는 플레이어 점수·인벤토리 같은 정보를 저장할 내장 방법이 없음.
+- 출처 간 차이: 공식 문서는 오토로드를 공유 데이터의 광범위한 해법으로 제시하나, 최근 커뮤니티 가이드는 최소 사용을 권장하며 세이브 데이터는 Resource 같은 대안을 제안.
+참고: docs.godotengine.org/fr/3.5/_sources/tutorials/scripting/singletons_autoload.rst.txt, uhiyama-lab.com/en/notes/godot/autoload-global-data-management/
+
+[질의 2] 데이터 기반 컷신 시스템과 스키마 일관성 — 레코더 vs 스크립트
+
+- MonoGame 커뮤니티: "컷신 코드를 쓰기 전에 컷신 스펙을 먼저 쓰라" — 컷신을 데이터로 먼저 정의하면 런타임 코드와 시각적 참고자료가 같은 데이터에서 생성되고, 게임을 켜보지 않고도 스키마 수준 검증(테스트)이 가능해짐.
+- 공유 타임라인 스키마의 독립적 수렴 사례: Unity(PlayableDirector/TimelineAsset), Unreal(LevelSequence/MovieScene), 닌텐도 내부 포맷(BFEVFL "TLIN": 배우·클립·트리거·서브타임라인·컷)이 서로 독립적으로 같은 구조로 수렴.
+- gamedev.net 스레드: 코루틴 방식과 데이터 기반 방식의 트레이드오프 — 데이터 기반은 강력하고 대규모 팀에 확장 가능하나 그만큼의 인프라가 필요.
+- "레코더 vs 스크립트"에 정확히 부합하는 자료는 확보하지 못함 — 사전 렌더링/녹화 컷신 파이프라인 대 실시간 스크립트 시퀀스라는 더 구체적인 용어로 추가 검색이 필요하다는 점이 확인됨(이번 조사 범위에서는 미수행).
+참고: community.monogame.net/t/write-the-cutscene-spec-before-you-write-the-cutscene-code/21593, skills.sh(firzus)/cinematic-system
+
+[질의 3] 버티컬 슬라이스 대 프로토타입/MVP 용어 구분
+
+- 버티컬 슬라이스: "거의 완성품 품질로 만들어, 완성된 게임이 어떻게 보이고 들리고 플레이될지 보여주는 소규모 플레이 가능 조각". 투자자·퍼블리셔에게 자금 지원 전 증명하는 용도.
+- 한 소스는 버티컬 슬라이스가 "게임이 작동한다는 증명"이 아니라 "이 팀이 그 게임을 만들 수 있다는 증명"이라고 구분.
+- 버티컬 슬라이스는 "데모"나 "베타"로 취급되어서는 안 된다는 경고 존재.
+- MVP는 "실제 플레이어가 플레이할 수 있고 그들에 대해 무언가를 가르쳐주는 가장 작은 버전"으로 구분 — 버티컬 슬라이스(거의 완성품 품질 전제)와는 다른 개념.
+- 리스크: 버티컬 슬라이스는 기대치를 과도하게 높이고 스코프 크립을 유발할 수 있음.
+참고: dragonflydb.io/faq/what-is-vertical-slice-in-game-development, juegostudio.com/blog/vertical-slice-vs-prototype-vs-mvp
+
+[질의 4] Godot Resource 기반 세이브 시스템 — 단일 진실 공급원
+
+- GDQuest: Resource를 상속하는 커스텀 클래스에 @export 변수로 저장할 데이터를 담고 ResourceSaver.save()로 .tres 파일에 기록. .tres는 사람이 읽을 수 있는 텍스트 파일로 에디터 인스펙터에서도 직접 열람 가능.
+- 리소스를 다른 리소스 안에 중첩할 수 있고 Godot이 전체를 하나의 세이브 파일로 자동 패킹.
+- 이미 아이템·캐릭터·퀘스트용 커스텀 리소스를 쓰고 있다면, 세이브 게임 리소스가 그 "살아있는" 런타임 리소스를 그대로 참조하게 하면 상태의 중복 사본이 생기지 않음(단일 진실 공급원의 실질적 구현).
+- 로드 시 CACHE_MODE_IGNORE 권장 — 메모리상의 오래된(stale) 데이터를 피하기 위함.
+- 트레이드오프: 커스텀 Resource는 엄격한 구조(이름으로 속성 접근 보장)를 주지만, .tres/.res 포맷은 Godot 바깥에서 쓰이지 않아 서드파티 호환이 안 됨. 스키마 변경 시 스크립트 수정 필요.
+- dev.to(ziva): Resource가 게임 상태를, ConfigFile이 설정을 담는 하이브리드 패턴. 같은 Resource 클래스를 .tres(텍스트, diff 가능)나 .res(바이너리, 더 작음)로 저장 가능.
+- 보안 경고: 신뢰할 수 없는 소스의 Resource를 로드하면 악성 코드가 실행될 수 있음(모드·외부 세이브 파일 허용 시 주의).
+참고: gdquest.com/library/save_game_godot4, gdquest.com/library/save_load_game_data_resources, dev.to/ziva/godot-4-save-systems-5-patterns-from-real-shipped-games-3g23
+
+[질의 5] 메트로이드배니아 최소 게이트(자물쇠-열쇠) 설계 경험칙
+
+- "게이트가 플레이어를 이미 본 곳으로 되돌려 보내 도달하고 싶었던 곳에 닿게 하는가"가 장르 핵심 루프의 미니어처이며, 다른 모든 게이트는 이 하나의 복사본이라는 서술(summerengine.com) — "every other gate in your game is a copy of this one".
+- "자물쇠가 열쇠보다 먼저 보여야 함" — 플레이어가 명백히 통과 못 하는 장애물을 먼저 제시(an early obstacle the player clearly cannot pass yet).
+- 능력은 그 자체로 쓰는 재미가 있어야 함(플레이어가 계속 쓰게 되므로).
+- 룸-그래프 가이드(sorceress.games): 능력 하나는 최소 2개 이상의 이미 본 공간을 열어야 하며, 단일 해제 능력은 설계 비트를 낭비하는 것.
+- 찰머스 대학(Chalmers University) 석사논문(학술 자료): 소규모 2D 프로토타입에서 폼 기능이 명확하고 환경 신호가 일관적일 때 백트래킹이 유의미하게 성립함을 확인 — 유일한 학술급 출처, 나머지는 튜토리얼/블로그 수준.
+참고: sorceress.games/blog/sprawl-how-to-make-a-metroidvania-map-ability-gates, summerengine.com/blog/make-a-metroidvania-with-ai.md, odr.chalmers.se/items/d79d64a8-8f42-4b85-a4f8-5b1b259962b0
+
+[질의 6] "단일 진실 공급원(Single Source of Truth)" — 게임 상태 아키텍처 업계 관행
+
+- 핵심 원칙: "사실 하나당 소유자 하나" — 대부분의 게임플레이 버그는 같은 데이터의 사본 두 개가 서로 어긋나는 것(most gameplay bugs are two copies of the truth disagreeing). 하나만 유지하고 나머지는 파생시킬 것을 권장.
+- 명시적 상태 전이: 메뉴→플레이, 생존→사망 같은 전환을 작은 상태 머신으로 모델링해 "불법 상태 조합"에 도달하기 어렵게 함. "아무 코드나 아무 플래그를 마음대로 뒤집을 수 있으면 거기서부터 혼돈이 시작된다"는 서술.
+- A-Frame(VR) 팀: Redux의 원칙(단일 전역 상태 + 순수 리듀서로만 변경)을 게임에 적용 — 디버깅·검사가 쉬워짐.
+- 트레이드오프: 상태가 병목이나 단일 장애점이 될 수 있고, 매우 단순한 게임에는 과잉설계.
+- 일부 엔진은 상태 트리를 "영속 데이터(프로필·설정)"와 "현재 회차 데이터"로 나눠 단일 루트 아래 둠 — 생명주기가 다른 데이터를 분리해 단일 진실 공급원을 유지.
+참고: bugnet.io/blog/how-to-manage-game-state-without-losing-your-mind, aframe.io/blog/gamestate/, gnosis-games.pages.dev/documentation/architecture/state-and-store/state-tree
+
+[질의 7] Unity ScriptableObject — 데이터 애셋 단일 진실 공급원 패턴
+
+- Unity 공식: ScriptableObject는 여러 오브젝트가 런타임에 읽는 공유 데이터 컨테이너로 흔히 쓰이며, 인스턴스별 사본을 피해 메모리 사용량을 줄임.
+- 서드파티(Dragonfly) FAQ: ScriptableObject가 "단일 진실 공급원을 제공해 게임 전체의 일관성을 보장한다"고 직접 서술(2차 출처, Unity 공식 서술 아님).
+- 주의점: 독립 실행 빌드에서는 ScriptableObject 애셋에서 저장된 데이터를 읽기만 할 수 있음 — 스크립트를 통한 런타임 변경이 디스크에 자동 저장되지 않으므로, 세션 간 진행 상황 보존에는 별도 세이브 시스템이 필요(추론, Unity 공식 문서가 명시한 것은 아님).
+- Unreal Engine의 대응 개념(UDataAsset, GameInstance/Subsystem 등)에 대해서는 이번 검색으로 확인하지 못함.
+참고: docs.unity.com/en-us/engine/6000.7/manual/scripting/get-started/fundamental-unity-types/class-scriptable-object, dragonflydb.io/faq/unity-when-to-use-scriptable-objects
+
+================================================================================
+조사 방법론 및 신뢰도 메모
+================================================================================
+- Godot/Unity 공식 문서(docs.godotengine.org, docs.unity.com)는 1차 출처로 신뢰도가 높음.
+- GDQuest는 Godot 커뮤니티 교육 기관으로 신뢰도가 상대적으로 높으나 공식 문서는 아님.
+- 찰머스 대학 석사논문은 이번 조사 전체에서 유일한 학술급(peer-reviewed에 준하는) 출처.
+- sorceress.games, summerengine.com, bugnet.io, dragonflydb.io FAQ, dev.to 블로그는 튜토리얼/실무 블로그 수준으로, 업계 통념을 반영하나 검증된 학술 기준은 아님.
+- "레코더 경로 vs 스크립트 경로"라는 이 기획 고유의 구분에 정확히 부합하는 선행 사례는 확보하지 못했으며, 가장 근접한 선례는 "컷신 스펙 선행 작성" 원칙과 Unity/Unreal/닌텐도의 독립적 스키마 수렴 사례임.

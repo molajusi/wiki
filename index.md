@@ -84,3 +84,4 @@ LLM 기반 위키 시스템의 아키텍처 설계·포맷 논쟁·구축 실무
   - [🛗 [분과 비평 5] BioGun 이동 플랫폼 점프 오작동 분석](biogun_moving_platform_jump_analysis.html)
 - [🎬 영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)
   - [🏯 [세계관 분과] 영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)
+  - [🧪 [분과] 영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html)
