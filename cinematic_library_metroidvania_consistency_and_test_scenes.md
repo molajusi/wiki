@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-06 오후 05:20:08 (KST, UTC+9)"
+updated: "2026-11-06 오후 05:56:01 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 05:20:08 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 05:56:01 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -134,6 +134,10 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 - **범위 준수 확인**: 게이트는 3.4절 배제 원칙대로 "단색 블록, 시각적 신호 없음"으로 구현되어, 2.3절(게이팅 설계 일관성)에 손대지 않았다는 설계 의도가 그대로 지켜졌습니다.
 - **5.3절 관련 후속 조치 완료**: `ajusine.game1`의 `project.godot`가 설치된 Godot 버전(4.7.2)에 맞춰 `config/features`를 `"4.7"`로 갱신했습니다 — [원 기획 문서](cinematic_library_metroidvania_game_design.html) 5.3절에서 남겨 둔 버전 정합성 점검 과제가 해소되었습니다.
 - **남은 작업**: 마을B 씬 미구현(체크리스트 2번 전체 검증의 전제조건), 레코더의 감정·대사·카메라 채집 미구현.
+
+<div class="callout">
+<p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
+</div>
 </analysis>
 
 ## 4. 용어 정리 및 정의
@@ -169,4 +173,5 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-8">[8] Dragonfly DB FAQ. 〈What is a vertical slice in game development〉. <a href="https://www.dragonflydb.io/faq/what-is-vertical-slice-in-game-development" target="_blank">dragonflydb.io</a> / Juego Studio. 〈Vertical Slice vs Prototype vs MVP〉. <a href="https://www.juegostudio.com/blog/vertical-slice-vs-prototype-vs-mvp" target="_blank">juegostudio.com</a> — 3.1절 버티컬 슬라이스/프로토타입/MVP 구분의 근거.</li>
     <li id="ref-9">[9] 이 위키. 〈영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획〉. <a href="cinematic_library_metroidvania_game_design.html">cinematic_library_metroidvania_game_design.html</a> — 3.4절 프리뷰 기법 등 원 기획서 7.2.2절 참조.</li>
     <li id="ref-10">[10] 구현 저장소 <code>ajusine.game1</code>(별도 git 저장소, 이 위키 바깥). <code>reports/20261106_field_scene_report.md</code> — 3.6절 마을A·필드 구현 및 체크리스트 검증 결과의 상세 로그. 본 위키는 원문을 그대로 가져오지 않고 설계적으로 의미 있는 결론만 요약함(AGENTS.md 3.15절).</li>
+    <li id="ref-11">[11] 구현 저장소 <code>ajusine.game1</code>. <code>assets/characters/runner/SOURCE.txt</code> — 3.6절 CC0 러너 스프라이트의 출처·라이선스·체크섬 기록(OpenGameArt, 작가 David Harrington, 2026-11-06 확인).</li>
 </ol>
