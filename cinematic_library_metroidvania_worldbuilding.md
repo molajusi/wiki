@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제"
 subtitle: "Worldbuilding and the Political-System Duality of the Cinematic-Library Metroidvania"
 created: "2026-09-30 오후 05:10:40 (KST, UTC+9)"
-updated: "2026-09-30 오후 05:10:40 (KST, UTC+9)"
+updated: "2026-11-06 오후 07:52:34 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Goryeo Fantasy", "Metroidvania", "Worldbuilding", "Class System", "Political System", "Hojang", "Munbeol"]
 html_view: "cinematic_library_metroidvania_worldbuilding.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_worldbuilding.html"
 *Worldbuilding and the Political-System Duality of the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-30 오후 05:10:40 (KST, UTC+9) | 최종 수정일시: 2026-09-30 오후 05:10:40 (KST, UTC+9)*
+*최초 작성일시: 2026-09-30 오후 05:10:40 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 07:52:34 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 3장 "세계관 및 정치 체제 설계"를 분리 이전한 문서입니다. 아저씨의 질문("세계관은 게임 기술적 구성 — 아키텍처나 기반기술, 스크립팅에서 영향이 분리되는가?")에 대해, 원 문서의 2장(아키텍처)·4장(감정표현)·5장(엔진)·6장(아트스타일)·7장(레벨·시퀀스 디자인)이 이 세계관의 구체적 내용(고려풍 판타지, 6단 신분 계층, 정치 체제)에 기술적으로 의존하지 않는다는 점을 확인했고, 이에 따라 세계관 콘텐츠를 별도 문서로 분리했습니다. 원 문서는 3장 자리에 요약과 이 문서로의 링크만 남깁니다. 원문은 `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`(기획 브리핑 전체)를 원천으로 하며, 이 위키의 고려풍 판타지 세계관 문서 및 고려 호족·향리 고증 문서와 교차 참조합니다.
@@ -64,6 +64,17 @@ html_view: "cinematic_library_metroidvania_worldbuilding.html"
 
 상세 근거·용어 논쟁·시기별 호칭 비교표는 별도 문서 [고려 호족·향리와 지방세력가 호칭 고증](goryeo_hojok_hyangni_terminology.html)으로 분리되어 있습니다.
 
+### 3.2 캐릭터 머리 모양 — 역사적 고증 조사와 적용 기각
+
+고려풍 세계관의 캐릭터 외형 설계를 위해 고려시대 미혼/기혼 남성의 전통 머리 모양을 조사했습니다.
+
+- **상투(上頭)**: 기혼 남성이 머리카락 전체를 정수리에 모아 틀어 묶는 방식. 한국민족문화대백과사전(E0027380)이 고구려 고분벽화까지 소급하는 전통 머리 모양으로 기록 [[9]](#ref-9).
+- **쌍상투(총각, 總角)**: 국립국어원(korean.go.kr)에 따르면 "총각하다"는 원래 "성인이 되기 전에 머리를 땋아 두 뿔 모양으로 묶는다"는 뜻이었고, 『신자전』은 총각을 "쌍상투"로 풀이합니다. 조선시대에는 "혼인 전 남자들이 상투를 틀지 못하고 머리를 가운데서 갈라 양쪽으로 묶었는데, 이 머리를 총각이라 불렀다"고 기록됩니다 — 등 뒤로 하나로 땋아 늘어뜨리는 "댕기머리" 이미지와는 구조가 다릅니다(묶음이 정수리 하나가 아니라 **좌우 양쪽, 귀보다 약간 위**에 생김) [[10]](#ref-10).
+- **고려시대로 좁히면**: 『고려도경』(서긍, 1123, 2차 인용으로만 확인, 원문 미대조)에 미혼 남녀가 목 뒤에서 머리를 묶어 늘어뜨리는 "속발(束髮)" 서술이 있으며, 미혼 남성은 검은 노끈(흑승)을 썼다고 전합니다. "총각=쌍상투"(국립국어원)와 "미혼 남녀 속발"(고려도경)이 같은 모양을 가리키는지는 **확인 불가**로 남습니다 [[11]](#ref-11).
+- **원간섭기 변발과는 별개**: 1278년(충렬왕 4) 왕명으로 관료층 전체가 정수리만 남기고 땋아 늘이는 몽골식 "개체변발"을 했다가, 1352년 공민왕이 반원 개혁으로 폐지한 사건이 확인되나, 이는 전통 속발·쌍상투 체계와 무관한 지배층 대상의 외래 강제 조치입니다 [[12]](#ref-12).
+
+조사 결과를 바탕으로 쌍상투·상투·댕기머리 세 모양을 비교하는 개념도를 제작해 아저씨가 직접 확인했습니다. **판단: 세 모양 모두 현대적 감각에 맞지 않아 게임 캐릭터 디자인에 적용하지 않기로 결정**했습니다. 캐릭터 머리 모양은 역사적 고증과 별개로, 현대 감각에 맞는 별도 디자인 방향을 다음 단계에서 정해야 합니다(아래 오픈 이슈 참조).
+
 ## 4. 마법 체계 재사용 검토
 *Reviewing Magic System Reuse*
 
@@ -79,6 +90,7 @@ html_view: "cinematic_library_metroidvania_worldbuilding.html"
 - **연출 레이어 왕정 소재의 시간적 연결 여부**: 연출 레이어가 다루는 왕정 소재(신분제 사회 등)가 게임 세계의 과거사로 시간적으로 연결되는지, 완전히 별개의 역사·세계선으로 다뤄지는지 미확정.
 - **플레이어 캐릭터 구성과의 연계**: 원 기획 문서(게임 본편)에서 단일 캐릭터인지 신분별 복수 캐릭터인지가 미정이며, 이 문서 3장의 계층 구조를 살리려면 신분별 복수 캐릭터가 유리함.
 - **마법 체계 차용 여부**: `goryeo_horizontal_fantasy_worldbuilding.html`의 통합 도술 체계를 그대로 차용할지, 변형할지, 별도로 새로 설계할지 미결정.
+- **캐릭터 머리 모양 대안**: 3.2절에서 쌍상투·상투·댕기머리 모두 현대적 감각에 맞지 않아 기각됨에 따라, 역사적 고증과 별개의 현대 감각 머리 모양 디자인 방향이 필요함. 미결정.
 </open_issues>
 
 <definitions>
@@ -91,6 +103,9 @@ html_view: "cinematic_library_metroidvania_worldbuilding.html"
 | **문벌** | **Munbeol**(門閥). 세계관 내 중앙관료의 정식 호칭. 고려 전기 중앙 정계를 장악한 가문·관료 집단. "귀족" 표현은 학계 귀족제/관료제 논쟁과 세습 작위 부재 학설을 반영해 배제(2015 개정 교과서 표기와 일치). 대중적 별칭은 양반(兩班, 원래 문반·무반을 합친 관제 용어). |
 | **외관** | **Oegwan**(外官). 세계관 내 지방관료의 호칭. 중앙 조정이 지방에 파견한 관료의 총칭이며, 대표 직위는 목사(牧使, 8목·12목 정3품). |
 | **연출 레이어 / 게임 레이어** | **Cinematic Layer / Game Layer**. [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html) 2장에서 정의된 이중 목적 아키텍처의 두 축. 이 문서에서는 정치 체제 설계를 이 두 축으로 분리하는 데 그 어휘를 그대로 차용함(구현 의존이 아닌 개념 공유). |
+| **상투** | 기혼 남성이 머리카락 전체를 정수리에 모아 틀어 묶는 전통 머리 모양. 고구려 고분벽화까지 소급. 3.2절 조사 결과 게임 캐릭터 디자인에는 적용하지 않기로 기각됨. |
+| **쌍상투(총각)** | 머리를 가운데서 갈라 좌우 양쪽(귀보다 약간 위)에서 각각 묶는 머리 모양. "총각(總角)"의 원래 뜻. 3.2절 참조. 게임 캐릭터 디자인에는 적용하지 않기로 기각됨. |
+| **속발** | 『고려도경』이 기록한 고려 미혼 남녀의 머리 모양. 목 뒤에서 머리를 묶어 늘어뜨림. 쌍상투와 같은 모양을 가리키는지는 확인 불가. 3.2절 참조. |
 </definitions>
 
 <references>
@@ -98,7 +113,7 @@ html_view: "cinematic_library_metroidvania_worldbuilding.html"
 *References & Raw Sources*
 
 <div class="callout">
-<p><strong>📁 로컬 원천 데이터 보존 경로:</strong> 본 문서는 원래 <a href="cinematic_library_metroidvania_game_design.html">영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획</a> 문서의 3장이었으며, 2026-09-30에 별도 문서로 분리되었습니다. 원 기획 브리핑 원문은 <code><a href="raw/20260923_cinematic_library_metroidvania_game_design_raw.txt">raw/20260923_cinematic_library_metroidvania_game_design_raw.txt</a></code>에 보존되어 있고, 지방세력가의 역사적 근거(고려 호족·향리 웹 조사)는 별도 문서 <a href="goryeo_hojok_hyangni_terminology.html">고려 호족·향리와 지방세력가 호칭 고증</a>과 그 자신의 원천데이터(<code>raw/20260923_goryeo_hojok_local_power_research_raw.txt</code>)를 참조합니다. 분할 전 원본 전문은 <code><a href="raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md">raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md</a></code>에 동결 보존되어 있습니다.</p>
+<p><strong>📁 로컬 원천 데이터 보존 경로:</strong> 본 문서는 원래 <a href="cinematic_library_metroidvania_game_design.html">영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획</a> 문서의 3장이었으며, 2026-09-30에 별도 문서로 분리되었습니다. 원 기획 브리핑 원문은 <code><a href="raw/20260923_cinematic_library_metroidvania_game_design_raw.txt">raw/20260923_cinematic_library_metroidvania_game_design_raw.txt</a></code>에 보존되어 있고, 지방세력가의 역사적 근거(고려 호족·향리 웹 조사)는 별도 문서 <a href="goryeo_hojok_hyangni_terminology.html">고려 호족·향리와 지방세력가 호칭 고증</a>과 그 자신의 원천데이터(<code>raw/20260923_goryeo_hojok_local_power_research_raw.txt</code>)를 참조합니다. 분할 전 원본 전문은 <code><a href="raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md">raw/20260930_cinematic_library_metroidvania_game_design_pre_split_backup.md</a></code>에 동결 보존되어 있습니다. 3.2절 캐릭터 머리 모양 조사는 <code><a href="raw/20261106_goryeo_unmarried_mens_hairstyle_raw.txt">raw/20261106_goryeo_unmarried_mens_hairstyle_raw.txt</a></code>를 원천으로 합니다.</p>
 </div>
 
 <ol class="reference-list">
@@ -110,5 +125,9 @@ html_view: "cinematic_library_metroidvania_worldbuilding.html"
     <li id="ref-6">[6] 이 위키. 〈한국 도시 행정단위의 역사적 계보와 계층 체계〉. <a href="korean_urban_administrative_hierarchy_evolution.html">korean_urban_administrative_hierarchy_evolution.html</a> — 3장 지방관료 호칭(외관·목사)의 근거.</li>
     <li id="ref-7">[7] 우리역사넷(국사편찬위원회). 〈귀족·귀족제의 개념〉·〈귀족제사회설의 논거〉·〈관료제 및 가산관료제설과 그에 대한 비판〉. <a href="https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_012_0020_0040_0020" target="_blank">https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_012_0020_0040_0020</a> — 3장 "문벌" 채택 근거(귀족제/관료제 논쟁).</li>
     <li id="ref-8">[8] 나무위키. 〈문벌귀족〉 항목. <a href="https://namu.wiki/w/%EB%AC%B8%EB%B2%8C%EA%B7%80%EC%A1%B1" target="_blank">문벌귀족</a> — 2015 개정 교과서의 "문벌" 단독 표기 전환 서술의 근거.</li>
+    <li id="ref-9">[9] 한국민족문화대백과사전(한국학중앙연구원). 〈상투〉(E0027380). <a href="https://encykorea.aks.ac.kr/Article/E0027380" target="_blank">encykorea.aks.ac.kr/Article/E0027380</a> — 3.2절 상투 정의·기원의 근거.</li>
+    <li id="ref-10">[10] 국립국어원. 「문화유산으로서의 국어 — 총각」. <a href="https://www.korean.go.kr/nkview/onletter/20050701/03.html" target="_blank">korean.go.kr</a> — 3.2절 "총각=쌍상투" 어원의 근거.</li>
+    <li id="ref-11">[11] 서긍, 『고려도경』(1123) 권20 「부인」조(2차 인용으로 확인, 원문 미대조) — 3.2절 고려 미혼 남녀 속발(束髮) 서술의 근거.</li>
+    <li id="ref-12">[12] 영문 위키백과. "Sangtu (topknot)" 항목. <a href="https://www.wikipedia.org/wiki/Sangtu_(Korean_topknot)" target="_blank">Sangtu (topknot)</a> — 3.2절 1278년 몽골식 변발 명령·1352년 공민왕 폐지의 근거.</li>
 </ol>
 </references>
