@@ -2,7 +2,7 @@
 title: "고려시대 배경 설화 속 기이한 존재와 출처 신뢰도"
 subtitle: "Strange Beings in Goryeo-Era Korean Legends: Attested, Partially Attested, and Unverified"
 created: "2026-11-05 오후 07:59:50 (KST, UTC+9)"
-updated: "2026-11-05 오후 07:59:50 (KST, UTC+9)"
+updated: "2026-11-06 오전 01:47:04 (KST, UTC+9)"
 category: "서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)"
 tags: ["Goryeo", "Korean Folklore", "Source Verification", "Jakjegeon", "Bulgasari", "Namuwiki Fact-Check"]
 html_view: "korean_goryeo_era_strange_beings.html"
@@ -12,7 +12,7 @@ html_view: "korean_goryeo_era_strange_beings.html"
 *Strange Beings in Goryeo-Era Korean Legends: Attested, Partially Attested, and Unverified*
 
 **카테고리**: 서사학·설화·민속 심리학 (Narrative, Folklore & Psychology)  
-*최초 작성일시: 2026-11-05 오후 07:59:50 (KST, UTC+9) | 최종 수정일시: 2026-11-05 오후 07:59:50 (KST, UTC+9)*
+*최초 작성일시: 2026-11-05 오후 07:59:50 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오전 01:47:04 (KST, UTC+9)*
 
 <context>
 본 문서는 고려시대를 배경으로 한 한국 설화 속 기이한 존재를 조사하고, 그중 나무위키 등 비학술 출처에서만 "고려시대 기원"으로 소개되는 서술(불가사리·그슨대·어둑시니)을 1차 문헌·학술서까지 역추적해 신뢰도를 재검증합니다. [한국 설화 속 귀신·요괴·괴물의 보상 체계](korean_folklore_creature_rewards.html)가 보상 유형 분류를 다루는 것과 달리, 본 문서는 **시대 배경의 사실성**과 **출처 추적**에 초점을 둡니다.
@@ -55,9 +55,17 @@ html_view: "korean_goryeo_era_strange_beings.html"
 
 『고려사』에 1246년(고종 33년) 5월 개성에 벌레가 비처럼 내렸다는 기록이 있습니다. 이를 괴이한 사건으로 볼지, 전염병·집단 식중독·환경적 요인으로 볼지는 해석이 나뉩니다(확인 불가로 명시 — 괴물 기록인지 자연재해 기록인지 불확정) [[5]](#ref-5).
 
-### 3.5 이슴(금잉어) — 확인 실패
+### 3.5 이슴(금잉어) — 추가 조사 후에도 원출처 특정 불가
 
-"『고려태조』에 등장하는 요괴"라는 단편적 언급만 확인되었고, 줄거리·원전은 이번 조사로 확보하지 못했습니다(완전히 확인 불가로 명시).
+1차 조사 시점에는 "『고려태조』에 등장하는 요괴"라는 단편적 언급만 확인되었습니다. 추가 조사에서는 다음 다섯 갈래의 가설을 검증했으나 모두 뒷받침 자료를 찾지 못했습니다.
+
+- **설화·민담 속 요괴명**: 한국민족문화대백과사전, 국립민속박물관 한국민속대백과사전(folkency.nfm.go.kr), 나무위키 어디에도 "이슴"이라는 명칭 자체가 검색되지 않음.
+- **곽재식 『한국 괴물 백과』 수록 항목**: 서평·출간정보 검색으로는 해당 항목의 존재를 확인하지 못함(전체 282종 목록을 직접 열람하지 못해 포함 여부는 미확정).
+- **드라마 《태조 왕건》(KBS, 2000~2002) 속 설정**: 방송 정보·리뷰 검색에서 "이슴" 언급 없음. 유사 소재로 제147회 "괴질"(전염병) 에피소드만 확인되나 동일 대상인지는 확인 불가.
+- **게임 몬스터명**: 검은사막(BDO Codex), 인벤 등에서 "이슴"이라는 몬스터·아이템이 존재하지 않음을 확인.
+- **표기 변형**: "이시미"(이무기의 별칭 중 하나)는 확인되나, "금잉어"·"이슴"이라는 구체 명칭과의 연결고리는 없음.
+
+따라서 "이슴(금잉어)"은 원출처 자체를 특정할 수 없는 상태로, 최초 조사보다 신뢰도 판정을 한 단계 더 낮춰 **"출처 불명 — 존재 자체가 검증 불가"**로 재확정합니다 [[9]](#ref-9).
 </analysis>
 
 <analysis>
@@ -107,7 +115,7 @@ html_view: "korean_goryeo_era_strange_beings.html"
 
 <div class="callout">
     <strong>📁 로컬 원천 데이터 보존 경로:</strong><br>
-    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261105_goryeo_era_strange_beings_raw.txt">raw/20261105_goryeo_era_strange_beings_raw.txt</a></code>(3절 근거), <code><a href="raw/20261105_namuwiki_source_tracing_bulgasari_geuseundae_eodugsini_raw.txt">raw/20261105_namuwiki_source_tracing_bulgasari_geuseundae_eodugsini_raw.txt</a></code>(4절 원출처 역추적 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr)이 직접 인용하는 전근대 문헌(『고려사』, 『송남잡지』)과 학술서(『제주도방언연구』)를 1차/학술 신뢰 출처로, 나무위키·개인 블로그를 비학술 보조 출처로 명확히 구분해 기록합니다. 손돌목 설화의 왕의 정체, 식인충의 괴물 여부, 이슴(금잉어) 설화의 전체 줄거리, 불가사리 설화의 "여인·이성계" 세부 서사는 각각 확인 불가로 명시됩니다.
+    본 위키 문서는 로컬 원천 텍스트 저장소 <code><a href="raw/20261105_goryeo_era_strange_beings_raw.txt">raw/20261105_goryeo_era_strange_beings_raw.txt</a></code>(3절 근거), <code><a href="raw/20261105_namuwiki_source_tracing_bulgasari_geuseundae_eodugsini_raw.txt">raw/20261105_namuwiki_source_tracing_bulgasari_geuseundae_eodugsini_raw.txt</a></code>(4절 원출처 역추적 근거), <code><a href="raw/20261106_iseum_golden_carp_source_tracing_raw.txt">raw/20261106_iseum_golden_carp_source_tracing_raw.txt</a></code>(3.5절 "이슴" 재조사 근거)의 데이터와 교차 검증을 거쳐 작성되었습니다. 한국민족문화대백과사전(encykorea.aks.ac.kr)이 직접 인용하는 전근대 문헌(『고려사』, 『송남잡지』)과 학술서(『제주도방언연구』)를 1차/학술 신뢰 출처로, 나무위키·개인 블로그를 비학술 보조 출처로 명확히 구분해 기록합니다. 손돌목 설화의 왕의 정체, 식인충의 괴물 여부, 불가사리 설화의 "여인·이성계" 세부 서사는 확인 불가로, 이슴(금잉어) 설화는 원출처 자체를 특정할 수 없는 출처 불명으로 명시됩니다.
 </div>
 
 <ol class="reference-list">
@@ -119,4 +127,5 @@ html_view: "korean_goryeo_era_strange_beings.html"
     <li id="ref-6">[6] 한국민족문화대백과사전(한국학중앙연구원). 〈불가사리〉·〈불가사리 설화〉·〈송남잡지〉. <a href="https://encykorea.aks.ac.kr/Article/E0024904" target="_blank">encykorea.aks.ac.kr/Article/E0024904</a> / <a href="https://encykorea.aks.ac.kr/Article/E0030766" target="_blank">encykorea.aks.ac.kr/Article/E0030766</a> / <a href="https://encykorea.aks.ac.kr/Article/E0030733" target="_blank">encykorea.aks.ac.kr/Article/E0030733</a></li>
     <li id="ref-7">[7] 나무위키. 〈그슨대〉(1985년 『제주도방언연구』 인용 부분 포함, 비학술 출처이나 원전 인용 확인). <a href="https://namu.wiki/w/%EA%B7%B8%EC%8A%A8%EB%8C%80" target="_blank">웹링크</a></li>
     <li id="ref-8">[8] 나무위키. 〈어둑시니〉; 언론 보도(표준국어대사전 '어둑서니' 항목 인용, 비학술 출처). <a href="https://namu.wiki/w/%EB%91%90%EC%96%B5%EC%8B%9C%EB%8B%88" target="_blank">웹링크</a></li>
+    <li id="ref-9">[9] "이슴(금잉어)" 원출처 재조사 결과 — 한국민족문화대백과사전·국립민속박물관 한국민속대백과사전(folkency.nfm.go.kr)·나무위키·곽재식 『한국 괴물 백과』 서평·KBS 《태조 왕건》 방송 정보·BDO Codex(검은사막)·인벤 어디에도 해당 명칭 미확인(모든 경로 검증 실패, 웹링크 생략).</li>
 </ol>
