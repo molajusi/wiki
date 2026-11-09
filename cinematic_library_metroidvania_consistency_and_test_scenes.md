@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-06 오후 07:07:46 (KST, UTC+9)"
+updated: "2026-11-09 오후 07:30:56 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-06 오후 07:07:46 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:30:56 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -137,7 +137,8 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 - **해상도 파이프라인 적용 및 설계 문서 오류 수정 유발**: 구현 세션이 [원 기획 문서](cinematic_library_metroidvania_game_design.html) 6.1·6.6.1절의 내부 렌더 해상도(320×224)를 실제로 적용하는 과정에서, 그 수치가 16:9(1920×1080)와 산술적으로 맞지 않는다는 원 문서 자체의 오류를 발견·보고했습니다 [[12]](#ref-12). 이에 따라 원 문서 6.6.1절의 내부 렌더 해상도를 **480×270**(16:9 네이티브, 1080p에서 정수 4배)으로 교정했습니다.
 - **축별 환산 규칙(설계적 결정, 구현 세션이 교차 기록 요청)**: 320×224→480×270은 가로 ×1.5, 세로 ×1.2054로 두 축의 배율이 다릅니다(10:7→16:9로 비율 자체가 바뀌기 때문). 구현 세션은 월드 요소를 세 범주로 나눠 각기 다른 기준을 적용했습니다 — ① 세로 화면 비율 요소(지면 높이·카메라 하한·배경 산)는 **화면 높이 비율 유지** 기준, ② 가로 화면 비율 요소(월드 폭·랜드마크 좌표·카메라 가로 한계)는 **화면 폭 대비 레벨 길이 유지**(×1.5) 기준, ③ 캐릭터 크기 의존 요소(충돌 영역·이동/점프/중력 수치·게이트 크기)는 **캐릭터 픽셀 크기가 안 변하므로 불변** 기준. 이 구분은 이후 해상도가 또 바뀔 때도 적용할 수 있는 일반 원칙입니다.
 - **이동 속도 트레이드오프(미해결, 9장 오픈 이슈와 연결)**: 월드 폭을 ×1.5로 넓히면서 이동 속도는 유지해, 화면 한 폭을 횡단하는 시간이 3.2초→4.8초로 늘었습니다. 조작감 수치(7.1.1절)가 설계 문서에 아직 명세되지 않아 구현 세션이 임의로 속도를 올리지 않고 그대로 보류했습니다.
-- **캐릭터 화면 비율 — 정수 배율 원칙과의 충돌, 재조정 결정**: 할로우 나이트 교차검증(11~12%)에 맞춰 11.2% 비율을 유지하려면 스프라이트에 비정수 배율(약 1.2054배)을 걸어야 했으나, 이는 6.6.1절의 정수 배율 원칙과 충돌합니다. 구현 세션은 정수 배율 원칙을 우선해 스프라이트를 1배로 유지했고, 그 결과 캐릭터 화면 비율이 **9.26%**로 낮아져 할로우 나이트 범위보다 2~3%p 낮은 상태가 되었습니다 [[13]](#ref-13). 이 간극을 아저씨가 검토한 결과, **실루엣 약 30px(프레임 약 38px)의 새 스프라이트로 교체해 11~12% 목표를 다시 맞추는 쪽으로 결정**했습니다 — 반영은 구현 저장소에서 진행됩니다.
+- **캐릭터 화면 비율 — 정수 배율 원칙과의 충돌, 재조정 결정**: 할로우 나이트 교차검증(11~12%)에 맞춰 11.2% 비율을 유지하려면 스프라이트에 비정수 배율(약 1.2054배)을 걸어야 했으나, 이는 6.6.1절의 정수 배율 원칙과 충돌합니다. 구현 세션은 정수 배율 원칙을 우선해 스프라이트를 1배로 유지했고, 그 결과 캐릭터 화면 비율이 **9.26%**로 낮아져 할로우 나이트 범위보다 2~3%p 낮은 상태가 되었습니다 [[13]](#ref-13). 이 간극을 아저씨가 검토한 결과, **실루엣 약 30px(프레임 약 38px)의 새 스프라이트로 교체해 11~12% 목표를 다시 맞추는 쪽으로 결정**했고, 구현 저장소가 기존 CC0 러너를 도트 단위로 기계적 확대해(새 아트 제작이 아님) 실루엣 30px·화면 비율 11.11%를 달성했습니다 [[14]](#ref-14).
+- **캐릭터 스킨 교체(Shantae/Rottytops/Sky) 및 내부 해상도 640×360 재교정(2026-11-09)**: 아저씨가 주인공 스프라이트를 《Shantae and the Pirate's Curse》 도트 시트 기반 스킨으로 교체 요청했습니다. 이 시트의 실루엣(약 41px)을 480×270에서 1배로 쓰면 화면 비율이 15.2%(목표 11~12% 초과)가 되어, 구현 세션은 **내부 해상도를 480×270 → 640×360**으로 다시 바꿔 비율을 11.4%로 맞췄습니다(1920×1080에서 정수 3배 유지) [[15]](#ref-15). [원 기획 문서](cinematic_library_metroidvania_game_design.html) 6.1·6.6.1절을 이 수치로 교정했습니다. 해당 스킨 에셋은 재사용 허가를 확인하지 못해 `local_only/`(저장소 미포함)로만 적용되며, 공개 저장소를 그대로 내려받으면 앞 문단의 CC0 30px 러너로 자동 대체(폴백)됩니다 — 이번 테스트의 체크리스트 통과 여부와는 무관한 저작권 확인 미결 사항입니다.
 
 <div class="callout">
 <p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
@@ -180,4 +181,6 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-11">[11] 구현 저장소 <code>ajusine.game1</code>. <code>assets/characters/runner/SOURCE.txt</code> — 3.6절 CC0 러너 스프라이트의 출처·라이선스·체크섬 기록(OpenGameArt, 작가 David Harrington, 2026-11-06 확인).</li>
     <li id="ref-12">[12] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_resolution_pipeline_report.md</code>, <code>reports/20261106_resolution_480x270_report.md</code> — 3.6절 해상도 파이프라인 적용, 원 기획 문서 6.6.1절 오류 발견, 480×270 축별 환산 규칙의 근거.</li>
     <li id="ref-13">[13] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_hollow_knight_scale_research.md</code> — 3.6절 캐릭터 화면 비율 교차검증의 근거. AtomechLLC/game-animation-library PR #40(히트박스 데이터, 신뢰도 비교적 높음) 및 Steam 공식 스크린샷 측정(신뢰도 중간) 기반.</li>
+    <li id="ref-14">[14] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_sprite_30px_report.md</code> — 3.6절 CC0 러너 30px 확대 스프라이트 교체(화면 비율 11.11% 달성)의 근거.</li>
+    <li id="ref-15">[15] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261109_shantae_skin_640x360_report.md</code> — 3.6절 Shantae/Rottytops/Sky 스킨 교체 및 내부 해상도 640×360 재교정의 근거. 라이선스 미확인으로 <code>local_only/</code>(저장소 미포함) 적용.</li>
 </ol>
