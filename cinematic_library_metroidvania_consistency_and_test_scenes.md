@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-09 오후 07:30:56 (KST, UTC+9)"
+updated: "2026-11-09 오후 07:54:52 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:30:56 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:54:52 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -143,6 +143,21 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 <div class="callout">
 <p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
 </div>
+
+### 3.7 교훈 — 캐릭터 비주얼 교체 요구가 반복적 재조정을 유발한 패턴
+
+3.6절의 변경 이력을 사용자 요구 기준으로 다시 추적하면, 번복의 공통 원인이 드러납니다. 아래 네 차례의 요구가 각각 앞선 결정을 뒤집었습니다.
+
+| 순서 | 요구(사용자 발화 또는 선택) | 번복된 결정 | 새 결정 |
+| :--- | :--- | :--- | :--- |
+| 1 | "캐릭터 저작권 공개된 무료 스프라이트를 구해 동작을 입혀보라." | "에셋 없이도 진행 가능"(그레이박싱) 전제 | CC0 러너 스프라이트 적용(위 콜아웃) |
+| 2 | "캐릭터 스프라이트 크기가 작다. 오리·호로우 나이트·샨테 시리즈 크기를 참조해 키우자." | 25px 스프라이트 1배 유지 | 2배→3배 확대(이후 해상도 파이프라인 적용으로 재차 대체) |
+| 3 | AskUserQuestion 응답 "새 스프라이트로 교체(11~12% 목표)" | 480×270에서 스프라이트 1배 유지(9.26%) | CC0 러너를 30px로 기계적 확대(11.11%) |
+| 4 | "스프라이트 교체 — 주인공 Shantae, NPC Rottytops·Sky" → AskUserQuestion 응답 "B(640×360)로 진행" | 30px CC0 러너 결정, 내부 해상도 480×270 | 로컬 전용 Shantae 스킨, 내부 해상도 640×360 |
+
+네 요구 모두 표면적으로는 "비주얼을 바꾸고 싶다"는 요청이었지만, 결과적으로 해상도·충돌 영역·이동 수치까지 재계산을 강제했습니다. 원인은 요구 자체가 아니라, 비주얼 교체 요구가 **화면 비율 목표(할로우 나이트 교차검증 11~12%)**와 **정수 배율 원칙(6.6.1절)**이라는 두 고정 제약과 결합할 때마다 같은 재조정 루프(새 에셋 실측 → 목표 비율과의 격차 확인 → 정수 배율로 도달 가능한 해상도 재탐색 → 길이 비례 요소 전부 재환산)가 발생한다는 점입니다.
+
+이 패턴은 앞으로도 캐릭터 비주얼이 또 바뀌면 같은 루프가 재발함을 시사합니다. 640×360을 최종 해상도로 확정하고 이후 에셋을 이 해상도·비율에 맞춰 제작하는 방향으로 전환할지, 아니면 에셋이 바뀔 때마다 해상도를 다시 맞추는 현재 방식을 유지할지는 9장 오픈 이슈로 남깁니다(아저씨 미결정).
 </analysis>
 
 ## 4. 용어 정리 및 정의

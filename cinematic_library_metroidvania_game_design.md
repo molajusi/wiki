@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-09 오후 07:30:56 (KST, UTC+9)"
+updated: "2026-11-09 오후 07:54:52 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:30:56 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:54:52 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
@@ -585,6 +585,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 - **세로 프로파일 캡처 해상도 정수 배율 수치**: 6.6.1절에서 "세로 프로파일의 내부 캡처 폭을 정수 배율이 나오는 값으로 스냅해야 한다"는 방향을 확인했으나, 실제 캡처 폭·최종 배율 수치는 아직 결정되지 않음.
 - **아웃라인·모션 블러의 프로파일별 보정 계수**: 6.6.3절에서 세로 출력의 확대 배율이 가로보다 커 아웃라인·모션 블러가 상대적으로 더 두껍게 보인다는 문제를 확인했으나, 이를 상쇄할 구체적 보정 계수는 두 프로파일을 나란히 비교해야 결정 가능하며 아직 미정.
 - **캐릭터 스프라이트 저작권**: 구현 저장소가 3씬 테스트용으로 적용한 캐릭터 스킨(Shantae/Rottytops/Sky, 《Shantae and the Pirate's Curse》 도트 시트)은 재사용 허가를 확인하지 못해 `local_only/`(저장소 미포함, 로컬 전용)로만 적용되어 있음. 6.1절의 "16비트급 도트" 방향과 스타일은 부합하나, 배포 가능한 최종 아트는 별도로 확보해야 함(`ajusine.game1/reports/20261109_shantae_skin_640x360_report.md` 6절).
+- **내부 해상도 확정 여부**: 캐릭터 비주얼 교체 요구가 있을 때마다 화면 비율 목표(약 11~12%)와 정수 배율 원칙이 충돌해 해상도가 세 차례(320×224→480×270→640×360) 바뀌었음. 640×360을 최종 확정으로 선언하고 이후 에셋을 이 기준에 맞춰 제작할지, 에셋이 바뀔 때마다 해상도를 재조정하는 현재 방식을 유지할지 미결정(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.7절).
 
 #### 7장 관련 — 레벨 디자인 및 시퀀스 디자인
 

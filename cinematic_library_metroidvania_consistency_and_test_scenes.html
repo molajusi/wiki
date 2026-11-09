@@ -12,7 +12,7 @@
         <h1>영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계</h1>
         <div class="subtitle">Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:30:56 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:54:52 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -305,6 +305,98 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 <div class="callout">
 <p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
 </div>
+
+<h3>3.7 교훈 — 캐릭터 비주얼 교체 요구가 반복적 재조정을 유발한 패턴</h3>
+
+<p>
+    3.6절의 변경 이력을 사용자 요구 기준으로 다시 추적하면, 번복의 공통 원인이 드러납니다. 아래 네 차례의 요구가 각각 앞선 결정을 뒤집었습니다.
+</p>
+
+<div class="table-responsive-wrapper">
+    <div class="desktop-table-view">
+        <table>
+<thead><tr><th>순서</th><th>요구(사용자 발화 또는 선택)</th><th>번복된 결정</th><th>새 결정</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>"캐릭터 저작권 공개된 무료 스프라이트를 구해 동작을 입혀보라."</td><td>"에셋 없이도 진행 가능"(그레이박싱) 전제</td><td>CC0 러너 스프라이트 적용(위 콜아웃)</td></tr>
+<tr><td>2</td><td>"캐릭터 스프라이트 크기가 작다. 오리·호로우 나이트·샨테 시리즈 크기를 참조해 키우자."</td><td>25px 스프라이트 1배 유지</td><td>2배→3배 확대(이후 해상도 파이프라인 적용으로 재차 대체)</td></tr>
+<tr><td>3</td><td>AskUserQuestion 응답 "새 스프라이트로 교체(11~12% 목표)"</td><td>480×270에서 스프라이트 1배 유지(9.26%)</td><td>CC0 러너를 30px로 기계적 확대(11.11%)</td></tr>
+<tr><td>4</td><td>"스프라이트 교체 — 주인공 Shantae, NPC Rottytops·Sky" → AskUserQuestion 응답 "B(640×360)로 진행"</td><td>30px CC0 러너 결정, 내부 해상도 480×270</td><td>로컬 전용 Shantae 스킨, 내부 해상도 640×360</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="mobile-table-view">
+        <dl class="mobile-table-list">
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">1</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">요구(사용자 발화 또는 선택)</dt>
+                <dd class="mobile-field-value">"캐릭터 저작권 공개된 무료 스프라이트를 구해 동작을 입혀보라."</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">번복된 결정</dt>
+                <dd class="mobile-field-value">"에셋 없이도 진행 가능"(그레이박싱) 전제</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">새 결정</dt>
+                <dd class="mobile-field-value">CC0 러너 스프라이트 적용(위 콜아웃)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">2</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">요구(사용자 발화 또는 선택)</dt>
+                <dd class="mobile-field-value">"캐릭터 스프라이트 크기가 작다. 오리·호로우 나이트·샨테 시리즈 크기를 참조해 키우자."</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">번복된 결정</dt>
+                <dd class="mobile-field-value">25px 스프라이트 1배 유지</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">새 결정</dt>
+                <dd class="mobile-field-value">2배→3배 확대(이후 해상도 파이프라인 적용으로 재차 대체)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">3</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">요구(사용자 발화 또는 선택)</dt>
+                <dd class="mobile-field-value">AskUserQuestion 응답 "새 스프라이트로 교체(11~12% 목표)"</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">번복된 결정</dt>
+                <dd class="mobile-field-value">480×270에서 스프라이트 1배 유지(9.26%)</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">새 결정</dt>
+                <dd class="mobile-field-value">CC0 러너를 30px로 기계적 확대(11.11%)</dd>
+            </div>
+        </div>
+        <div class="mobile-table-card">
+            <dt class="mobile-table-term">4</dt>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">요구(사용자 발화 또는 선택)</dt>
+                <dd class="mobile-field-value">"스프라이트 교체 — 주인공 Shantae, NPC Rottytops·Sky" → AskUserQuestion 응답 "B(640×360)로 진행"</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">번복된 결정</dt>
+                <dd class="mobile-field-value">30px CC0 러너 결정, 내부 해상도 480×270</dd>
+            </div>
+            <div class="mobile-field-row">
+                <dt class="mobile-field-label">새 결정</dt>
+                <dd class="mobile-field-value">로컬 전용 Shantae 스킨, 내부 해상도 640×360</dd>
+            </div>
+        </div>
+    </dl>
+    </div>
+</div>
+
+<p>
+    네 요구 모두 표면적으로는 "비주얼을 바꾸고 싶다"는 요청이었지만, 결과적으로 해상도·충돌 영역·이동 수치까지 재계산을 강제했습니다. 원인은 요구 자체가 아니라, 비주얼 교체 요구가 <b>화면 비율 목표(할로우 나이트 교차검증 11~12%)</b>와 <b>정수 배율 원칙(6.6.1절)</b>이라는 두 고정 제약과 결합할 때마다 같은 재조정 루프(새 에셋 실측 → 목표 비율과의 격차 확인 → 정수 배율로 도달 가능한 해상도 재탐색 → 길이 비례 요소 전부 재환산)가 발생한다는 점입니다.
+</p>
+
+<p>
+    이 패턴은 앞으로도 캐릭터 비주얼이 또 바뀌면 같은 루프가 재발함을 시사합니다. 640×360을 최종 해상도로 확정하고 이후 에셋을 이 해상도·비율에 맞춰 제작하는 방향으로 전환할지, 아니면 에셋이 바뀔 때마다 해상도를 다시 맞추는 현재 방식을 유지할지는 9장 오픈 이슈로 남깁니다(아저씨 미결정).
+</p>
             </section>
             <section>
                 <h2>4. 용어 정리 및 정의</h2>
