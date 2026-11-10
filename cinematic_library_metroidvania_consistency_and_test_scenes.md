@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-10 오후 05:33:48 (KST, UTC+9)"
+updated: "2026-11-10 오후 06:02:51 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 05:33:48 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 06:02:51 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -145,6 +145,7 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 - **연출 액터 인터페이스 확정(2026-11-10, 사용자 결정) — 9장 "CinematicPlayer 추상화 인터페이스" 오픈 이슈 해소**: 아저씨가 재현 방식을 "입력을 재생하지 않고 결과 상태를 기록·적용한다"는 방향(구현 세션이 제시한 안 중 C안)으로 확정했습니다. 이에 따라 `CinematicSequence.timeline` 항목의 상태 키를 **연속 키**(`position`처럼 구간 선형 보간), **계단식 키**(`facing`·`anim`·`emotion_tag`·`dialogue_key`·`camera_target`처럼 마지막 값 유지), **순간 키**(`events`처럼 그 시각에만 1회 실행)로 분류하고, 재생 대상이 `capture_state()`/`apply_state()`/`begin_cinematic()`/`end_cinematic()`을 구현하면 전체 상태를 기록·적용하는 액터 인터페이스 규약을 도입했습니다 [[17]](#ref-17). 레코더 샘플링 간격은 3.6절 앞부분의 **0.1초(사용자 확인 임시값)에서 매 물리 틱(1/60초)으로 변경**되었습니다 — 0.1초 간격은 점프 포물선 보간에서 최대 9.2px 오차를 냈습니다. 검증 결과 오프라인 재현 위치 오차는 0.0000px, 소리 이벤트(걸음·착지)까지 원본과 일치하도록 재현됩니다.
 - **재생 제어 API 통합(2026-11-10)**: `CinematicPlayer`에 두 재생 경로(스크립트/레코더) 공통의 `pause`/`resume`/`set_speed`/`hold`/`release`/`skip_to_end`/`seek` API가 추가되었습니다. 마을A·마을B의 대사 진행(빨리감기·다음 대사 대기)이 `ScriptedDialogue`가 `AnimationPlayer.speed_scale`을 직접 조작하던 방식에서, 이 공통 API의 `hold()`/`release()` 호출로 바뀌었습니다 — 3.2절이 서술한 두 씬의 대사 진행 메커니즘은 현재 이 API를 통해 구현되어 있습니다 [[18]](#ref-18). 다만 스크립트 경로는 여전히 `AnimationPlayer` 메서드 트랙(M안, 폴백)을 쓰고 있고, 설계가 권장하는 속성 트랙(P안)으로의 전환은 다음 구현 단계에서 검증될 예정입니다.
 - **다중 액터 장면 재생(2026-11-10)**: 사용자가 사전 확정한 규칙(정적 절대 시작 시각 우선, 같은 키 충돌은 레이어 우선 후 늦은 시작 우선, 중첩·재대상화는 후순위)에 따라 구현 세션이 `CinematicScene`/`CinematicClip`을 추가했습니다 — 여러 `CinematicSequence`를 시작 시각·배속·레이어·대상 액터로 묶어 한 장면으로 재생하는 조합 리소스입니다(원 기획서 2.4.1절 리소스 이원화에 더해진 조합 레이어, 데이터 이원화 원칙은 유지) [[19]](#ref-19). `play_sequence()`는 이제 클립 1개짜리 장면의 래퍼이며, 재생 전 구조·액터 검증(미등록 액터, 액터가 선언하지 않은 키 등)을 통과해야 재생됩니다. 상대 시작·마커·멀티 액터 레코더·스크립트 경로의 장면 편입은 다음 단계로 남아 있습니다.
+- **다중 액터 장면 단계 B — 상대 시작·마커·멀티 액터 레코더(2026-11-10)**: `CinematicClip`에 절대 시각 외에 `start_after`(선행 클립 종료 기준)·`start_with`(동시 시작)·`start_at_marker`(다른 시퀀스의 이름 붙은 시각 기준)·`delay`를 추가하고, `CinematicScene.resolve()`가 재생 전에 모든 클립의 절대 시작·종료 시각을 확정합니다(순환 참조는 오류로 거부) [[20]](#ref-20). `add_parallel`/`add_chain`/`add_stagger` 편의 함수도 추가됐습니다. `CinematicRecorder.start_scene(targets)`로 **여러 액터를 같은 물리 틱 시계로 동시 채집**할 수 있게 되어, 원 기획서 2.2절의 "레코더 경로" 채집 범위가 액터 1명에서 다중 액터로 확장되었습니다. 채집 중 `mark(이름)`으로 남긴 지점은 `CinematicSequence.markers`(이름→시퀀스 로컬 시각)에 저장되며, 이는 **7.4.3절 "하이라이트 트림 마커"·7.4.4절 "연출 가능 순간 태깅"과 같은 데이터 모델**이되 현재는 클립 시작 시각의 기준점으로만 쓰입니다 — 쇼츠 트림용 용도로는 아직 쓰이지 않습니다.
 
 <div class="callout">
 <p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
@@ -226,4 +227,5 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-17">[17] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_actor_interface_step1_report.md</code> — 3.6절 연출 액터 인터페이스(상태 키 분류, capture_state/apply_state 규약, 물리 틱 샘플링) 확정의 근거.</li>
     <li id="ref-18">[18] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_playback_control_step2_report.md</code> — 3.6절 재생 제어 API(pause/resume/hold/release/seek 등) 통합 및 대사 진행 메커니즘 변경의 근거.</li>
     <li id="ref-19">[19] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_scene_step_a_report.md</code> — 3.6절 다중 액터 장면(CinematicScene/CinematicClip), 충돌 해소·검증 규칙의 근거.</li>
+    <li id="ref-20">[20] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_scene_step_b_report.md</code> — 3.6절 상대 시작 지정(start_after/start_with/start_at_marker)·마커·멀티 액터 레코더의 근거.</li>
 </ol>

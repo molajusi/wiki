@@ -12,7 +12,7 @@
         <h1>영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계</h1>
         <div class="subtitle">Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania</div>
         <div class="category">카테고리: 게임 디자인 및 분석 (Game Design & Taxonomy)</div>
-        <div class="meta">최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 05:33:48 (KST, UTC+9)</div>
+        <div class="meta">최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 06:02:51 (KST, UTC+9)</div>
     </header>
     <nav>
         <div class="nav-links">
@@ -308,6 +308,7 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 <li><b>연출 액터 인터페이스 확정(2026-11-10, 사용자 결정) — 9장 "CinematicPlayer 추상화 인터페이스" 오픈 이슈 해소</b>: 아저씨가 재현 방식을 "입력을 재생하지 않고 결과 상태를 기록·적용한다"는 방향(구현 세션이 제시한 안 중 C안)으로 확정했습니다. 이에 따라 <code>CinematicSequence.timeline</code> 항목의 상태 키를 <b>연속 키</b>(<code>position</code>처럼 구간 선형 보간), <b>계단식 키</b>(<code>facing</code>·<code>anim</code>·<code>emotion_tag</code>·<code>dialogue_key</code>·<code>camera_target</code>처럼 마지막 값 유지), <b>순간 키</b>(<code>events</code>처럼 그 시각에만 1회 실행)로 분류하고, 재생 대상이 <code>capture_state()</code>/<code>apply_state()</code>/<code>begin_cinematic()</code>/<code>end_cinematic()</code>을 구현하면 전체 상태를 기록·적용하는 액터 인터페이스 규약을 도입했습니다 <sup class="citation"><a href="#ref-17">[17]</a></sup>. 레코더 샘플링 간격은 3.6절 앞부분의 <b>0.1초(사용자 확인 임시값)에서 매 물리 틱(1/60초)으로 변경</b>되었습니다 — 0.1초 간격은 점프 포물선 보간에서 최대 9.2px 오차를 냈습니다. 검증 결과 오프라인 재현 위치 오차는 0.0000px, 소리 이벤트(걸음·착지)까지 원본과 일치하도록 재현됩니다.</li>
 <li><b>재생 제어 API 통합(2026-11-10)</b>: <code>CinematicPlayer</code>에 두 재생 경로(스크립트/레코더) 공통의 <code>pause</code>/<code>resume</code>/<code>set_speed</code>/<code>hold</code>/<code>release</code>/<code>skip_to_end</code>/<code>seek</code> API가 추가되었습니다. 마을A·마을B의 대사 진행(빨리감기·다음 대사 대기)이 <code>ScriptedDialogue</code>가 <code>AnimationPlayer.speed_scale</code>을 직접 조작하던 방식에서, 이 공통 API의 <code>hold()</code>/<code>release()</code> 호출로 바뀌었습니다 — 3.2절이 서술한 두 씬의 대사 진행 메커니즘은 현재 이 API를 통해 구현되어 있습니다 <sup class="citation"><a href="#ref-18">[18]</a></sup>. 다만 스크립트 경로는 여전히 <code>AnimationPlayer</code> 메서드 트랙(M안, 폴백)을 쓰고 있고, 설계가 권장하는 속성 트랙(P안)으로의 전환은 다음 구현 단계에서 검증될 예정입니다.</li>
 <li><b>다중 액터 장면 재생(2026-11-10)</b>: 사용자가 사전 확정한 규칙(정적 절대 시작 시각 우선, 같은 키 충돌은 레이어 우선 후 늦은 시작 우선, 중첩·재대상화는 후순위)에 따라 구현 세션이 <code>CinematicScene</code>/<code>CinematicClip</code>을 추가했습니다 — 여러 <code>CinematicSequence</code>를 시작 시각·배속·레이어·대상 액터로 묶어 한 장면으로 재생하는 조합 리소스입니다(원 기획서 2.4.1절 리소스 이원화에 더해진 조합 레이어, 데이터 이원화 원칙은 유지) <sup class="citation"><a href="#ref-19">[19]</a></sup>. <code>play_sequence()</code>는 이제 클립 1개짜리 장면의 래퍼이며, 재생 전 구조·액터 검증(미등록 액터, 액터가 선언하지 않은 키 등)을 통과해야 재생됩니다. 상대 시작·마커·멀티 액터 레코더·스크립트 경로의 장면 편입은 다음 단계로 남아 있습니다.</li>
+<li><b>다중 액터 장면 단계 B — 상대 시작·마커·멀티 액터 레코더(2026-11-10)</b>: <code>CinematicClip</code>에 절대 시각 외에 <code>start_after</code>(선행 클립 종료 기준)·<code>start_with</code>(동시 시작)·<code>start_at_marker</code>(다른 시퀀스의 이름 붙은 시각 기준)·<code>delay</code>를 추가하고, <code>CinematicScene.resolve()</code>가 재생 전에 모든 클립의 절대 시작·종료 시각을 확정합니다(순환 참조는 오류로 거부) <sup class="citation"><a href="#ref-20">[20]</a></sup>. <code>add_parallel</code>/<code>add_chain</code>/<code>add_stagger</code> 편의 함수도 추가됐습니다. <code>CinematicRecorder.start_scene(targets)</code>로 <b>여러 액터를 같은 물리 틱 시계로 동시 채집</b>할 수 있게 되어, 원 기획서 2.2절의 "레코더 경로" 채집 범위가 액터 1명에서 다중 액터로 확장되었습니다. 채집 중 <code>mark(이름)</code>으로 남긴 지점은 <code>CinematicSequence.markers</code>(이름→시퀀스 로컬 시각)에 저장되며, 이는 <b>7.4.3절 "하이라이트 트림 마커"·7.4.4절 "연출 가능 순간 태깅"과 같은 데이터 모델</b>이되 현재는 클립 시작 시각의 기준점으로만 쓰입니다 — 쇼츠 트림용 용도로는 아직 쓰이지 않습니다.</li>
 </ul>
 
 <div class="callout">
@@ -516,6 +517,7 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-17">[17] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_actor_interface_step1_report.md</code> — 3.6절 연출 액터 인터페이스(상태 키 분류, capture_state/apply_state 규약, 물리 틱 샘플링) 확정의 근거.</li>
     <li id="ref-18">[18] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_playback_control_step2_report.md</code> — 3.6절 재생 제어 API(pause/resume/hold/release/seek 등) 통합 및 대사 진행 메커니즘 변경의 근거.</li>
     <li id="ref-19">[19] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_scene_step_a_report.md</code> — 3.6절 다중 액터 장면(CinematicScene/CinematicClip), 충돌 해소·검증 규칙의 근거.</li>
+    <li id="ref-20">[20] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_scene_step_b_report.md</code> — 3.6절 상대 시작 지정(start_after/start_with/start_at_marker)·마커·멀티 액터 레코더의 근거.</li>
 </ol>
             </section>
         </article>
