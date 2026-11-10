@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-10 오후 03:54:24 (KST, UTC+9)"
+updated: "2026-11-10 오후 04:42:32 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 03:54:24 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 04:42:32 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
@@ -97,6 +97,10 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 - **`CinematicSequence`**: 순수 연출 데이터(무엇이 보이고 들리는가) — 캐릭터 위치·애니메이션, 감정 태그(4장), 대사, 카메라 파라미터(2.1절), 하이라이트 트림 마커(7.4.3절), 연출 가능 순간/챕터명(7.4.4·7.5.3절), 가로/세로 프레이밍 프로파일(7.4.2·7.5.2절).
 - **`SequenceModeConfig`**: 순수 게임 로직 데이터(무엇이 판정되는가) — 7.3절의 규칙 세트 A/B/C 플래그 조합, 탐지 판정 수치.
 - 시퀀스 진입 시 두 리소스를 함께 참조만 하며, 서로의 내부를 알 필요가 없습니다.
+
+<div class="callout">
+<p><strong>구현 세션의 추가 리소스(2026-11-10)</strong>: 구현 저장소(<code>ajusine.game1</code>)가 다중 액터 장면을 재생하기 위해 <code>CinematicScene</code>/<code>CinematicClip</code>을 추가했습니다 — 여러 <code>CinematicSequence</code>를 시작 시각·배속·레이어·대상 액터로 묶어 하나의 장면으로 재생하는 조합 레이어입니다. 이는 위 이원화 원칙을 깨지 않습니다(연출 데이터만 조합하며 게임 로직 플래그는 섞지 않음). 상세: <a href="cinematic_library_metroidvania_consistency_and_test_scenes.html">영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계</a> 3.6절.</p>
+</div>
 
 #### 2.4.2 두 진입 경로에 서로 다른 포맷을 매핑
 
@@ -572,7 +576,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 
 #### 2장 관련 — 아키텍처
 
-- **연출 스크립트 데이터 포맷 세부 설계** — **부분 해소(2026-11-10)**: `CinematicPlayer` 추상화 인터페이스는 구현 저장소(`ajusine.game1`)에서 아저씨가 "결과 상태 기록 + 액터 인터페이스" 방향으로 확정했다. 상태 키를 연속(`position`)·계단식(`facing`·`anim`·`emotion_tag`·`dialogue_key`·`camera_target`)·순간(`events`) 세 종류로 분류하고, 재생 대상이 `capture_state()`/`apply_state()`/`begin_cinematic()`/`end_cinematic()`을 구현하는 액터 인터페이스 규약과 두 경로 공통의 재생 제어 API(`pause`/`resume`/`set_speed`/`hold`/`release`/`seek` 등)도 함께 도입됐다(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.6절). 다만 스크립트 경로는 현재도 2.4.2절의 `AnimationPlayer` 메서드 트랙(폴백)을 쓰고 있다. 구현 세션은 속성 트랙 방식을 권장 후보로 제안했으나 이는 2.4.2절에 없는 새 후보이며 아직 검증 전이다. `Animation` 트랙 세부 명세·포맷 버저닝도 미해결로 남아 있다.
+- **연출 스크립트 데이터 포맷 세부 설계** — **부분 해소(2026-11-10)**: `CinematicPlayer` 추상화 인터페이스는 구현 저장소(`ajusine.game1`)에서 아저씨가 "결과 상태 기록 + 액터 인터페이스" 방향으로 확정했다. 상태 키를 연속(`position`)·계단식(`facing`·`anim`·`emotion_tag`·`dialogue_key`·`camera_target`)·순간(`events`) 세 종류로 분류하고, 재생 대상이 `capture_state()`/`apply_state()`/`begin_cinematic()`/`end_cinematic()`을 구현하는 액터 인터페이스 규약과 두 경로 공통의 재생 제어 API(`pause`/`resume`/`set_speed`/`hold`/`release`/`seek` 등)도 함께 도입됐다(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.6절). 다만 스크립트 경로는 현재도 2.4.2절의 `AnimationPlayer` 메서드 트랙(폴백)을 쓰고 있다. 구현 세션은 속성 트랙 방식을 권장 후보로 제안했으나 이는 2.4.2절에 없는 새 후보이며 아직 검증 전이다. `Animation` 트랙 세부 명세·포맷 버저닝도 미해결로 남아 있다. 이어서 다중 액터 장면 재생(`CinematicScene`/`CinematicClip`, 키 단위 충돌 해소, 액터 잠금 참조 관리, 재생 전 구조·액터 검증)도 구현되었으나, 상대 시작·마커·멀티 액터 레코더·스크립트 경로의 장면 편입은 아직 범위 밖이다.
 
 #### 4장 관련 — 캐릭터 및 전투
 
