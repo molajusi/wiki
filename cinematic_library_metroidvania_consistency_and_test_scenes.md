@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-09 오후 07:54:52 (KST, UTC+9)"
+updated: "2026-11-10 오후 03:23:24 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:54:52 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 03:23:24 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -157,7 +157,11 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 
 네 요구 모두 표면적으로는 "비주얼을 바꾸고 싶다"는 요청이었지만, 결과적으로 해상도·충돌 영역·이동 수치까지 재계산을 강제했습니다. 원인은 요구 자체가 아니라, 비주얼 교체 요구가 **화면 비율 목표(할로우 나이트 교차검증 11~12%)**와 **정수 배율 원칙(6.6.1절)**이라는 두 고정 제약과 결합할 때마다 같은 재조정 루프(새 에셋 실측 → 목표 비율과의 격차 확인 → 정수 배율로 도달 가능한 해상도 재탐색 → 길이 비례 요소 전부 재환산)가 발생한다는 점입니다.
 
-이 패턴은 앞으로도 캐릭터 비주얼이 또 바뀌면 같은 루프가 재발함을 시사합니다. 640×360을 최종 해상도로 확정하고 이후 에셋을 이 해상도·비율에 맞춰 제작하는 방향으로 전환할지, 아니면 에셋이 바뀔 때마다 해상도를 다시 맞추는 현재 방식을 유지할지는 9장 오픈 이슈로 남깁니다(아저씨 미결정).
+이 패턴은 앞으로도 캐릭터 비주얼이 또 바뀌면 같은 루프가 재발함을 시사합니다.
+
+<div class="callout">
+<p><strong>결정(2026-11-10): 내부 해상도 640×360 최종 확정</strong>. 근거: ① 1280×720(2배)·1920×1080(3배)·2560×1440(4배)·3840×2160(6배)에서 모두 여백 없는 정수 배율로, 320×224·480×270보다 적용 가능한 디스플레이 해상도 범위가 넓음(<code>reports/20261109_shantae_skin_640x360_report.md</code> D2). ② 현재 확보된 Shantae 도트 시트 실루엣(약 41px)이 11.4%로 목표(11~12%) 범위 안에 들어옴. ③ 해상도가 바뀔 때마다 월드 좌표·충돌 영역·이동/점프/중력·HUD 글자 크기 전부를 재계산해야 했음(3.6절, 3회 반복)이 실측으로 확인되어 추가 변경의 비용이 큼. <b>이에 따라 앞으로 캐릭터 아트(저작권이 해결된 최종본 포함)가 바뀌어도 해상도는 다시 바꾸지 않고, 새 아트를 실루엣 약 41px(화면 높이 360px의 11.4%) 기준으로 스케일링해 맞춘다</b> — 해상도 변경은 더 이상 아트 교체의 자동 결과가 아니라 별도로 정당화해야 하는 결정으로 취급한다.</p>
+</div>
 </analysis>
 
 ## 4. 용어 정리 및 정의

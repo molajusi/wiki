@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-09 오후 07:54:52 (KST, UTC+9)"
+updated: "2026-11-10 오후 03:23:24 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-09 오후 07:54:52 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 03:23:24 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
@@ -270,7 +270,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 
 #### 6.6.1 캡처 해상도와 정수 배율 스케일링
 
-게임 본편의 내부 렌더 해상도는 **640×360**입니다(수정 경위는 아래 콜아웃 참조). 가로 출력(1920×1080)으로 확대할 때 배율은 1920/640=1080/360=3배로 정수이며, 픽셀 하나가 화면상 정확히 3×3 픽셀로 커져 도트 경계가 고르게 유지됩니다. 640×360은 1920×1080과 같은 16:9 비율이라 여백 없이 화면을 정확히 채우며, 2560×1440(4배)·3840×2160(6배) 등 주요 모니터 해상도에서도 정수 배율을 유지합니다.
+게임 본편의 내부 렌더 해상도는 **640×360**으로 최종 확정되었습니다(수정 경위는 아래 콜아웃 참조, 확정 사유는 9장 오픈 이슈 해소 기록 참조). 이후 캐릭터 아트가 교체되어도 이 해상도는 다시 바꾸지 않고 새 아트를 이 기준에 맞춰 스케일링합니다. 가로 출력(1920×1080)으로 확대할 때 배율은 1920/640=1080/360=3배로 정수이며, 픽셀 하나가 화면상 정확히 3×3 픽셀로 커져 도트 경계가 고르게 유지됩니다. 640×360은 1920×1080과 같은 16:9 비율이라 여백 없이 화면을 정확히 채우며, 2560×1440(4배)·3840×2160(6배) 등 주요 모니터 해상도에서도 정수 배율을 유지합니다.
 
 <div class="callout">
 <p><strong>수정 경위</strong>: 이 절은 원래 내부 해상도를 320×224로 서술했으나, 320×224는 10:7 비율이라 16:9(1920×1080)와 산술적으로 맞지 않습니다 — "1920/320=6배"는 가로 기준으로는 정수이나, 그 배율을 세로(224×6=1344)에 적용하면 1080을 초과해 실제로는 4배(1280×896, 상하·좌우 여백 발생)가 한계였습니다. 이 불일치는 구현 저장소(<code>ajusine.game1</code>)가 320×224를 실제로 적용하는 과정에서 발견해 보고했습니다(<code>reports/20261106_resolution_pipeline_report.md</code> 4절). 보고된 후보(320×224 유지/320×180/384×216/480×270) 중 아저씨가 <b>480×270</b>(16:9 네이티브, 1080p에서 여백 없이 정확히 4배)을 1차로 선택해 이 절의 수치를 교정했습니다. 이후 캐릭터 스킨을 Shantae(《Shantae and the Pirate's Curse》 도트 시트, 실루엣 약 41px)로 교체하면서, 목표 화면 비율(약 11~12%)을 정수 배율로 맞추려면 480×270(비율 15.2%)이 아니라 <b>640×360</b>(비율 11.4%)이 필요하다는 점이 구현 세션에서 확인되어 2차로 교정했습니다(<code>ajusine.game1/reports/20261109_shantae_skin_640x360_report.md</code> D1).</p>
@@ -585,7 +585,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 - **세로 프로파일 캡처 해상도 정수 배율 수치**: 6.6.1절에서 "세로 프로파일의 내부 캡처 폭을 정수 배율이 나오는 값으로 스냅해야 한다"는 방향을 확인했으나, 실제 캡처 폭·최종 배율 수치는 아직 결정되지 않음.
 - **아웃라인·모션 블러의 프로파일별 보정 계수**: 6.6.3절에서 세로 출력의 확대 배율이 가로보다 커 아웃라인·모션 블러가 상대적으로 더 두껍게 보인다는 문제를 확인했으나, 이를 상쇄할 구체적 보정 계수는 두 프로파일을 나란히 비교해야 결정 가능하며 아직 미정.
 - **캐릭터 스프라이트 저작권**: 구현 저장소가 3씬 테스트용으로 적용한 캐릭터 스킨(Shantae/Rottytops/Sky, 《Shantae and the Pirate's Curse》 도트 시트)은 재사용 허가를 확인하지 못해 `local_only/`(저장소 미포함, 로컬 전용)로만 적용되어 있음. 6.1절의 "16비트급 도트" 방향과 스타일은 부합하나, 배포 가능한 최종 아트는 별도로 확보해야 함(`ajusine.game1/reports/20261109_shantae_skin_640x360_report.md` 6절).
-- **내부 해상도 확정 여부**: 캐릭터 비주얼 교체 요구가 있을 때마다 화면 비율 목표(약 11~12%)와 정수 배율 원칙이 충돌해 해상도가 세 차례(320×224→480×270→640×360) 바뀌었음. 640×360을 최종 확정으로 선언하고 이후 에셋을 이 기준에 맞춰 제작할지, 에셋이 바뀔 때마다 해상도를 재조정하는 현재 방식을 유지할지 미결정(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.7절).
+- ~~**내부 해상도 확정 여부**~~ — **해소(2026-11-10)**: 640×360을 최종 해상도로 확정(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.7절). 이후 캐릭터 아트가 교체되어도 해상도는 다시 바꾸지 않고, 새 아트를 실루엣 약 41px(화면 높이의 11.4%) 기준으로 스케일링해 맞춘다.
 
 #### 7장 관련 — 레벨 디자인 및 시퀀스 디자인
 
