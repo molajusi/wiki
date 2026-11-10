@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계"
 subtitle: "Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania"
 created: "2026-11-06 오후 02:57:19 (KST, UTC+9)"
-updated: "2026-11-10 오후 03:23:24 (KST, UTC+9)"
+updated: "2026-11-10 오후 03:54:24 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Consistency", "Single Source of Truth", "Data Schema", "Prototype", "Godot", "Ability Gating"]
 html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_consistency_and_test_scenes.html"
 *Defining Consistency Layers and a Minimal Three-Scene Test for the Cinematic-Library Metroidvania*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 03:23:24 (KST, UTC+9)*
+*최초 작성일시: 2026-11-06 오후 02:57:19 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 03:54:24 (KST, UTC+9)*
 
 <context>
 본 문서는 [영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획](cinematic_library_metroidvania_game_design.html)의 9장 오픈 이슈 중 "연출 스크립트 데이터 포맷 세부 설계"와 "게이팅 능력 목록" 항목에 선행해, 아저씨가 요구한 "일관성"이 구체적으로 무엇을 의미하는지 정의하고, 완성된 게임이 아니라 **플레이 가능성과 연출 API 가능성만 검증하는 최소 3씬(마을→필드→마을) 테스트**를 설계합니다. 원 기획 문서의 아키텍처(2장)·레벨 디자인(7장) 이론을 그대로 적용하되, 그중 "게이팅 설계 패턴이 이후 전체 게임의 템플릿으로 고착되는 효과"는 아저씨의 명시적 지시로 이번 테스트 범위에서 배제합니다(3.4절 참조).
@@ -98,6 +98,8 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
   required_ability: String  # 필드 씬 게이트 전용, 예: "double_jump"
 ```
 
+이 초안은 "미확정, 이번 테스트 전용"으로 남겨 두었으나, 구현 세션이 고스트 재생을 실제 플레이와 대조하는 과정에서 애니메이션·방향·소리 필드의 부재가 재현 충실도에 영향을 준다는 것을 발견했고, 사용자 결정을 거쳐 `facing`·`anim`·`events`(순간 이벤트) 키를 추가하고 재생 대상의 `capture_state()`/`apply_state()` 인터페이스로 일반화했습니다 — 경위와 최종 형태는 3.6절을 참조하십시오.
+
 ### 3.4 범위에서 명시적으로 배제한 것 — 게이팅 설계 일관성(2.3절)
 
 아저씨의 지시("되돌리기 어려운 것은 이번 테스트 구현에서는 적용하고 싶지 않다")에 따라, 2.3절의 "자물쇠-열쇠 신호 설계"는 이번 테스트에서 **의도적으로 구현하지 않습니다**. 구체적으로:
@@ -127,7 +129,7 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 - **체크리스트 1번(스키마 일관성) 확인됨**: 마을A·마을B는 `CinematicPlayer.play_scripted()`(스크립트 경로), 필드는 `CinematicPlayer.play_sequence()`(레코더 경로)로 각각 재생되며, 셋 다 같은 `CinematicPlayer` 클래스가 처리합니다.
 - **체크리스트 3번(리소스 이원화) 확인됨**: `SequenceModeConfig`(`field_gate_config.tres`) 값을 바꿔도 `CinematicSequence`(레코더가 채집한 타임라인)에는 영향이 없음이 테스트로 확인되었습니다.
 - **체크리스트 2번(상태 일관성) 확인됨**: 필드에서 능력을 획득한 뒤 씬을 전환해 마을B에 진입해도 `PlayerState` 오토로드 하나만 참조해 대사 분기가 결정됨을 확인했습니다 — 마을B 쪽 소스에 능력 상태의 사본 변수가 없다는 점까지 직접 검사했습니다.
-- **9장 오픈 이슈 중 일부가 임시로 메워짐**(최종 확정 아님, 구현 저장소 수준의 임시 결정):
+- **9장 오픈 이슈 중 일부가 임시로 메워짐**(최종 확정 아님, 구현 저장소 수준의 임시 결정 — 이후 아래 "액터 인터페이스 확정"으로 대체됨):
   - `CinematicPlayer`의 추상화 인터페이스 — `register_actor(character_id, node)`로 재생 대상을 등록하고, 레코더 경로 재생 시 `position`은 이전 항목까지 선형 보간하는 방식으로 구현됨.
   - 레코더 경로의 샘플링 간격 — 0.1초, 상태 변화 시에만 기록(델타 인코딩). 이번 테스트는 `position`만 채집하며 감정·대사·카메라는 채집 대상이 없습니다.
   - 필드 게이트의 능력 ID — `double_jump`(플래그 검사만, 이중 점프 물리 자체는 미구현).
@@ -139,6 +141,9 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
 - **이동 속도 트레이드오프(미해결, 9장 오픈 이슈와 연결)**: 월드 폭을 ×1.5로 넓히면서 이동 속도는 유지해, 화면 한 폭을 횡단하는 시간이 3.2초→4.8초로 늘었습니다. 조작감 수치(7.1.1절)가 설계 문서에 아직 명세되지 않아 구현 세션이 임의로 속도를 올리지 않고 그대로 보류했습니다.
 - **캐릭터 화면 비율 — 정수 배율 원칙과의 충돌, 재조정 결정**: 할로우 나이트 교차검증(11~12%)에 맞춰 11.2% 비율을 유지하려면 스프라이트에 비정수 배율(약 1.2054배)을 걸어야 했으나, 이는 6.6.1절의 정수 배율 원칙과 충돌합니다. 구현 세션은 정수 배율 원칙을 우선해 스프라이트를 1배로 유지했고, 그 결과 캐릭터 화면 비율이 **9.26%**로 낮아져 할로우 나이트 범위보다 2~3%p 낮은 상태가 되었습니다 [[13]](#ref-13). 이 간극을 아저씨가 검토한 결과, **실루엣 약 30px(프레임 약 38px)의 새 스프라이트로 교체해 11~12% 목표를 다시 맞추는 쪽으로 결정**했고, 구현 저장소가 기존 CC0 러너를 도트 단위로 기계적 확대해(새 아트 제작이 아님) 실루엣 30px·화면 비율 11.11%를 달성했습니다 [[14]](#ref-14).
 - **캐릭터 스킨 교체(Shantae/Rottytops/Sky) 및 내부 해상도 640×360 재교정(2026-11-09)**: 아저씨가 주인공 스프라이트를 《Shantae and the Pirate's Curse》 도트 시트 기반 스킨으로 교체 요청했습니다. 이 시트의 실루엣(약 41px)을 480×270에서 1배로 쓰면 화면 비율이 15.2%(목표 11~12% 초과)가 되어, 구현 세션은 **내부 해상도를 480×270 → 640×360**으로 다시 바꿔 비율을 11.4%로 맞췄습니다(1920×1080에서 정수 3배 유지) [[15]](#ref-15). [원 기획 문서](cinematic_library_metroidvania_game_design.html) 6.1·6.6.1절을 이 수치로 교정했습니다. 해당 스킨 에셋은 재사용 허가를 확인하지 못해 `local_only/`(저장소 미포함)로만 적용되며, 공개 저장소를 그대로 내려받으면 앞 문단의 CC0 30px 러너로 자동 대체(폴백)됩니다 — 이번 테스트의 체크리스트 통과 여부와는 무관한 저작권 확인 미결 사항입니다.
+- **고스트 재생 충실도 점검 — 설계 문서의 내부 모순 발견(2026-11-09)**: 구현 세션이 필드 고스트 재생과 실제 플레이를 프레임별로 비교한 결과, 위치 오차(평균 3.1px)와 애니메이션 불일치(27%)를 확인했습니다. 원인 분석 결과 **원 기획 문서 2.2절(레코더 채집 대상: 좌표·애니메이션 클립·감정 태그·대사 텍스트·카메라 값)과 3.3절 초안(`timeline` 필드에 애니메이션 필드 없음) 사이에 간극**이 있었습니다 — 2.2절이 의도한 채집 대상을 3.3절 초안이 빠뜨린 경우로, 3.16절 의미적 모순 대조 의무에 해당하는 사례입니다 [[16]](#ref-16). 구현 결함 2건(정지 구간 선형 보간 오염, 종료 시각 손실)은 스키마 변경 없이 수정해 위치 오차를 1.2px로 줄였고, 스키마 보완은 사용자 결정이 필요한 항목으로 분리해 보고했습니다.
+- **연출 액터 인터페이스 확정(2026-11-10, 사용자 결정) — 9장 "CinematicPlayer 추상화 인터페이스" 오픈 이슈 해소**: 아저씨가 재현 방식을 "입력을 재생하지 않고 결과 상태를 기록·적용한다"는 방향(구현 세션이 제시한 안 중 C안)으로 확정했습니다. 이에 따라 `CinematicSequence.timeline` 항목의 상태 키를 **연속 키**(`position`처럼 구간 선형 보간), **계단식 키**(`facing`·`anim`·`emotion_tag`·`dialogue_key`·`camera_target`처럼 마지막 값 유지), **순간 키**(`events`처럼 그 시각에만 1회 실행)로 분류하고, 재생 대상이 `capture_state()`/`apply_state()`/`begin_cinematic()`/`end_cinematic()`을 구현하면 전체 상태를 기록·적용하는 액터 인터페이스 규약을 도입했습니다 [[17]](#ref-17). 레코더 샘플링 간격은 3.6절 앞부분의 **0.1초(사용자 확인 임시값)에서 매 물리 틱(1/60초)으로 변경**되었습니다 — 0.1초 간격은 점프 포물선 보간에서 최대 9.2px 오차를 냈습니다. 검증 결과 오프라인 재현 위치 오차는 0.0000px, 소리 이벤트(걸음·착지)까지 원본과 일치하도록 재현됩니다.
+- **재생 제어 API 통합(2026-11-10)**: `CinematicPlayer`에 두 재생 경로(스크립트/레코더) 공통의 `pause`/`resume`/`set_speed`/`hold`/`release`/`skip_to_end`/`seek` API가 추가되었습니다. 마을A·마을B의 대사 진행(빨리감기·다음 대사 대기)이 `ScriptedDialogue`가 `AnimationPlayer.speed_scale`을 직접 조작하던 방식에서, 이 공통 API의 `hold()`/`release()` 호출로 바뀌었습니다 — 3.2절이 서술한 두 씬의 대사 진행 메커니즘은 현재 이 API를 통해 구현되어 있습니다 [[18]](#ref-18). 다만 스크립트 경로는 여전히 `AnimationPlayer` 메서드 트랙(M안, 폴백)을 쓰고 있고, 설계가 권장하는 속성 트랙(P안)으로의 전환은 다음 구현 단계에서 검증될 예정입니다.
 
 <div class="callout">
 <p><strong>의미적 모순 대조 — "애셋 없이 진행" 범위의 일부 변경</strong>: 필드 보고서 이후 구현 저장소에 <code>assets/characters/runner/</code>(OpenGameArt "Runner character", CC0 라이선스, 출처·SHA-256 체크섬이 기록된 <code>SOURCE.txt</code> 동봉 <sup class="citation"><a href="#ref-11">[11]</a></sup>)가 추가되어, 플레이어·NPC·고스트가 실제 스프라이트 애니메이션(idle/run/jump)으로 표현됩니다. 이는 "이미지나 사운드 같은 에셋 없이도 진행할 수 있는가?"라는 이전 논의에서 합의한 그레이박싱(단순 도형) 원칙의 <b>일부 수정</b>입니다. 다만 2.3·3.4절이 명시적으로 배제한 "자물쇠-열쇠 시각적 신호 설계"는 게이트 자체가 여전히 "단색 블록, 시각적 신호 없음"으로 유지되어 있어 영향받지 않습니다 — 변경된 것은 캐릭터 표현 수단(스프라이트 유무)이고, 배제된 게이팅 설계 원칙은 그대로입니다.</p>
@@ -202,4 +207,7 @@ SequenceModeConfig (게임 로직 데이터, 원 기획서 2.4.1절):
     <li id="ref-13">[13] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_hollow_knight_scale_research.md</code> — 3.6절 캐릭터 화면 비율 교차검증의 근거. AtomechLLC/game-animation-library PR #40(히트박스 데이터, 신뢰도 비교적 높음) 및 Steam 공식 스크린샷 측정(신뢰도 중간) 기반.</li>
     <li id="ref-14">[14] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261106_sprite_30px_report.md</code> — 3.6절 CC0 러너 30px 확대 스프라이트 교체(화면 비율 11.11% 달성)의 근거.</li>
     <li id="ref-15">[15] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261109_shantae_skin_640x360_report.md</code> — 3.6절 Shantae/Rottytops/Sky 스킨 교체 및 내부 해상도 640×360 재교정의 근거. 라이선스 미확인으로 <code>local_only/</code>(저장소 미포함) 적용.</li>
+    <li id="ref-16">[16] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261109_ghost_replay_fidelity_report.md</code> — 3.6절 고스트 재생 충실도 점검, 원 기획 문서 2.2절·3.3절 초안 간극 발견의 근거.</li>
+    <li id="ref-17">[17] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_actor_interface_step1_report.md</code> — 3.6절 연출 액터 인터페이스(상태 키 분류, capture_state/apply_state 규약, 물리 틱 샘플링) 확정의 근거.</li>
+    <li id="ref-18">[18] 구현 저장소 <code>ajusine.game1</code>. <code>reports/20261110_cinematic_playback_control_step2_report.md</code> — 3.6절 재생 제어 API(pause/resume/hold/release/seek 등) 통합 및 대사 진행 메커니즘 변경의 근거.</li>
 </ol>
