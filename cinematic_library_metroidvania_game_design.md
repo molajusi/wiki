@@ -2,7 +2,7 @@
 title: "영상 연출 라이브러리 병행 플레이어블 메트로이드배니아 게임 기획"
 subtitle: "Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production"
 created: "2026-09-23 오전 05:53:46 (KST, UTC+9)"
-updated: "2026-11-10 오후 06:02:51 (KST, UTC+9)"
+updated: "2026-11-11 오전 11:19:32 (KST, UTC+9)"
 category: "게임 디자인 및 분석 (Game Design & Taxonomy)"
 tags: ["Metroidvania", "Cinematic Direction", "Pixel Art", "Dialogue System", "Character Expression", "Game Architecture", "Music Design", "Sound Design", "Game Feel", "Combat Design", "Hitbox", "Moving Platform", "Velocity Inheritance"]
 html_view: "cinematic_library_metroidvania_game_design.html"
@@ -12,7 +12,7 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 *Playable Metroidvania Game Design with a Reusable Cinematic Direction Library for Short-Form Video Production*
 
 **카테고리**: 게임 디자인 및 분석 (Game Design & Taxonomy)  
-*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-10 오후 06:02:51 (KST, UTC+9)*
+*최초 작성일시: 2026-09-23 오전 05:53:46 (KST, UTC+9) | 최종 수정일시: 2026-11-11 오전 11:19:32 (KST, UTC+9)*
 
 <context>
 본 문서는 픽셀 도트 기반의 실제 플레이 가능한 메트로이드배니아 게임을 만들되, 그 내부에 쇼츠 영상용 연출(캐릭터 감정표현, 대사풍선, 무대 연출)을 게임 밖에서도 녹화·재현할 수 있는 재사용 가능한 라이브러리/API를 병행 내장하는 이중 목적 게임 기획을 다룹니다. 세계관(고려풍 판타지, 6단 신분 계층)은 이 기술 기획과 아키텍처·기반기술·스크립팅 수준에서 독립적임이 확인되어 별도 문서 [영상 연출 라이브러리 메트로이드배니아의 세계관과 정치 체제](cinematic_library_metroidvania_worldbuilding.html)로 분리되었습니다(3장 참조). 본 문서는 아저씨와의 기획 논의(원문: `raw/20260923_cinematic_library_metroidvania_game_design_raw.txt`)를 원천으로 하며, 이 위키의 기존 메트로이드배니아 이론 클러스터 및 고려풍 판타지 세계관 문서와 교차 참조합니다.
@@ -112,6 +112,10 @@ html_view: "cinematic_library_metroidvania_game_design.html"
 | 레코더 경로(플레이 중 자동 채집) | 커스텀 경량 `CinematicSequence` Resource(단순 이벤트 배열) | 프로그램이 생성·파싱하기 쉬운 단순 구조가 유리하고, 사람이 직접 읽을 일이 적어 시각적 에디터의 이점이 크지 않음. |
 
 `Animation` 리소스는 키프레임이 패킹된 float 배열로 저장돼 원안의 커스텀 스키마보다 에이전트가 직접 손편집하기는 불편하다는 점을 트레이드오프로 인지하고 있습니다 — 다만 이 포맷은 사람이 Godot 에디터로 직접 다듬는 것을 전제하므로, 에이전트 편집 편의성보다 시각적 저작 편의성이 우선하는 경로입니다. `CinematicPlayer` 노드가 두 포맷을 공통 런타임 인터페이스로 추상화해 재생합니다.
+
+<div class="callout">
+<p><strong>구현 세션의 경로 통합(2026-11-10)</strong>: 구현 저장소(<code>ajusine.game1</code>)가 두 경로를 2.4.1절의 <code>CinematicScene</code> 아래 한 시계로 통합했습니다 — <code>AnimationPlayer</code>를 수동 모드(<code>callback_mode_process = MANUAL</code>)로 바꿔 장면 시계가 매 프레임 <code>advance(dt)</code>를 호출해 구동하며, 레코더 경로의 <code>CinematicSequence</code> 클립과 같은 재생 제어 규칙(정지·대기점·배속·충돌)을 공유합니다. 엔진 4.7.2 실측 결과 <code>AnimationPlayer.seek()</code>는 지나간 이벤트를 직전 키 하나만 실행하고 속성 값을 어긋나게 만들어 신뢰할 수 없음을 확인했으며, 이에 따라 애니메이션 클립이 있는 장면은 임의 시각 이동(seek)을 지원하지 않습니다. 상세: <a href="cinematic_library_metroidvania_consistency_and_test_scenes.html">영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계</a> 3.6절.</p>
+</div>
 
 #### 2.4.3 다국어 대사 — 로컬라이제이션 키 저장
 
@@ -576,7 +580,7 @@ Steve Swink는 2009년 저서 《Game Feel》에서 이 용어를 대중화했�
 
 #### 2장 관련 — 아키텍처
 
-- **연출 스크립트 데이터 포맷 세부 설계** — **부분 해소(2026-11-10)**: `CinematicPlayer` 추상화 인터페이스는 구현 저장소(`ajusine.game1`)에서 아저씨가 "결과 상태 기록 + 액터 인터페이스" 방향으로 확정했다. 상태 키를 연속(`position`)·계단식(`facing`·`anim`·`emotion_tag`·`dialogue_key`·`camera_target`)·순간(`events`) 세 종류로 분류하고, 재생 대상이 `capture_state()`/`apply_state()`/`begin_cinematic()`/`end_cinematic()`을 구현하는 액터 인터페이스 규약과 두 경로 공통의 재생 제어 API(`pause`/`resume`/`set_speed`/`hold`/`release`/`seek` 등)도 함께 도입됐다(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.6절). 다만 스크립트 경로는 현재도 2.4.2절의 `AnimationPlayer` 메서드 트랙(폴백)을 쓰고 있다. 구현 세션은 속성 트랙 방식을 권장 후보로 제안했으나 이는 2.4.2절에 없는 새 후보이며 아직 검증 전이다. `Animation` 트랙 세부 명세·포맷 버저닝도 미해결로 남아 있다. 이어서 다중 액터 장면 재생(`CinematicScene`/`CinematicClip`, 키 단위 충돌 해소, 액터 잠금 참조 관리, 재생 전 구조·액터 검증)과 상대 시작 지정(`start_after`/`start_with`/`start_at_marker`+`delay`, `CinematicScene.resolve()`의 순환 참조 검증)·멀티 액터 레코더(여러 액터를 같은 물리 틱 시계로 동시 채집)도 구현되었다. 스크립트 경로의 장면 편입(`AnimationPlayer`를 마스터 시계에 종속)은 아직 범위 밖이며, 속성 트랙 전환 검증이 선행되어야 한다.
+- **연출 스크립트 데이터 포맷 세부 설계** — **부분 해소(2026-11-10)**: `CinematicPlayer` 추상화 인터페이스는 구현 저장소(`ajusine.game1`)에서 아저씨가 "결과 상태 기록 + 액터 인터페이스" 방향으로 확정했다. 상태 키를 연속(`position`)·계단식(`facing`·`anim`·`emotion_tag`·`dialogue_key`·`camera_target`)·순간(`events`) 세 종류로 분류하고, 재생 대상이 `capture_state()`/`apply_state()`/`begin_cinematic()`/`end_cinematic()`을 구현하는 액터 인터페이스 규약과 두 경로 공통의 재생 제어 API(`pause`/`resume`/`set_speed`/`hold`/`release`/`seek` 등)도 함께 도입됐다(상세: [영상 연출 라이브러리 메트로이드배니아의 일관성 개념과 최소 테스트 씬 설계](cinematic_library_metroidvania_consistency_and_test_scenes.html) 3.6절). 다중 액터 장면 재생(`CinematicScene`/`CinematicClip`, 키 단위 충돌 해소, 액터 잠금 참조 관리, 재생 전 구조·액터 검증), 상대 시작 지정(`start_after`/`start_with`/`start_at_marker`+`delay`, `CinematicScene.resolve()`의 순환 참조 검증), 멀티 액터 레코더(여러 액터를 같은 물리 틱 시계로 동시 채집)에 이어, 스크립트 경로(`AnimationPlayer`)도 장면의 클립 종류 중 하나로 편입되었다(2.4.2절 참고) — `AnimationPlayer`를 수동 모드로 바꿔 장면 시계가 매 프레임 `advance()`를 호출해 구동하는 방식이며, `speed_scale` 직접 조작 우회는 제거됐다. 이와 함께 중첩 장면(장면을 다른 장면의 클립으로 삽입)과 신호 시작(`start_on_cue`, 재생 중 `trigger_cue()`로 대기 중인 클립을 시작)이 구현됐다. 구현 세션이 사전에 제안했던 "상태 키를 속성 트랙으로 전환" 방안은 검증 결과 동기가 사라져 보류됐다(엔진 4.7.2에서 `AnimationPlayer.seek()`가 이벤트를 직전 키 하나만 실행하고 속성 값을 어긋나게 만들어 신뢰할 수 없음을 실측 확인했고, 속성 트랙의 이점이던 시크 안전성이 이 때문에 성립하지 않음). 따라서 애니메이션 클립·신호 시작이 있는 장면은 `seek()`를 지원하지 않는다(경고만 남기고 시계를 바꾸지 않음). `Animation` 트랙 세부 명세·포맷 버저닝은 여전히 미해결이다.
 
 #### 4장 관련 — 캐릭터 및 전투
 
